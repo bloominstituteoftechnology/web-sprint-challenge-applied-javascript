@@ -12,9 +12,9 @@ _You have **three hours** to complete this challenge. Plan your time accordingly
 
 ## Introduction
 
-You are going to create a Lambda Newspaper. Your job is going to be to create the components that make up the newspaper's home page. You will do this at first with static data, then you will request data from a server to create dynamic components. In meeting the minimum viable product (MVP) specifications listed below, your project should look similar to the following example (note that the filtering functionality is one of the stretch goals):
+You are going to create a Lambda Newspaper. Your job is going to be to create the components that make up the newspaper's home page. You will do this at first with static data, then you will request data from a server to create dynamic components. In meeting the minimum viable product (MVP) specifications listed below, your project should look similar to the following example:
 
-[Lambda Newspaper](./finished.gif)
+[Lambda Newspaper](./designs/design.png)
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
@@ -55,7 +55,7 @@ Look through the HTML code and familiarize yourself with the different sections.
 
 #### Build a Header component
 
-- [ ] Preview the design [here](./example-header.png).
+- [ ] Preview the design [here](./designs/header.png).
 - [ ] Work inside the `Header/index.js` file.
 - [ ] Create a `Header` function. When invoked, it should return the following markup:
 
@@ -74,7 +74,7 @@ Look through the HTML code and familiarize yourself with the different sections.
 
 #### Build tabs using data from an API
 
-- [ ] Preview the design [here](./example.tabs.png).
+- [ ] Preview the design [here](./designs/tabs.png).
 - [ ] Work inside the `Tabs/index.js` file.
 - [ ] Use Axios to send a GET request to: `https://lambda-times-backend.herokuapp.com/topics`.
 - [ ] Once the data resolves, use console logs or breakpoints to review the structure of the data.
@@ -88,7 +88,7 @@ Look through the HTML code and familiarize yourself with the different sections.
 
 #### Build a Card component
 
-- [ ] Preview the design [here](./example-card.png).
+- [ ] Preview the design [here](./designs/card.png).
 - [ ] Work inside the `Cards/Cards.js` file.
 - [ ] Create a `Card` function that takes an article object as argument.
 - [ ] When invoked, `Card` should return the following markup:
@@ -111,15 +111,14 @@ Look through the HTML code and familiarize yourself with the different sections.
 
 ### Task 3: Stretch Goals
 
-> Include stretch goals in this section. These are additional things the student can do go beyond basic proficiency, and push their scores on the challenge up to a 3. Be clear that these are *not* required. Completing all of the tasks in the required section must be sufficient to  demonstrate proficiency of all sprint objectives, and earn a score of '2. 
+After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals.
 
-> Example stretch goals below:
+Your stretch challenge is to write the functionality of a `Carousel` component. If you begin and don't finish, you should still submit with what you have. There is no need to request data for this exercise.
 
-After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
-
-* [ ] Build a page of your choosing from the navigation items.  Come up with content and images that fit the theme.  
-* [ ] Introduce CSS animations to your site.
-* [ ] Build a contact page and create a form with several inputs of your choosing
+- [ ] Complete the carousel functionality in `Carousel.js`.
+- [ ] If you complete the Carousel, add functionality so that the carousel slides when the buttons are pressed instead of just appearing.
+- [ ] Create an 'infinite loop' carousel. In which as long as you click on an arrow, the array of images will loop over itself.
+- [ ] If you have finished the above, research `data attributes`. Implement data attributes within your tabs as well as your cards. Give the tabs functionality so that when they are clicked they filter the cards to only display the cards that contain that topic. Preview the functionality [here](designs/stretch.gif)
 
 ## Submission format
 
