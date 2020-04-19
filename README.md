@@ -1,14 +1,12 @@
-# Sprint Challenge Instructions Template
-
-> Text like this that uses the `>` character (quoted block in Markdown) is commentary and instructions for you (the curriculum developer) to replace. They should not be left in your final result. Conversely, text not in a quote block is either a example for you to modify, or text that will usually be left as-is for most if not all sprint challenges.
+# Sprint Challenge: Applied JavaScript - Lambda Times
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
-This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored **`<Sprint Subject Here>`**. During this sprint, you studied **`<High-level sprint topics here>`**. In your challenge this week, you will demonstrate your mastery of these skills by creating **`<describe project here>`**.
+This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored **the DOM and the concept of components**. During this sprint, you studied **the DOM, DOM Events, components, HTTP GET requests, and the Axios library**. In your challenge this week, you will demonstrate your mastery of these skills by creating an **online Lambda newspaper called "Lambda Times"**.
 
 This is an individual assessment. All work must be your own. Your challenge score is a measure of your ability to work independently using the material covered through this sprint. You need to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
 
-You are not allowed to collaborate during the sprint challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your TL if you need direction. 
+You are not allowed to collaborate during the sprint challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your TL if you need direction.
 
 _You have **three hours** to complete this challenge. Plan your time accordingly._
 
@@ -112,5 +110,3 @@ Follow these steps for completing your project.
 - [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
 - [ ] Add your team lead as a reviewer on the pull-request
 - [ ] Your team lead will count the project as complete after receiving your pull-request
-
-
