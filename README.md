@@ -78,7 +78,7 @@ Look through the HTML code and familiarize yourself with the different sections.
 - [ ] Work inside the `Tabs/index.js` file.
 - [ ] Use Axios to send a GET request to: `https://lambda-times-backend.herokuapp.com/topics`.
 - [ ] Once the data resolves, use console logs or breakpoints to review the structure of the data.
-- [ ] Iterate over the list of topics.
+- [ ] Loop over the list of topics.
 - [ ] At each iteration, create a new tab and append it to the DOM under `div.topics`.
 - [ ] Each tab should look like the following markup:
 
