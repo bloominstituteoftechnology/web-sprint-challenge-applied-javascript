@@ -14,7 +14,7 @@ _You have **three hours** to complete this challenge. Plan your time accordingly
 
 You are going to create a Lambda Newspaper. Your job is going to be to create the components that make up the newspaper's home page. You will do this at first with static data, then you will request data from a server to create dynamic components. In meeting the minimum viable product (MVP) specifications listed below, your project should look similar to the following example:
 
- [Lambda Newspaper](./example.gif)
+ [Lambda Newspaper](./example.png)
 
 ### Commits
 
