@@ -12,17 +12,17 @@ _You have **three hours** to complete this challenge. Plan your time accordingly
 
 ## Introduction
 
-You are going to create a Lambda Newspaper. Your job is going to be to create the components that make up the newspaper's home page. You will do this at first with static data, then you will request data from a server to create dynamic components. In meeting the minimum viable product (MVP) specifications listed below, your project should look similar to the following example:
+You are going to create a Lambda Newspaper. Your job is going to be to create the components that make up the newspaper's home page. You will do this at first with static data, then you will request data from a server to create dynamic components. In meeting the minimum viable product (MVP) specifications listed below, your project should look similar to the following example (note that the filtering functionality is one of the stretch goals):
 
- [Lambda Newspaper](./example.gif)
+[Lambda Newspaper](./finished.gif)
+
+In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
 ### Commits
 
 Commit your code regularly and meaningfully. This helps both you (in case you ever need to return to old code for any number of reasons) and your team lead as the evaluate your solution.
 
 ## Interview Questions
-
-> List out the topics covered that students should study and review to be prepared for the questions asked in the TL interview. You can use the list of learning objectives that should be covered by the interview as a start.
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
@@ -51,38 +51,65 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 ### Task 2: Project Requirements
 
-> This section should include requirements for the sprint challenge itself. The idea is to be explicit with the student about the things their project solution needs to implement, without telling them **how** to do any of these things. Be sure all learning objectives in your sprint challenge list are covered. 
+Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself. Your finished project must include all of the following requirements:
 
-Your finished project must include all of the following requirements:
+#### Build a Header component
 
-> (The following is an example):
+- [ ] Preview the design [here](./example-header.png).
+- [ ] Work inside the `Header/index.js` file.
+- [ ] Create a `Header` function. When invoked, it should return the following markup:
 
-#### Home Page
+  ```html
+    <div class="header">
+      <span class="date">SMARCH 28, 2019</span>
+      <h1>Lambda Times</h1>
+      <span class="temp">98°</span>
+    </div>
+  ```
 
-[Review the provided design file for the home page](design/home.png).  Notice the navigation and header images are missing.
+- [ ] Invoke your function.
+- [ ] Append the returned markup to the DOM.
 
-* [ ] Uses Semantic HTML and CSS to create the missing navigation and header
-* [ ] The `About` navigation item must be linked to the [about.html](about.html) page
-* [ ] Your design must be responsive such that it is accessible on mobile(500px) and tablet(800 px) and matches the [mobile](design/mobile.png) wireframe. This functionality must be implemented using flexbox.
-* [ ] Uses all box model properties so that margins, borders, and padding match the wireframes
-* [ ] You must add responsive breakpoints to your code by using media queries
-* [ ] All 10 boxes on the home page are correctly styled with background colors using the guide below:
+#### Tabs
 
+#### Build tabs using data from an API
 
-* [ ] box1: `teal`
-* [ ] box2: `gold`
-* [ ] box3: `cadetblue`
-* [ ] box4: `coral`
-* [ ] box5: `crimson`
-* [ ] box6: `forestgreen`
-* [ ] box7: `darkorchid`
-* [ ] box8: `hotpink`
-* [ ] box9: `indigo`
-* [ ] box10: `dodgerblue`
+- [ ] Preview the design [here](./example.tabs.png).
+- [ ] Work inside the `Tabs/index.js` file.
+- [ ] Use Axios to send a GET request to: `https://lambda-times-backend.herokuapp.com/topics`.
+- [ ] Once the data resolves, use console logs or breakpoints to review the structure of the data.
+- [ ] Iterate over the list of topics.
+- [ ] At each iteration, create a new tab for each topic and append it to the DOM under `div.topics`.
+- [ ] Each tab should look like the following markup:
 
-In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
+  ```html
+     <div class="tab">topic here</div>
+  ```
 
-### Task 3: Stretch Goals 
+#### Build a Card component
+
+- [ ] Preview the design [here](./example-card.png).
+- [ ] Work inside the `Cards/Cards.js` file.
+- [ ] Create a `Card` function that takes an article object as argument.
+- [ ] When invoked, `Card` should return the following markup:
+
+  ```html
+    <div class="card">
+      <div class="headline">{{headline of article}}</div>
+      <div class="author">
+        <div class="img-container">
+          <img src={{author image url}} />
+        </div>
+        <span>By {{author name}}</span>
+      </div>
+    </div>
+  ```
+
+- [ ] Outside your function, use Axios to send a GET request to: `https://lambda-times-backend.herokuapp.com/articles`.
+- [ ] Study the response data you get back, closely. This won't be as easy as just iterating over an array.
+- [ ] Use your function to create a card for each article, and add each card to the DOM.
+
+### Task 3: Stretch Goals
 
 > Include stretch goals in this section. These are additional things the student can do go beyond basic proficiency, and push their scores on the challenge up to a 3. Be clear that these are *not* required. Completing all of the tasks in the required section must be sufficient to  demonstrate proficiency of all sprint objectives, and earn a score of '2. 
 
