@@ -10,18 +10,11 @@ You are not allowed to collaborate during the sprint challenge. However, you are
 
 _You have **three hours** to complete this challenge. Plan your time accordingly._
 
-
 ## Introduction
 
-> In this section, introduce the challenge,  with a high level explanation of the components of the project.
-> 
-> This section should include examples in the form of screenshots, screen recording GIFs, and/or links to an example.
+You are going to create a Lambda Newspaper. Your job is going to be to create the components that make up the newspaper's home page. You will do this at first with static data, then you will request data from a server to create dynamic components. In meeting the minimum viable product (MVP) specifications listed below, your project should look similar to the following example:
 
-In meeting the minimum viable product (MVP) specifications listed below, your project should look like the solution examples below:
-
- [Sample Screenshot](https://tk-assets.lambdaschool.com/39a49225-8ac9-43da-aa90-514fd60ae99a_sprint-challenge-ui-home-example.png)
-
-[Sample mobile example](https://tk-assets.lambdaschool.com/fbe7ebfc-a4c2-4a32-8929-bbd41fbc4f67_ScreenShot2020-03-25at11.03.41AM.png)
+ [Lambda Newspaper](./lambda-news-finished.gif)
 
 ### Commits
 
@@ -33,17 +26,17 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
-1. Describe semantic HTML 
+1. What is the DOM?
 
-2. Understand when and how to use CSS reset
+2. What is an event?
 
-3. Understand the use of the command line interface (CLI)
+3. What is an event listener?
 
-4. Explain git commands and why git is valuable to a team of developers.
+4. Why would we convert a NodeList into an Array?
 
-5. Define mobile-first design in your own words, and the difference in layout types.
+5. What is a component?
 
-You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
+You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
 ## Instructions
 
