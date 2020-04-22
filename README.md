@@ -45,8 +45,6 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 ### Task 1: Project Set Up
 
-> This section should include instruction for the sprint challenge. These should only cover things that are _not_ being evaluated by the challenge itself, e.g. environment/project setup, link to a starter project, etc. In general, this will be the following Git fork, clone, branch, commit, push, create pull request flow, though may need to be adapted for some specific challenges.
-
 - [ ] Create a forked copy of this project
 - [ ] Add your team lead as collaborator on Github
 - [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
@@ -55,8 +53,6 @@ You are expected to be able to answer questions in these areas. Your responses c
 - [ ] Push commits: git push origin `<firstName-lastName>`
 
 ### Task 2: Project Requirements
-
-> This section should include requirements for the sprint challenge itself. The idea is to be explicit with the student about the things their project solution needs to implement, without telling them **how** to do any of these things. Be sure all learning objectives in your sprint challenge list are covered. 
 
 Your finished project must include all of the following requirements:
 
