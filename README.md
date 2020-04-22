@@ -1,10 +1,8 @@
-# Sprint Challenge Instructions Template
-
-> Text like this that uses the `>` character (quoted block in Markdown) is commentary and instructions for you (the curriculum developer) to replace. They should not be left in your final result. Conversely, text not in a quote block is either a example for you to modify, or text that will usually be left as-is for most if not all sprint challenges.
+# Applied JavaScript Sprint Challenge
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
-This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored **`<Sprint Subject Here>`**. During this sprint, you studied **`<High-level sprint topics here>`**. In your challenge this week, you will demonstrate your mastery of these skills by creating **`<describe project here>`**.
+This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored **Applied JavaScript**. During this sprint, you studied **DOM and components**. In your challenge this week, you will demonstrate your mastery of these skills by creating **an online Lambda newspaper called "Lambda Times."**.
 
 This is an individual assessment. All work must be your own. Your challenge score is a measure of your ability to work independently using the material covered through this sprint. You need to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
 
@@ -15,9 +13,7 @@ _You have **three hours** to complete this challenge. Plan your time accordingly
 
 ## Introduction
 
-> In this section, introduce the challenge,  with a high level explanation of the components of the project.
-> 
-> This section should include examples in the form of screenshots, screen recording GIFs, and/or links to an example.
+You are going to create a Lambda Newspaper. Your job is going to be to create the components that make up the newspaper's home page. You will do this at first with static data, then you will request data from a server to create dynamic components.
 
 In meeting the minimum viable product (MVP) specifications listed below, your project should look like the solution examples below:
 
@@ -31,19 +27,17 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 ## Interview Questions
 
-> List out the topics covered that students should study and review to be prepared for the questions asked in the TL interview. You can use the list of learning objectives that should be covered by the interview as a start.
-
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
-1. Describe semantic HTML 
+1. What is the DOM?
 
-2. Understand when and how to use CSS reset
+2. What is an event?
 
-3. Understand the use of the command line interface (CLI)
+3. What is an event listener?
 
-4. Explain git commands and why git is valuable to a team of developers.
+4. Why would we convert a NodeList into an Array?
 
-5. Define mobile-first design in your own words, and the difference in layout types.
+5. What is a component?
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
@@ -66,31 +60,13 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 Your finished project must include all of the following requirements:
 
-> (The following is an example):
+- [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
 
-#### Home Page
+- [ ] Following the instructions in the Header/index.js file, create the Header component.
 
-[Review the provided design file for the home page](design/home.png).  Notice the navigation and header images are missing.
+- [ ] Following the instructions in the Tabs/index.js file, create individual Tabs components.
 
-* [ ] Uses Semantic HTML and CSS to create the missing navigation and header
-* [ ] The `About` navigation item must be linked to the [about.html](about.html) page
-* [ ] Your design must be responsive such that it is accessible on mobile(500px) and tablet(800 px) and matches the [mobile](design/mobile.png) wireframe. This functionality must be implemented using flexbox.
-* [ ] Uses all box model properties so that margins, borders, and padding match the wireframes
-* [ ] You must add responsive breakpoints to your code by using media queries
-* [ ] All 10 boxes on the home page are correctly styled with background colors using the guide below:
-
-
-* [ ] box1: `teal`
-* [ ] box2: `gold`
-* [ ] box3: `cadetblue`
-* [ ] box4: `coral`
-* [ ] box5: `crimson`
-* [ ] box6: `forestgreen`
-* [ ] box7: `darkorchid`
-* [ ] box8: `hotpink`
-* [ ] box9: `indigo`
-* [ ] box10: `dodgerblue`
-
+- [ ] Following the instructions in the Cards/index.js file, create individual Cards components.
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
 ### Task 3: Stretch Goals 
