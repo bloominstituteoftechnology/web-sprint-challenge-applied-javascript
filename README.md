@@ -6,10 +6,9 @@ This challenge allows you to practice the concepts and techniques learned over t
 
 This is an individual assessment. All work must be your own. Your challenge score is a measure of your ability to work independently using the material covered through this sprint. You need to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
 
-You are not allowed to collaborate during the sprint challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your TL if you need direction. 
+You are not allowed to collaborate during the sprint challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your TL if you need direction.
 
 _You have **three hours** to complete this challenge. Plan your time accordingly._
-
 
 ## Introduction
 
@@ -17,7 +16,7 @@ You are going to create a Lambda Newspaper. Your job is going to be to create th
 
 In meeting the minimum viable product (MVP) specifications listed below, your project should look like the solution examples below:
 
- [Sample Screenshot](https://tk-assets.lambdaschool.com/39a49225-8ac9-43da-aa90-514fd60ae99a_sprint-challenge-ui-home-example.png)
+[Sample Screenshot](https://tk-assets.lambdaschool.com/39a49225-8ac9-43da-aa90-514fd60ae99a_sprint-challenge-ui-home-example.png)
 
 [Sample mobile example](https://tk-assets.lambdaschool.com/fbe7ebfc-a4c2-4a32-8929-bbd41fbc4f67_ScreenShot2020-03-25at11.03.41AM.png)
 
@@ -39,7 +38,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 5. What is a component?
 
-You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
+You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
 ## Instructions
 
@@ -66,17 +65,11 @@ Your finished project must include all of the following requirements:
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
-### Task 3: Stretch Goals 
-
-> Include stretch goals in this section. These are additional things the student can do go beyond basic proficiency, and push their scores on the challenge up to a 3. Be clear that these are *not* required. Completing all of the tasks in the required section must be sufficient to  demonstrate proficiency of all sprint objectives, and earn a score of '2. 
-
-> Example stretch goals below:
+### Task 3: Stretch Goals
 
 After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
 
-* [ ] Build a page of your choosing from the navigation items.  Come up with content and images that fit the theme.  
-* [ ] Introduce CSS animations to your site.
-* [ ] Build a contact page and create a form with several inputs of your choosing
+- [ ] Work on the accessibility of the website.
 
 ## Submission format
 
@@ -85,5 +78,3 @@ Follow these steps for completing your project.
 - [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
 - [ ] Add your team lead as a reviewer on the pull-request
 - [ ] Your team lead will count the project as complete after receiving your pull-request
-
-
