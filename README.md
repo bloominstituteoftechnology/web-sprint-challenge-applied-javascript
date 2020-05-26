@@ -57,11 +57,11 @@ Your finished project must include all of the following requirements:
 
 - [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
 
-- [ ] Following the instructions in the Header/index.js file, create the Header component.
+- [ ] Following the instructions in the Header/index.js file, create the Header.
 
-- [ ] Following the instructions in the Tabs/index.js file, create individual Tabs components.
+- [ ] Following the instructions in the Tabs/index.js file, create the Tabs.
 
-- [ ] Following the instructions in the Cards/index.js file, create individual Cards components.
+- [ ] Following the instructions in the Cards/index.js file, create the Cards.
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
@@ -69,12 +69,12 @@ In your solution, it is essential that you follow best practices and produce cle
 
 After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
 
-- [ ] Work on the accessibility of the website.
+- [ ] Following the instructions in the Carousel/index.js file, create the Carousel component.
 
 ## Submission format
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
+- [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into master (student's  Repo). **Please don't merge your own pull request**
 - [ ] Add your team lead as a reviewer on the pull-request
 - [ ] Your team lead will count the project as complete after receiving your pull-request
