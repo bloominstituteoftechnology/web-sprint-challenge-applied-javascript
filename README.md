@@ -14,11 +14,9 @@ _You have **three hours** to complete this challenge. Plan your time accordingly
 
 You are going to create a Lambda Newspaper. Your job is going to be to create the components that make up the newspaper's home page. You will do this at first with static data, then you will request data from a server to create dynamic components.
 
-In meeting the minimum viable product (MVP) specifications listed below, your project should look like the solution examples below:
+In meeting the minimum viable product (MVP) specifications listed below, your project should look like the solution below:
 
-[Sample Screenshot](https://tk-assets.lambdaschool.com/39a49225-8ac9-43da-aa90-514fd60ae99a_sprint-challenge-ui-home-example.png)
-
-[Sample mobile example](https://tk-assets.lambdaschool.com/fbe7ebfc-a4c2-4a32-8929-bbd41fbc4f67_ScreenShot2020-03-25at11.03.41AM.png)
+[Lambda Times](https://tk-assets.lambdaschool.com/83869a99-62dc-4896-be79-f5ad1885631b_Sprint-Challenge.gif)
 
 ### Commits
 
