@@ -68,6 +68,7 @@ In your solution, it is essential that you follow best practices and produce cle
 After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
 
 - [ ] Following the instructions in the Carousel/index.js file, create the Carousel component.
+- [ ] Render an error message on the page for the user, if the network request fails.
 
 ## Submission format
 
