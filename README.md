@@ -40,7 +40,7 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 ## Instructions
 
-### Task 1: Project Setup
+### Task 1: Project Set Up
 
 #### Repository Set Up
 
