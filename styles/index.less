@@ -1,6 +1,5 @@
 @import './variables';
 @import './mixins';
-@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic,900');
 
 * {
   box-sizing: border-box;
@@ -9,6 +8,7 @@
 html, body {
   margin: 0; 
   padding: 0;
+  font-family: 'PT Sans', sans-serif;
 }
 
 body {
@@ -19,7 +19,7 @@ body {
 }
 
 @import './TopBar';
-@import './components/Header/Header';
-@import './components/Tabs/Tabs';
-@import './components/Cards/Cards';
-@import './components/Carousel/Carousel';
+@import './Header';
+@import './Tabs';
+@import './Cards';
+@import './Carousel';
