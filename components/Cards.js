@@ -26,7 +26,7 @@ const { default: Axios } = require("axios")
 const errors = document.querySelector('.errors-container')
 // console.log(errors)
 const cards = document.querySelector('.cards-container')
-const articleURL = 'https://lambda-times-backend.herokuapp.com/articless'
+const articleURL = 'https://lambda-times-backend.herokuapp.com/articles'
 
 Axios.get(articleURL)
 .then((res) => {

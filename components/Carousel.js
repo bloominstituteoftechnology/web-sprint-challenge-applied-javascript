@@ -27,7 +27,6 @@ const carouselContainer = document.querySelector('.carousel-container')
 
 // console.log(carouselContainer)
 
-
 function carouselMaker(){
   const carousel = document.createElement('div')
   const leftBtn = document.createElement('div')
@@ -52,7 +51,10 @@ function carouselMaker(){
   carousel.appendChild(img3)
   carousel.appendChild(img4)
   carousel.appendChild(rightBtn)
-
+  
+  img1.style.display = 'block'
+  
+  
   // console.log(carousel)
   
   return carousel
@@ -60,5 +62,5 @@ function carouselMaker(){
 
 // carouselMaker()
 
-
 carouselContainer.appendChild(carouselMaker());
+
