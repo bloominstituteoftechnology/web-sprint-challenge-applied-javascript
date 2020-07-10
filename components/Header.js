@@ -24,9 +24,9 @@ function header() {
     headerSpanTemp.classList.add("temp")
 
     // CREATE THE TEXT CONTENT
-    headerSpanDate.textContent = "March 28, 2019"
+    headerSpanDate.textContent = "July 10, 2020"
     headerHeading.textContent = "Lambda Times"
-    headerSpanTemp.innerHTML = "98&deg;"
+    headerSpanTemp.innerHTML = "81&deg;" // My actual local weather today
 
     // APPEND ELEMENTS
     headerDiv.appendChild(headerSpanDate)
