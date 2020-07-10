@@ -51,7 +51,6 @@ function articleMaker(object){
     // main card = second level parent 
     const authorBox = document.createElement('div'); 
     authorBox.classList.add('author'); 
-    articleCard.appendChild(authorBox); 
     // sub card 
     const authorFrame = document.createElement('div');
     authorFrame.classList.add('img-container'); 
@@ -64,8 +63,9 @@ function articleMaker(object){
     // author's name span 
     const authorName = document.createElement('span'); 
     authorName.textContent = 'By ' + object.authorName; 
-    authorFrame.appendChild(authorName); 
-    
+    authorBox.appendChild(authorName); 
+    articleCard.appendChild(authorBox); 
+
     // event listener 
     articleCard.addEventListener('click', () => {
         console.log(articleHeadline.textContent); 
