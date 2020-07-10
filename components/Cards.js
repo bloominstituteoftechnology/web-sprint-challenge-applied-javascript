@@ -33,9 +33,16 @@ axios.get(articleURL)
         });
     }
     })
-    .catch((error) =>
+    .catch((error) => {
     console.log(error)
-    )
+    const errorMessage = document.createElement('div');
+    errorMessage.className = 'card';
+    const errorHeadline = document.createElement('div')
+    errorHeadline.textContent = "There was an error fetching data, Try again later."
+    const errorCont = document.querySelector('.errors-container')
+    errorMessage.appendChild(errorHeadline);
+    errorCont.appendChild(errorMessage);
+    })
 
 
 function cardMaker(obj){
@@ -46,6 +53,10 @@ function cardMaker(obj){
     headline.className = 'headline'
     headline.textContent = obj.headline
 
+    headline.addEventListener('click', () =>{
+        console.log(headline.textContent)
+    }
+    )
     const author = document.createElement('div')
     author.className = 'author'
 
