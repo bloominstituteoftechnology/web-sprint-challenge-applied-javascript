@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+ANSWER: The Document Object Model (DOM) represents the #document and allows manipulation of elements
+
 2. What is an event?
+
+ANSWER: An event is an action initiated by the user, such as a click or moving the mouse
 
 3. What is an event listener?
 
+ANSWER: Event listener "listens" for the user's actions in order to use that action to do something
+
 4. Why would we convert a NodeList into an Array?
 
+ANSWER: To be able to index and use the data?
+
 5. What is a component?
+
+ANSWER: Components are reusable pieces of code for easier reference
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
