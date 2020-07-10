@@ -29,12 +29,10 @@ function Header() {
     header.appendChild(h1)
     header.appendChild(temp)
 
-
     return header
 }
 
-console.log(Header())
+// console.log(Header())
 
 const headerContainer = document.querySelector('.header-container')
-
 headerContainer.appendChild(Header())

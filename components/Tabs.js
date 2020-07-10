@@ -25,7 +25,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
     console.log(err)
 })
 
-
 function tabCreate(topic){
     const tab = document.createElement('div')
     tab.className = 'tab'

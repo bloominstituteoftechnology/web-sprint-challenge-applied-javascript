@@ -23,8 +23,10 @@
 
 const { default: Axios } = require("axios")
 
+const errors = document.querySelector('.errors-container')
+// console.log(errors)
 const cards = document.querySelector('.cards-container')
-const articleURL = 'https://lambda-times-backend.herokuapp.com/articles'
+const articleURL = 'https://lambda-times-backend.herokuapp.com/articless'
 
 Axios.get(articleURL)
 .then((res) => {
@@ -34,6 +36,16 @@ Axios.get(articleURL)
             cards.appendChild(cardMaker(element))
         });
     }
+})
+.catch((err) => {
+console.log(`error`,err)
+// console.log(err.response)
+// console.log(err.response.data)
+// console.log(err.response.status)
+// console.log(err.response.headers)
+// console.log(err.response.request.statusText)
+
+errors.appendChild(errorMessages(err))
 })
 
 
@@ -60,5 +72,23 @@ function cardMaker(obj){
     imgContainer.appendChild(img)
     author.appendChild(authorName)
 
+    card.addEventListener('click', () => {
+        console.log(obj.headline)
+    })
+
     return card
+}
+
+function errorMessages(err){
+    const error = document.createElement('div')
+    const status = document.createElement('h3')
+    const headers = document.createElement('p')
+
+    status.textContent = `Error ${err.response.status} ${err.response.request.statusText}`
+    headers.textContent = err.message
+
+    error.appendChild(status)
+    error.appendChild(headers)
+
+    return error
 }
