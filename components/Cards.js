@@ -30,16 +30,14 @@ const cardContainer = document.querySelector(".cards-container");
 
 axios
   .get("https://lambda-times-backend.herokuapp.com/articles")
-  .then(({ data }) => {
-    const { articles } = data;
-    for (let topic in articles) {
-      articles[topic].forEach((article) => {
-        cardContainer.appendChild(cardMaker(article, topic));
-      });
-    }
+  .then((success) => {
+    console.log(success);
+    success.data.articles.forEach((element) => {
+      console.log(element);
+    });
   })
-  .catch((error) => {
-    console.log(error);
+  .catch((failure) => {
+    console.log("zero chance of success captain");
   });
 
 function cardMaker(obj) {
