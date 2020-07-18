@@ -11,4 +11,28 @@
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
 
-function Header(obj) {}
+import axios from 'axios'
+
+function constructor(text1, text2) {
+    let div = document.createElement('div')
+    div.classList.add('header')
+    
+    let span = document.createElement('span')
+    span.classList.add('date')
+    span.textContent = text1
+
+    let span2 = document.createElement('span')
+    span2.classList.add('temp')
+    span2.textContent = text2
+
+    let h1 = document.createElement('h1')
+
+    div.appendChild(span)
+    div.appendChild(span2)
+    div.appendChild(h1)
+
+    return div
+}
+
+constructor('MARCH 28 2020', '98°')
+
