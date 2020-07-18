@@ -43,7 +43,7 @@ function articleMaker(object){
     const headline = document.createElement('div'); 
     headline.classList.add('headline'); 
     headline.textContent = object.headline;
-    articleCard.appendChild(articleHeadline); 
+    articleCard.appendChild(headline); 
 
     const box = document.createElement('div'); 
     box.classList.add('author'); 
@@ -53,13 +53,13 @@ function articleMaker(object){
     frame.classList.add('img-container'); 
 
     const image = document.createElement('img'); 
-    image.src = object.authorPhoto;
+    image.src = object.photo;
     frame.appendChild(image);
     box.appendChild(frame); 
 
     const name = document.createElement('span'); 
-    name.textContent = 'By ' + object.authorName; 
-    frame.appendChild(authorName); 
+    name.textContent = 'By ' + object.name; 
+    frame.appendChild(name); 
  
     articleCard.addEventListener('click', () => {
         console.log(headline.textContent); 
