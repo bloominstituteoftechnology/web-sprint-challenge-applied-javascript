@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // STEP 1: Create a Header component.
 // -----------------------
 // Write a function that returns the markup you see below:
@@ -11,4 +12,17 @@
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
 
-function Header() {}
+function Header() {
+    //create element and class
+    const headerDiv = document.createElement('div');
+    headerDiv.classList.add('header');
+
+    const headerSpan = document.createElement('span')
+    headerSpan.classList.add('date')
+    
+
+
+
+
+    
+}
