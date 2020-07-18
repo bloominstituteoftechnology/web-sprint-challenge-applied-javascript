@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+    It is an interface to web pages. Allows programs to read and manipulate the pages content
+
 2. What is an event?
+
+    occurrences that happen in the system
 
 3. What is an event listener?
 
+    it 'listens' out for the event that is/will happen
+
 4. Why would we convert a NodeList into an Array?
 
+    To be able to use the methods map and forEach
+
 5. What is a component?
+
+    they are building blocks
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
