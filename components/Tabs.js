@@ -16,7 +16,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 		const newTopic = document.createElement('div');
 		newTopic.classList.add('tab');
 		newTopic.textContent = element;
-		document.querySelector('.title').appendChild(newTopic);
+		document.querySelector('.topics').appendChild(newTopic);
 	});
 })
 .catch(failure => {

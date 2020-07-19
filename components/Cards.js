@@ -1,3 +1,4 @@
+
 // STEP 3: Create article cards.
 // -----------------------
 // Send an HTTP GET request to the following address: https://lambda-times-backend.herokuapp.com/articles
@@ -37,22 +38,35 @@ function articleMaker(obj){
 	img.setAttribute('src',obj.authorPhoto);
 	
 //content
-	headLine.textContent = obj.headline;
 	span.textContent = obj.authorName;
-	
+	card.addEventListener('click', event => {
+		headLine.textContent = obj.headline;
+	})
 //putting it alllll together
-	imgDiv.appendChild('img');
+	imgDiv.appendChild(img);
 	author.append(imgDiv,span);
 	card.append(headLine,author);
 	
 //return finished Article
 	return card;
 }
+// making an array to hold the values for each topic 
+const myArr = [
+	"javascript",
+	"bootstrap",
+	"technology",
+	"jquery",
+	"node"
+];
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(success => {
 	console.log(success);
-	success.data.articles.forEach(element => {
-		console.log(element);
+	myArr.forEach(topic => {
+		success.data.articles[topic].forEach(el => {
+		const newDiv = articleMaker(el);
+		console.log(newDiv);
+		document.querySelector('.cards-container').appendChild(newDiv);
+	});
 	});
 })
 .catch(failure => {
