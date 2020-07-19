@@ -43,9 +43,17 @@ function constructor(obj) {
     img.src = obj.authorPhoto
     span.textContent = `By ${obj.authorName}`
 
-    divContainer.append(div2,div3,div4,img,span)
+    divContainer.addEventListener('click', e => {
+        console.log(obj.headline)
+    })
+    divContainer.append(div2,div3)
+    div3.append(div4,span)
+    div4.append(img)
+
     return divContainer
+    
 }
+
 
 const entryPoint = document.querySelector('.cards-container')
 
@@ -56,6 +64,44 @@ promise.then((response => {
         
     })
 }))
+
+promise.then((response => {
+    response.data.articles.javascript.forEach(i => {
+        const article = constructor(i)
+        entryPoint.appendChild(article)
+        
+    })
+}))
+
+promise.then((response => {
+    response.data.articles.jquery.forEach(i => {
+        const article = constructor(i)
+        entryPoint.appendChild(article)
+        
+    })
+}))
+
+promise.then((response => {
+    response.data.articles.node.forEach(i => {
+        const article = constructor(i)
+        entryPoint.appendChild(article)
+        
+    })
+}))
+
+promise.then((response => {
+    response.data.articles.technology.forEach(i => {
+        const article = constructor(i)
+        entryPoint.appendChild(article)
+        
+    })
+}))
+
+
+
+
+
+
 
 .catch((errorResponse) => {
     console.log('error!', errorResponse)

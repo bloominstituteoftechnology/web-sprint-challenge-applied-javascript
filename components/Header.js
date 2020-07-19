@@ -13,29 +13,34 @@
 
 import axios from 'axios'
 
-function constructor(text1, text2) {
-    let div = document.createElement('div')
-    div.classList.add('header')
+
+function constructor(text1,text2,text3) {
+    //elements
+    const header = document.createElement('div')
+    const date = document.createElement('span')
+    const h1 = document.createElement('h1')
+    const temp = document.createElement('span')
     
-    let span = document.createElement('span')
-    span.classList.add('date')
-    span.textContent = text1
+    //classes
+    header.classList.add('header')
+    date.classList.add('date')
+    temp.classList.add('temp')
 
-    let span2 = document.createElement('span')
-    span2.classList.add('temp')
-    span2.textContent = text2
+    //text content
+    date.textContent = text1
+    h1.textContent = text2
+    temp.textContent = text3
 
-    let h1 = document.createElement('h1')
-
-
-    div.append(span, span2, h1)
-    return div
+    header.append(date,h1,temp)
+    const headerContainer = document.querySelector('div.header-container')
+    headerContainer.append(header)
+    return header
+    
 }
 
-let header = document.querySelector('.header-container')
-header.append(constructor('MARCH 28 2020', '98°'))
 
 
+constructor('MARCH 28, 2020','Lambda Times','98°')
 
 
 
