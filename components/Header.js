@@ -27,12 +27,16 @@ function constructor(text1, text2) {
 
     let h1 = document.createElement('h1')
 
-    div.appendChild(span)
-    div.appendChild(span2)
-    div.appendChild(h1)
 
+    div.append(span, span2, h1)
     return div
 }
 
-constructor('MARCH 28 2020', '98°')
+let header = document.querySelector('.header-container')
+header.append(constructor('MARCH 28 2020', '98°'))
+
+
+
+
+
 
