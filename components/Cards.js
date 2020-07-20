@@ -22,14 +22,16 @@
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
 
-const articleMaker = (array, titles) => {
+const articleMaker = (array) => {
     array.forEach(obj => {
+        console.log(obj);
+
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('card');
         
         const headlineDiv = document.createElement('div');
         headlineDiv.classList.add('headline');
-        headlineDiv.textContent = obj[titles] ['headline']
+        headlineDiv.textContent = obj['headline']
         cardDiv.appendChild(headlineDiv)
     
         const authorDiv = document.createElement('div');
@@ -41,19 +43,31 @@ const articleMaker = (array, titles) => {
         authorDiv.appendChild(imgContainerDiv);
     
         const authorImg = document.createElement('img');
-        authorImg.style.src = obj[titles]['authorPhoto']
+        authorImg.src = obj['authorPhoto'];
         imgContainerDiv.appendChild(authorImg);
     
         const authorSpan = document.createElement('span');
-        authorSpan.textContent = `By ${obj[titles]['authorName']}`
-        authorDiv.appendChild(authorImg);
+        authorSpan.textContent = `By ${obj['authorName']}`
+        authorDiv.appendChild(authorSpan);
         
         const articleAttach = document.querySelector('.cards-container')
         articleAttach.appendChild(cardDiv)
-        console.log(articleAttach);
+
+        const headlineLog = obj['headline']
+        console.log(headlineLog);
+
+        cardDiv.addEventListener('click', () => {
+            const headlineLog = obj['headline']
+        console.log(headlineLog);
+        cardDiv.classList.toggle('tabAttach')
+
+        })
+
+
         return articleAttach;
     })
 }
+
 
 
 axios
@@ -62,30 +76,66 @@ axios
             const articleTopic = response.data["articles"];
             console.log(articleTopic);
             const artValues = Object.values(articleTopic);
-            console.log(artValues[2]);
             artValues.forEach( element => {
-                const artValuesHeadlineArray = Object.values(artValues);
-                console.log(artValues)
-                console.log(artValuesHeadlineArray);
-                console.log(artValuesHeadlineArray[0])
-
-                const headlinesArray = Object.values(artValuesHeadlineArray);
-                console.log(headlinesArray);
-
-                // indivArticles = artValuesHeadlineArray[element];
-                // indivArticles.forEach(headlines => {
-                //    const indivHeadlines = indivArticles[headlines];
-                //     return indivHeadlines;
-                // })
-            })
-            const artKeys = Object.keys(articleTopic);
-            console.log(artKeys);
+                articleMaker(element);
+            });
+            console.log(artValues);
             console.log('success');
             console.log(response);
         })
         .catch( error => {
-            console.log('error');
+            console.log(error);
         })
+
+
+
+
+// axios
+//     .get('https://lambda-times-backend.herokuapp.com/articles')
+//         .then( response => {
+//             const articleTopic = response.data["articles"];
+//             console.log(articleTopic);
+//             const artValues = Object.values(articleTopic);
+//             console.log(artValues);
+//             const artValuesZero = artValues[0];
+//             console.log(artValuesZero);
+//             const artValuesOne = artValues[1];
+//             console.log(artValuesOne);
+//             const artValuesTwo = artValues[2];
+//             console.log(artValuesTwo);
+//             const artValuesThree = artValues[3];
+//             console.log(artValuesThree);
+//             const artValuesFour = artValues[4];
+//             console.log(artValuesFour);
+//             Object.values(artValuesFour).forEach(element => {
+//                 const dataItems = artValuesFour[element];
+//                 const dataItemsZero = dataItems[0];
+//                 console.log(dataItemsZero)
+//             })
+//             // artValues.forEach( element => {
+//             //     console.log(artValues)
+//             //     const headlinesArray = artValues[element];
+//             //     console.log(headlinesArray);
+//                 // Array.from(headlinesArray).forEach(headline => {
+//                 //     const headlinesList = headlinesArray[headline];
+//                 //     console.log(headlinesList)
+//                 // })
+
+//                 // indivArticles = artValuesHeadlineArray[element];
+//                 // indivArticles.forEach(headlines => {
+//                 //    const indivHeadlines = indivArticles[headlines];
+//                 //     return indivHeadlines;
+//                 // })
+//             // })
+
+//             const artKeys = Object.keys(articleTopic);
+//             console.log(artKeys);
+//             console.log('success');
+//             console.log(response);
+//         })
+//         .catch( error => {
+//             console.log('error');
+//         })
 
 
 
