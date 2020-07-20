@@ -22,4 +22,20 @@ function Header() {
     header.classList.add('header');
     date.classList.add('date');
     temp.classList.add('temp');
+
+    //content
+
+    date.textContent = "MARCH 28, 2020";
+    h1.textContent = "LAMBDA TIMES";
+    temp.textContent = "98o";
+
+    //Element
+    header.appendChild(date);
+    header.appendChild(h1);
+    header.appendChild(temp);
+
+    return header;
 }
+
+const topheader = document.querySelector(".header-container");
+topheader.appendChild(Header());
