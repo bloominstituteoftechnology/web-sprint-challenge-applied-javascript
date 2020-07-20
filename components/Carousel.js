@@ -22,3 +22,67 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+// console.log(imgDictionary);
+
+// import axios from "axios";
+
+function constructor() {
+  const imageObj = {
+    0: "./assets/carousel/mountains.jpeg",
+    1: "./assets/carousel/computer.jpeg",
+    2: "./assets/carousel/trees.jpeg",
+    3: "./assets/carousel/turntable.jpeg",
+  };
+
+  let imageIndex = 0;
+  //objects
+  const carousel = document.createElement("div");
+  const leftButton = document.createElement("div");
+  leftButton.classList.add("left-button");
+  const rightButton = document.createElement("div");
+  rightButton.classList.add("right-button");
+  const caroImg = document.createElement("img");
+
+  //classes
+  carousel.classList.add("carousel");
+  // leftButton.textContent = "left";
+  // rightButton.textContent = "right";
+
+  caroImg.src = imageObj[imageIndex];
+  function increment() {
+    console.log("+");
+    if (imageIndex === 3) {
+      imageIndex = 0;
+    } else {
+      imageIndex = imageIndex + 1;
+    }
+    caroImg.src = imageObj[imageIndex];
+  }
+
+  function decrement() {
+    console.log("-");
+    if (imageIndex === 0) {
+      imageIndex = 3;
+    } else {
+      imageIndex = imageIndex - 1;
+    }
+    caroImg.src = imageObj[imageIndex];
+  }
+
+  leftButton.onclick = decrement;
+  rightButton.onclick = increment;
+  //src
+
+  //append
+  carousel.append(caroImg, leftButton, rightButton);
+
+  //return
+  return carousel;
+}
+
+const entryPoint = document.querySelector(".carousel-container");
+
+const caro = constructor();
+// entryPoint.append(constructor());
+entryPoint.appendChild(caro);
