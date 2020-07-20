@@ -34,7 +34,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles').then(response=>
     }
 })
 .catch(()=>{
-    // stretch
+    // error stretch
     const errorMsg = document.createElement('h1')
     errorMsg.textContent = "Can not display articles"
     document.querySelector('.errors-container').append(errorMsg)
