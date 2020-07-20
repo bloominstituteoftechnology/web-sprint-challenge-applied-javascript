@@ -23,9 +23,12 @@
 const cardsContain = document.querySelector('.cards-container')
 axios.get('https://lambda-times-backend.herokuapp.com/articles').then(response=>{
     console.log(response)
-    const art = response.data.articles
-    for(let articles in art){
-        art[articles].forEach(item=>{
+    const art = response.data.articles //holds each article catagory
+
+    
+    //for let in loop to loop through each article within each category
+    for(let i in art){
+        art[i].forEach(item=>{
             cardsContain.append(articleCard(item))
         })
     }
@@ -61,6 +64,12 @@ const articleCard = (obj)=>{
     headline.textContent= obj.headline
     authSpan.textContent = `By: ${obj.authorName}`
     authImg.src = obj.authorPhoto
+
+    //click event
+
+    card.addEventListener("click", () => {
+        console.log(obj.headline);
+    })
 
     return card
 
