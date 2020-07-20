@@ -10,33 +10,59 @@
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
 
+const infiniteTabs =() => {
+    axios
+        .get('https://lambda-times-backend.herokuapp.com/topics')
+            .then(response => {
+                console.log(response);
+                tabCollection = tabCreator(response.data['topics'])
+                console.log(tabCollection)
+                tabCollection.forEach(element => {
+                    const iteration = response.data['topics'][element];
+                    const filled = tabCreator(iteration);
+                    const tabAttach = document.querySelector('.topics');
+                    tabAttach.appendChild(filled);
+                    return filled;
+                });
+            })
+            .catch( error => {
+                console.log('error')
+                return error;
+            })
+}
 
-axios
-    .get('https://lambda-times-backend.herokuapp.com/topics')
-        .then(response => {
-            console.log(response);
-            return response;
-        })
-        .catch(error => {
-            console.log(error);
-            return error;
-        })
+infiniteTabs();
 
 
- const tabCreator = () => {
+ const tabCreator = (info) => {
     const divTab = document.createElement('div');
     divTab.classList.add('tab');
-    divTab.textContent = 'blam';
-    
-    console.log(divTab)
+    divTab.textContent = info;
+
     return divTab;
  }
 
- const tabAttach = document.querySelector('.topics');
-
- tabAttach.appendChild(tabCreator());
+ 
 
 
+
+
+// const infiniteTabs = (array) => {
+//     array.forEach(element => {
+//         axios
+//             .get('https://lambda-times-backend.herokuapp.com/topics')
+//                 .then(response => {
+//                     const tabAttach = document.querySelector('.topics');
+//                     const tab = tabCreator(response.topics);
+//                     tabAttach.appendChild(tab);
+//                     return tab;
+//                 })
+//                 .catch(error => {
+//                     console.log('error');
+//                     return error;
+//                 })
+//     });
+// }
 
 
         // axios
