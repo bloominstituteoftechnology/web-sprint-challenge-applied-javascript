@@ -21,6 +21,24 @@
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 const cardsContain = document.querySelector('.cards-container')
+axios.get('https://lambda-times-backend.herokuapp.com/articles').then(response=>{
+    console.log(response)
+    const art = response.data.articles //holds each article catagory
+
+
+    //for let in loop to loop through each article within each category
+    for(let i in art){
+        art[i].forEach(item=>{
+            cardsContain.append(articleCard(item))
+        })
+    }
+})
+.catch(()=>{
+    // stretch
+    const errorMsg = document.createElement('h1')
+    errorMsg.textContent = "Can not display articles"
+    document.querySelector('.errors-container').append(errorMsg)
+})
 
 
 const articleCard = (obj)=>{
@@ -62,27 +80,3 @@ const articleCard = (obj)=>{
 
 
 }
-
-axios.get('https://lambda-times-backend.herokuapp.com/articles').then(response=>{
-    console.log(response)
-    const art = response.data.articles //holds each article catagory
-
-
-    //for let in loop to loop through each article within each category
-    for(let i in art){
-        art[i].forEach(item=>{
-            cardsContain.append(articleCard(item))
-        })
-    }
-})
-.catch((errorResponse)=>{
-    // stretch
-    const error = document.createElement('h1')
-    const errorMsg = document.createElement('p')
-    error.classList.add('card')
-    error.textContent = "Can not display article"
-    errorMsg.textContent = "Please try again later"
-    document.querySelector('.errors-container').append(error)
-    document.querySelector('.errors-container').append(errorMsg)
-
-})
