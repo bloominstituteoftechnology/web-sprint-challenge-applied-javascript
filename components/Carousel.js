@@ -23,54 +23,66 @@
   </div>
 */
 
-const imageObj = {
-  0: "./assets/carousel/mountains.jpeg",
-  1: "./assets/carousel/computer.jpeg",
-  2: "./assets/carousel/trees.jpeg",
-  3: "./assets/carousel/turntable.jpeg"
-}
+// console.log(imgDictionary);
 
-console.log(imgDictionary)
-
-
-
-
-
-import axios from 'axios'
+// import axios from "axios";
 
 function constructor() {
+  const imageObj = {
+    0: "./assets/carousel/mountains.jpeg",
+    1: "./assets/carousel/computer.jpeg",
+    2: "./assets/carousel/trees.jpeg",
+    3: "./assets/carousel/turntable.jpeg",
+  };
+
+  let imageIndex = 0;
   //objects
-const carousel = document.createElement('div')
-const leftButton = document.createElement('div')
-const rightButton = document.createElement('div')
-const img1 = document.createElement('img')
+  const carousel = document.createElement("div");
+  const leftButton = document.createElement("div");
+  leftButton.classList.add("left-button");
+  const rightButton = document.createElement("div");
+  rightButton.classList.add("right-button");
+  const caroImg = document.createElement("img");
 
+  //classes
+  carousel.classList.add("carousel");
+  // leftButton.textContent = "left";
+  // rightButton.textContent = "right";
 
-//classes
-carousel.classList.add('carousel')
-leftButton.classList.add('left-button')
-rightButton.classList.add('right-button')
+  caroImg.src = imageObj[imageIndex];
+  function increment() {
+    console.log("+");
+    if (imageIndex === 3) {
+      imageIndex = 0;
+    } else {
+      imageIndex = imageIndex + 1;
+    }
+    caroImg.src = imageObj[imageIndex];
+  }
 
-//src
-const imageSRC = imageObj[0]
-img1.src = './assets/carousel/mountains.jpeg'
-img2.src = './assets/carousel/computer.jpeg'
-img3.src = './assets/carousel/trees.jpeg'
-img4.src = './assets/carousel/turntable.jpeg'
+  function decrement() {
+    console.log("-");
+    if (imageIndex === 0) {
+      imageIndex = 3;
+    } else {
+      imageIndex = imageIndex - 1;
+    }
+    caroImg.src = imageObj[imageIndex];
+  }
 
-//append
-carousel.append(leftButton,rightButton,img1)
+  leftButton.onclick = decrement;
+  rightButton.onclick = increment;
+  //src
 
-//return
-return carousel
+  //append
+  carousel.append(caroImg, leftButton, rightButton);
+
+  //return
+  return carousel;
 }
 
+const entryPoint = document.querySelector(".carousel-container");
 
-const entryPoint = document.querySelector('.carousel-container')
-
-
-
-entryPoint.append(constructor())
-
-
-
+const caro = constructor();
+// entryPoint.append(constructor());
+entryPoint.appendChild(caro);
