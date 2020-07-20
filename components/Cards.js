@@ -20,3 +20,49 @@
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
+const cardsContain = document.querySelector('.cards-container')
+axios.get('https://lambda-times-backend.herokuapp.com/articles').then(response=>{
+    console.log(response)
+    const art = response.data.articles
+    for(let articles in art){
+        art[articles].forEach(item=>{
+            cardsContain.append(articleCard(item))
+        })
+    }
+})
+.catch((errorResponse)=>{
+    alert('Something Broke')
+})
+
+const articleCard = (obj)=>{
+    //create elements
+    const card = document.createElement('div')
+    const headline = document.createElement('div')
+    const author = document.createElement('div')
+    const imgContainer = document.createElement('div')
+    const authImg = document.createElement('img')
+    const authSpan = document.createElement('span')
+    
+    //add classes
+    card.classList.add('card')
+    headline.classList.add('headline')
+    author.classList.add('author')
+    imgContainer.classList.add('img-container')
+
+    //append
+
+    card.append(headline)
+    card.appendChild(author)
+    author.appendChild(imgContainer)
+    author.appendChild(authSpan)
+    imgContainer.appendChild(authImg)
+
+    //assign data from obj
+    headline.textContent= obj.headline
+    authSpan.textContent = `By: ${obj.authorName}`
+    authImg.src = obj.authorPhoto
+
+    return card
+
+
+}

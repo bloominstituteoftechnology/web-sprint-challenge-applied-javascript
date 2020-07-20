@@ -23,4 +23,8 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics').then(response=>{
         topic.classList.add('tab')
         topics.append(topic)
     })
+
+})
+.catch((errorResponse)=>{
+    alert('Something Broke')
 })
