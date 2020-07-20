@@ -10,24 +10,23 @@
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
 
-const coy = ['tree', 'bean', 'wall'];
-console.log(coy);
 
-const tabCreator = (array) => {
-    array.forEach(element => {
-        const divTab = document.createElement('div');
-        divTab.classList.add('tab');
-        divTab.textContent = element;
-        const tabAttach = document.querySelector('.topics');
-        tabAttach.appendChild(divTab)
-        return divTab;
-    })
- }
+
 
 const infiniteTabs =() => {
     axios
         .get('https://lambda-times-backend.herokuapp.com/topics')
             .then(response => {
+                const tabCreator = (array) => {
+                    array.forEach(element => {
+                        const divTab = document.createElement('div');
+                        divTab.classList.add('tab');
+                        divTab.textContent = element;
+                        const tabAttach = document.querySelector('.topics');
+                        tabAttach.appendChild(divTab)
+                        return divTab;
+                    })
+                 }
                 const tabCreateInfo = response.data['topics'];
                 const filled = tabCreator(tabCreateInfo);
                 return filled;
