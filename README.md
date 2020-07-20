@@ -28,13 +28,24 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+The DOM (Document Object Model) is the programming interface for html and xml documents that allows programs to change structure, style, and content.
+
 2. What is an event?
+
+An event is an action that occurs as a result of user action.
 
 3. What is an event listener?
 
+An even listener is a routine that listens for a specific type of event, so as to execute code in response to it.
+
 4. Why would we convert a NodeList into an Array?
 
+We would convert a NodeList into an Array to be able to execute Array methods on data that aren't natively supported by NodeLists.
+
 5. What is a component?
+
+A component is an independent and reusable piece of code that can be reused repeatedly throughout a project, saving time and allowing implementation of the DRY code concept.
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
