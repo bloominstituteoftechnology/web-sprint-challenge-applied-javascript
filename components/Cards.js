@@ -59,7 +59,7 @@ function articleMaker(object){
     box.appendChild(frame); 
 
     const name = document.createElement('span'); 
-    name.textContent = 'By ' + object.name; 
+    name.textContent = 'By ' + object.authorName; 
     frame.appendChild(name); 
  
     articleCard.addEventListener('click', () => {
