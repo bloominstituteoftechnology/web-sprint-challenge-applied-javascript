@@ -23,22 +23,22 @@
 // logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
-
-const cardContainer = document.querySelector(".cards-container");
+const cardCont = document.querySelector(".cards-container");
+const articleURL = "https://lambda-times-backend.herokuapp.com/articles";
 
 //getting from API axios
 
 axios
-  .get("https://lambda-times-backend.herokuapp.com/articles")
-  .then((success) => {
-    console.log(success);
-    success.data.articles.forEach((element) => {
-      console.log(element);
-    });
+  .get(articleURL)
+  .then((response) => {
+    const articles = response.data.articles;
+    for (let names in articles) {
+      articles[names].forEach((element) => {
+        cardCont.appendChild(cardMaker(element));
+      });
+    }
   })
-  .catch((failure) => {
-    console.log("zero chance of success captain");
-  });
+  .catch((error) => console.log("zero percent chance of success captain"));
 
 function cardMaker(obj) {
   const card = document.createElement("div");
