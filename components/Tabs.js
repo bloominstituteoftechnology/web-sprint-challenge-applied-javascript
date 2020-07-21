@@ -14,7 +14,7 @@
 axios
   .get("https://lambda-times-backend.herokuapp.com/topics")
   .then((success) => {
-    console.log(success);
+    console.log('make it so');
     success.data.topics.forEach((element) => {
       const tabs = document.createElement("div");
       tabs.classList.add("tab");
@@ -23,5 +23,5 @@ axios
     });
   })
   .catch((failure) => {
-    console.log(failure);
+    console.log('we are the borg');
   });
