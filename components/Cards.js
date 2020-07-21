@@ -39,8 +39,9 @@ function articleMaker(obj){
 	
 //content
 	span.textContent = obj.authorName;
+	headLine.textContent = obj.headline;
 	card.addEventListener('click', event => {
-		headLine.textContent = obj.headline;
+		console.log(obj.headline)
 	})
 //putting it alllll together
 	imgDiv.appendChild(img);
@@ -64,7 +65,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 	myArr.forEach(topic => {
 		success.data.articles[topic].forEach(el => {
 		const newDiv = articleMaker(el);
-		console.log(newDiv);
 		document.querySelector('.cards-container').appendChild(newDiv);
 	});
 	});
