@@ -47,9 +47,9 @@
             carddiv.textContent = cardsURL
             headlinediv.textContent= headline
             authordiv.textContent = authorName
-            imgcontainer.textContent =cards
+            imgcontainer.textContent =cardsURL
             image.src = cardsURL
-            span.textContent =cards
+            span.textContent =cardsURL
 
     
         return carddiv;
