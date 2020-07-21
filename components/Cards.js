@@ -51,7 +51,7 @@ function cardMaker(obj) {
   card.className = "card";
   headline.className = "headline";
   author.className = "author";
-  imgCont.className = "image-container";
+  imgCont.className = "img-container";
 
   img.src = obj.authorPhoto;
 

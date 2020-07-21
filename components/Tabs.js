@@ -14,14 +14,14 @@
 axios
   .get("https://lambda-times-backend.herokuapp.com/topics")
   .then((success) => {
-    console.log('make it so');
+    console.log("make it so");
     success.data.topics.forEach((element) => {
       const tabs = document.createElement("div");
       tabs.classList.add("tab");
       tabs.textContent = element;
-      document.querySelector(".title").appendChild(tabs);
+      document.querySelector(".topics").appendChild(tabs);
     });
   })
   .catch((failure) => {
-    console.log('we are the borg');
+    console.log("we are the borg");
   });
