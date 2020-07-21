@@ -24,10 +24,8 @@
 
 const article = axios.get("https://lambda-times-backend.herokuapp.com/articles")
 .then(response => {
-    return response;
+const articlesArray = article.entries
     
 });
 
-function articleFunc(obj){
-    
-}
+
