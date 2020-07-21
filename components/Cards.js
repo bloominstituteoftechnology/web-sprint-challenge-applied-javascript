@@ -29,6 +29,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
             })
         })
     })
+
  
 .catch(error => {
     console.log('not today!' + error); 
@@ -47,13 +48,13 @@ function articleMaker(object){
 
     const box = document.createElement('div'); 
     box.classList.add('author'); 
-    articleCard.appendChild(authorBox); 
+    articleCard.appendChild(box); 
     
     const frame = document.createElement('div');
     frame.classList.add('img-container'); 
 
     const image = document.createElement('img'); 
-    image.src = object.photo;
+    image.src = object.authorPhoto;
     frame.appendChild(image);
     box.appendChild(frame); 
 
