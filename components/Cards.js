@@ -22,21 +22,34 @@
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
 
-    // const newcards  = (cards){
+    function newcards(cards){
 
-    //     const carddiv = document.createElement('div')
-    //     const headlinediv = document.createElement('div')
-    //     const authordiv = document.createElement('div')
-    //     const imgcontainer =document.createElement('div')
-    //     const image = document.createElement('img')
-    //     const span = document.createElement('span')
+            const carddiv = document.createElement('div')
+            const headlinediv = document.createElement('div')
+            const authordiv = document.createElement('div')
+            const imgcontainer =document.createElement('div')
+            const image = document.createElement('img')
+            const span = document.createElement('span')
 
 
-    //     carddiv.classList.add('card')
-    //     headlinediv.classList.add('headline')
-    //     authordiv.classList.add('author')
-    //     imgcontainer.classList.add('img-container')
+            carddiv.classList.add('card')
+            headlinediv.classList.add('headline')
+            authordiv.classList.add('author')
+            imgcontainer.classList.add('img-container')
+
+            carddiv.append(headlinediv, authordiv, imgcontainer, image, span)
+           
+            carddiv.textContent = cards
+            headlinediv.textContent = cards
+            authordiv.textContent =cards
+            imgcontainer.textContent =cards
+            image.src = cards
+            span.textContent =cards
 
     //     image.src =
-        
-    // }
+        return carddiv;
+    }
+    axios.get("https:lambda-times-backend.herokuapp.com/articles")
+    .then(Response => {
+        console.log(Response);
+    })
