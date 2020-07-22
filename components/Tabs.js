@@ -16,14 +16,7 @@
 
 import axios from 'axios';
 
-/*function createTabs(data){ 
-        const tabDiv = document.createElement('div');
-        tabDiv.classList.add('tab');
-       tabDiv.textContent = data 
-       const appendTabs = document.querySelector('.topics');
-       appendTabs.appendChild(createTabs(data))
 
-}*/
 const topicsObj = axios.get("https://lambda-times-backend.herokuapp.com/topics")
     .then(res => {
         const topic = res.data.topics;
@@ -35,7 +28,7 @@ const topicsObj = axios.get("https://lambda-times-backend.herokuapp.com/topics")
        appendTabs.appendChild(tabDiv)
             
         }
-        console.log(topic)
+        
 })
 
 
