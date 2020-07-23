@@ -10,4 +10,35 @@
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
 
-axios.get('https://lambda-times-backend.herokuapp.com/topics')
+import axios from "axios";
+
+const axiosPrime = axios.get('https://lambda-times-backend.herokuapp.com/topics');
+
+axiosPrime
+.then(response => {
+
+const tabCreate = (obj) => {
+    obj.forEach(element => {
+        const divTab = document.createElement('div');
+        divTab.classList.add('tab');
+        divTab.textContent = element;
+
+        const tabInfo = document.querySelector('.topics');
+        tabInfo.appendChild(divTab)
+        return divTab;
+        
+    });
+}
+const infoTabNew = response.data['topics'];
+const filled = tabCreator(infoTabNew);
+return filled;
+})
+
+.catch( error => {
+    console.log('error')
+    return error;
+    
+})
+
+
+//// not done 
