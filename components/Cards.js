@@ -1,3 +1,4 @@
+
 // STEP 3: Create article cards.
 // -----------------------
 // Send an HTTP GET request to the following address: https://lambda-times-backend.herokuapp.com/articles
@@ -20,3 +21,54 @@
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
+function articleMaker(obj){
+//creating elements
+	const card = document.createElement('div');
+	const headLine = document.createElement('div')
+	const author = document.createElement('div');
+	const imgDiv = document.createElement('div');
+	const img = document.createElement('img');
+	const span = document.createElement('span');
+	
+//adding classes and attributes
+	card.classList.add('card');
+	headLine.classList.add('headline');
+	author.classList.add('author');
+	imgDiv.classList.add('img-container');
+	img.setAttribute('src',obj.authorPhoto);
+	
+//content
+	span.textContent = obj.authorName;
+	headLine.textContent = obj.headline;
+	card.addEventListener('click', event => {
+		console.log(obj.headline)
+	})
+//putting it alllll together
+	imgDiv.appendChild(img);
+	author.append(imgDiv,span);
+	card.append(headLine,author);
+	
+//return finished Article
+	return card;
+}
+// making an array to hold the values for each topic 
+const myArr = [
+	"javascript",
+	"bootstrap",
+	"technology",
+	"jquery",
+	"node"
+];
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+.then(success => {
+	console.log(success);
+	myArr.forEach(topic => {
+		success.data.articles[topic].forEach(el => {
+		const newDiv = articleMaker(el);
+		document.querySelector('.cards-container').appendChild(newDiv);
+	});
+	});
+})
+.catch(failure => {
+	console.log(failure);
+});
