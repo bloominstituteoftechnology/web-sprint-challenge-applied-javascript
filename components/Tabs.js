@@ -61,4 +61,3 @@
     //         entrypoint.appendChild(newtab1)
     //     });
     
-    

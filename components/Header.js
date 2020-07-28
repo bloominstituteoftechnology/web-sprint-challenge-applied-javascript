@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 /* eslint-disable no-unused-vars */
 // STEP 1: Create a Header component.
 // -----------------------
@@ -42,7 +43,4 @@ function Header() {
     
 
 
-
-
-    
 

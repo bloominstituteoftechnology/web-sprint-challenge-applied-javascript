@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 // STEP 3: Create article cards.
 // -----------------------
 // Send an HTTP GET request to the following address: https://lambda-times-backend.herokuapp.com/articles
@@ -19,72 +21,97 @@
 //
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
-// Use your function to create a card for each of the articles, and append each card to the DOM.
-
+// Use your function to create a card for each of the articles, and append each card to the DOM.nn
 
     function newcards(cardsURL){
 
             const carddiv = document.createElement('div');
-            const headlinediv = document.createElement('div');
+            const headlineOfArtDiv = document.createElement('div');
             const authordiv = document.createElement('div');
             const imgcontainer =document.createElement('div');
-            const image = document.createElement('img');
-            const span = document.createElement('span');
+            const imageAuthor = document.createElement('img');
+            const spanAuthorName = document.createElement('span');
 
 
             carddiv.classList.add('card')
-            headlinediv.classList.add('headline')
+            headlineOfArtDiv.classList.add('headline')
             authordiv.classList.add('author')
             imgcontainer.classList.add('img-container')
 
            
-            carddiv.appendChild(headlinediv);
+            carddiv.appendChild(headlineOfArtDiv);
             carddiv.appendChild(authordiv);
             carddiv.appendChild(imgcontainer);
-            carddiv.appendChild(image);
-            carddiv.appendChild(span);
+            carddiv.appendChild(imageAuthor);
+            carddiv.appendChild(spanAuthorName);
            
-            carddiv.textContent = cardsURL
-            headlinediv.textContent= headline
-            authordiv.textContent = authorName
-            imgcontainer.textContent =cardsURL
-            image.src = cardsURL
-            span.textContent =cardsURL
+           // carddiv.textContent = cardsURL
+            headlineOfArtDiv.textContent= cardsURL
+            authordiv.textContent = cardsURL
+            imageAuthor.src = cardsURL
+            spanAuthorName.textContent =cardsURL
 
     
         return carddiv;
-    }
-    const entryPoint = document.querySelector('.cards-container');
-    console.log(entryPoint);
+    } 
 
-    
-    axios
-    .get("https://lambda-times-backend.herokuapp.com/articles")
-    .then(Response =>{
-        console.log(Response.data.articles);
-        Response.articles[topics].forEach(_article =>{
-        entryPoint.append(newcards(article, topic));
+    // const cardcomponent = newcards('cardsURL');
+    // const cardsContainer = document.querySelector('.cards-container');
+    // cardsContainer.appendChild(cardcomponent);
+    // console.log(cardcomponent);
+
+    axios.get('https://lambda-times-backend.herokuapp.com/articles')
+      .then(res => {
+        console.log(res);
+        const data = res.data.articles;
+        articleTypes = [
+          data.javascript,
+          data.bootstrap,
+          data.technology,
+          data.jquery,
+          data.nod
+        ]
+        console.log(articleTypes);
+      })
+      .then(() => {
+        const cardsContainer = document.querySelector('.cards-container')
+        articleTypes.forEach(articles => {
+          articles.forEach(article => {
+            cardsContainer.append(
+             newcards(article.headline, article.authorPhoto, article.authorName)
+            )
+          }
+          )
         })
-    })
-    //  .catch((_err) => {
-    //      console.log('the data was not returned', error)
-    //  })
-
-     
-    // const cardcontainer = document.querySelector('.cards-container').appendChild(newcards())
+      })
+      .catch(err => console.log(err)) 
 
 
-        // axios.get('https://lambda-times-backend.herokuapp.com/articles')
-        // .then(Response => {
-        //     console.log(Response)
-        // })
-//     })
 
-//     .catch(error => {
-//         console.log('the data was not returned', error);
-//     
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // axios.get('https://lambda-times-backend.herokuapp.com/articles')
+    //         .then((response) =>{
+    //             console.log(response);
+    //         response.data.articles[boot].forEach(url =>{
+    //             const newcard1a = newcards(url)
+    //             cardsContainer.appendChild(newcard1a)
+    //         })
+    //         })
     
-
-        
-
+    
+ 
+ 
