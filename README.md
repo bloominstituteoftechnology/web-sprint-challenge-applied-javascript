@@ -27,15 +27,16 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+Document Object Model is an object representation of the html elements of a webpage2. 
 
-2. What is an event?
-
+What is an event?
+Events are the way we users interact with the page
 3. What is an event listener?
-
+an object that can handle an event dispatched by an EventTarget object
 4. Why would we convert a NodeList into an Array?
-
+because you can't use methods like  .forEach(),  Array.filter() with a nodelist
 5. What is a component?
-
+reusable pieces of code that can be used to build elements sharing functionality and styling
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
 ## Instructions
@@ -54,7 +55,7 @@ You are expected to be able to answer questions in these areas. Your responses c
 #### Launching the App
 
 - [ ] Navigate to the root of the project with your command line
-- [ ] Run `npm install` to download the dependencies listed in the `package.json` file
+- [ ] Run `npm install` to download th dependencies listed in the `package.json` file
 - [ ] Run `npm start` to compile the project and serve it
 - [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command
 

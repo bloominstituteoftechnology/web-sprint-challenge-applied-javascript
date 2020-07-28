@@ -12,7 +12,7 @@
     6. Have fun!
 */
 
-/* HTML:
+/* HTML
   <div class="carousel">
     <div class="left-button"> < </div>
     <img src="./assets/carousel/mountains.jpeg" />
@@ -22,3 +22,44 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+const carouselMaker = () =>{
+  //set variables
+  const carousel = document.createElement('div')
+  const leftBtn = document.createElement('div')
+  const img1 = document.createElement('img')
+  const img2 = document.createElement('img')
+  const img3 = document.createElement('img')
+  const img4 = document.createElement('img')
+  const rightBtn = document.createElement('div')
+  // set classnames
+  carousel.className ='carousel'
+  leftBtn.className ='left-button'
+  rightBtn.className = 'right-button'
+
+ //get img sources
+
+  img1.src ='./assets/carousel/mountains.jpeg'
+  img2.src ='./assets/carousel/computer.jpeg'
+  img3.src ='/assets/carousel/trees.jpeg'
+  img4.src ='./assets/carousel/turntable.jpeg'
+
+  //append append append
+
+  carousel.appendChild(leftBtn)
+  carousel.appendChild(img1)
+  carousel.appendChild(img2)
+  carousel.appendChild(img3)
+  carousel.appendChild(img4)
+  carousel.appendChild(rightBtn)
+
+  // console.log(carousel)
+
+  return carousel
+
+}
+//declare carosule cont
+const carouselContainer =document.querySelector('.carousel-container')
+carouselContainer.appendChild(carouselMaker());
+
+
