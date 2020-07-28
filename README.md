@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+its an object model that Represents HTML elements
+
 2. What is an event?
+
+Users interact with pages
 
 3. What is an event listener?
 
+An object that can be dispatched by an event target object
+
 4. Why would we convert a NodeList into an Array?
 
+.forEach()
+
 5. What is a component?
+
+Call that can be used to build elements and styling
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
