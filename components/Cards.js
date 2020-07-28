@@ -46,7 +46,15 @@ function articleMaker (object){
     authorsImage.src = obj['authorPhoto'];
     divImage.appendChild(authorsImage);
 
-    const authorNamen= document.createElement('span');
+    const authorName= document.createElement('span');
+    authorName.textContent = 'By' + object.authorName;
+    divAuthor.appendChild(authorName);
+    divHeadline.appendChild(divHeadline);
+
+    divCard.addEventListener('click', () =>{
+        console.log(divHeadline.textContent);
+    });
+    return divCard;
     
 
 }

@@ -30,7 +30,9 @@ const tabCreate = (obj) => {
     });
 }
 const infoTabNew = response.data['topics'];
-const filled = tabCreator(infoTabNew);
+console.log(infoTabNew);
+
+const filled = tabCreate(infoTabNew);
 return filled;
 })
 
