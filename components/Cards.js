@@ -23,7 +23,7 @@
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.nn
 
-    function newcards(cardsURL){
+    function newcards(article){
 
             const carddiv = document.createElement('div');
             const headlineOfArtDiv = document.createElement('div');
@@ -46,10 +46,14 @@
             carddiv.appendChild(spanAuthorName);
            
            // carddiv.textContent = cardsURL
-            headlineOfArtDiv.textContent= cardsURL
-            authordiv.textContent = cardsURL
-            imageAuthor.src = cardsURL
-            spanAuthorName.textContent =cardsURL
+            headlineOfArtDiv.textContent = article
+            authordiv.textContent = article
+            imageAuthor.src = article.authorPhoto
+            spanAuthorName.textContent = article
+
+            carddiv.addEventListener('click', ()=>{ 
+              console.log(article)
+            })
 
     
         return carddiv;
@@ -69,7 +73,7 @@
           data.bootstrap,
           data.technology,
           data.jquery,
-          data.nod
+          data.node
         ]
         console.log(articleTypes);
       })
@@ -79,13 +83,20 @@
           articles.forEach(article => {
             cardsContainer.append(
              newcards(article.headline, article.authorPhoto, article.authorName)
+          
             )
+
+
+            console.log(article)
+            
           }
           )
         })
       })
+      
       .catch(err => console.log(err)) 
 
+      
 
 
 
@@ -102,16 +113,4 @@
 
 
 
-
-    // axios.get('https://lambda-times-backend.herokuapp.com/articles')
-    //         .then((response) =>{
-    //             console.log(response);
-    //         response.data.articles[boot].forEach(url =>{
-    //             const newcard1a = newcards(url)
-    //             cardsContainer.appendChild(newcard1a)
-    //         })
-    //         })
-    
-    
- 
- 
+   

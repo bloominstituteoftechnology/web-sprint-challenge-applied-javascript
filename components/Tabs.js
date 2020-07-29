@@ -18,8 +18,8 @@
   
     })
      const NewTab = (tabs) => {
-     const jsTab = document.createElement('div')
-    
+     
+       const Javascript = document.createElement('div')
        const bootstrapTab = document.createElement('div')
       
        const technologyTab = document.createElement('div')
@@ -28,28 +28,29 @@
        
        const nodejsTab = document.createElement('div')
 
-        jsTab.textContent = "Javascript"
+        Javascript.textContent = "Javascript"
         bootstrapTab.textContent = "Bootstrap"
         technologyTab.textContent ="Technology"
         jqueryTab.textContent = "jquery"
         nodejsTab.textContent = "node.js"
 
-        jsTab.classList.add('tab')
+        Javascript.classList.add('tab')
         bootstrapTab.classList.add('tab')
         technologyTab.classList.add('tab')
         jqueryTab.classList.add('tab')
         nodejsTab.classList.add('tab')
+        
+        Javascript.appendChild(bootstrapTab)
+        Javascript.appendChild(technologyTab)
+        Javascript.appendChild(jqueryTab)
+        Javascript.appendChild(nodejsTab)
 
-        jsTab.appendChild(bootstrapTab)
-        jsTab.appendChild(technologyTab)
-        jsTab.appendChild(jqueryTab)
-        jsTab.appendChild(nodejsTab)
 
 
-
-       return jsTab;
+       return Javascript;
     }
-        document.querySelector('.topics').appendChild(NewTab())
+        document.querySelector('.topics').appendChild(NewTab());
+        
     // const entrypoint = document.querySelector('.topics')
 
     // axios.get("https://lambda-times-backend.herokuapp.com/topics")
@@ -61,3 +62,4 @@
     //         entrypoint.appendChild(newtab1)
     //     });
     
+
