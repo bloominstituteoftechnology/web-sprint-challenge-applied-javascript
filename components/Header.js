@@ -1,6 +1,6 @@
 // STEP 1: Create a Header component.
 // -----------------------
-// Write a function that returns the markup you see below:
+// Write a function that takes no arguments and returns the markup you see below:
 //
 //  <div class="header">
 //    <span class="date">MARCH 28, 2020</span>
