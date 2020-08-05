@@ -76,9 +76,9 @@ In your solution, it is essential that you follow best practices and produce cle
 
 After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
 
+- [ ] Use the tabs at the top of the page to filter articles by topic.
 - [ ] Following the instructions in the `components/Carousel.js file`, create the Carousel component.
 - [ ] Render an error message on the page for the user, if the network request to fetch articles fails.
-- [ ] Use the tabs at the top of the page to filter articles by topic.
 
 ## Submission format
 
