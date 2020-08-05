@@ -1,6 +1,6 @@
 // STEP 3: Create article cards.
 // -----------------------
-// Send an HTTP GET request to the following address: https://lambda-times-backend.herokuapp.com/articles
+// Send an HTTP GET request to the following address: https://lambda-times-api.herokuapp.com/articles
 // Study the response data you get back, closely.
 // You will be creating a card for each article in the response.
 // This won't be as easy as just iterating over an array though.

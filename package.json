@@ -2,8 +2,7 @@
   "name": "web-sprint-challenge-applied-javascript",
   "version": "1.0.0",
   "scripts": {
-    "start": "parcel index.html",
-    "postinstall": "mkdir -p dist && cp -R ./assets ./dist"
+    "start": "parcel index.html"
   },
   "repository": {
     "type": "git",
