@@ -22,3 +22,80 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+function carousel () {
+  const carouselDIV = document.createElement('div')
+  const carouselLeft = document.createElement('div')
+  const carouselIMG1 = document.createElement('img')
+  const carouselIMG2 = document.createElement('img')
+  const carouselIMG3 = document.createElement('img')
+  const carouselIMG4 = document.createElement('img')
+  const carouselRight = document.createElement('div')
+
+  // const carouselButton = document.createElement('button')
+  // carouselButton.classList.add('carouselButton')
+  // carouselButton.textContent = "See the Images"
+
+  carouselDIV.classList.add('carousel')
+  carouselLeft.classList.add('left-button')
+  carouselIMG1.classList.add('image1')
+  carouselIMG2.classList.add('image2')
+  carouselIMG3.classList.add('image3')
+  carouselIMG4.classList.add('image4')
+  carouselRight.classList.add('right-button')
+
+  carouselIMG1.src = "./assets/carousel/mountains.jpeg"
+  carouselIMG2.src = "./assets/carousel/computer.jpeg"
+  carouselIMG3.src = "./assets/carousel/trees.jpeg"
+  carouselIMG4.src = "./assets/carousel/turntable.jpeg"
+
+  carouselLeft.innerHTML = " &lArr; "
+  carouselRight.innerHTML = " &rArr; "
+
+  carouselDIV.appendChild(carouselLeft)
+  carouselDIV.appendChild(carouselIMG1)
+  carouselDIV.appendChild(carouselIMG2)
+  carouselDIV.appendChild(carouselIMG3)
+  carouselDIV.appendChild(carouselIMG4)
+  carouselDIV.appendChild(carouselRight)
+
+      carouselRight.addEventListener('click', () => {
+        document.querySelector('.image1').style.display = "block"
+        carouselLeft.style.display = "none"
+        carouselRight.classList.add('next-image-2')
+      })
+  if(carouselRight.classList.contains('next-image-2')) {
+    const nextImage2 = document.querySelector('.next-image-2')
+    nextImage2.addEventListener('click', () => {
+      document.querySelector('.image2').style.display = "block"
+      document.querySelector('.image1').style.display = "none"
+      carouselLeft.style.display = "block"
+      carouselRight.classList.remove('next-image-2')
+      carouselRight.classList.add('next-image-3')
+  })
+}
+if(carouselRight.classList.contains('next-image-3')) {
+  const nextImage3 = document.querySelector('.next-image-3')
+    nextImage3.addEventListener('click', () => {
+      document.querySelector('.image3').style.display = "block"
+      document.querySelector('.image2').style.display = "none"
+      carouselLeft.style.display = "block"
+      carouselRight.classList.remove('next-image-3')
+      carouselRight.classList.add('next-image-4')
+  })
+}
+  if(carouselRight.classList.contains('next-image-4')) {
+    const nextImage4 = document.querySelector('.next-image-4')
+    nextImage4.addEventListener('click', () => {
+      document.querySelector('.image4').style.display = "block"
+      document.querySelector('.image3').style.display = "none"
+      carouselLeft.style.display = "block"
+      carouselRight.style.display = "none"
+  })
+}
+  return carouselDIV
+}
+
+const carouselContainer = document.querySelector('.carousel-container')
+
+carouselContainer.appendChild(carousel())
