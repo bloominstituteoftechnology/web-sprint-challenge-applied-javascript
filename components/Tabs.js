@@ -9,3 +9,21 @@
 //    <div class="tab">topic here</div>
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
+import axios from 'axios'
+
+const dfsdf = document.querySelector('.title')
+
+function Tab(topic){
+
+const myTab = document.createElement("div")
+myTab.className = 'tab'
+myTab.textContent = topic
+
+return myTab
+}
+//console.log(axios.get(`https://lambda-times-backend.herokuapp.com/topics`))
+axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
+.then(function(userArr){
+  userArr.data.topics.forEach(topic => dfsdf.appendChild(Tab(topic)))
+
+})

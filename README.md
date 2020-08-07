@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+DOM of the page created by brouser when page is loaded. DOM allows to get change to HTML elements not using the HTML. Just by JS.
+
 2. What is an event?
+
+Some things that can be done with page. Events can be done with the page (loading, closed) or by user (clicking, scrolling, mooving the maus and more...)
 
 3. What is an event listener?
 
+Event listener attached to the element and waiting for customer doing something specific with it.
+
 4. Why would we convert a NodeList into an Array?
 
+NodeList is not a array and JS cannot us it for array methods.
+
 5. What is a component?
+
+Components are independent and reusable bits of code.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
