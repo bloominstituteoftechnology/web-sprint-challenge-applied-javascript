@@ -38,4 +38,4 @@ function Header() {
 }
 
 const topheader = document.querySelector(".header-container");
-topheader.appendChild(Header());
+topheader.append(Header());

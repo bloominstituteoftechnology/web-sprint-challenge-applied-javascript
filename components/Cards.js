@@ -21,9 +21,24 @@
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
-const cardsContainer = document.querySelector('.cards-container')
+
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
+.then(response =>{
+    const data = response.data.articles;
+    Object.values(data).forEach((articles) => {
+        articles.forEach((articles) => {
+            cards.appendChild(articleMaker(article));
+        })
+    })
+})
+
+.catch(error => {
+    console.log('not today' + error);
+});
+
+
+const cards = document.querySelector('.cards-container')
 
 function articleMaker (object){
     const divCard =  document.createElement('div');
@@ -34,26 +49,27 @@ function articleMaker (object){
     divHeadline.textContent = object.divHeadline;
     divCard.appendChild(divHeadline);
 
-    const divAuthor = document.createElement('div');
-    divAuthor.classList.add('author');
-    divCard.appendChild(divAuthor);
+    const box = document.createElement('div');
+    box.classList.add('author');
+    articleCard.appendChild(box);
 
-    const divImage = document.createElement('div');
-    divImage.classList.add('img-container');
-    divAuthor.appendChild(divImage);
+    const frame = document.createElement('div');
+    frame.classList.add('img-conatiner');
 
-    const authorsImage = document.createElement('img');
-    authorsImage.src = obj['authorPhoto'];
-    divImage.appendChild(authorsImage);
+    const image = document.createElement('img');
+    image.src = object.authorPhoto;
+    frame.appendChild(image);
+    box.appendChild(frame);
 
-    const authorName= document.createElement('span');
-    authorName.textContent = 'By' + object.authorName;
-    divAuthor.appendChild(authorName);
-    divHeadline.appendChild(divHeadline);
+    const name = document.createElement('span');
+    name.textContent = 'Then' + object.authorName;
+    frame.appendChild(name);
 
-    divCard.addEventListener('click', () =>{
+    articleCard.addEventListener('click', () => {
         console.log(divHeadline.textContent);
     });
+
+
     return divCard;
     
 

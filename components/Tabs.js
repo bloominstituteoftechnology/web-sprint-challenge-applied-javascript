@@ -12,35 +12,20 @@
 
 import axios from "axios";
 
-const axiosPrime = axios.get('https://lambda-times-backend.herokuapp.com/topics');
-
-axiosPrime
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
 .then(response => {
+    response.data.topics.forEach(item =>{
+        holder.appendChild(maker(item));
+    })
+})
 
-const tabCreate = (obj) => {
-    obj.forEach(element => {
-        const divTab = document.createElement('div');
-        divTab.classList.add('tab');
-        divTab.textContent = element;
-
-        const tabInfo = document.querySelector('.topics');
-        tabInfo.appendChild(divTab)
-        return divTab;
-        
-    });
+.catch(error => {
+    console.log('not today' + error);
+});
+function maker(topic){
+    const tab = document.createElement('div');
+    tab.textContent = topic;
+    tab.classList.add('tab');
+    return tab;
 }
-const infoTabNew = response.data['topics'];
-console.log(infoTabNew);
-
-const filled = tabCreate(infoTabNew);
-return filled;
-})
-
-.catch( error => {
-    console.log('error')
-    return error;
-    
-})
-
-
-//// not done 
+const holder = document.querySelector('div.topics');
