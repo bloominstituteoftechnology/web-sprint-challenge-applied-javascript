@@ -41,18 +41,20 @@
            
             carddiv.appendChild(headlineOfArtDiv);
             carddiv.appendChild(authordiv);
-            carddiv.appendChild(imgcontainer);
-            carddiv.appendChild(imageAuthor);
-            carddiv.appendChild(spanAuthorName);
+            authordiv.appendChild(imgcontainer)
+            imgcontainer.appendChild(imageAuthor)
+            authordiv.appendChild(spanAuthorName)
+
+        
            
-           // carddiv.textContent = cardsURL
-            headlineOfArtDiv.textContent = article
-            authordiv.textContent = article
+          
+            headlineOfArtDiv.textContent = article.headline
+  
             imageAuthor.src = article.authorPhoto
-            spanAuthorName.textContent = article
+            spanAuthorName.textContent = article.authorName
 
             carddiv.addEventListener('click', ()=>{ 
-              console.log(article)
+              console.log(article.headline)
             })
 
     
@@ -65,8 +67,9 @@
     // console.log(cardcomponent);
 
     axios.get('https://lambda-times-backend.herokuapp.com/articles')
-      .then(res => {
-        console.log(res);
+      .then((res) => {
+        const cardsContainer = document.querySelector('.cards-container')
+
         const data = res.data.articles;
         articleTypes = [
           data.javascript,
@@ -75,14 +78,11 @@
           data.jquery,
           data.node
         ]
-        console.log(articleTypes);
-      })
-      .then(() => {
-        const cardsContainer = document.querySelector('.cards-container')
+
         articleTypes.forEach(articles => {
           articles.forEach(article => {
             cardsContainer.append(
-             newcards(article.headline, article.authorPhoto, article.authorName)
+             newcards(article)
           
             )
 
