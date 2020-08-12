@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 // STEP 2: Create tabs
 // -----------------------
 // Using axios send a GET request to the address: https://lambda-times-backend.herokuapp.com/topics
@@ -15,6 +17,7 @@
    axios.get("https://lambda-times-backend.herokuapp.com/topics")
     .then(Response => {
         console.log(Response);
+        
   
     })
      const NewTab = (tabs) => {
@@ -51,15 +54,21 @@
     }
         document.querySelector('.topics').appendChild(NewTab());
         
-    // const entrypoint = document.querySelector('.topics')
+    const entrypoint = document.querySelector('.topics')
 
-    // axios.get("https://lambda-times-backend.herokuapp.com/topics")
-    // .then(Response => {
-    //     console.log(Response);
+    axios.get("https://lambda-times-backend.herokuapp.com/topics")
+    .then(Response => {
+        console.log(Response);
+        // const tabstab = Response.data.topics;
+        //  for (let i =o; i<tabstab.length; i++ )
+        //  console.log(tabstab)
 
-    //     Response.data.topics.forEach(Element => {
-    //         const newtab1 = NewTab(Element);
-    //         entrypoint.appendChild(newtab1)
-    //     });
-    
+        Response.data.topics.forEach(Element => {
+            const newtab1 = NewTab(Element);
+            entrypoint.appendChild(newtab1)
+            // console.log(newtab1)
+            console.log(` this is my element ${Element}`)
+        });
+        
 
+    })
