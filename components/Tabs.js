@@ -23,30 +23,30 @@
      const NewTab = (tabs) => {
      
        const Javascript = document.createElement('div')
-       const bootstrapTab = document.createElement('div')
+    //    const bootstrapTab = document.createElement('div')
       
-       const technologyTab = document.createElement('div')
+    //    const technologyTab = document.createElement('div')
        
-       const jqueryTab = document.createElement('div')
+    //    const jqueryTab = document.createElement('div')
        
-       const nodejsTab = document.createElement('div')
+    //    const nodejsTab = document.createElement('div')
 
-        Javascript.textContent = "Javascript"
-        bootstrapTab.textContent = "Bootstrap"
-        technologyTab.textContent ="Technology"
-        jqueryTab.textContent = "jquery"
-        nodejsTab.textContent = "node.js"
+        Javascript.textContent = tabs
+        // bootstrapTab.textContent = "Bootstrap"
+        // technologyTab.textContent ="Technology"
+        // jqueryTab.textContent = "jquery"
+        // nodejsTab.textContent = "node.js"
 
         Javascript.classList.add('tab')
-        bootstrapTab.classList.add('tab')
-        technologyTab.classList.add('tab')
-        jqueryTab.classList.add('tab')
-        nodejsTab.classList.add('tab')
+        // bootstrapTab.classList.add('tab')
+        // technologyTab.classList.add('tab')
+        // jqueryTab.classList.add('tab')
+        // nodejsTab.classList.add('tab')
         
-        Javascript.appendChild(bootstrapTab)
-        Javascript.appendChild(technologyTab)
-        Javascript.appendChild(jqueryTab)
-        Javascript.appendChild(nodejsTab)
+        // Javascript.appendChild(bootstrapTab)
+        // Javascript.appendChild(technologyTab)
+        // Javascript.appendChild(jqueryTab)
+        // Javascript.appendChild(nodejsTab)
 
 
 
