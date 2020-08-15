@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+DOM is the Document Object Model. It is the structure and content of a webpage. It displays all the data in a way that other languages can interact and change the webpage.
+
 2. What is an event?
+
+an Event is when something happens on the webpage. Most common events are clicks, and double clicks.
 
 3. What is an event listener?
 
+An Event Listener is when a method that will detect when a specific event occurs, and then execute a function.
+
 4. Why would we convert a NodeList into an Array?
 
+To be able to work with the data easier. For example, using an Array gives us access to methods like forEach, and map.
+
 5. What is a component?
+
+A function that creates content for the html. This could be more html elements, and even include styling.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -44,29 +54,29 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 #### Repository Set Up
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: `git checkout -b <firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
-- [ ] Push commits: `git push origin <firstName-lastName>`
+- [Done] Create a forked copy of this project
+- [Done] Add your team lead as collaborator on Github
+- [Done] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [Done] Create a new branch: `git checkout -b <firstName-lastName>`.
+- [Done] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
+- [Done] Push commits: `git push origin <firstName-lastName>`
 
 #### Launching the App
 
-- [ ] Navigate to the root of the project with your command line
-- [ ] Run `npm install` to download the dependencies listed in the `package.json` file
-- [ ] Run `npm start` to compile the project and serve it
-- [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command
+- [Done] Navigate to the root of the project with your command line
+- [Done] Run `npm install` to download the dependencies listed in the `package.json` file
+- [Done] Run `npm start` to compile the project and serve it
+- [Done] Navigate Chrome to the URL indicated in the output of the `npm start` command
 
 ### Task 2: Project Requirements
 
 Your finished project must include all of the following requirements:
 
-- [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the `index.html` file itself.
+- [Done] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the `index.html` file itself.
 
-- [ ] Following the instructions in the `components/Header.js` file, create the Header.
+- [Done] Following the instructions in the `components/Header.js` file, create the Header.
 
-- [ ] Following the instructions in the `components/Tabs.js` file, create the Tabs.
+- [Done] Following the instructions in the `components/Tabs.js` file, create the Tabs.
 
 - [ ] Following the instructions in the `components/Cards.js` file, create the Cards.
 
