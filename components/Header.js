@@ -31,3 +31,4 @@ function Header() {
     return divHeader;
 }
 
+document.querySelector('.header-container').append(Header());
