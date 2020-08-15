@@ -10,5 +10,22 @@
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
 
-// my get request
+// my get request Component
 
+
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+.then(response=>{
+    // forEach to Iterate over the Topics
+
+    response.data.topics.forEach(element => {
+        const topicMaker=
+         document.createElement('div');
+             topicMaker.append('.topics');
+             topicMaker.classList.add('tab');
+             topicMaker.textContent=`${element}`;
+         document.querySelector('.topics').append(topicMaker);
+    });
+})
+.catch(error=>{
+    console.log(error)
+});
