@@ -19,15 +19,18 @@ function Header() {
     const h1Tag = document.createElement('h1');
     const spanTemp = document.createElement('span');
     // adding to the DOM
-    divHeader.append(spanDate);
     divHeader.append(h1Tag);
+    divHeader.append(spanDate);
     divHeader.append(spanTemp);
+    
     divHeader.classList.add('header');
     spanDate.classList.add('date');
-    spanTemp.classList.add('temp');
-    spanDate.testContent=('March 28, 2020');
-    h1Tag.textContent=('98°');
+    spanDate.textContent=('March 28, 2020');
 
+    spanTemp.classList.add('temp');
+    spanTemp.textContent=('98°');
+    h1Tag.textContent=('Lambda Times');
+    
     return divHeader;
 }
 
