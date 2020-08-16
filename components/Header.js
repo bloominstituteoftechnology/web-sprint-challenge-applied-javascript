@@ -26,7 +26,7 @@ let createHeader = () => {
    
    let container = document.querySelector('.header-container')
     
- 
+    return container.append(header)
 
 }
 
