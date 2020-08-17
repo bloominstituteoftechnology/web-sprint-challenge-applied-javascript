@@ -17,7 +17,7 @@ let createHeader = () => {
     let date = document.createElement('span')
     date.classList.add('date')
     date.innerHTML = 'MARCH 28, 2020'
-    let h1 = document.createElement('hi')
+    let h1 = document.createElement('h1')
     h1.innerHTML = 'Lambda Times'
     let temp = document.createElement('span')
     temp.innerHTML = '98°'

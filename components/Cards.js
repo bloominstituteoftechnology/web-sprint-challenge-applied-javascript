@@ -20,3 +20,57 @@
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
+let cardGenerator = (article) => {
+    //creating elements
+    let card = document.createElement('div')
+    let headline = document.createElement('div')
+    let author = document.createElement('div')
+    let imgContainer = document.createElement('div')
+    let img = document.createElement('img')
+    let authorName = document.createElement('span')
+    //setting classes
+    card.classList.add('card')
+    headline.classList.add('headline')
+    author.classList.add('author')
+    imgContainer.classList.add('img-container')
+    //setting attributes
+    img.src = article.authorPhoto
+    //Create text
+    headline.innerHTML = article.headline
+    authorName.innerHTML = article.authorName
+   
+    //creating append Hierarchy
+    imgContainer.append(img)
+    author.append(imgContainer,authorName)
+    card.append(headline, author)
+   //eventListenres
+   card.addEventListener('click', () => {
+       console.log(article.headline)
+   })
+    let cardContainer = document.querySelector('.cards-container')
+    cardContainer.append(card)
+
+}
+
+
+
+import axios from 'axios';
+
+axios.get('https://lambda-times-api.herokuapp.com/articles')
+    .then( response => {
+      
+
+        let test = response.data.articles
+     
+        
+        Object.entries(test).map(([key, value]) => {
+            value.map((E) => {
+                cardGenerator(E)
+            })
+        })
+     
+    })
+    .catch( error => {
+        console.log("Error:", error);
+    })
+  
