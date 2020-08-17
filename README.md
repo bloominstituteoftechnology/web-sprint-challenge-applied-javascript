@@ -28,14 +28,22 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+The DOM is the Document Object Model. It helps us treat HTML documents as  a logical tree like structure 
 2. What is an event?
 
+An event is when either a user or browser interacts in some capacity with our document. Such as clicking or scrolling. 
 3. What is an event listener?
 
+A event listener listens for events to take place and then lets you dispatch responses to the event that has taken place. For instance you can send an alert or copy text when a user clicks by using a click event listener. 
 4. Why would we convert a NodeList into an Array?
 
+you would want to convert a NodeList into an array to gain array methods such as .reduce or .map 
 5. What is a component?
 
+a component is a reusable piece of code that allows you to build elements that can  share functionality and styling.
+You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
+//
+//
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
 ## Instructions
