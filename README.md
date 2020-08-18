@@ -27,15 +27,15 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
-
+    a programming API for HTML and XML documents.
 2. What is an event?
-
+    when you set up interactivity on a website you can trigger events. Basically events are javascripts interaction with HTML 
 3. What is an event listener?
-
+    a procedure in js that waits for and event to occure like clicking or scrolling or pressing keys
 4. Why would we convert a NodeList into an Array?
-
+    one example would be to select an element that shares a class with many other elements and you want to get the middle one
 5. What is a component?
-
+    components are independent and reusable bits of code.
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
 ## Instructions
