@@ -28,14 +28,14 @@ function Header() {
     date.classList.add('date')
     temp.classList.add('temp')
 
-    date.textContent = `MARCH 28, 2020`
+    date.textContent = 'MARCH 28, 2020'
     title.textContent = title
-    temp.textContent = `98°`
+    temp.textContent = '98°'
 
     return header
 }
 
-    headerData.forEach(headerObj => {
+    header.forEach(headerObj => {
         const headerElement = (headerObj)
         headercontainer.appendChild(headerElement)
     })

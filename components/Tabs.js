@@ -13,10 +13,12 @@
 function tabCreator(tabTopic){
     let newTab = document.createElement('div');
     newTab.textContent = tabTopic;
-    newTab.classList.add('div');
+    newTab.classList.add('tab');
 
     return newTab;
 }
+
+const axios = require('axios');
 
 axios.get('https://lambda-times-api.herokuapp.com/topics')
     .then( response => {
