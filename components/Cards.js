@@ -21,9 +21,23 @@
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
+const cardscontainer = document.querySelector('.cards-container')
+
 const axios = require('axios');
 
-axios.get('https://lambda-times-api.herokuapp.com/articles')
+axios.get('https://lambda-times-api.herokuapp.com/articles') 
+    .then( response => {
+        // articles.forEach(articlesObj => {
+        // const articleElement = (articlesObj)
+        // cardscontainer.appendChild(articleElement)
+        console.log(response.data.articles)
+        for(const articleTopic in response.data.articles) {
+            response.data.articles[articleTopic].forEach( article => {
+                cardscontainer.append(Article(article))
+            })
+        }
+    })
+
 
 function Article (articlesObj){
     const card = document.createElement('div')
@@ -33,32 +47,33 @@ function Article (articlesObj){
     const img = document.createElement('img')
     const authorname = document.createElement('span')
 
-    card.appendChild(card)
+    card.classList.add('card')
+    headline.classList.add('headline')
+    author.classList.add('author')
+    imgcontainer.classList.add('img-container')
+
+    headline.textContent = articlesObj.headline
+    author.textContent = articlesObj.authorName
+    img.src = articlesObj.authorPhoto
+    authorname.textContent = articlesObj.authorName
+
+    card.addEventListener('click', event => {
+        console.log(headline)
+      })
+
     card.appendChild(headline)
     card.appendChild(author)
     card.appendChild(imgcontainer)
     card.appendChild(img)
     card.appendChild(authorname)
 
-    headline.textContent = articles.headline
-    author.textContent = articles.authorName
-    img.src = articles.authorPhoto
-    authorname.textContent = articles.authorName
-
-    card.addEventListener('click', event => {
-        console.log(headline)
-      })
-
     return card
 
 }
 
-const cardscontainer = document.querySelector('.cards-container')
 
-articles.forEach(articlesObj => {
-    const articleElement = (articlesObj)
-    cardscontainer.appendChild(articleElement)
-})
+
+
 
 
 

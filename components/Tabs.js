@@ -22,8 +22,9 @@ const axios = require('axios');
 
 axios.get('https://lambda-times-api.herokuapp.com/topics')
     .then( response => {
-        response.data.forEach( item => {
+        response.data.topics.forEach( item => {
             let tab = tabCreator(item);
+            let parent = document.querySelector('.topics')
             parent.appendChild(tab);
         })
     })
