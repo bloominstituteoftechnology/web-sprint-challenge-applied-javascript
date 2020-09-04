@@ -1,3 +1,5 @@
+
+
 // STEP 1: Create a Header component.
 // -----------------------
 // Write a function that takes no arguments and returns the markup you see below:
@@ -11,4 +13,28 @@
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
 
-function Header() {}
+const header = document.querySelector('.header-container');
+
+function Header() {
+
+  const heading = document.createElement('div');
+  heading.classList.add('header');
+
+  const date = document.createElement('span');
+  date.classList.add('date');
+  date.textContent='MARCH 28, 2020';
+
+  const title = document.createElement('h1');
+  title.textContent = 'Lambda Times';
+  
+  const temperature = document.createElement('span');
+  temperature.classList.add('temp');
+  
+  header.appendChild(heading)
+  heading.appendChild(date);
+  heading.appendChild(title);
+  heading.appendChild(temperature);
+
+  return Header;
+}
+

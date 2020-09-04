@@ -1,3 +1,4 @@
+
 // STEP 3: Create article cards.
 // -----------------------
 // Send an HTTP GET request to the following address: https://lambda-times-api.herokuapp.com/articles
@@ -20,3 +21,60 @@
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
+
+import axios from "axios"
+
+const cards = document.querySelector('.cards-container')
+
+  axios.get("https://lambda-times-api.herokuapp.com/articles")
+  .then(stuff =>{
+    stuff.data.articles.forEach(element => {
+      const card = document.createElement('div')
+      card.classList.add('cards-container')
+      card.textContent = element
+      cards.appendChild(cardMaker(stuff.data))
+    })
+  })
+  .catch(err => {
+    console.log(err)
+  })
+
+
+
+
+function cardMaker(data) {
+
+  let {authorName, authorPhoto, headline, id} = data
+
+  const card = document.createElement('div')
+  card.classList.add('card')
+
+  const title = document.createElement('div')
+  title.classList.add('headline')
+  title.textContent = `${headline}`
+
+  const person = document.createElement('div')
+  person.classList.add('author')
+  
+  const image = document.createElement('div')
+  image.classList.add('img-container')
+  image.src = authorPhoto
+
+  const div = document.createElement('div')
+  const spanThing = document.createElement('span')
+  spanThing.textContent = `By ${authorName}`
+
+  // setting class names, attributes and text
+  
+  card.appendChild(title)
+  card.appendChild(person)
+  card.appendChild(image)
+  card.appendChild(spanThing)
+
+  card.addEventListener('click', (event) =>{
+    console.log(`${headline}`)
+  });
+ 
+  return card;
+}
+
