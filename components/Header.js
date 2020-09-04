@@ -15,7 +15,7 @@ const entryPoint = document.querySelector(".header-container");
 
 function Header() {
   let head = document.createElement("div");
-  head.classList.add("header-container");
+  head.classList.add("header");
   let spanD = document.createElement("span");
   spanD.textContent = "MARCH 28, 2020";
   //   console.log(spanD);
@@ -24,6 +24,7 @@ function Header() {
   titleH.textContent = "Lambda Times";
   let spanT = document.createElement("span");
   spanT.textContent = "98*";
+  spanT.classList.add("temp");
 
   entryPoint.appendChild(head);
   entryPoint.appendChild(spanD);

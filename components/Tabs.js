@@ -29,13 +29,10 @@ axios
 function tabMaker(tabObj) {
   const tabs = document.createElement("div");
   tabs.classList.add("tab");
-  const js = document.createElement("p");
-  //   js.classList.add("tab");
-  js.textContent = "javascript";
-
+  tabs.textContent = tabObj.topics;
   entryPoint1.appendChild(tabs);
 
   return tabs;
 }
 
-tabMaker();
+// tabMaker();
