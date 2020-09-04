@@ -28,13 +28,24 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+The DOM stands for Document Object Model and it is
+the representation of all html elements on a webpage.
+
 2. What is an event?
+
+An event is something that happens on a webpage that you can track, such as a click event.
 
 3. What is an event listener?
 
+This is a type of function that we can build onto an element that is triggered by a specific type of event on a webpage.
+
 4. Why would we convert a NodeList into an Array?
 
+In order to manipulate the data better in JS using common array methods functions.
+
 5. What is a component?
+
+A component is the result of JS's transformation of HTML data into usable pieces that are output into the DOM. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
