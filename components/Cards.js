@@ -1,3 +1,16 @@
+import axios from "axios";
+
+const entryPoint2 = document.querySelector(".cards-container");
+
+axios
+  .get("https://lambda-times-api.herokuapp.com/articles")
+  .then((content) => {
+    const entry2 = content.data;
+    console.log(entry2);
+  })
+  .catch((error) => {
+    debugger;
+  });
 // STEP 3: Create article cards.
 // -----------------------
 // Send an HTTP GET request to the following address: https://lambda-times-api.herokuapp.com/articles
@@ -20,3 +33,18 @@
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
+function cardMaker(articleObj) {
+  const card = document.createElement("div");
+  card.classList.add("card");
+  const headline = document.createElement("div");
+  headline.classList.add("headline");
+  const author = document.createElement("div");
+  author.classList.add("author");
+  const image = document.createElement("img");
+  image.classList.add("img-container");
+  const span = document.createElement("span");
+  span.classList.add("author");
+
+  image.src = articleObj.author_url;
+  return card;
+}
