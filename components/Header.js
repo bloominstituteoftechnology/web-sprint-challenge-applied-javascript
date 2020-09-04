@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // STEP 1: Create a Header component.
 // -----------------------
 // Write a function that takes no arguments and returns the markup you see below:
@@ -11,4 +12,20 @@
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
 
-function Header() {}
+function Header() {
+    let header = document.createElement('header')
+    header.textContent = "Lambda Times"
+
+    header.style.width = '100%'
+    header.style.marginTop = '15%'
+    header.style.height = '10vh'
+    header.style.fontSize = '5rem'
+    
+    return header
+}
+
+const header = Header()
+
+let container1 = document.querySelector('.header-container')
+
+container1.appendChild(header)
