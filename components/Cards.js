@@ -28,63 +28,66 @@ const cards = document.querySelector('.cards-container')
 
   axios.get("https://lambda-times-api.herokuapp.com/articles")
   .then(stuff =>{
-
     stuff.data.articles.bootstrap.forEach(element => {
-        cards.appendChild(cardMaker(element));
-    }}
+      cards.appendChild(cardMaker(element));
+    })
+
     stuff.data.articles.javascript.forEach(element => {
       cards.appendChild(cardMaker(element));
-    }}
-    stuff.data.articles.jquery.forEach(element => {
-      cards.appendChild(cardMaker(element));
-    }}
+    })
+
     stuff.data.articles.node.forEach(element => {
       cards.appendChild(cardMaker(element));
-    }}
+    })
+
     stuff.data.articles.technology.forEach(element => {
       cards.appendChild(cardMaker(element));
-    }}
-  
-  });
-    .catch(err => {
-    console.log(err)
+    })
+
+    stuff.data.articles.jquery.forEach(element => {
+      cards.appendChild(cardMaker(element));
+    })
+
+  })
+  .catch( err=> {
+    console.log('error')
   })
 
 
-
-
 function cardMaker(data) {
-  console.log('this works')
-  let {authorName, authorPhoto, headline} = data
+    console.log('this works')
+    console.log(data)
+    let {authorName, authorPhoto, headline} = data
 
-  const card = document.createElement('div')
-  card.classList.add('card')
+    const card = document.createElement('div')
+    card.classList.add('card')
 
-  const title = document.createElement('div')
-  title.classList.add('headline')
-  title.textContent = headline
+    const title = document.createElement('div')
+    title.classList.add('headline')
+    title.textContent = headline
 
-  const person = document.createElement('div')
-  person.classList.add('author')
- 
-  const imageHolder = document.createElement('div')
-  imageHolder.classList.add('img-container')
-
-  const image = document.createElement('img')
-  image.src = authorPhoto
+    const person = document.createElement('div')
+    person.classList.add('author')
   
-  const span= document.createElement('span')
-  span.textContent = `By ${authorName}`
-  
-  card.append(title)
-  card.append(person)
-  card.append(imageHolder)
-  imageHolder.append(image)
-  card.append(span)
+    const imageHolder = document.createElement('div')
+    imageHolder.classList.add('img-container')
 
-  card.addEventListener('click', event =>{
-    console.log(headline)
-  });
- 
-  return card;
-}
+    const image = document.createElement('img')
+    image.src = authorPhoto
+    
+    const span= document.createElement('span')
+    span.textContent = `By ${authorName}`
+    
+    card.append(title)
+    card.append(person)
+    card.append(imageHolder)
+    imageHolder.append(image)
+    person.append(imageHolder)
+    card.append(span)
+
+    card.addEventListener('click', event =>{
+      console.log(headline)
+    })
+  
+    return card
+  }
