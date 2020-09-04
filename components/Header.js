@@ -19,14 +19,18 @@ function Header() {
     const title = document.createElement('h1')
     const temp = document.createElement('span')
 
-    header.classList.add('header')
-    date.classList.add('date')
-    title.classList.add('temp')
-
     header.appendChild(header)
     header.appendChild(date)
     header.appendChild(title)
     header.appendChild(temp)
+
+    header.classList.add('header')
+    date.classList.add('date')
+    temp.classList.add('temp')
+
+    date.textContent = `MARCH 28, 2020`
+    title.textContent = title
+    temp.textContent = `98°`
 
     return header
 }
