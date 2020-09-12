@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+My favorite explanation of the DOM is "a bridge between your content and the browser".
+
 2. What is an event?
+
+An event is something happening--like a mouse click or a button press.
 
 3. What is an event listener?
 
+A piece of code that is set to run when a specific event occurs.
+
 4. Why would we convert a NodeList into an Array?
 
+Some array methods will not work with a NodeList.
+
 5. What is a component?
+
+A reusable block that includes styling, HTML and Javascript. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
