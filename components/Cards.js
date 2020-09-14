@@ -171,19 +171,8 @@ axios.get(apiURL)
          if(allCards[0].firstElementChild == null){
       
         
-                tabClicked = tab.textContent;
-                if(tabClicked === 'all'){
-                    // Can you reuse the same object within itself over and over again? if not one day use artTops
-        art.reTop().forEach(topic => {
-            // Iterate each toipc while appending all articles to that topic
-            resp.data.articles[topic].forEach(e => {
-            let newD = art.articleMaker(e);
-            // Append each new article div with the cards-container
-            document.querySelector('.cards-container').appendChild(newD);
-        });
-        });
-                } // End all 
-                art.artM(tab,resp);
+            art.artM(tab,resp);
+                
             }else if(allCards[0].firstElementChild.classList.contains('card')){
                 console.log('removed');
             let cards = document.querySelectorAll('.card');
