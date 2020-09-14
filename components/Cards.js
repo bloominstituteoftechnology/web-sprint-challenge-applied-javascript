@@ -132,6 +132,7 @@ axios.get(apiURL)
                     document.querySelector('.cards-container').appendChild(newD);
                 });
             }
+            
             if(tabClicked === 'technology'){
                 resp.data.articles['technology'].forEach(e => {
                     let newD = art.articleMaker(e);
