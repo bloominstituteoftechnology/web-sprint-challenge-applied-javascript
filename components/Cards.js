@@ -76,6 +76,65 @@ class Article{
         //the Article
             return card;
         }
+
+    artM(tab,resp){
+        let tabs = document.querySelectorAll('.tab');
+        let tabClicked = '';
+        tabClicked = tab.textContent;
+                if(tabClicked === 'all'){
+                    // Can you reuse the same object within itself over and over again? if not one day use artTops
+        art.reTop().forEach(topic => {
+            // Iterate each toipc while appending all articles to that topic
+            resp.data.articles[topic].forEach(e => {
+            let newD = art.articleMaker(e);
+            // Append each new article div with the cards-container
+            document.querySelector('.cards-container').appendChild(newD);
+        });
+        });
+                } // End all 
+                if(tabClicked === 'javascript'){
+                    resp.data.articles['javascript'].forEach(e => {
+                        let newD = art.articleMaker(e);
+                        // Append each new article div with the cards-container
+                        document.querySelector('.cards-container').appendChild(newD);
+                    });
+                }
+                if(tabClicked === 'bootstrap'){
+                    resp.data.articles['bootstrap'].forEach(e => {
+                        let newD = art.articleMaker(e);
+                        // Append each new article div with the cards-container
+                        document.querySelector('.cards-container').appendChild(newD);
+                    });
+                }
+    
+                if(tabClicked === 'technology'){
+                    resp.data.articles['technology'].forEach(e => {
+                        let newD = art.articleMaker(e);
+                        // Append each new article div with the cards-container
+                        document.querySelector('.cards-container').appendChild(newD);
+                    });
+                }
+                if(tabClicked === 'jquery'){
+                    resp.data.articles['jquery'].forEach(e => {
+                        let newD = art.articleMaker(e);
+                        // Append each new article div with the cards-container
+                        document.querySelector('.cards-container').appendChild(newD);
+                    });
+                }
+                let dot = '';
+                 dot = escape('.');
+                console.log('s'+dot);
+                let nodejs = "node"+dot+"js";
+                // console.log(tabClicked);
+                if(tabClicked === nodejs){
+                    console.log(tabClicked);
+                    resp.data.articles['node'].forEach(e => {
+                        let newD = art.articleMaker(e);
+                        // Append each new article div with the cards-container
+                        document.querySelector('.cards-container').appendChild(newD);
+                    });
+                }
+    }
         
 }// End Article Class
 
@@ -124,48 +183,7 @@ axios.get(apiURL)
         });
         });
                 } // End all 
-                if(tabClicked === 'javascript'){
-                    resp.data.articles['javascript'].forEach(e => {
-                        let newD = art.articleMaker(e);
-                        // Append each new article div with the cards-container
-                        document.querySelector('.cards-container').appendChild(newD);
-                    });
-                }
-                if(tabClicked === 'bootstrap'){
-                    resp.data.articles['bootstrap'].forEach(e => {
-                        let newD = art.articleMaker(e);
-                        // Append each new article div with the cards-container
-                        document.querySelector('.cards-container').appendChild(newD);
-                    });
-                }
-    
-                if(tabClicked === 'technology'){
-                    resp.data.articles['technology'].forEach(e => {
-                        let newD = art.articleMaker(e);
-                        // Append each new article div with the cards-container
-                        document.querySelector('.cards-container').appendChild(newD);
-                    });
-                }
-                if(tabClicked === 'jquery'){
-                    resp.data.articles['jquery'].forEach(e => {
-                        let newD = art.articleMaker(e);
-                        // Append each new article div with the cards-container
-                        document.querySelector('.cards-container').appendChild(newD);
-                    });
-                }
-                let dot = '';
-                 dot = escape('.');
-                console.log('s'+dot);
-                let nodejs = "node"+dot+"js";
-                // console.log(tabClicked);
-                if(tabClicked === nodejs){
-                    console.log(tabClicked);
-                    resp.data.articles['node'].forEach(e => {
-                        let newD = art.articleMaker(e);
-                        // Append each new article div with the cards-container
-                        document.querySelector('.cards-container').appendChild(newD);
-                    });
-                }
+                art.artM(tab,resp);
             }else if(allCards[0].firstElementChild.classList.contains('card')){
                 console.log('removed');
             let cards = document.querySelectorAll('.card');
@@ -176,60 +194,7 @@ axios.get(apiURL)
                 
             });
             
-            tabClicked = tab.textContent;
-                if(tabClicked === 'all'){
-                    // Can you reuse the same object within itself over and over again? if not one day use artTops
-        art.reTop().forEach(topic => {
-            // Iterate each toipc while appending all articles to that topic
-            resp.data.articles[topic].forEach(e => {
-            let newD = art.articleMaker(e);
-            // Append each new article div with the cards-container
-            document.querySelector('.cards-container').appendChild(newD);
-        });
-        });
-                } // End all 
-                if(tabClicked === 'javascript'){
-                    resp.data.articles['javascript'].forEach(e => {
-                        let newD = art.articleMaker(e);
-                        // Append each new article div with the cards-container
-                        document.querySelector('.cards-container').appendChild(newD);
-                    });
-                }
-                if(tabClicked === 'bootstrap'){
-                    resp.data.articles['bootstrap'].forEach(e => {
-                        let newD = art.articleMaker(e);
-                        // Append each new article div with the cards-container
-                        document.querySelector('.cards-container').appendChild(newD);
-                    });
-                }
-    
-                if(tabClicked === 'technology'){
-                    resp.data.articles['technology'].forEach(e => {
-                        let newD = art.articleMaker(e);
-                        // Append each new article div with the cards-container
-                        document.querySelector('.cards-container').appendChild(newD);
-                    });
-                }
-                if(tabClicked === 'jquery'){
-                    resp.data.articles['jquery'].forEach(e => {
-                        let newD = art.articleMaker(e);
-                        // Append each new article div with the cards-container
-                        document.querySelector('.cards-container').appendChild(newD);
-                    });
-                }
-                let dot = '';
-                 dot = escape('.');
-                console.log('s'+dot);
-                let nodejs = "node"+dot+"js";
-                // console.log(tabClicked);
-                if(tabClicked === nodejs){
-                    console.log(tabClicked);
-                    resp.data.articles['node'].forEach(e => {
-                        let newD = art.articleMaker(e);
-                        // Append each new article div with the cards-container
-                        document.querySelector('.cards-container').appendChild(newD);
-                    });
-                }
+            art.artM(tab,resp);
     
         }
             },false);
