@@ -17,6 +17,28 @@
 //   </div>
 // </div>
 //
-// Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
+// Add a listener for click events so that when a user clicks on a card,
+//  the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
+
+class Article{
+    constructor(url){
+        this.url = { 'url':url };
+    }
+
+    articleRe(){
+      
+
+
+        return this.url;
+    }
+
+}
+
+
+
+
+ARTICLES_URL = 'https://lambda-times-api.herokuapp.com/articles';
+let art = new Article(ARTICLES_URL);
+console.log(art.url['url']);
