@@ -22,3 +22,39 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+class Carousel{
+  constructor(){
+    this.imgSrcs = [];
+  }
+  makeCarousel(){
+    
+    let div = document.createElement('div');
+    let left = document.createElement('div');
+    let right = document.createElement('div');
+    let img1 = document.createElement('img');
+    let img2 = document.createElement('img');
+    let img3 = document.createElement('img');
+    let img4 = document.createElement('img');
+
+    // Set classes 
+    div.classList.add("carousel");
+    left.classList.add("left-button");
+    right.classList.add("right-button");
+
+    left.textContent = "<";
+    right.textContent = ">";
+
+    // Create imgs srcs
+    img1.src = "https://tk-assets.lambdaschool.com/ba687af4-3a1e-43d7-87b2-f30453264c9d_mountains.jpeg";
+    img2.src = "https://tk-assets.lambdaschool.com/8aa075b0-67cf-47ce-9a7f-8cc9d754675d_computer.jpeg";
+    img3.src = "https://tk-assets.lambdaschool.com/5b7441c6-6e4b-4feb-a4ec-8dd2eb76238a_trees.jpeg";
+    img4.src = "https://tk-assets.lambdaschool.com/0b770382-d0eb-4465-8bf2-692a79fcda71_turntable.jpeg";
+    div.append(left,img1,img2,img3,img4,right);
+    
+    document.querySelector('.carousel-container').append(div);
+
+  }
+};
+let caro = new Carousel();
+caro.makeCarousel();

@@ -28,13 +28,26 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+    DOM is the Document Object Model and is where all objects, their properties, methods, and values are found on that webpage.
+
 2. What is an event?
+
+    An event can be triggered by an element and has predefined code that makes it easy to write code for any kind of mouse event, keyboard event, or loading event. 
 
 3. What is an event listener?
 
+    An event listener is a function that allows you to write code for when the user does something with their pointing device or keyboard device. Its the actual method an event will be using when that event is triggered. 
+
 4. Why would we convert a NodeList into an Array?
 
+    A nodelist is a browser object that lets you use the browser's api and does not allow accesss to array functions like filter, map, or from. To use these you would place the nodelist in the Array.from() method and equal it to a new let array variable where array 
+    functions can be used .  
 5. What is a component?
+
+
+    A component is a group of dom elements brought together within a function so it is easy to recreate as many as needed and whenever it
+    is needed. Making a component is more modular and takes less time to use. 
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
