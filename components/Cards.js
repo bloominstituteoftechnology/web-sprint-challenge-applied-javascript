@@ -68,6 +68,10 @@ function cardList(articleData){
     span.textContent = articleData.authorName;
     divAuthor.appendChild(span)
 
+    divCard.addEventListener("click", (event) =>{
+        console.log(articleData.headline);
+    })
+
     return divCard
 }
 
