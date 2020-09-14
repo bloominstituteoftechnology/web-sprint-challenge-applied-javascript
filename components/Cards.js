@@ -29,12 +29,14 @@ function CardCreator(item) {
   const img = document.createElement('img');
   const cardBy = document.createElement('span');
 
+  //appending each card to the dom
   cardMainDiv.appendChild(cardHeadLineDiv);
   cardMainDiv.appendChild(cardauthorDiv);
   cardauthorDiv.appendChild(cardImgDiv);
   cardImgDiv.appendChild(img);
   cardauthorDiv.appendChild(cardBy);
 
+  //adding the needed class for each div
   cardMainDiv.classList.add('card');
   cardHeadLineDiv.classList.add('headline');
   cardauthorDiv.classList.add('author');
