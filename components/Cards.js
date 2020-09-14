@@ -34,6 +34,38 @@ class Article{
         return this.url;
     }
 
+
+     articleMaker(obj){
+        // All elements
+            const card = document.createElement('div');
+            const headLine = document.createElement('div')
+            const author = document.createElement('div');
+            const imgD = document.createElement('div');
+            const img = document.createElement('img');
+            const span = document.createElement('span');
+            
+        //classes and properties
+            card.classList.add('card');
+            headLine.classList.add('headline');
+            author.classList.add('author');
+            imgD.classList.add('img-container');
+            img.setAttribute('src',obj.authorPhoto);
+            
+        //Text content
+            span.textContent = obj.authorName;
+            headLine.textContent = obj.headline;
+            card.addEventListener('click', event => {
+                console.log(obj.headline)
+            })
+        //Append the whole thing
+            imgD.appendChild(img);
+            author.append(imgD,span);
+            card.append(headLine,author);
+            
+        //the Article
+            return card;
+        }
+        
 }
 
 
@@ -42,3 +74,34 @@ class Article{
 ARTICLES_URL = 'https://lambda-times-api.herokuapp.com/articles';
 let art = new Article(ARTICLES_URL);
 console.log(art.url['url']);
+
+
+
+// making an array to hold the values for each topic 
+const arTopics = [
+    "javascript",
+    "bootstrap",
+    "technology",
+    "jquery",
+    "node"
+];
+console.log()
+let artTops = [];
+
+axios.get(ARTICLES_URL)
+.then(resp => {
+    console.log(resp);
+    arTopics.forEach(topic => {
+        resp.data.articles[topic].forEach(e => {
+        let newD = art.articleMaker(e);
+        document.querySelector('.cards-container').appendChild(newD);
+    });
+    });
+})
+.catch(failure => {
+    console.log('Faild',failure);
+});
+
+
+
+
