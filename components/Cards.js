@@ -48,14 +48,15 @@ function CardCreator(item) {
 }
 //}
 
-//robel use entryPoint here
+//my entryPoint here
 const cardsContainer = document.querySelector('.cards-container');
 
 axios
   .get('https://lambda-times-api.herokuapp.com/articles')
   .then((response) => {
+    //checking my response
     console.log(response);
-
+    //const allData
     const bulkData = response.data.articles;
 
     const sortedData = Object.keys(bulkData).map((key) => [bulkData[key]]);

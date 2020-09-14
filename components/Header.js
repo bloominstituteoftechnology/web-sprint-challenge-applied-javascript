@@ -12,10 +12,10 @@
 // and append it to the DOM inside the div.header-container
 
 function Header() {
-  const headerDivDefinition = document.createComment('div');
-  const dateSpanDefinition = document.createComment('span');
-  const titleDefinition = document.createComment('h1');
-  const tempSpanDefinition = document.createComment('span');
+  const headerDivDefinition = document.createElement('div');
+  const dateSpanDefinition = document.createElement('span');
+  const titleDefinition = document.createElement('h1');
+  const tempSpanDefinition = document.createElement('span');
 
   //Seeting the parent and chilld
   headerDivDefinition.appendChild(dateSpanDefinition);

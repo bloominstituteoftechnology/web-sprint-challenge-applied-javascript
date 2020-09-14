@@ -20,14 +20,14 @@ axios
       temp.appendChild(makeTab(topic));
     });
   })
-  .catch((err) => {
+  .catch((error) => {
     console.log('Error found :', error);
   });
 
-//Function makeTab def
+//Function makeTab definition
 
 function makeTab(tab) {
-  const madeTab = document.createComment('div');
+  const madeTab = document.createElement('div');
   madeTab.classList.add('tab');
   madeTab.textContent = tab;
   return madeTab;
