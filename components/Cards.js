@@ -82,8 +82,7 @@ class Article{
 
 
 // Article Lambda URL Found as a api url no const let or var
-// What does this default to as? Do Errors get Created like this?
-ARTICLES_URL = 'https://lambda-times-api.herokuapp.com/articles';
+let ARTICLES_URL = 'https://lambda-times-api.herokuapp.com/articles';
 let art = new Article(ARTICLES_URL);
 // The url string from the url article object
 const apiURL = art.articleRe()['url'];
@@ -104,64 +103,82 @@ axios.get(apiURL)
 
     let tabs = document.querySelectorAll('.tab');
     let tabClicked = '';
-    tabs.forEach(tab =>{
-        tab.addEventListener('click',(e)=>{
-            tabClicked = tab.textContent;
-            if(tabClicked === 'all'){
-                // Can you reuse the same object within itself over and over again? if not one day use artTops
-    art.reTop().forEach(topic => {
-        // Iterate each toipc while appending all articles to that topic
-        resp.data.articles[topic].forEach(e => {
-        let newD = art.articleMaker(e);
-        // Append each new article div with the cards-container
-        document.querySelector('.cards-container').appendChild(newD);
-    });
-    });
-            } // End all 
-            if(tabClicked === 'javascript'){
-                resp.data.articles['javascript'].forEach(e => {
-                    let newD = art.articleMaker(e);
-                    // Append each new article div with the cards-container
-                    document.querySelector('.cards-container').appendChild(newD);
-                });
-            }
-            if(tabClicked === 'bootstrap'){
-                resp.data.articles['bootstrap'].forEach(e => {
-                    let newD = art.articleMaker(e);
-                    // Append each new article div with the cards-container
-                    document.querySelector('.cards-container').appendChild(newD);
-                });
-            }
-
-            if(tabClicked === 'technology'){
-                resp.data.articles['technology'].forEach(e => {
-                    let newD = art.articleMaker(e);
-                    // Append each new article div with the cards-container
-                    document.querySelector('.cards-container').appendChild(newD);
-                });
-            }
-            if(tabClicked === 'jquery'){
-                resp.data.articles['jquery'].forEach(e => {
-                    let newD = art.articleMaker(e);
-                    // Append each new article div with the cards-container
-                    document.querySelector('.cards-container').appendChild(newD);
-                });
-            }
-            let dot = '';
-             dot = escape('.');
-            console.log('s'+dot);
-            let nodejs = "node"+dot+"js";
-            // console.log(tabClicked);
-            if(tabClicked === nodejs){
-                console.log(tabClicked);
-                resp.data.articles['node'].forEach(e => {
-                    let newD = art.articleMaker(e);
-                    // Append each new article div with the cards-container
-                    document.querySelector('.cards-container').appendChild(newD);
-                });
-            }
-        },false);
-    });
+    
+    
+        tabs.forEach(tab =>{
+            tab.addEventListener('click',(e)=>{
+                let allCards = document.querySelectorAll('.cards-container');
+        console.log(allCards);
+         if(allCards[0].firstElementChild == null){
+      
+        
+                tabClicked = tab.textContent;
+                if(tabClicked === 'all'){
+                    // Can you reuse the same object within itself over and over again? if not one day use artTops
+        art.reTop().forEach(topic => {
+            // Iterate each toipc while appending all articles to that topic
+            resp.data.articles[topic].forEach(e => {
+            let newD = art.articleMaker(e);
+            // Append each new article div with the cards-container
+            document.querySelector('.cards-container').appendChild(newD);
+        });
+        });
+                } // End all 
+                if(tabClicked === 'javascript'){
+                    resp.data.articles['javascript'].forEach(e => {
+                        let newD = art.articleMaker(e);
+                        // Append each new article div with the cards-container
+                        document.querySelector('.cards-container').appendChild(newD);
+                    });
+                }
+                if(tabClicked === 'bootstrap'){
+                    resp.data.articles['bootstrap'].forEach(e => {
+                        let newD = art.articleMaker(e);
+                        // Append each new article div with the cards-container
+                        document.querySelector('.cards-container').appendChild(newD);
+                    });
+                }
+    
+                if(tabClicked === 'technology'){
+                    resp.data.articles['technology'].forEach(e => {
+                        let newD = art.articleMaker(e);
+                        // Append each new article div with the cards-container
+                        document.querySelector('.cards-container').appendChild(newD);
+                    });
+                }
+                if(tabClicked === 'jquery'){
+                    resp.data.articles['jquery'].forEach(e => {
+                        let newD = art.articleMaker(e);
+                        // Append each new article div with the cards-container
+                        document.querySelector('.cards-container').appendChild(newD);
+                    });
+                }
+                let dot = '';
+                 dot = escape('.');
+                console.log('s'+dot);
+                let nodejs = "node"+dot+"js";
+                // console.log(tabClicked);
+                if(tabClicked === nodejs){
+                    console.log(tabClicked);
+                    resp.data.articles['node'].forEach(e => {
+                        let newD = art.articleMaker(e);
+                        // Append each new article div with the cards-container
+                        document.querySelector('.cards-container').appendChild(newD);
+                    });
+                }
+            }else if(allCards[0].firstElementChild.classList.contains('card')){
+                console.log('removed');
+            let cards = document.querySelectorAll('.card');
+            cards.forEach(card =>{
+                card.remove('card')
+                
+            });
+    
+        }
+            },false);
+            
+        });  // end foreach
+    
     
 })
 .catch(failure => {
