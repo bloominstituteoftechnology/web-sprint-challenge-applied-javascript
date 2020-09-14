@@ -13,6 +13,10 @@
 const dataFunc = function(dataN) {
     let topics = document.querySelector(".topics")
 
+    let tab = document.createElement("div")
+    tab.classList.add("tab")
+    tab.textContent = 'all'
+    topics.appendChild(tab)
 for(let i = 0; i < dataN.length; i++) {
 
     let tab = document.createElement("div")
@@ -23,7 +27,7 @@ for(let i = 0; i < dataN.length; i++) {
   }
 }
 
-axios.get('https://lambda-times-backend.herokuapp.com/topics')
+axios.get('https://lambda-times-api.herokuapp.com/topics')
 .then(function (res) {
   console.log('Response: ', res.data);
   let rdata = res.data.topics

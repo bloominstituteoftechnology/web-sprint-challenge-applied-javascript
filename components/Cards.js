@@ -23,27 +23,28 @@
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
 class Article{
+    // Article Construction
     constructor(url){
         this.arTopics = [];
        
         this.url = { 'url':url };
     }
+    // Mutator Function for this.arTopics
     makeTopics(a){
         a.forEach((at,i) =>{
             this.arTopics[i] = at;
         });
     }
+    // Accessor Function for this.url
     articleRe(){
-      
-
-
         return this.url;
     }
+    // Accessor function for this.arTopics
     reTop(){
         return this.arTopics;
     }
 
-
+/// Created Each Article
      articleMaker(obj){
         // All elements
             const card = document.createElement('div');
@@ -100,7 +101,14 @@ axios.get(apiURL)
         console.log('inside the data'+f);
     } // Copying topics over to article object 
     art.makeTopics(artTops);
-    // Can you reuse the same object within itself over and over again? if not one day use artTops
+
+    let tabs = document.querySelectorAll('.tab');
+    let tabClicked = '';
+    tabs.forEach(tab =>{
+        tab.addEventListener('click',(e)=>{
+            tabClicked = tab.textContent;
+            if(tabClicked === 'all'){
+                // Can you reuse the same object within itself over and over again? if not one day use artTops
     art.reTop().forEach(topic => {
         // Iterate each toipc while appending all articles to that topic
         resp.data.articles[topic].forEach(e => {
@@ -109,6 +117,47 @@ axios.get(apiURL)
         document.querySelector('.cards-container').appendChild(newD);
     });
     });
+            } // End all 
+            if(tabClicked === 'javascript'){
+                resp.data.articles['javascript'].forEach(e => {
+                    let newD = art.articleMaker(e);
+                    // Append each new article div with the cards-container
+                    document.querySelector('.cards-container').appendChild(newD);
+                });
+            }
+            if(tabClicked === 'bootstrap'){
+                resp.data.articles['bootstrap'].forEach(e => {
+                    let newD = art.articleMaker(e);
+                    // Append each new article div with the cards-container
+                    document.querySelector('.cards-container').appendChild(newD);
+                });
+            }
+            if(tabClicked === 'technology'){
+                resp.data.articles['technology'].forEach(e => {
+                    let newD = art.articleMaker(e);
+                    // Append each new article div with the cards-container
+                    document.querySelector('.cards-container').appendChild(newD);
+                });
+            }
+            if(tabClicked === 'jquery'){
+                resp.data.articles['jquery'].forEach(e => {
+                    let newD = art.articleMaker(e);
+                    // Append each new article div with the cards-container
+                    document.querySelector('.cards-container').appendChild(newD);
+                });
+            }
+            console.log(tabClicked);
+            if(tabClicked === 'node'){
+                console.log(tabClicked);
+                resp.data.articles['node'].forEach(e => {
+                    let newD = art.articleMaker(e);
+                    // Append each new article div with the cards-container
+                    document.querySelector('.cards-container').appendChild(newD);
+                });
+            }
+        },false);
+    });
+    
 })
 .catch(failure => {
     console.log('Faild',failure);
