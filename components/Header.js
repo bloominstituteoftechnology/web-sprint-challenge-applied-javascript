@@ -18,12 +18,18 @@ function Header() {
     const spanDate = document.createElement("span")
     spanDate.classList.add("date")
     spanDate.textContent = "MARCH 28, 2020";
-    divHeader.appendChild(spanDate)
+    divHeader.appendChild(spanDate);
 
     const headerOne = document.createElement("h1")
-    divHeader.appendChild(headerOne)
+    headerOne.textContent = "Lambda Times"
+    divHeader.appendChild(headerOne);
 
-    
+    const spanTemp = document.createElement("span")
+    spanTemp.textContent = "98°";
+    divHeader.appendChild(spanTemp);
+
 
     return divHeader
 }
+
+document.querySelector(".header-container").appendChild(Header())
