@@ -23,7 +23,11 @@
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
 class Article{
-    constructor(url){
+    constructor(url,at){
+        this.arTopics = [];
+        at.forEach((a,i) =>{
+            this.arTopics[i] = a;
+        })
         this.url = { 'url':url };
     }
 
@@ -32,6 +36,9 @@ class Article{
 
 
         return this.url;
+    }
+    reTop(){
+        return this.arTopics;
     }
 
 
@@ -54,6 +61,7 @@ class Article{
         //Text content
             span.textContent = obj.authorName;
             headLine.textContent = obj.headline;
+        // Click Event listener
             card.addEventListener('click', event => {
                 console.log(obj.headline)
             })
@@ -70,28 +78,28 @@ class Article{
 
 
 
-
-ARTICLES_URL = 'https://lambda-times-api.herokuapp.com/articles';
-let art = new Article(ARTICLES_URL);
-console.log(art.url['url']);
-
-
-
-// making an array to hold the values for each topic 
-const arTopics = [
+let aTop = [
     "javascript",
     "bootstrap",
     "technology",
     "jquery",
     "node"
 ];
-console.log()
+ARTICLES_URL = 'https://lambda-times-api.herokuapp.com/articles';
+let art = new Article(ARTICLES_URL,aTop);
+console.log(art.reTop());
+
+
+// Backup array of all topics
 let artTops = [];
+artTops = art.reTop();
 
 axios.get(ARTICLES_URL)
 .then(resp => {
-    console.log(resp);
-    arTopics.forEach(topic => {
+    // console.log(art.reTop());
+    // Can you reuse the same object within itself over and over again? if not one day use artTops
+    art.reTop().forEach(topic => {
+        // Iterate each toipc while appending all articles to that topic
         resp.data.articles[topic].forEach(e => {
         let newD = art.articleMaker(e);
         document.querySelector('.cards-container').appendChild(newD);
