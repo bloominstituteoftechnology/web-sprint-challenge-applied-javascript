@@ -23,14 +23,16 @@
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
 class Article{
-    constructor(url,at){
+    constructor(url){
         this.arTopics = [];
-        at.forEach((a,i) =>{
-            this.arTopics[i] = a;
-        })
+       
         this.url = { 'url':url };
     }
-
+    makeTopics(a){
+        a.forEach((at,i) =>{
+            this.arTopics[i] = at;
+        })
+    }
     articleRe(){
       
 
@@ -90,12 +92,19 @@ let art = new Article(ARTICLES_URL,aTop);
 console.log(art.reTop());
 
 
-// Backup array of all topics
+// Backup array of all topics if we can figure out how to get updated values of the topics in the object
 let artTops = [];
-artTops = art.reTop();
+// artTops = art.reTop();
 
 axios.get(ARTICLES_URL)
 .then(resp => {
+    let count = 0;
+    for(let f in resp.data.articles){
+        artTops[count] = f;
+        ++count;
+        console.log('inside the data'+f);
+    }
+    art.makeTopics(artTops);
     // console.log(art.reTop());
     // Can you reuse the same object within itself over and over again? if not one day use artTops
     art.reTop().forEach(topic => {
