@@ -74,7 +74,7 @@ class Article{
             return card;
         }
         
-}
+}// End Article Class
 
 
 
