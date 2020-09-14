@@ -15,5 +15,15 @@ function Header() {
     const divHeader = document.createElement("div")
     divHeader.classList.add("header")
 
+    const spanDate = document.createElement("span")
+    spanDate.classList.add("date")
+    spanDate.textContent = "MARCH 28, 2020";
+    divHeader.appendChild(spanDate)
+
+    const headerOne = document.createElement("h1")
+    divHeader.appendChild(headerOne)
+
+    
+
     return divHeader
 }
