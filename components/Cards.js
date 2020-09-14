@@ -132,7 +132,7 @@ axios.get(apiURL)
                     document.querySelector('.cards-container').appendChild(newD);
                 });
             }
-            
+
             if(tabClicked === 'technology'){
                 resp.data.articles['technology'].forEach(e => {
                     let newD = art.articleMaker(e);
@@ -147,8 +147,12 @@ axios.get(apiURL)
                     document.querySelector('.cards-container').appendChild(newD);
                 });
             }
-            console.log(tabClicked);
-            if(tabClicked === 'node'){
+            let dot = '';
+             dot = escape('.');
+            console.log('s'+dot);
+            let nodejs = "node"+dot+"js";
+            // console.log(tabClicked);
+            if(tabClicked === nodejs){
                 console.log(tabClicked);
                 resp.data.articles['node'].forEach(e => {
                     let newD = art.articleMaker(e);
