@@ -31,7 +31,7 @@ class Article{
     makeTopics(a){
         a.forEach((at,i) =>{
             this.arTopics[i] = at;
-        })
+        });
     }
     articleRe(){
       
@@ -80,37 +80,32 @@ class Article{
 
 
 
-let aTop = [
-    "javascript",
-    "bootstrap",
-    "technology",
-    "jquery",
-    "node"
-];
+// Article Lambda URL Found as a api url no const let or var
+// What does this default to as? Do Errors get Created like this?
 ARTICLES_URL = 'https://lambda-times-api.herokuapp.com/articles';
-let art = new Article(ARTICLES_URL,aTop);
-console.log(art.reTop());
-
-
+let art = new Article(ARTICLES_URL);
+// The url string from the url article object
+const apiURL = art.articleRe()['url'];
 // Backup array of all topics if we can figure out how to get updated values of the topics in the object
 let artTops = [];
 // artTops = art.reTop();
 
-axios.get(ARTICLES_URL)
+axios.get(apiURL)
 .then(resp => {
+    // Live dynamic topic update
     let count = 0;
     for(let f in resp.data.articles){
         artTops[count] = f;
         ++count;
         console.log('inside the data'+f);
-    }
+    } // Copying topics over to article object 
     art.makeTopics(artTops);
-    // console.log(art.reTop());
     // Can you reuse the same object within itself over and over again? if not one day use artTops
     art.reTop().forEach(topic => {
         // Iterate each toipc while appending all articles to that topic
         resp.data.articles[topic].forEach(e => {
         let newD = art.articleMaker(e);
+        // Append each new article div with the cards-container
         document.querySelector('.cards-container').appendChild(newD);
     });
     });
