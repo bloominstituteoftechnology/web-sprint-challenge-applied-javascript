@@ -42,8 +42,7 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
         // Javascript.appendChild(technologyTab)
         // Javascript.appendChild(jqueryTab)
         // Javascript.appendChild(nodejsTab)
-
-
+       
 
        return Javascript;
     }
@@ -58,9 +57,21 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
         Response.data.topics.forEach(Element => {
             const newtab1 = NewTab(Element);
             entrypoint.appendChild(newtab1)
-            // console.log(newtab1)
+            newtab1.addEventListener('click', ()=>{
+                console.log("help")
+            })
+             console.log(newtab1)
             console.log(` this is my element ${Element}`)
+            
         });
         
-
+            Response.data.topicsforEach(addEventListener('click', ()=>{
+                console.log('faye')
+            }))
+    
+    
+    
+    
     })
+
+
