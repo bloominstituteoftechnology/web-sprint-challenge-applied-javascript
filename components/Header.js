@@ -28,7 +28,8 @@ function Header() {
     //Populate Content
     date.textContent = 'MARCH 28, 2020';
     title.textContent = 'Lambda Times';
-    temp.textContent = `98 sym`;
+    //!-! Reference: \u unicode esacpe used to populate degree symbol
+    temp.textContent = '98 \u00B0';
 
     return head;
 }
