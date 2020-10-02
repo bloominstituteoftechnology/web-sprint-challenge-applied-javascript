@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+The DOM is the Document Object Model. It is essentially a data representation of the HTML source code that the browser creates. It's key attributes are that it is Tree structure made of parent and child nodes and it is dynamic. The DOM allows developers to interact with the webpage in real time - adding/ removing elements, styles and functionality. 
+
 2. What is an event?
+
+Events are objects that are sent when something takes place on teh web page. For example when a user clicks on a button or hovers over an image a 'click' or 'hover' event objects is sent to notify the code that the event has taken place. Events can be triggered in alot of differnt ways such as CSS Animation, Resource Occurences (load, error, etc) user generated (click, scroll, keydown etc...), CSS Animations, and more. 
 
 3. What is an event listener?
 
+Event Listners are essentially pieces of code teh 'listen' for an event to take place then excute a desired block of code. It could be as straight foreward as populating a email opt in form 10 second after the page loads, or populating new elements when a user selects certain data (like an interactive dashboard).
+
 4. Why would we convert a NodeList into an Array?
 
+Converting a NodeList into an array is useful because you get access to all of Arrays prototype methods. Whereas a NodeLlist is an 'array like object' and only has access to .forEach().
+
 5. What is a component?
+
+A component is a single modular piece of code that is made up of HTML, CSS (preferably from an external style sheet), and Javascript. Javascript is used to construct the Component by building the elements, nesting them appropriatley, assigning classes or Id's in accordance with the desired sytling, populating the HTML content and attributes, and building functionality via event listners. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
