@@ -82,5 +82,9 @@ function articleMaker(artObj) {
     headDiv.textContent = artObj.headline
     img.src = artObj.authorPhoto
     spanName.textContent = artObj.authorName
+    //Click Listener
+    cardDiv.addEventListener('click', event => {
+        console.log(event.target.textContent)
+    })
     return cardDiv
 }
