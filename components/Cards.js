@@ -26,14 +26,17 @@ import axios from 'axios'
 const cardContainer = document.querySelector('.cards-container')
 
 
+
 function cardMaker (data){
     // Instatiation
     const card = document.createElement('div')
-    const headline = document.createElement('div')
-    const author = document.createElement('div')
-    const imgContainer = document.createElement('div')
     const img = document.createElement('img')
     const span = document.createElement('span')
+    const headline = document.createElement('div')
+    const h3 = document.createElement('h3')
+    const author = document.createElement('div')
+    const imgContainer = document.createElement('div')
+    
 
     // CLASSES
     card.classList.add('card')
@@ -44,33 +47,34 @@ function cardMaker (data){
     //HIERArchy set up
     card.appendChild(headline)
     headline.appendChild(author)
+    headline.appendChild(h3)
     author.appendChild(imgContainer)
     author.appendChild(span)
     imgContainer.appendChild(img)
 // Content 
+for(let i=0;i<data.length;i++){
+    h3.textContent = data[i].headline
+    img.src = data[i].authorPhoto
+    span.textContent = data[i].authorName
+  
+}
 
-    
-        headline.textContent = data.headline
-        img.src = data.authorPhoto
-        span.textContent = data.authorName
-    
-   
+  
+card.addEventListener('click', () => {
+    console.log(data.headline)
+})
     //EVENT LISTENERS
-    card.addEventListener('click', () => {
-        console.log(data.headline)
-    })
+    
     return card
     
 }
+
 
 axios.get('https://lambda-times-api.herokuapp.com/articles')
 .then(res => {
     const articles = Object.values(res.data.articles)
     const Articles2 = [].concat.apply([], articles)
     console.log(Articles2)
-    for (var i=0;i<Articles2.length;i+=1) {
-        headline.textContent = Articles2[i].headline
-    }
     Articles2.map(data => {
         cardContainer.appendChild(cardMaker(Articles2))
     })
@@ -78,4 +82,3 @@ axios.get('https://lambda-times-api.herokuapp.com/articles')
 .catch(err => {
     console.log(err)
 });
-
