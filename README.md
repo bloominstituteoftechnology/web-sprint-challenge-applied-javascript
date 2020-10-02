@@ -40,7 +40,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 5. What is a component?
     A component is a reusable piece of JS that makes building webpages a lot less tedious.
-    
+
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
 ## Instructions
