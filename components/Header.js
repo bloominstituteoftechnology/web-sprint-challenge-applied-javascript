@@ -39,5 +39,4 @@ const headerCont = document.querySelector('.header-container')
 
 headerCont.appendChild(Header())
 
-
 console.log(Header());

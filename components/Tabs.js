@@ -18,13 +18,13 @@ const data = axios.get('https://lambda-times-api.herokuapp.com/topics')
     console.log(error)
 })
 
-const entryPoint2 = document.querySelector('.tabs')
+const entryPoint2 = document.querySelectorAll('.tabs')
 function Tabs(){
-    const js = document.createElement('javascript')
-    const bs = document.createElement('bootstrap')
-    const tech = document.createElement('technology')
-    const jquery = document.createElement('jquery')
-    const node = document.createElement('node.js')
+    const js = document.createElement('div')
+    const bs = document.createElement('div')
+    const tech = document.createElement('div')
+    const jquery = document.createElement('div')
+    const node = document.createElement('div')
 
     js.classList.add('tabs')
     bs.classList.add('tabs')
@@ -32,11 +32,17 @@ function Tabs(){
     jquery.classList.add('tabs')
     node.classList.add('tabs')
 
-    return js
+    js.textContent = 'javascript'
+    bs.textContent = 'bootstrap'
+    tech.textContent = 'technology'
+    jquery.textContent = ' jquery'
+    node.textContent = 'node.js'
+
+    return Tabs
 
     
 }
 const topics = document.querySelector('.topics')
-topics.appendChild(Tabs())
+topics.append(Tabs())
 
 console.log(Tabs())
