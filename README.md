@@ -27,14 +27,20 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+Dom is an interface used to manipulate your page.
 
 2. What is an event?
+loading of a page is called an event. Any interaction that user has with the webpage (clicking, closing, resizing) is an event.
 
 3. What is an event listener?
+It's a procedure that waits for an event to occur
 
 4. Why would we convert a NodeList into an Array?
+So that we can take advantage of the array methods in ES6.
 
 5. What is a component?
+Components are independent & reusable pieces of code. They're similar to JavaScript functions, but work alone, and returns HTML via a render function
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
