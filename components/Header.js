@@ -89,8 +89,5 @@ function Header() {
   return header;
 
 }
-// Header();
-// console.log(12);
-// console.log(getDate());
 
 document.querySelector("div.header-container").appendChild(Header());
