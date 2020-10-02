@@ -38,7 +38,7 @@ axios.get("https://lambda-times-api.herokuapp.com/articles")
   // }
 })
 .catch(e => {
-  console.log(e);
+  document.querySelector("div.errors-container").appendChild(makeError(e));
 });
 
 function makeArticle(article) {
@@ -70,4 +70,13 @@ function makeArticle(article) {
   
   return card;
   
+}
+
+const makeError = (e) => {
+  const errorDiv = document.createElement("div");
+  const errMsg = document.createElement("p1");
+  errMsg.textContent = e;
+  errorDiv.appendChild(errMsg);
+
+  return errorDiv;
 }
