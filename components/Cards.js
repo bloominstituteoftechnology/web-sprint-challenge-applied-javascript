@@ -32,7 +32,7 @@ function artMaker(obj){
     card.classList.add('card')
     headline.classList.add('headline')
     author.classList.add('author')
-    imgCont.classList.add('imgCont')
+    imgCont.classList.add('img-container')
 
     headline.textContent = obj.headline
     img.src = obj.authorPhoto
@@ -51,9 +51,10 @@ function artMaker(obj){
 const cardsContainer = document.querySelector('.cards-container');
 
 const articleobj = 
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
+axios.get('https://lambda-times-api.herokuapp.com/articles')
 .then(res =>{
      cardMaker(res.data.articles)
+     console.log(res.data)
 })
 .catch(err => {
     console.log('error', err)
