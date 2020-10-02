@@ -1,7 +1,7 @@
 
 
 
-//This is the entry point
+//This is the header entry point
 const headerContainer = document.querySelector('.header-container')
 
 function Header() {
@@ -24,7 +24,6 @@ function Header() {
     //return the header
     return header
 }
-console.log(Header())
 
 headerContainer.appendChild(Header());
 // STEP 1: Create a Header component.
