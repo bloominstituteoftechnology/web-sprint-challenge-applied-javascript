@@ -13,7 +13,11 @@
 function makeTab(topic) {
     const newTab = document.createElement('div')
     newTab.classList.add('tab')
+    newTab.classList.add(`${topic}`)
     newTab.textContent = `${topic}`
+    newTab.addEventListener('click', (target) => {
+        changeView(target)
+    })
     return newTab
 }
 axios.get('https://lambda-times-api.herokuapp.com/topics')
@@ -29,3 +33,24 @@ axios.get('https://lambda-times-api.herokuapp.com/topics')
     .catch(err => {
         console.log(err)
     })
+
+function changeView(event) {
+    let myTab = makeTab('All')
+    const entryPoint = document.querySelector('.title')
+    entryPoint.after(myTab)
+    console.log(event.target)
+    let cards = document.querySelectorAll('card')
+    console.log(cards)
+    debugger
+    cards.forEach(function (card) {
+        console.log(card)
+        debugger
+        if (event.target.classList.includes('All')) {
+            card.classList.add('on')
+        } else if (card.classList !== event.target.classList) {
+            card.classList.remove('on')
+        } else card.classList = event.target.classList
+    })
+}
+
+        
