@@ -27,14 +27,19 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+  The Document Object Model is a multi-platform interface that employs HTML code in a tree structure. Each node (parent > child > grandchild > great-grandchild > ... > (great * n)-grandchild) represents part of the document, and carries out nesting in the code by way of the Inheritance Model.
 
 2. What is an event?
+  Events are used in HTML to represent the occurance of some action executed by either the browser or the user. When a user Clicks, this is a click event. When a browser resizes, this is a resize event. Events allow you to add Event listeners (see below) to execute code upon the instance of an event, thus handling the event.
 
 3. What is an event listener?
+  Event listeners are attributes added to HTML elements that listen for the instance of an event (specified by the programmer). Once that specified event triggers, the HTML element will redirect the system to exectute any code that the programmer specified the eventListener to invoke (these specified functions are the event Handlers).  
 
 4. Why would we convert a NodeList into an Array?
+  A programmer might have reason to use Array methods upon a NodeList collection. If they'd like to invoke .map(), for instance, the programmer would have to convert a NodeList into an Array to use that Array method. NodeLists are Array-like by default, but they do not inherently use the same methods as Arrays.
 
 5. What is a component?
+  Components are reusable, independent bits of code. They work in isolation and usually return HTML——in React, they return HTML (JSX) by way of a render() method. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -44,12 +49,12 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 #### Repository Set Up
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: `git checkout -b <firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
-- [ ] Push commits: `git push origin <firstName-lastName>`
+- [x] Create a forked copy of this project
+- [x] Add your team lead as collaborator on Github
+- [x] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [x] Create a new branch: `git checkout -b <firstName-lastName>`.
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
+- [x] Push commits: `git push origin <firstName-lastName>`
 
 #### Launching the App
 
