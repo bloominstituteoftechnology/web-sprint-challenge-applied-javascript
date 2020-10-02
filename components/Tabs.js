@@ -39,18 +39,17 @@ function changeView(event) {
     const entryPoint = document.querySelector('.title')
     entryPoint.after(myTab)
     console.log(event.target)
-    let cards = document.querySelectorAll('card')
-    console.log(cards)
+    let cards = document.querySelector('.cards-container')
+    console.log(cards.children)
     debugger
-    cards.forEach(function (card) {
-        console.log(card)
-        debugger
+    for (let i; i < cards.children.length; i++) {
         if (event.target.classList.includes('All')) {
-            card.classList.add('on')
-        } else if (card.classList !== event.target.classList) {
-            card.classList.remove('on')
-        } else card.classList = event.target.classList
-    })
+            cards.children[i].classList.add('on')
+        } else if (cards[i].classList !== event.target.classList) {
+            cards[i].classList.remove('on')
+        } else {
+            cards[i].classList.add = event.target.classList[1]
+            cards[i].classList.add = 'on'
+        }
+    }
 }
-
-        
