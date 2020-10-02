@@ -46,21 +46,21 @@ function createTab(tabname) {
   return tab;
 }
 
-function handleTabs(e) {
-  const activeTab = document.querySelector("div.activeTab");
-  if (activeTab !== null) {
-    activeTab.classList.remove("active-tab");
-  }
-  console.log(activeTab);
-  e.target.classList.add("active-tab");
-  // const target = e.target;
-  //  if (target.classList.contains("active-tab")) {
-  //    target.classList.remove("active-tab");
-  //  } else {
-  //    target.classList.add("active-tab");
-  //  }
-  // const divTopics = document.querySelector("div.topics");
-  // console.log(divTopics);
-  // const topics = Array.from(document.querySelectorAll("div.tab"));
-  // console.log(topics);
-}
+// function handleTabs(e) {
+//   const activeTab = document.querySelector("div.activeTab");
+//   if (activeTab !== null) {
+//     activeTab.classList.remove("active-tab");
+//   }
+//   console.log(activeTab);
+//   e.target.classList.add("active-tab");
+//   // const target = e.target;
+//   //  if (target.classList.contains("active-tab")) {
+//   //    target.classList.remove("active-tab");
+//   //  } else {
+//   //    target.classList.add("active-tab");
+//   //  }
+//   // const divTopics = document.querySelector("div.topics");
+//   // console.log(divTopics);
+//   // const topics = Array.from(document.querySelectorAll("div.tab"));
+//   // console.log(topics);
+// }
