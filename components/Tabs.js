@@ -13,20 +13,54 @@ import axios from "axios";
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
 
 // function createTabs() {
-  axios.get("https://lambda-times-api.herokuapp.com/topics")
-    .then(res => {
-      const divTopics = document.querySelector("div.topics");
-      const topicArr = res.data.topics;
-      // console.log(topicArr);
-      topicArr.forEach( x => {
-        const tab = document.createElement("div");
-        tab.classList.add("tab");
-        tab.textContent = x;
-        divTopics.appendChild(tab);
-      });
-    })
-    .catch(e => {
-      console.log(e);
+axios
+  .get("https://lambda-times-api.herokuapp.com/topics")
+  .then((res) => {
+    const divTopics = document.querySelector("div.topics");
+    const topicArr = res.data.topics;
+    // console.log(topicArr);
+    topicArr.forEach((x) => {
+      const tab = createTab(x);
+      divTopics.appendChild(tab);
     });
+  })
+  .catch((e) => {
+    console.log(e);
+  });
 // }
 // createTabs();
+
+function createTab(tabname) {
+  const tab = document.createElement("div");
+  tab.classList.add("tab");
+  tab.textContent = tabname;
+
+  tab.addEventListener("click", (e) => {
+    const activeTab = document.querySelector("div.active-tab");
+    if (activeTab !== null) {
+      activeTab.classList.remove("active-tab");
+    }
+    e.target.classList.add("active-tab");
+  });
+
+  return tab;
+}
+
+function handleTabs(e) {
+  const activeTab = document.querySelector("div.activeTab");
+  if (activeTab !== null) {
+    activeTab.classList.remove("active-tab");
+  }
+  console.log(activeTab);
+  e.target.classList.add("active-tab");
+  // const target = e.target;
+  //  if (target.classList.contains("active-tab")) {
+  //    target.classList.remove("active-tab");
+  //  } else {
+  //    target.classList.add("active-tab");
+  //  }
+  // const divTopics = document.querySelector("div.topics");
+  // console.log(divTopics);
+  // const topics = Array.from(document.querySelectorAll("div.tab"));
+  // console.log(topics);
+}
