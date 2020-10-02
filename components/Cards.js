@@ -53,12 +53,16 @@ const cardsContainer = document.querySelector('.cards-container');
 const articleobj = 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(res =>{
-     artMaker(res.data.articles)
-    
-    
-
+     cardMaker(res.data.articles)
+})
+.catch(err => {
+    console.log('error', err)
 })
 
-
-
-
+function cardMaker(obj) {
+    for(let key in obj) {
+        obj[key].forEach((article) => {
+            cardsContainer.appendChild(artMaker(article))
+        })
+    }
+}
