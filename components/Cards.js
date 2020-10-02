@@ -1,39 +1,35 @@
 
 axios.get('https://lambda-times-api.herokuapp.com/articles')
 .then(res => {
+   console.log(res.data.articles)
+   const bigObject = res.data.articles 
    
-   
-        const array = res.data.articles.bootstrap
-        array.forEach(item => {
-        const newCard = cardMaker(item)
-        articleParent.append(newCard)
-        })
-        const array2 = res.data.articles.javascript
-        array2.forEach(item => {
-        const newCard = cardMaker(item)
-        articleParent.append(newCard)
-        })
-        const array3 = res.data.articles.jquery
-        array3.forEach(item => {
-        const newCard = cardMaker(item)
-        articleParent.append(newCard)
-        })
-        const array4 = res.data.articles.node
-        array4.forEach(item => {
-        const newCard = cardMaker(item)
-        articleParent.append(newCard)
-        })
-        const array5 = res.data.articles.technology
-        array5.forEach(item => {
-        const newCard = cardMaker(item)
-        articleParent.append(newCard)
-        })
+   const articleKeys = Object.keys(bigObject)
+   articleKeys.forEach(key => {
+     console.log(key)
+     const array = res.data.articles[key]
+     array.forEach(item => {
+     const newCard = cardMaker(item)
+     articleParent.append(newCard)
+     })
+   })    
+   //Event Listener if click on card, console.log headline
+   const theCards = document.querySelectorAll('.card')
+   theCards.forEach(elem => { 
+    elem.addEventListener('click', (event) => {
+      console.log(event.target.textContent)
+    })
+})
 })
 .catch(drama => {
   // handle the drama
   console.log(drama)
 })
 
+//const oneCard = querySelector
+//oneCard.addEventListener('click', (event) => {
+//    console.log(event.target)
+//})
 //Entry point for articles
 const articleParent = document.querySelector('.cards-container')
 
@@ -85,4 +81,4 @@ console.log(cardMaker())
 //
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
-// Use your function to create a card for each of the articles, and append each card to the DOM.
+// Use your function to create a card for each of the articles, and append ///each card to the DOM.
