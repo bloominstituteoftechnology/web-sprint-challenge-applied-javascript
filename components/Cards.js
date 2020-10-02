@@ -23,7 +23,13 @@
 const cardsContainer = document.querySelector('.cards-container');
 axios.get('https://lambda-times-api.herokuapp.com/articles')
     .then(info => {
-        console.log(info);
+        //Cycle through our data.articles -- Its an object
+        for (const [key, value] of Object.entries(info.data.articles)) {
+            //Now we take each article topic (arrays) and cycle through them - using their data to populate cardMaker
+            value.forEach(item => {
+                cardsContainer.append(cardMaker(item));
+            })
+        }
     })
     .catch(err => {
         console.log(err);
@@ -54,8 +60,8 @@ function cardMaker(articleObj) {
     nameSpan.textContent = `By ${articleObj.authorName}`;
     //Add Event Listners
     card.addEventListener('click', () => {
-        
+        console.log(headline.textContent);
     })
-    console.log(card);
+    // console.log(card);
     return card
 }
