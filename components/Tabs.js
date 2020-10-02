@@ -18,7 +18,7 @@ axios
 		const topics = res.data.topics;
 		topics.forEach((topic) => {
 			const tab = tabMaker({ topic: topic });
-			console.log(tab);
+			// console.log(tab);
 			entry.append(tab);
 		});
 	})
