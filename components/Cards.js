@@ -23,13 +23,34 @@
 
 
 const entry = document.querySelector('.cards-container')
+axios.get('https://lambda-times-api.herokuapp.com/articles')
+    .then(res => {
 
-function cardMaker({ article }) {
+        const articles = res.data.articles
+        console.log(articles)
+
+        const js = res.data.articles.javascript
+        const bs = res.data.articles.bootstrap
+        const tech = res.data.articles.technology
+        const jq = res.data.articles.jquery
+        const node = res.data.articles.node
+        const articlesArray = [js, bs, tech, jq, node]
+
+        articlesArray.forEach(items => {
+            items.forEach(item => {
+                entry.append(cardMaker(item))
+            })
+        })
+    })
+    .catch(err => console.log(err))
+
+function cardMaker(article) {
     const cardDiv = document.createElement('div')
     cardDiv.className = 'card'
 
     const headlineDiv = document.createElement('div')
     headlineDiv.className = 'headline'
+    headlineDiv.textContent = article.headline
 
     const authorDiv = document.createElement('div')
     authorDiv.className = 'author'
@@ -38,27 +59,20 @@ function cardMaker({ article }) {
     imgDiv.className = 'img-container'
 
     const authImg = document.createElement('img')
+    authImg.src = article.authorPhoto
 
     const nameSpan = document.createElement('span')
+    nameSpan.textContent = `By: ${article.authorName}`
 
-    cardDiv.append(headlineDiv, authorDiv, nameSpan)
+    cardDiv.append(headlineDiv, authorDiv)
 
-    authorDiv.append(imgDiv)
+    authorDiv.append(imgDiv, nameSpan)
 
     imgDiv.append(authImg)
 
+    cardDiv.addEventListener('click', (e) => {
+        console.log(headlineDiv.textContent, e.target)
+    })
+
     return cardDiv
 }
-
-
-axios.get('https://lambda-times-api.herokuapp.com/articles')
-    .then(res => {
-        console.log(res.data.articles)
-        const js = res.data.articles.javascript
-        const bs = Array.from(res.data.articles.bootstrap)
-        const tech = Array.from(res.data.articles.technology)
-        const jq = Array.from(res.data.articles.jquery)
-        const node = Array.from(res.data.articles.node)
-        console.log(js)
-    })
-    .catch(err => console.log(err))
