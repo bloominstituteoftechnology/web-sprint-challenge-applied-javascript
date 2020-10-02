@@ -16,19 +16,23 @@ function Header() {
     const headerBox = document.createElement('div');
     const dateContent = document.createElement('span');
     const title = document.createElement('h1');
-    const temperature = document.createElement('span')
+    const temperature = document.createElement('span');
 
-    headerBox.classList.add('header')
-    dateContent.classList.add('date')
-    temperature.classList.add('temp')
+    headerBox.classList.add('header');
+    dateContent.classList.add('date');
+    temperature.classList.add('temp');
 
-    headerBox.appendChild(dateContent)
-    headerBox.appendChild(title)
-    headerBox.appendChild(temperature)
+    headerBox.appendChild(dateContent);
+    headerBox.appendChild(title);
+    headerBox.appendChild(temperature);
+
+    dateContent.textContent = 'MARCH 28, 2020';
+    title.textContent = 'Lambda Times';
+    temperature.textContent = '98°';
 
     return headerBox
 }
 
-const mainContainer = document.querySelector('.header-container');
+const headerContainer = document.querySelector('.header-container');
 
-mainContainer.appendChild(Header);
+headerContainer.append(Header());
