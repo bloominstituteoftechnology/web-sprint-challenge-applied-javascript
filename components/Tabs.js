@@ -4,7 +4,6 @@ axios.get('https://lambda-times-api.herokuapp.com/topics')
     const array = res.data.topics
     array.forEach(item => {
         const newTab = makeTabs(item)
-        console.log(newTab)
         tabsParent.append(newTab)
     })   
   })
@@ -26,7 +25,7 @@ function makeTabs(arrayItem) {
     //Return tabs
     return tab
 }
-console.log(makeTabs())
+
 
 // STEP 2: Create tabs
 // -----------------------
