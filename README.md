@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+The DOM is the Document Object Model of a webpage. It treats HTML as a tree structure where each node represents an object or element of that document.
+
 2. What is an event?
+
+An event is anything happening on the webpage. EX. click, scroll, reload, animation, etc.
 
 3. What is an event listener?
 
+A procedure in Java Script that waits for an event to occur, then executes an action or task.
+
 4. Why would we convert a NodeList into an Array?
 
+so the data is more accesible.
+
 5. What is a component?
+
+A piece of independant, reusable code that is a mix of HTML, CSS and JavaScript.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
