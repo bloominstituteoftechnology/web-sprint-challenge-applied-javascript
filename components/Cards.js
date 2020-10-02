@@ -26,11 +26,16 @@ import axios from "axios";
 axios.get("https://lambda-times-api.herokuapp.com/articles")
 .then(res => {
   const articles = res.data.articles;
-  for (const [topic, articlesArr] of Object.entries(articles)) {
-    articlesArr.forEach(arr => {
-      document.querySelector("div.cards-container").appendChild(makeArticle(arr));
+  for (const articlesArr of Object.values(articles)) {
+    articlesArr.forEach(article => {
+      document.querySelector("div.cards-container").appendChild(makeArticle(article));
     })
   }
+  // for (const [topic, articlesArr] of Object.entries(articles)) {
+  //   articlesArr.forEach(arr => {
+  //     document.querySelector("div.cards-container").appendChild(makeArticle(arr));
+  //   })
+  // }
 })
 .catch(e => {
   console.log(e);
@@ -59,7 +64,7 @@ function makeArticle(article) {
   imgAuthor.setAttribute("src", article.authorPhoto);
   spanAuthor.textContent = `By ${article.authorName}`;
 
-  card.addEventListener("click", (e) => {
+  card.addEventListener("click", () => {
     console.log(headline.innerText);
   })
   
