@@ -28,13 +28,19 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
-2. What is an event?
+ The Dom is short for Document Object Model. Its a programming interface for HTMl and help with changing the styling structure and content
+ 2. What is an event?
 
-3. What is an event listener?
+ Events are almost trigger points that creatsa an action. For an example when you click a button to go to the pext page. 
+ 3. What is an event listener?
 
-4. Why would we convert a NodeList into an Array?
+ The addEventListener() method attaches an event handler to the specified element.
+ 4. Why would we convert a NodeList into an Array?
 
-5. What is a component?
+ The querySelectorAll method returns an array-like object called a node list. These data structures are referred to as “Array-like”, because they appear as an array, but can not be used with array methods like map and forEach.
+ 5. What is a component?
+ Components are independent and reusable bits of code.
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 

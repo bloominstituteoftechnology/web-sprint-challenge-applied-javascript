@@ -11,25 +11,30 @@
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
 
-function Header() {
-    const theNewDiv = document.createElement('div')
-    theNewDiv.classList.add('header')
-    theNewDiv.createElement('span')
-    theNewDiv.classList.add('date')
-    theNewDiv.createElement('h1')
-    theNewDiv.createElement('span')
-    theNewDiv.classList.add('temp')
+function Header() {}
+ const headerContainer = document.querySelector('.header-container');
 
-    const date = document.querySelector('div .header span .date')
-    date.textContent = 'MARCH 28, 2020'
+ function Header(todaysDate, headingContent, tempature)  {
+     //Top div
+     const header = document.createElement('div');
+     header.classList.add('header');
+     headerContainer.appendChild(header);
+     //Date span
+     const date = document.createElement('span');
+     date.textContent = todaysDate;
+     date.classList.add('date');
+     header.appendChild(date);
+     //h1 header
+     const heading = document.createElement('h1');
+     heading.textContent = headingContent;
+     header.appendChild(heading);
+     //Temp span
+     const temp = document.createElement('span');
+     temp.classList.add('temp');
+     temp.textContent = tempature;
+     header.appendChild(temp);
 
-    const mainHeader = document.querySelector('div .header h1')
-    mainHeader.textContent = 'Lambda Times'
-
-    const temp = document.querySelector('div .header span .temp')
-    temp.textContent = '98º'
-
-    return theNewDiv
-}
-
-document.body.headerContainer.prepend(Header)
+     console.log(header);
+     return header;
+ }
+  Header('June 14, 2020', 'Lamba Times', '78 degress') 
