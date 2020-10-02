@@ -21,18 +21,19 @@
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 function articleMaker(obj){
-        const card = document.createElement('div');
-        const headLine = document.createElement('div')
-        const author = document.createElement('div');
-        const imgDiv = document.createElement('div');
-        const img = document.createElement('img');
-        const span = document.createElement('span');
+        const card = document.createElement('div'); //Write a function 
+        const headLine = document.createElement('div') // <div class="headline">{Headline of article}</div>
+        const author = document.createElement('div');  //   <div class="author">
+        const imgDiv = document.createElement('div'); //< class="img-container">
+        const img = document.createElement('img');  //<img src={url of authors image} //
+        const span = document.createElement('span'); //<span>By {author's name}</span>
         
+        //setting class names
         card.classList.add('card');
         headLine.classList.add('headline');
         author.classList.add('author');
         imgDiv.classList.add('img-container');
-        img.setAttribute('src',obj.authorPhoto);
+        img.setAttribute('src',obj.authorPhoto); // img src
         
         span.textContent = obj.authorName;
         headLine.textContent = obj.headline;
