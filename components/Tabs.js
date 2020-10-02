@@ -21,6 +21,7 @@ function tabMaker(topics) {
     tabBox.textContent = topics
 
     return topicBox.appendChild(tabBox)
+
 }
 
 axios.get('https://lambda-times-api.herokuapp.com/topics')
