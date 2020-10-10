@@ -65,10 +65,10 @@ console.log(articleArr);
 axios.get('https://lambda-times-api.herokuapp.com/articles')
 
     .then((successResponse) => {
-        console.log('cards', successResponse);
-        successResponse.articleArr.articles.forEach(articles => {
+        console.log('cards', successResponse)
+        successResponse.data.articles.forEach(articles => {
             const newArticle = articleMaker(articles.data.headline, articles.data.authorPhoto, articles.data.authorName);
-            articleCards.appendChild(newArticle);
+            articleCards.appendChild(newArticle)
         })
 
     })
