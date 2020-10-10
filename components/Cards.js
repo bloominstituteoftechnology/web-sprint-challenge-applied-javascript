@@ -56,13 +56,17 @@ const articleMaker = (headline, authorPhoto, authorName) => {
 
 }
 
-const articleCards = document.querySelector('.cards-container')
+const articleCards = document.querySelector('.cards-container');
+const nodeList = document.querySelectorAll('.articles');
+const articleArr = Array.from(nodeList);
+console.log(articleArr);
+
 
 axios.get('https://lambda-times-api.herokuapp.com/articles')
 
     .then((successResponse) => {
         console.log('cards', successResponse);
-        successResponse.data.articles.forEach(articles => {
+        successResponse.articleArr.articles.forEach(articles => {
             const newArticle = articleMaker(articles.data.headline, articles.data.authorPhoto, articles.data.authorName);
             articleCards.appendChild(newArticle);
         })
