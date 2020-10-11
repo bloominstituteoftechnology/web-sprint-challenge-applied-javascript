@@ -16,14 +16,12 @@ import axios from 'axios'
 
 axios.get('https://lambda-times-api.herokuapp.com/topics').then((res)=> {
     console.log(res.data);
-    res.topics.forEach(element => {
+    res.data.topics.forEach(element => {
         
         topic.appendChild(tabMaker(element))
-        
-    }).catch((err) => {
-        console.log("error 2");
-        debugger;
-      });
+
+    })
+    
 });
 
 function tabMaker(data) {
@@ -34,6 +32,8 @@ function tabMaker(data) {
 
     div.textContent = data
 
+
+    return div
 }
 
 const topic = document.querySelector('div.topics')
