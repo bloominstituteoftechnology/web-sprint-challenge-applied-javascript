@@ -27,14 +27,15 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
-
+The DOM is an interface that allows HTML and CSS to be treated as nodes which are objects that represent part of the document. it is the Document Object Model.
 2. What is an event?
-
+An event is something that can be either user-generated (click, scroll, etc.) or computer-generated (API, animation, video, etc.). Events have properties and methods.
 3. What is an event listener?
-
+An event listener is something that allows an event to take place by a handle or something. 
 4. Why would we convert a NodeList into an Array?
-
+Because NodeLists are objects and they have parent/child relationships. Arrays are easier to work with.
 5. What is a component?
+A component is like a function in isolation and returns HTML elements. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
