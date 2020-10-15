@@ -12,18 +12,19 @@
 
 const makeTopics = document.querySelector(".topics");
 const makeTabs = (data) => {
-    const newTab = document.createElement('div');
-    newTab.classList.add('tab');
-    newTab.textContent = data;
+  const newTab = document.createElement('div');
+  newTab.classList.add('tab');
+  newTab.textContent = data;
 
-    return newTab;
+  return newTab;
 }
 
 axios
   .get("https://lambda-times-api.herokuapp.com/topics")
-  .then((response) => {
-    response.data.topics.forEach(data => {
-        makeTopics.appendChild(makeTabs(data));
+  .then((response) => { //asyncronous code-will wait until later to run
+    response.data.topics.forEach(data => { //calls a function once for each element in an array, in order. 
+      makeTopics.appendChild(makeTabs(data));
+      console.log(data);
     })
   })
   .catch((err) => {
