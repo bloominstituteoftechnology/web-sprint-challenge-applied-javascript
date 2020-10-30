@@ -31,6 +31,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
     let tabData = res.data.topics;
     tabData.forEach(item => {
         topics.appendChild(tabMaker(item));
+    
     })
      })
 .catch((err) => {
