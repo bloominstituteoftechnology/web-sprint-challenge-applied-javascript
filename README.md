@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+DOM stand for Document Object Model. The DOM is a user interface that allows a developer to add functionality to a static website.
+
 2. What is an event?
+
+An event is whenever the user does something. Clicking, scrolling, reloading the page, these are all events. Other events might be the page failing to load or things like that.
 
 3. What is an event listener?
 
+An event listener is something we set up on an element that watches for a certain event. Then when that event happens, it runs a callback function.
+
 4. Why would we convert a NodeList into an Array?
 
+NodeList's do not have the Array methods—besides for each. If we convert a nodelist to an array it is much easier to work with.
+
 5. What is a component?
+
+A component is a reusable piece of code that has the same styling that we can use in multiple places on our webpage. It helps us keep our code DRY.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
