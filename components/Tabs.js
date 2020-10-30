@@ -13,15 +13,54 @@
 
 import axios from "axios"
 
-const entryPoint = document.querySelector('topics')
-    axios
-        .get('https://lambda-times-api.herokuapp.com/topics')
-        .then(res => {
-            console.log(res)
-        })
-        .catch( error => {
-            console.log(error)
-        })
+axios
+    .get("https://lambda-times-backend.herokuapp.com/topics")
+    .then((res) => topicTab(res.data))
+
+    .catch((err) => {
+        console.log(err)
+    })
+
+const topics = document.querySelector('.topics')
+function topicTab(tabs) {
+    tabs.topics.map((obj) => {
+        const tab = document.createElement("div");
+
+        tab.textContent = obj;
+
+        tab.classList.add("tab");
+
+        topics.appendChild(tab);
+    });
+}
+
+
+
+
+//     axios
+//         .get('https://lambda-times-api.herokuapp.com/topics')
+//         .then((res) => tabs(res.data))
+
+//         .catch((error) => {
+//             console.log("there is an issue", error)
+//         })
+
+// const entryPoint4 = document.querySelector('.topics')
+// function tabs(info){
+//     info.entryPoint4.map((obj) => {
+//         const tab = document.createElement('div');
+
+//     tab.classList.add('tab');
+
+//     tab.textContent = obj;
+
+//     topics.appendChild(tabs);  
+//     });
+
+// }
+
+
+
 
 
 
