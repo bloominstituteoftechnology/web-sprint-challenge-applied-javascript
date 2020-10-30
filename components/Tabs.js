@@ -9,3 +9,16 @@
 //    <div class="tab">topic here</div>
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
+const topics = [
+    "javascript",
+    "bootstrap",
+    "technology",
+    "jquery",
+    "node.js"
+]
+function makeTabs(){ 
+topics.forEach((item) => {
+item.createElement("div").classList.add("tab").textContent("topic here")
+});
+} 
+makeTabs(topics);
