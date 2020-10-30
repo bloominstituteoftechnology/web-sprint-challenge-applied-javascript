@@ -26,8 +26,12 @@ axios
 .then(res => 
     {
         const authorData = res.data.articles
-        const cardsGalore = CardMaker(authorData)
-        cardsCarrier.appendChild(cardsGalore)
+        for(let value in authorData) {
+            authorData[value].forEach((item) => {
+                let mainData = CardMaker(item)
+                cardsCarrier.appendChild(mainData)
+            })
+        }
     })
 
 .catch(err => {
@@ -57,13 +61,13 @@ function CardMaker(obj) {
     author.appendChild(authorName)
 
     // //Text Content
-    headLine.textContent = obj.javascript.headline
-    img.src = obj.javascript.authorPhoto
-    authorName.textContent = obj.javascript.authorName
+    headLine.textContent = obj.headline;
+    img.src = obj.authorPhoto;
+    authorName.textContent = obj.authorName;
 
     //Interactivity 
     cardHolder.addEventListener('click', () => {
-        console.log(headLine)
+        console.log(headLine.textContent)
     })
 
     return cardHolder;
