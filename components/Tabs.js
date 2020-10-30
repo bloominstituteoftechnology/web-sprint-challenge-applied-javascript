@@ -15,11 +15,14 @@ import axios from "axios";
 axios
     .get("https://lambda-times-api.herokuapp.com/topics")
     .then(function(response) {
+        
+        const topics = document.querySelector(".topics");
+
         response.data.topics.forEach(function(item) {
             const tab = document.createElement("div");
             tab.className = "tab";
             tab.innerText = item;
-            document.querySelector(".topics").appendChild(tab);
+            topics.appendChild(tab);
         })   
     })
     .catch(function(error) {

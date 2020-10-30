@@ -20,3 +20,55 @@
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
+
+const { default: Axios } = require("axios");
+
+Axios
+    .get("https://lambda-times-api.herokuapp.com/articles")
+    .then(function(response) {
+        console.log(response);
+        
+            const objectArray = Object.entries(response.data.articles);
+            console.log(objectArray);
+            objectArray.forEach(function(thing){
+                thing[1].forEach(function(item) {
+                    //Create elements
+                    const card = document.createElement("div");
+                    const headline = document.createElement("div");
+                    const authorCont = document.createElement("div");
+                    const imgCont = document.createElement("div");
+                    const img = document.createElement("img");
+                    const authorName = document.createElement("span");
+                    
+                    //Set classes
+                    card.className = "card";
+                    headline.className = "headline";
+                    authorCont.className = "author";
+                    imgCont.className = "img-container";
+     
+                    //Set Attributes
+                    img.setAttribute("src", item.authorPhoto);
+     
+                    //Set values
+                    headline.innerText = item.headline;
+                    authorName.innerText = item.authorName;
+     
+                    //Append
+                    document.querySelector(".cards-container").appendChild(card);
+                    card.appendChild(headline);
+                    card.appendChild(authorCont);
+                    authorCont.appendChild(imgCont);
+                    authorCont.appendChild(authorName);
+                    imgCont.appendChild(img);
+     
+                    //Add listener
+                    card.addEventListener("click", function() {
+                        console.log(headline.innerText);
+                    });
+                }); 
+            });
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+
