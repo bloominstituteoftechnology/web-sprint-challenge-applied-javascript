@@ -21,15 +21,15 @@ axios
         console.log('Dang', err);
     })
 
+
 const topicsContainer = document.querySelector('.topics')
 
 function tabMaker(data){
     const tab = document.createElement('div');
     tab.classList.add('tab');
-    tab.textContent = (data);
-    topicsContainer.appendChild(tab);
+    tab.textContent = data;
 
     return tab;
 }
 
-console.log(tabMaker())
+// console.log(tabMaker())
