@@ -20,3 +20,67 @@
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
+
+const { default: Axios } = require("axios");
+
+Axios
+.get('https://lambda-times-api.herokuapp.com/articles')
+.then((resolved) =>{
+    const seperateCards = resolved.data.articles;
+    const javaScript = seperateCards.javascript;
+    const bootStrap = speperateCards.bootstrap;
+    const technology = speperateCards.technology;
+    const jQuery = speperateCards.jquery;
+    const node = speperateCards.node;
+
+    javaScript.forEach((info) =>{
+        
+    });
+
+    bootStrap.forEach((info) =>{
+
+    });
+
+    technology.forEach((info) =>{
+
+    });
+
+    jQuery.forEach((info) =>{
+
+    });
+
+    node.forEach((info) =>{
+
+    });
+});
+
+function cardCreator(object){
+
+    //created elements
+    const card = document.createElement('div');
+    const headLine = document.createElement('div');
+    const author = document.createElement('div')
+    const imgContainer = document.createElement('div');
+    const image = document.createElement('img');
+    const authorName = document.createElement('span');
+
+    //Gave calss name to specific elements
+    card.classList.add('card');
+    headLine.classList.add('headline');
+    author.classList.add('author');
+    imgContainer.classList.add('img-container');
+    
+    //added text content
+    headLine.textContent = object.headline
+    image.src = object.authoPhoto;
+    authorName.textContent = object.authorName
+
+    //created order
+    card.appendChild(headLine);
+    card.appendChild(author);
+    author.appendChild(imgContainer);
+    author.appendChild(image);
+    card.appendChild(authorName);
+
+    return card;
+}
