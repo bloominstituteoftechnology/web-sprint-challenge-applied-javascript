@@ -23,38 +23,42 @@
 
 const { default: Axios } = require("axios");
 
+const cardContainer = document.querySelector('div.cards-container');
+
 Axios
 .get('https://lambda-times-api.herokuapp.com/articles')
 .then((resolved) =>{
     const seperateCards = resolved.data.articles;
     const javaScript = seperateCards.javascript;
-    const bootStrap = speperateCards.bootstrap;
-    const technology = speperateCards.technology;
-    const jQuery = speperateCards.jquery;
-    const node = speperateCards.node;
+    const bootStrap = seperateCards.bootstrap;
+    const technology = seperateCards.technology;
+    const jQuery = seperateCards.jquery;
+    const node = seperateCards.node;
 
     javaScript.forEach((info) =>{
-        
+        // console.log(info);
+        cardContainer.appendChild(cardCreator(info));
     });
 
     bootStrap.forEach((info) =>{
-
+        cardContainer.appendChild(cardCreator(info));
     });
 
     technology.forEach((info) =>{
-
+        cardContainer.appendChild(cardCreator(info));
     });
 
     jQuery.forEach((info) =>{
-
+        cardContainer.appendChild(cardCreator(info));
     });
 
     node.forEach((info) =>{
-
+        cardContainer.appendChild(cardCreator(info));
     });
 });
 
 function cardCreator(object){
+    console.log(object)
 
     //created elements
     const card = document.createElement('div');
@@ -72,7 +76,7 @@ function cardCreator(object){
     
     //added text content
     headLine.textContent = object.headline
-    image.src = object.authoPhoto;
+    image.src = object.authorPhoto;
     authorName.textContent = object.authorName
 
     //created order
@@ -82,5 +86,11 @@ function cardCreator(object){
     author.appendChild(image);
     card.appendChild(authorName);
 
+    //added event listener
+    card.addEventListener('click', () =>{
+        console.log(headLine);
+    });
+
     return card;
 }
+
