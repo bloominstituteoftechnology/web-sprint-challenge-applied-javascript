@@ -8,4 +8,23 @@
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
 //
+
+// const { default: Axios } = require("axios");
+import axios from "axios";
+
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
+const topics = document.querySelector(".topics");
+//Tab creation function
+
+axios
+  .get("https://lambda-times-backend.herokuapp.com/topics")
+  .then((res) => topicTab(res.data));
+
+function topicTab(tabs) {
+  tabs.topics.map((obj) => {
+    const tab = document.createElement("div");
+    tab.textContent = obj;
+    tab.classList.add("tab");
+    topics.appendChild(tab);
+  });
+}
