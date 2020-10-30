@@ -20,3 +20,72 @@
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
+
+axios
+.get('https://lambda-times-api.herokuapp.com/articles')
+.then(response => {
+    response.data.articles.javascript.forEach((item) => {
+        cardsContainer.appendChild(articleCardMaker(item));
+        cardsContainer.addEventListener('click', event => {
+            console.log(item.headline);
+        });
+    })
+  response.data.articles.bootstrap.forEach((item) => {
+        cardsContainer.appendChild(articleCardMaker(item));
+        cardsContainer.addEventListener('click', event => {
+            console.log(item.headline);
+        });
+    })
+    response.data.articles.technology.forEach((item) => {
+        cardsContainer.appendChild(articleCardMaker(item));
+        cardsContainer.addEventListener('click', event => {
+            console.log(item.headline);
+        });
+    })
+    response.data.articles.jquery.forEach((item) => {
+        cardsContainer.appendChild(articleCardMaker(item));
+        cardsContainer.addEventListener('click', event => {
+            console.log(item.headline);
+        });
+    })
+    response.data.articles.node.forEach((item) => {
+        cardsContainer.appendChild(articleCardMaker(item));
+        cardsContainer.addEventListener('click', event => {
+            console.log(item.headline);
+        });
+    })
+})
+.catch(err => {
+    console.log('OOPS', err)
+})
+
+const cardsContainer = document.querySelector('.cards-container')
+
+function articleCardMaker(artObj){
+    const card = document.createElement('div');
+    const artHeadline = document.createElement('div');
+    const author = document.createElement('div');
+    const imgContainer = document.createElement('div');
+    const image = document.createElement('img');
+    const authName = document.createElement('span');
+
+    card.classList.add('card');
+    artHeadline.classList.add('headline');
+    author.classList.add('author');
+    imgContainer.classList.add('img-container');
+    
+    artHeadline.textContent = artObj.headline;
+    authName.textContent = `By ${artObj.authorName}`;
+    image.src = artObj.authorPhoto
+
+    card.appendChild(artHeadline);
+    card.appendChild(author);
+
+    author.appendChild(imgContainer);
+    author.appendChild(authName);
+
+    imgContainer.appendChild(image);
+
+    return card
+}
+
