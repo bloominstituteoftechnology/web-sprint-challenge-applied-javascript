@@ -20,46 +20,21 @@
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
+const cardsContainer = document.querySelector('.cards-container')
 
 axios
 .get('https://lambda-times-api.herokuapp.com/articles')
 .then(response => {
-    response.data.articles.javascript.forEach((item) => {
-        cardsContainer.appendChild(articleCardMaker(item));
-        cardsContainer.addEventListener('click', event => {
-            console.log(item.headline);
+    Object.keys(response.data.articles).forEach(topic => {
+        response.data.articles[topic].forEach(item => {
+            cardsContainer.appendChild(articleCardMaker(item));
         });
-    })
-  response.data.articles.bootstrap.forEach((item) => {
-        cardsContainer.appendChild(articleCardMaker(item));
-        cardsContainer.addEventListener('click', event => {
-            console.log(item.headline);
-        });
-    })
-    response.data.articles.technology.forEach((item) => {
-        cardsContainer.appendChild(articleCardMaker(item));
-        cardsContainer.addEventListener('click', event => {
-            console.log(item.headline);
-        });
-    })
-    response.data.articles.jquery.forEach((item) => {
-        cardsContainer.appendChild(articleCardMaker(item));
-        cardsContainer.addEventListener('click', event => {
-            console.log(item.headline);
-        });
-    })
-    response.data.articles.node.forEach((item) => {
-        cardsContainer.appendChild(articleCardMaker(item));
-        cardsContainer.addEventListener('click', event => {
-            console.log(item.headline);
-        });
-    })
+    });
 })
 .catch(err => {
     console.log('OOPS', err)
-})
+});
 
-const cardsContainer = document.querySelector('.cards-container')
 
 function articleCardMaker(artObj){
     const card = document.createElement('div');
@@ -85,6 +60,8 @@ function articleCardMaker(artObj){
     author.appendChild(authName);
 
     imgContainer.appendChild(image);
+
+    card.addEventListener('click', event => console.log (artObj.headline))
 
     return card
 }
