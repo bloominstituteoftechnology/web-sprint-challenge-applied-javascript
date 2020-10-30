@@ -10,23 +10,36 @@
 //
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
-// const header = document.querySelector('.header')
-// console.log(header)
-function heading (title, content){
-    const header = document.createElement('div')
-    const span = document.createElement('span')
-    const date = document.createElement('div')
-    const headerTitle = document.createElement('h1')
-    const temp = document.createElement('div')
-    header.appendChild(span)
-    header.appendChild(date);
-    header.appendChild(headerTitle);
-    header.appendChild(temp);
-    header.classList.add('header')
-   
-    headerTitle.textContent = title
-    date.textContent = content
-    temp.textContent = temp
-    return header
-}
-console.log(heading())
+
+const headerContainer = document.querySelector(".header-container");
+
+let header = (date, title, temp) => {
+  const head = document.createElement("div");
+  const dates = document.createElement("span");
+  const titles = document.createElement("h1");
+  const temps = document.createElement("span");
+
+  //appendchild
+
+  headerContainer.appendChild(head);
+  head.appendChild(dates);
+  head.appendChild(titles);
+  head.appendChild(temps);
+
+  //create class
+
+  head.classList.add("header");
+  dates.classList.add("date");
+  temps.classList.add("temp");
+
+  //content
+
+  dates.textContent = date;
+  titles.textContent = title;
+  temps.textContent = temp;
+
+  //return
+
+  return head;
+};
+header("october 30, 2020", "Lambda Times", "65 degrees");
