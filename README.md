@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+    A programming interface that repesents a HTML page so that programs can change the document structure. Means Document Object Model
+
 2. What is an event?
+
+    An action with a conditional trigger, that changes something about elements in the code
 
 3. What is an event listener?
 
+    A method of creating an 'event' with a conditional trigger
+
 4. Why would we convert a NodeList into an Array?
 
+    So that you can treat it as an array, and use things that work with arrays
+
 5. What is a component?
+
+    A function, or part of a class, that can be used many times without having to be altered.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
