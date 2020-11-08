@@ -11,7 +11,7 @@
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
 
-function Header() {
+function HeaDy() {
     const div = document.createElement('div');
     div.classList.add('header');
     const divhtml = `<span class="date">MARCH 28, 2020</span>
@@ -21,4 +21,4 @@ function Header() {
     const header = document.getElementsByClassName('header-container')[0]
     header.appendChild(div);
 }
-Header()
+HeaDy()
