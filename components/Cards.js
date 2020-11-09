@@ -39,7 +39,7 @@ axios.get('https://lambda-times-api.herokuapp.com/articles')
   function CardMaker(response){
     // <div class="card">
     const card = document.createElement('div')
-    card.attributes = 'class="card"';
+    card.setAttribute('class','card');
     // //   <div class="headline">{Headline of article}</div>
     const headline = document.createElement('div');
     headline.setAttribute('class','headline')
