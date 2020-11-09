@@ -9,3 +9,21 @@
 //    <div class="tab">topic here</div>
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
+const createTab = () =>{
+    const tab= document.createElement('div')
+    tab.classList.add(tab)
+    tab..forEach(element => {
+        
+    });
+}
+const getData = () =>{
+    console.log('get data')
+    axios.get(URL + 1)
+      .then(res => {
+          debugger
+      })
+      .catch(err =>{
+          debugger
+      })
+
+}
