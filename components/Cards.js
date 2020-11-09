@@ -20,3 +20,55 @@
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
+
+
+axios
+.get(`https://lambda-times-api.herokuapp.com/articles`)
+.then(res => {
+    console.log(res.data.articles)
+})
+.then(res => {
+    res.data.articles.bootstrap.forEach(item => {
+      articleCard.appendChild(newCard(item))
+})
+res.data.articles.javascript.forEach(item => {
+    articleCard.appendChild(newCard(item))
+})
+res.data.articles.jquery.forEach(item => {
+    articleCard.appendChild(newCard(item))
+})
+res.data.articles.node.forEach(item => {
+    articleCard.appendChild(newCard(item))
+})
+res.data.articles.technology.forEach(item => {
+    articleCard.appendChild(newCard(item))
+})
+
+.catch(err => {
+    console.log(`Error Found:`, err);
+})
+
+// Write a function that takes a single article object and returns the following markup:
+//
+// <div class="card">
+//   <div class="headline">{Headline of article}</div>
+//   <div class="author">
+//     <div class="img-container">
+//       <img src={url of authors image} />
+//     </div>
+//     <span>By {author's name}</span>
+//   </div>
+// </div>
+function newCard (obj) {
+    const card = document.createElement(`div`);
+    const headline = document.createElement(`div`);
+    const author = document.createElement(`div`);
+    const imgContainer = document.createElement(`div`);
+    const img = document.createElement(`img`);
+    const name = document.createElement(`span`);
+
+    card.classList.add(`card`);
+    headline
+}
+
+const articleCard = document.querySelector(`div.cards-container`)
