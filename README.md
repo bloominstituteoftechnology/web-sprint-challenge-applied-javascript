@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+-DOM stands for "Document Object Model" The DOM acts like a tree structure where each node is and object that shows a part of the document.
+
 2. What is an event?
+
+-An event is what happens when the user does something to the page, once it loads it is called an event.
 
 3. What is an event listener?
 
+-It waits for an event to take place.
+
 4. Why would we convert a NodeList into an Array?
 
+-An array can hold more than one value at a time.
+
 5. What is a component?
+
+-They are reusable bits of code.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -44,25 +54,25 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 #### Repository Set Up
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: `git checkout -b <firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
+- [ - ] Create a forked copy of this project
+- [ x ] Add your team lead as collaborator on Github
+- [ - ] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [ - ] Create a new branch: `git checkout -b <firstName-lastName>`.
+- [ - ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
 - [ ] Push commits: `git push origin <firstName-lastName>`
 
 #### Launching the App
 
-- [ ] Navigate to the root of the project with your command line
-- [ ] Run `npm install` to download the dependencies listed in the `package.json` file
-- [ ] Run `npm start` to compile the project and serve it
-- [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command
+- [ - ] Navigate to the root of the project with your command line
+- [ - ] Run `npm install` to download the dependencies listed in the `package.json` file
+- [ - ] Run `npm start` to compile the project and serve it
+- [ - ] Navigate Chrome to the URL indicated in the output of the `npm start` command
 
 ### Task 2: Project Requirements
 
 Your finished project must include all of the following requirements:
 
-- [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the `index.html` file itself.
+- [ - ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the `index.html` file itself.
 
 - [ ] Following the instructions in the `components/Header.js` file, create the Header.
 
