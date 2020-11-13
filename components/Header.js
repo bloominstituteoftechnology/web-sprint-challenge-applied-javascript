@@ -17,18 +17,15 @@ function Header(name, day, deg) {
     const title = document.createElement('h1')
     const temp = document.createElement('span')
 
-
+    div.classList.add('header')
+    date.classList.add('date')
+    temp.classList.add('temp')
     title.textContent = name
     date.textContent = day
     temp.textContent = deg
-    div.style.width = '100%'
-    date.style.width = "100%"
-    temp.style.width = '100%'
-    div.style.display = 'flex'
-    div.style.justifyContent = "space-evenly"
 
-    div.appendChild(title)
     div.appendChild(date)
+    div.appendChild(title)
     div.appendChild(temp)
 
 
