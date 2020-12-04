@@ -17,11 +17,7 @@ for (let i = 0; i < 5; i++) {
     axios
         .get("https://lambda-times-api.herokuapp.com/topics")
         .then((topics) => {
-            // const newTopics = topics.data.topics
-            
-            
                 return addTab(topics.data.topics[i])
-            
         })
     }
 
