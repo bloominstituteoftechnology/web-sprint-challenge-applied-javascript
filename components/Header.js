@@ -31,13 +31,10 @@ function header() {
     return head;
 }
 
-    const headContainer = document.querySelector(".header-container");
+const headContainer = document.querySelector(".header-container");
 
-    // const headElements = header.foreach((data) =>{
-    //     return header(data);
-    // });
-    const newHeader = header(header)
-    // headElements.foreach(headElem => {
-        headContainer.appendChild(newHeader);
-    // });
+headContainer.append(header);
+
+   
+ 
 

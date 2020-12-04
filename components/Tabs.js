@@ -9,19 +9,10 @@
 //    <div class="tab">topic here</div>
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
-axios.get(`https://lambda-times-api.herokuapp.com/topics`).then((futureData)=> {
-  console.log(futureData);
-})
-.catch((drama) =>{
-console.log(drama);
-});
-axios
-.get('https://lambda-times-api.herokuapp.com/topics')
-.then((results) => {
-const card = cardMaker(results)
- cards.appendChild(card)
-  // console.log(results.data)
-})
-.catch((err) => {
-  console.log(err);
-})
+// axios.get(`https://lambda-times-api.herokuapp.com/topics`)
+// .then((futureData)=> {
+//   console.log(futureData);
+// })
+// .catch((drama) =>{
+// console.log(drama);
+// });
