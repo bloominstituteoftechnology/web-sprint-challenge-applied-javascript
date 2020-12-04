@@ -20,43 +20,52 @@
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
-const cd = document.querySelector("cards-container")
 
+const cd = document.querySelector(".cards-container")
+console.log(cd)
 const result = axios.get("https://lambda-times-api.herokuapp.com/articles")
 .then(res => {
-    const test = res.data.articles
-   console.log(cardMaker(test))
-   console.log(test)
-
+    cardMaker(res.data.articles.javascript)
+    cardMaker(res.data.articles.bootstrap)
+    cardMaker(res.data.articles.technology)
+    cardMaker(res.data.articles.jquery)
+    cardMaker(res.data.articles.node)
 })
 .catch(err => console.log(err))
 
-function cardMaker( {obj} ) {
+function cardMaker( obj ) {
+    // iterate obj in a for each loop
+    const arr = Array.from(obj)
 
-    const main = document.createElement("div");
-    const head = document.createElement("div")
-    const auth = document.createElement("div");
-    const imgCon = document.createElement("div")
-    const image = document.createElement("img");
-    const sp = document.createElement("span");
+    arr.forEach((elem) => {
+        
+        const main = document.createElement("div");
+        const head = document.createElement("div");
+        const auth = document.createElement("div");
+        const imgCon = document.createElement("div");
+        const image = document.createElement("img");
+        const sp = document.createElement("span");
+    
+        head.textContent = `${elem.headline}`
+        sp.textContent = `${elem.authorName}`
+        image.src = `${elem.authorPhoto}`
+        
+        main.classList.add("card");
+        head.classList.add("headline");
+        auth.classList.add("author");
+        imgCon.classList.add("img-container");
 
-    //  image.src = `${obj[0].authorPhoto}`;
-    //  head.textContent = `${.headline}`;
-    //  sp.textContent = `${.authorName}`;
+        main.appendChild(head);
+        main.appendChild(auth);
+        auth.appendChild(imgCon);
+        imgCon.appendChild(image);
+        auth.appendChild(sp);
+        console.log(main);
 
+        main.addEventListener("click", (event) => {
+            console.log(`${elem.headline}`)
+        })
 
-    main.classList.add("card");
-    head.classList.add("headline");
-    auth.classList.add("author");
-    imgCon.classList.add("img-container");
-
-    main.appendChild(head);
-    main.appendChild(auth);
-    auth.appendChild(imgCon);
-    imgCon.appendChild(image);
-    auth.appendChild(sp);
-
-    // return console.log(main)
+        return cd.appendChild(main)
+    })
 }
-
-// cardMaker()
