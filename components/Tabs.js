@@ -25,6 +25,21 @@ axios
     })
 
 //Function that create the component tab
-const tabMaker = () => {
+
+const tabMaker = (topic) => {
+
+    // Model of the tab:
+    // <div class="tab">topic here</div>
+
+    //Creating HTML tag
+    const tab = document.createElement("div")
+    
+    //Setting styles
+    tab.classList.add("tab")
+
+    //Setting content
+    tab.textContent = topic
+
+    return tab
 
 }
