@@ -13,16 +13,17 @@
 // import axios from "axios"
 const topics = document.querySelector(".topics")
 
-
+for (let i = 0; i < 5; i++) {
     axios
         .get("https://lambda-times-api.herokuapp.com/topics")
         .then((topics) => {
-            const newTopics = topics.data.topics
+            // const newTopics = topics.data.topics
             
-            for (let i = 0; i < newTopics.length; i++) {
-                return addTab(newTopics[i])
-            }
+            
+                return addTab(topics.data.topics[i])
+            
         })
+    }
 
 function addTab(newTopics) {
     const newTab = document.createElement("div")
