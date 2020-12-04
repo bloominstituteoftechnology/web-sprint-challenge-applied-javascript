@@ -12,12 +12,12 @@ import axios from 'axios'
 const API_CARDS = 'https://lambda-times-api.herokuapp.com/articles'
 
 axios
-    .get()
+    .get(API_CARDS)
     .then( (res) => {
-        console.log('Yep!')
+        console.log(res)
     })
     .catch( (err) => {
-        console.log('Yep!')
+        console.log(err)
     })
 
 // Write a function that takes a single article object and returns the following markup:
