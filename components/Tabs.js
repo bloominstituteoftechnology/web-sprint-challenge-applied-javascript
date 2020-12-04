@@ -11,24 +11,67 @@
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
 
 
-const topicBar = document.querySelector('.topics');
-
-axios
-.get('https://lambda-times-api.herokuapp.com/topics')
-.then((result) => {
-    const banana = result.data;
-    const barDir = randFunct(banana);
-    topicBar.appendChild(barDir);
-})
-.catch((error) => {
-    console.log(error);
-})
-
-function randFunct() {
 
 
 
 
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const topicBar = document.querySelector('tabs');
+// const topics = document.querySelector('topics');
+
+// axios
+// .get('https://lambda-times-api.herokuapp.com/topics')
+// .then((result) => {
+//     const banana = result.data;
+//     const barDir = randFunct(banana);
+//     topics.appendChild(barDir);
+// })
+// .catch((error) => {
+//     console.log(error);
+// })
+
+// function randFunct() {
+//     const buttonOne = document.createElement('div');
+//     const buttonTwo = document.createElement('div');
+//     const buttonThree = document.createElement('div');
+//     const buttonFour = document.createElement('div');
+//     const buttonFive = document.createElement('div');
+
+//     topics.appendChild(buttonOne);
+//     topics.appendChild(buttonTwo);
+//     topics.appendChild(buttonThree);
+//     topics.appendChild(buttonFour);
+//     topics.appendChild(buttonFive);
+
+//     buttonOne.classList.add('tab');
+//     buttonTwo.classList.add('tab');
+//     buttonThree.classList.add('tab');
+//     buttonFour.classList.add('tab');
+//     buttonFive.classList.add('tab');
+
+//     return topics;
+// }
+// console.log(randFunct());
