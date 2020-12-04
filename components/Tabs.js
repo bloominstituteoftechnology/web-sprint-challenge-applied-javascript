@@ -17,7 +17,7 @@ const tabsEntryPoint = document.querySelector('.topics')
 
 Axios.get('https://lambda-times-api.herokuapp.com/topics')
 .then((res) =>{
-    console.log(res.data.topics)
+    // console.log(res.data.topics)
 
     // created array of topics
     const topics = res.data.topics;
