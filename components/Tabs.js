@@ -13,10 +13,10 @@
 
 import axios from 'axios'
 
-const URL_API = 'https://lambda-times-api.herokuapp.com/topics'
+const API_TOPICS = 'https://lambda-times-api.herokuapp.com/topics'
 
 axios
-    .get(URL_API)
+    .get(API_TOPICS)
     .then((res) => {
         let topicsArray = res.data.topics
 
@@ -27,7 +27,7 @@ axios
         // console.log(res.data.topics[0])
     })
     .catch((err) => {
-        console.log('Ups!')
+        console.log(err)
     })
 
 //Function that create the component tab
