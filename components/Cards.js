@@ -19,9 +19,7 @@ axios
 
         //This function handle the logic of showing ALL the result cards
         showAll(allArray)
-
-
-
+        
     })
     .catch( (err) => {
         console.log(err)
