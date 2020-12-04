@@ -18,7 +18,13 @@ const URL_API = 'https://lambda-times-api.herokuapp.com/topics'
 axios
     .get(URL_API)
     .then((res) => {
-        console.log(res.data.topics)
+        let topicsArray = res.data.topics
+
+        topicsArray.forEach( (topic) => {
+            tabMaker(topic)
+        })
+        // tabMaker(res.data.topics[0])
+        // console.log(res.data.topics[0])
     })
     .catch((err) => {
         console.log('Ups!')
@@ -40,6 +46,8 @@ const tabMaker = (topic) => {
     //Setting content
     tab.textContent = topic
 
-    return tab
+    const tabContainer = document.querySelector("div.topics")
+    tabContainer.appendChild(tab)
 
+    return tab
 }
