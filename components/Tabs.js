@@ -9,3 +9,26 @@
 //    <div class="tab">topic here</div>
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
+
+
+const topicBar = document.querySelector('.topics');
+
+axios
+.get('https://lambda-times-api.herokuapp.com/topics')
+.then((result) => {
+    const banana = result.data;
+    const barDir = randFunct(banana);
+    topicBar.appendChild(barDir);
+})
+.catch((error) => {
+    console.log(error);
+})
+
+function randFunct() {
+
+
+
+
+
+
+}
