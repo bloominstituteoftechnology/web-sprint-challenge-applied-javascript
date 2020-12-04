@@ -22,7 +22,7 @@ axios.get("https://lambda-times-api.herokuapp.com/topics").then((res) => {
 function tabComponent(topic) {
   const tabDiv = document.createElement("div");
   tabDiv.classList.add("tab");
-  tabDiv.textContent = `${topic}`; //topic.topics[];
+  tabDiv.textContent = `${topic} -`; //topic.topics[];
   //backticks because i need to create the topic by fetching the items from their server using Axios.
   //don't append this inside function because it needs to go inside the class in html so needs done after function is created.
   return tabDiv;

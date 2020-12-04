@@ -5,7 +5,7 @@
 const cardEntry = document.querySelector(".cards-container");
 
 axios.get("https://api.github.com/users/lindsay-deaton").then((res) => {
-  const newCard = lTimesComponent(res.data);
+  const newCard = timesComponent(res.data);
   console.log(newCard);
   cardEntry.appendChild(newCard);
 });
@@ -28,31 +28,33 @@ axios.get("https://api.github.com/users/lindsay-deaton").then((res) => {
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
-function lTimesComponent(data) {
-    const cardDiv = document.createElement('div');
-    cardDiv.classList.add("card");
-    //no need to append inside function
+function timesComponent(data) {
+  const cardDiv = document.createElement("div");
+  cardDiv.classList.add("card");
+  //no need to append inside function
 
-    const headlineDiv = document.createElement('div')
-    headlineDiv.classList.add("headline")
-    headlineDiv.textContent = data.articles[].headline;
-    cardDiv.appendChild(headlineDiv);
+  const headlineDiv = document.createElement("div");
+  headlineDiv.classList.add("headline");
+  headlineDiv.textContent = data;
+  cardDiv.appendChild(headlineDiv);
 
-    const authorDiv = document.createElement('div')
-    authorDiv.classList.add("author");
-    cardDiv.appendChild(authorDiv);
+  const authorDiv = document.createElement("div");
+  authorDiv.classList.add("author");
+  cardDiv.appendChild(authorDiv);
 
-    const imgContainer = document.createElement("div");
-    imgContainer.classList.add("img-container");
-    authorDiv.appendChild(imgContainer);
+  const imgContainer = document.createElement("div");
+  imgContainer.classList.add("img-container");
+  authorDiv.appendChild(imgContainer);
 
-    const newImg = document.createElement('img')
-    newImg.src = data.articles[].authorPhoto;
-    imgContainer.appendChild(newImg);
+  const newImg = document.createElement("img");
+  newImg.src = data;
+  imgContainer.appendChild(newImg);
 
-    const bySpan = document.createElement('span');
-    bySpan.textContent = "By " + data.articles[].authorName;
-    authorDiv.appendChild(bySpan);
-    
-    return cardDiv;
+  const bySpan = document.createElement("span");
+  bySpan.textContent = "By " + data;
+  authorDiv.appendChild(bySpan);
+
+  return cardDiv;
 }
+
+// const firstAccordion = timesComponent()
