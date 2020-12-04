@@ -21,7 +21,7 @@
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
-function cardMaker(data){
+function cardMaker(cardItems){
     const makeCard = document.createElement.add("div");
     const headline = document.createElement.add("div");
     const author = document.createElement.add("div");
@@ -40,5 +40,9 @@ function cardMaker(data){
     author.classList.add("author");
     imgCont.classList.add("img-container");
 
-    headline.textContent = data.headline;
-};
+    headline.textContent = `${cardItems.data.headline}`;
+    img.src = cardItems.data.authorPhoto;
+    author.textContent = cardItems.data.authorName
+
+    return makeCard;
+}
