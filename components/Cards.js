@@ -14,24 +14,42 @@ const API_CARDS = 'https://lambda-times-api.herokuapp.com/articles'
 axios
     .get(API_CARDS)
     .then( (res) => {
-        console.log(res)
+        console.log(res.data.articles)
     })
     .catch( (err) => {
         console.log(err)
     })
 
-// Write a function that takes a single article object and returns the following markup:
-//
-// <div class="card">
-//   <div class="headline">{Headline of article}</div>
-//   <div class="author">
-//     <div class="img-container">
-//       <img src={url of authors image} />
-//     </div>
-//     <span>By {author's name}</span>
-//   </div>
-// </div>
-//
-// Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
-//
-// Use your function to create a card for each of the articles, and append each card to the DOM.
+
+
+const cardMaker = () => {
+
+    // Write a function that takes a single article object and returns the following markup:
+    //
+    // <div class="card">
+    //   <div class="headline">{Headline of article}</div>
+    //   <div class="author">
+    //     <div class="img-container">
+    //       <img src={url of authors image} />
+    //     </div>
+    //     <span>By {author's name}</span>
+    //   </div>
+    // </div>
+
+    //Creating HTML tags
+    const card = document.createElement("div")
+    const cardTitle = document.createElement("div")
+    const cardAuthor = document.createElement("div")
+    const cardImgContainer = document.createElement("div")
+    const cardImg = document.createElement("img")
+    const cardBy = document.createElement("span")
+
+    //Setting Styles
+
+
+
+    // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
+    //
+    // Use your function to create a card for each of the articles, and append each card to the DOM.
+
+}
