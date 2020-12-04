@@ -25,8 +25,8 @@ function header() {
     span.classList.add('date')
     span2.classList.add('temp')
 
-    span.textContent = 'MARCH 28, 2020';
-    span2.textContent = '98°';
+    span.textContent = 'DECEMBER 04, 2020';
+    span2.textContent = '44°';
     h1.textContent = 'Lambda Times';
 
 div.appendChild(span);
