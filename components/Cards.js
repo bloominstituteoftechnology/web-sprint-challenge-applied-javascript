@@ -14,21 +14,13 @@ const API_CARDS = 'https://lambda-times-api.herokuapp.com/articles'
 axios
     .get(API_CARDS)
     .then( (res) => {
-        // cardMaker(res.data.articles.bootstrap[0])
-
+        //Transform the object-of-objects into an array to iterate over it
         const allArray = Object.entries(res.data.articles)
-        // console.log(allArray)
 
-        function showAll(myArray) {
-            myArray.forEach(levelOne => {
-                // console.log('Nivel 1: ', levelOne)
-                levelOne[1].forEach(levelTwo => {
-                    // console.warn('Nivel 2: ', levelTwo)
-                    cardMaker(levelTwo)
-                })
-            })
-        }
+        //This function handle the logic of showing ALL the result cards
         showAll(allArray)
+
+
 
     })
     .catch( (err) => {
@@ -90,4 +82,19 @@ const cardMaker = ( { authorName, authorPhoto, headline } ) => {
     // Use your function to create a card for each of the articles, and append each card to the DOM.
 
     return card
+}
+
+//This function handle the logic of showing ALL the result cards
+function showAll(myArray) {
+    //Iterrating over the array
+    myArray.forEach(levelOne => {
+        // console.log('Nivel 1: ', levelOne)
+        //Showing just the position [1] of each result
+        //The position [0] its getting excludes because its just a title
+        levelOne[1].forEach(levelTwo => {
+            //At this point we have the object that we need
+            // console.warn('Nivel 2: ', levelTwo)
+            cardMaker(levelTwo)
+        })
+    })
 }
