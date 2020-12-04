@@ -27,9 +27,9 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
-
+the DOM is the Document Object Model, which enables you to manipulate html elements using javascript. it is incredibly useful for running asynchronous code, as well as injecting new elements within the html from javascript.
 2. What is an event?
-
+events are pieces of code within html that execute under certain conditions (i.e. web page is loading/finishes loading, the user clicks on something, holding the mousebutton down and releasing it )
 3. What is an event listener?
 
 4. Why would we convert a NodeList into an Array?
