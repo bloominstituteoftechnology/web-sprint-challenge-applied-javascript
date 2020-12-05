@@ -29,13 +29,13 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 1. What is the DOM?
 the DOM is the Document Object Model, which enables you to manipulate html elements using javascript. it is incredibly useful for running asynchronous code, as well as injecting new elements within the html from javascript.
 2. What is an event?
-events are pieces of code within html that execute under certain conditions (i.e. web page is loading/finishes loading, the user clicks on something, holding the mousebutton down and releasing it )
+events are pieces of javascript code that execute as a reaction to html elements (i.e. web page is loading/finishes loading, the user clicks on something, holding the mousebutton down vs releasing it, the page has an error, etc. )
 3. What is an event listener?
-
+it is a method in which attaches an event handler to a specific DOM element or elements, enabling you to use javascript to  execute multiple code blocks when the listener "hears" the event specified
 4. Why would we convert a NodeList into an Array?
 
 5. What is a component?
-
+components are independant, interchangable, reusable and replacable blocks of code. these are useful for asynchronous coding, enabling you to adjust and replace parts of a whole and dividing up the code into much more managable chunks.
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
 ## Instructions
