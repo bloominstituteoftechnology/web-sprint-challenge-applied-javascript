@@ -54,3 +54,11 @@ function myCard (data) {
 }
 const card = document.querySelector("cards-container");
 
+axios.get ("https://lambda-times-api.herokuapp.com/articles")
+    .then(res =>{
+
+
+    })
+    .catch(error =>{
+        
+    })
