@@ -22,3 +22,36 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+function carouselComponent() {
+  const carouselDiv = document.createElement("div");
+  carouselDiv.classList.add("carousel");
+
+  const lBtnDiv = document.createElement("div");
+  lBtnDiv.classList.add("left-button");
+  lBtnDiv.addEventListener("click", (event) => {
+    event.target.style.color = "black";
+  });
+
+  const img1 = document.createElement("img");
+  img1.src =
+    "https://tk-assets.lambdaschool.com/ba687af4-3a1e-43d7-87b2-f30453264c9d_mountains.jpeg";
+
+  const img2 = document.createElement("img");
+  img2.src =
+    "https://tk-assets.lambdaschool.com/ba687af4-3a1e-43d7-87b2-f30453264c9d_mountains.jpeg";
+
+  const img3 = document.createElement("img");
+  img3.src =
+    "https://tk-assets.lambdaschool.com/ba687af4-3a1e-43d7-87b2-f30453264c9d_mountains.jpeg";
+
+  const rBtnDiv = document.createElement("div");
+  rBtnDiv.classList.add("right-button");
+
+  carouselDiv.appendChild(lBtnDiv);
+  carouselDiv.appendChild(img1);
+  carouselDiv.appendChild(img2);
+  carouselDiv.appendChild(img3);
+  carouselDiv.appendChild(rBtnDiv);
+}
+const carouselEntry = document.querySelector(".carousel-container");
