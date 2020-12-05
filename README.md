@@ -4,7 +4,7 @@
 
 This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored **Applied JavaScript**. During this sprint, you studied **DOM and components**. In your challenge this week, you will demonstrate your mastery of these skills by creating **an online Lambda newspaper called "Lambda Times"**.
 
-This is an individual assessment. All work must be your own. Your challenge score is a measure of your ability to work independently using the material covered through this sprint. You need to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
+This is an individual assessment. All work must be your own. Your challenge score is a measure of your ability to work independently using the material covered through this sprint. You need to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days!
 
 You are not allowed to collaborate during the sprint challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your TL if you need direction.
 
@@ -64,9 +64,9 @@ Your finished project must include all of the following requirements:
 
 - [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the `index.html` file itself.
 
-- [ ] Following the instructions in the `components/Header.js` file, create the Header.
+- [ X] Following the instructions in the `components/Header.js` file, create the Header.
 
-- [ ] Following the instructions in the `components/Tabs.js` file, create the Tabs.
+- [X ] Following the instructions in the `components/Tabs.js` file, create the Tabs.
 
 - [ ] Following the instructions in the `components/Cards.js` file, create the Cards.
 
