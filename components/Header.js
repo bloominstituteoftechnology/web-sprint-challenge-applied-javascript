@@ -13,7 +13,7 @@
 
 const divContainer = document.querySelector(".header-container")
  
-function Header() {
+function header() {
 
 const container = document.createElement("div")
 const date = document.createElement("span")
@@ -25,20 +25,19 @@ date.classList.add("date")
 temp.classList.add("temp")
 
 date.textContent ="March 28, 2020"
-Lambda.textcontent = "Lambda Times"
-temp.textcontent = "98\u00B0 "
+Lambda.textContent = "Lambda Times"
+temp.textContent = "98°"
 
 // divContainer.appendChild(container)
 // divContainer.appendChild(container)
-// divContainer.append(container)'
+container.appendChild(date)
 container.appendChild(Lambda)
- container.appendChild(date)
 container.appendChild(temp)
+// divContainer.append(container)
 
 return container
 
 }
+divContainer.appendChild(header())
 
 
-let test = Header()
-divContainer.appendChild(test)

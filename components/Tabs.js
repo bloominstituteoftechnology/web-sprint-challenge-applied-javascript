@@ -9,6 +9,7 @@
 //    <div class="tab">topic here</div>
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
+const topics = document.querySelector(".topics")
 
 axios
   .get("https://lambda-times-api.herokuapp.com/topics")
@@ -16,11 +17,12 @@ axios
     const result = futureData.data.topics
     console.log(result)
    result.forEach(el => {
-    let ele = document.createElement("div")
-     
-    ele.classList.add("tab")
-    const topics = document.querySelector(".topics")
-    topics.appendChild(ele)
+  const listItem = document.createElement("div")
+    // let ele = document.createElement("div")
+    // const tabs = futureData.data.topics
+     listItem.textContent = el
+    listItem.classList.add("tab")
+    topics.appendChild(listItem)
     
     
    });
