@@ -5,9 +5,12 @@
 const tabEntry = document.querySelector(".topics");
 
 axios.get("https://lambda-times-api.herokuapp.com/topics").then((res) => {
-  const newTab = tabComponent(res.data.topics);
-  //   console.log(newTab);
-  tabEntry.appendChild(newTab);
+  // console.log(res.data.topics);
+  res.data.topics.forEach((item) => {
+    // console.log(item);
+    const newTab = tabComponent(item);
+    tabEntry.appendChild(newTab);
+  });
 });
 
 // Once the data is resolved use console logs or breakpoints to review the structure.
@@ -22,7 +25,7 @@ axios.get("https://lambda-times-api.herokuapp.com/topics").then((res) => {
 function tabComponent(topic) {
   const tabDiv = document.createElement("div");
   tabDiv.classList.add("tab");
-  tabDiv.textContent = `${topic} -`; //topic.topics[];
+  tabDiv.textContent = `${topic}`; //topic.topics[];
   //backticks because i need to create the topic by fetching the items from their server using Axios.
   //don't append this inside function because it needs to go inside the class in html so needs done after function is created.
   return tabDiv;
