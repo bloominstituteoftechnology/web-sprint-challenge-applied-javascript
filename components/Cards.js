@@ -52,3 +52,5 @@ function myCard (data) {
     })
     return card
 }
+const card = document.querySelector("cards-container");
+

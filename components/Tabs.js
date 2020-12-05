@@ -16,7 +16,7 @@ const { default: Axios } = require("axios");
 const topics = document.querySelector(".topics")
 Axios.get("https://lambda-times-api.herokuapp.com/topics")
     .then(res => {
-        const card = myCard(res.data);
+        const card = newTabs(res.data);
         topics.appendChild(card);
     })
 .catch(error =>{
@@ -30,35 +30,37 @@ const tab3 = document.createElement("div");
 const tab4 = document.createElement("div");
 
 
-tab.classList.add("javascript");
-tab1.classList.add("bootstrap");
-tab2.classList.add("technology");
-tab3.classList.add("jquery");
-tab4.classList.add("node.js");
+tab.classList.add("tab");
+tab1.classList.add("tab");
+tab2.classList.add("tab");
+tab3.classList.add("tab");
+tab4.classList.add("tab");
 
-tab.textContent = data.javascript
-tab1.textContent = data.bootstrap
-tab2.textContent = data.technology
-tab3.textContent = data.jquery
-tab4.textContent = data.nodejs
+tab.textContent = data.topics[0]
+tab1.textContent = data.topics[1]
+tab2.textContent = data.topics[2]
+tab3.textContent = data.topics[3]
+tab4.textContent = data.topics[4]
 
-tab.appendChild(tab1)
-tab1.appendChild(tab2)
-tab2.appendChild(tab3)
-tab3.appendChild(tab4)
+topics.appendChild(tab)
+topics.appendChild(tab1)
+topics.appendChild(tab2)
+topics.appendChild(tab3)
+topics.appendChild(tab4)
 
 tab.addEventListener("click", () => {
-    tab.classList.toggle("javascript");
+    tab.classList.toggle("tab");
 });
 tab1.addEventListener("click", () => {
-    tab1.classList.toggle("bootstrap")
+    tab1.classList.toggle("tab")
 });   
 tab2.addEventListener("click", () => {
-    tab2.classList.toggle("technology")
+    tab2.classList.toggle("tab")
 });
 tab3.addEventListener("click", () => {
-    tab3.classList.toggle("jquery")
+    tab3.classList.toggle("tab")
 });
 tab4.addEventListener("click", () => {
-    tab4.classList.toggle("node.js")
+    tab4.classList.toggle("tab")
 });
+}

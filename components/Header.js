@@ -4,7 +4,7 @@
 //
 //  <div class="header">
 //    <span class="date">MARCH 28, 2020</span>
-//    <h1>Lambda Times</h1>
+//    <h1>Lambda Times</h1>`
 //    <span class="temp">98°</span>
 //  </div>
 //
@@ -21,9 +21,16 @@ function Header() {
     newDate.classList.add("date");
     temp.classList.add("temp");
 
+    newDate.textContent = "March 28, 2020"
+    header1.textContent = "Lambda Times"
+    temp.textContent = "98°"
+
     newHeader.appendChild(newDate);
     newHeader.appendChild(header1);
     newHeader.appendChild(temp);
 
     return newHeader
 }
+const header = document.querySelector(".header-container")
+
+header.appendChild(Header())
