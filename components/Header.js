@@ -27,7 +27,7 @@ function Header() {
     divHeader.classList.add('header');
     spanElement.classList.add('date');
     secondSpanElement.classList.add('temp');
-    
+
 
     divHeader.appendChild(spanElement);
     divHeader.appendChild(headingOneElement);
