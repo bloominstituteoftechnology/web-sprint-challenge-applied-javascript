@@ -52,26 +52,30 @@ const articleCard = (headline, authorPhoto, authorName) => {
   return card;
 };
 
-// const nodeList = document.querySelectorAll(".articles");
-// const articleArr = Array.from(nodeList);
-
 const articleMaker = document.querySelector(".cards-container");
+const nodeList = document.querySelectorAll(".articles");
+const articleArr = Array.from(nodeList);
+
+console.log(articleArr);
+
 // articleMaker.appendChild(articleCard);
+
+// articleMaker.appendChild(articleArr);
 
 console.log(articleMaker);
 
-axios
-  .get(`https://lambda-times-api.herokuapp.com/articles`)
-  .then((success) => {
-    success.data.articles.headline.forEach((articles) => {
-      const newHeadline = articleCard(
-        articles.headline
-        // articles.authorPhoto,
-        // articles.authorName
-      );
-      articleMaker.appendChild(newHeadline);
-    });
-  })
-  .catch((err) => {
-    console.log("err", err);
-  });
+// axios
+//   .get(`https://lambda-times-api.herokuapp.com/articles`)
+//   .then((success) => {
+//     success.data.articles.headline.forEach((articles) => {
+//       const newHeadline = articleCard(
+//         data.articles.headline
+//         // articles.authorPhoto,
+//         // articles.authorName
+//       );
+//       articleMaker.appendChild(newHeadline);
+//     });
+//   })
+//   .catch((err) => {
+//     console.log("err", err);
+//   });
