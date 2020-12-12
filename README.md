@@ -1,6 +1,6 @@
 # Applied JavaScript Sprint Challenge
 
-**Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
+[x]**Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
 This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored **Applied JavaScript**. During this sprint, you studied **DOM and components**. In your challenge this week, you will demonstrate your mastery of these skills by creating **an online Lambda newspaper called "Lambda Times"**.
 
@@ -10,7 +10,7 @@ You are not allowed to collaborate during the sprint challenge. However, you are
 
 _You have **three hours** to complete this challenge. Plan your time accordingly._
 
-## Introduction
+[x]## Introduction
 
 You are going to create a Lambda Newspaper. Your job is going to be to create the components that make up the newspaper's home page. You will do this at first with static data, then you will request data from a server to create dynamic components.
 
@@ -18,23 +18,28 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 [Lambda Times](https://tk-assets.lambdaschool.com/83869a99-62dc-4896-be79-f5ad1885631b_Sprint-Challenge.gif)
 
-### Commits
+[x]### Commits
 
 Commit your code regularly and meaningfully. This helps both you (in case you ever need to return to old code for any number of reasons) and your team lead as the evaluate your solution.
 
-## Interview Questions
+[x]## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+    The DOM is the Document Object Model, which we can see in the browser, the HTML elements, and manipulate them locally on our computer. 
 
 2. What is an event?
+    An event is an interactive action that happens in the code, which when executed tells the computer system to respond in a certain way.
 
 3. What is an event listener?
+    An event listener is what registers said event. The listener is essentially watching (or listening I guess, haha) for the event to happen, so that the event handler (the code that runs as a response to the event being executed) can do its thing.
 
 4. Why would we convert a NodeList into an Array?
+    We would do this to be able to increase our specificity and accessibility, to be able to grab certain properties, as well as enable us to loop through that data.
 
 5. What is a component?
+    A component is a reusable bit of code that combines HTML markup, styling and script.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -44,19 +49,19 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 #### Repository Set Up
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: `git checkout -b <firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
-- [ ] Push commits: `git push origin <firstName-lastName>`
+- [x ] Create a forked copy of this project
+- [ x] Add your team lead as collaborator on Github
+- [x ] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [ x] Create a new branch: `git checkout -b <firstName-lastName>`.
+- [ x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
+- [x ] Push commits: `git push origin <firstName-lastName>`
 
 #### Launching the App
 
-- [ ] Navigate to the root of the project with your command line
-- [ ] Run `npm install` to download the dependencies listed in the `package.json` file
-- [ ] Run `npm start` to compile the project and serve it
-- [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command
+- [ x] Navigate to the root of the project with your command line
+- [x ] Run `npm install` to download the dependencies listed in the `package.json` file
+- [ x] Run `npm start` to compile the project and serve it
+- [ x] Navigate Chrome to the URL indicated in the output of the `npm start` command
 
 ### Task 2: Project Requirements
 
