@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+The DOM or Document Object Model is used to manipulate an HTML document by changing, adding or removing content.
+
 2. What is an event?
+
+An event is a change that occurs within the browser which a programmer can interact with using JavaScript.
 
 3. What is an event listener?
 
+An event listener waits for an event to occur (i.e. a click, dblclick) and it responds accordingly using an argument or parameter.
+
 4. Why would we convert a NodeList into an Array?
 
+So that you can utilize cetain array methods such as .map or .forEach which you cannot use with a NodeList.
+
 5. What is a component?
+
+A component is JavaScript code that can be reused to change, add or remove HTML.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
