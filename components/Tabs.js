@@ -9,3 +9,15 @@
 //    <div class="tab">topic here</div>
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
+
+const topicCard = () => {
+  const tab = document.createElement("div");
+
+  tab.classList.add("tab");
+
+  tab.textContent.add = data.topics;
+
+  return tab;
+};
+
+const topicCard = document.querySelector(".topics");

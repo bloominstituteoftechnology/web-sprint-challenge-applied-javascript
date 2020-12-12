@@ -31,6 +31,6 @@ function Header() {
 }
 
 const headComponent = Header();
-const headContainer = document.querySelector(".header-container");
+const headContainer = document.querySelector("div.header-container");
 
 headContainer.appendChild(headComponent);
