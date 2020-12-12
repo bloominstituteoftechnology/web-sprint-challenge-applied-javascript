@@ -53,10 +53,6 @@ const articleCard = (headline, authorPhoto, authorName) => {
 };
 
 const articleMaker = document.querySelector(".cards-container");
-const nodeList = document.querySelectorAll(".articles");
-const articleArr = Array.from(nodeList);
-
-console.log(articleArr);
 
 // articleMaker.appendChild(articleCard);
 
@@ -64,18 +60,19 @@ console.log(articleArr);
 
 console.log(articleMaker);
 
-// axios
-//   .get(`https://lambda-times-api.herokuapp.com/articles`)
-//   .then((success) => {
-//     success.data.articles.headline.forEach((articles) => {
-//       const newHeadline = articleCard(
-//         data.articles.headline
-//         // articles.authorPhoto,
-//         // articles.authorName
-//       );
-//       articleMaker.appendChild(newHeadline);
-//     });
-//   })
-//   .catch((err) => {
-//     console.log("err", err);
-//   });
+axios
+  .get(`https://lambda-times-api.herokuapp.com/articles`)
+  .then((success) => {
+    const nodeList = document.querySelectorAll(".articles");
+    const articleArr = Array.from(nodeList);
+
+    success.articles.forEach((articles) => {
+      const newArticle = articleCard(
+        articleArr(articles.headline, articles.authorPhoto, articles.authorName)
+      );
+      articleMaker.appendChild(newArticle);
+    });
+  })
+  .catch((err) => {
+    console.log("err", err);
+  });
