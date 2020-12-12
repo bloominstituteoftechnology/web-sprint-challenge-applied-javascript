@@ -21,26 +21,55 @@
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
-const articleCard = () => {
+const articleCard = (headline, authorPhoto, authorName) => {
   const card = document.createElement("div");
-  const headLine = document.createElement("div");
+  const head = document.createElement("div");
   const author = document.createElement("div");
   const imgCont = document.createElement("div");
-  const photo = document.createElement("img");
+  const authPhoto = document.createElement("img");
   const authName = document.createElement("span");
 
-  card.append(headLine, author);
+  card.append(head, author);
   author.append(imgCont, authName);
-  imgCont.appendChild(photo);
+  imgCont.appendChild(authPhoto);
 
   card.classList.add("card");
-  headLine.classList.add("headline");
+  head.classList.add("headline");
   author.classList.add("author");
   imgCont.classList.add("img-container");
 
-  headLine.textContent = articles.headline;
-  photo.textContent = articles.authorPhoto.url;
-  authName.textContent = articles.authorName;
+  headLine.textContent = data.articles.headline;
+  authPhoto.src = data.articles.authorPhoto.url;
+  authName.textContent = data.articles.authorName;
+
+  card.addEventListener("click", () => {
+    card.classList.toggle("card");
+    console.log("card", card);
+  });
 
   return card;
 };
+
+// const nodeList = document.querySelectorAll(".articles");
+// const articleArr = Array.from(nodeList);
+
+const articleMaker = document.querySelector(".cards-container");
+// articleMaker.appendChild(articleCard);
+
+console.log(articleMaker);
+
+axios
+  .get(`https://lambda-times-api.herokuapp.com/articles`)
+  .then((success) => {
+    success.data.articles.forEach((articles) => {
+      const newArticle = articleCard(
+        articles.headline,
+        articles.authorPhoto,
+        articles.authorName
+      );
+      articleMaker.appendChild(newArticle);
+    });
+  })
+  .catch((err) => {
+    console.log("err", err);
+  });
