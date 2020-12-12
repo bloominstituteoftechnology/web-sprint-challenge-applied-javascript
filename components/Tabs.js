@@ -15,7 +15,7 @@ const topicCard = (topic) => {
 
   tab.classList.add("tab");
 
-  tab.textContent.add = topic;
+  tab.textContent = topic;
 
   return tab;
 };

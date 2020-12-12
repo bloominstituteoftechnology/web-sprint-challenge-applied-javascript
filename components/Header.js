@@ -21,9 +21,9 @@ function Header() {
   date.classList.add("date");
   temp.classList.add("temp");
 
-  date.textContent.add = "MARCH 28, 2020";
-  title.textContent.add = "Lambda Times";
-  temp.textContent.add = "98•";
+  date.textContent = "MARCH 28, 2020";
+  title.textContent = "Lambda Times";
+  temp.textContent = "98•";
 
   header.append(date, title, temp);
 
