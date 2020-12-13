@@ -54,7 +54,9 @@ function createNewCard (articleObject) {
     byAuthor.textContent = articleObject.authorName;
 
     // assign listening event to card, click
-    card.addEventListener('click', console.log(headline));
+    card.addEventListener('click', () => {
+      console.log(headline)
+    });
  
     //  append to heirarchy 
     card.appendChild(headline);
