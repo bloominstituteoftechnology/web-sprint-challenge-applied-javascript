@@ -24,7 +24,7 @@ Axios
                 
                 newTab.classList.add('tab')
                 
-                newTab.textContent = 'TRENDING TOPICS'
+                newTab.textContent = element
 
                 topicsDom.append(newTab)
 
