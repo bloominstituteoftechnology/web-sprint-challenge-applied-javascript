@@ -40,9 +40,9 @@ const articleCard = (headline, authorPhoto, authorName) => {
   author.classList.add("author");
   imgCont.classList.add("img-container");
 
-  headLine.textContent = data.articles.headline;
-  authPhoto.src = data.articles.authorPhoto.url;
-  authName.textContent = data.articles.authorName;
+  head.textContent = headline;
+  authPhoto.src = authorPhoto;
+  authName.textContent = authorName;
 
   card.addEventListener("click", () => {
     card.classList.toggle("card");
@@ -52,26 +52,56 @@ const articleCard = (headline, authorPhoto, authorName) => {
   return card;
 };
 
-const articleMaker = document.querySelector(".cards-container");
-
 // articleMaker.appendChild(articleCard);
 
 // articleMaker.appendChild(articleArr);
 
-console.log(articleMaker);
+// console.log(articleMaker);
+
+// axios
+//   .get(`https://lambda-times-api.herokuapp.com/articles`)
+//   .then((success) => {
+//     const nodeList = document.querySelectorAll(".articles");
+//     const articleArr = Array.from(nodeList);
+
+//     success.articles.forEach((articles) => {
+//       const newArticle = articleCard(
+//         articleArr(articles.headline, articles.authorPhoto, articles.authorName)
+//       );
+//       articleMaker.appendChild(newArticle);
+//     });
+//   })
+//   .catch((err) => {
+//     console.log("err", err);
+//   });
+
+// axios
+//   .get(`https://lambda-times-api.herokuapp.com/articles/headline`)
+//   .then((success) => {
+//     success.data.articles.headline.forEach((headline) => {
+//       const articleHead = articleCard(headline);
+//       articleMaker.appendChild(articleHead);
+//     });
+//   });
+
+// axios
+//   .get(`https://lambda-times-api.herokuapp.com/articles/${headline}`)
+//   .then((head) => {
+//     let articleHead = document.querySelector(".cards-container");
+//     articleHead.appendChild(articleCard(head));
+//   });
+
+const articleMaker = document.querySelector(".cards-container");
 
 axios
   .get(`https://lambda-times-api.herokuapp.com/articles`)
   .then((success) => {
-    const nodeList = document.querySelectorAll(".articles");
-    const articleArr = Array.from(nodeList);
-
-    success.articles.forEach((articles) => {
-      const newArticle = articleCard(
-        articleArr(articles.headline, articles.authorPhoto, articles.authorName)
-      );
-      articleMaker.appendChild(newArticle);
-    });
+    let articleHead = articleCard(
+      success.data.articles.headline,
+      success.data.articles.authorPhoto,
+      success.data.articles.authorName
+    );
+    articleMaker.appendChild(articleHead);
   })
   .catch((err) => {
     console.log("err", err);
