@@ -30,12 +30,12 @@ const cards = document.querySelector('.cards-container')
 Axios.
     get('https://lambda-times-api.herokuapp.com/articles')
     .then((x) => {
-        console.log(x)
+        console.log(x);
         
         Object.values(x.data.articles).forEach((foo) => {
             foo.forEach(bar => {
-                const cardDom = cardBuilder(bar)
-                cards.appendChild(cardDom)
+                const cardDom = cardBuilder(bar);
+                cards.appendChild(cardDom);
             })
         })
 
@@ -70,6 +70,10 @@ function cardBuilder(obj) {
     authorSpan.textContent = obj.authorName 
     image.src = obj.authorPhoto 
     
+    //listener event
+    cardDiv.addEventListener('click', x => {
+        console.log(headlineDiv.textContent)
+    })
     
     return cardDiv
 
