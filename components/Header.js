@@ -19,15 +19,17 @@ function Header() {
   let title = document.createElement('h1');
   let temp = document.createElement('span');
 
+
+  console.log(header)
   // assign class
   header.classList.add('header');
   date.classList.add('date');
   temp.classList.add('temp');
 
   // assign content
-  date.textContent = "test";
-  title.textContent = "test";
-  temp.textContent = "test";
+  date.textContent = "March 28, 2020";
+  title.textContent = "Lambda Times";
+  temp.textContent = "98°";
 
 
   //  append to heirarchy 
@@ -39,6 +41,9 @@ function Header() {
   let headerContainer = document.querySelector('.header-container');
   headerContainer.appendChild(header);
 
-  console.log(header);
+  // console.log(header); // it works
 
 };
+
+// console.log(Header()); // it works
+Header();

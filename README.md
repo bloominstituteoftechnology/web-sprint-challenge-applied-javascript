@@ -77,7 +77,7 @@ Your finished project must include all of the following requirements:
 
 - [x] Following the instructions in the `components/Header.js` file, create the Header.
 
-- [ ] Following the instructions in the `components/Tabs.js` file, create the Tabs.
+- [x] Following the instructions in the `components/Tabs.js` file, create the Tabs.
 
 - [ ] Following the instructions in the `components/Cards.js` file, create the Cards.
 
