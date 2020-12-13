@@ -11,4 +11,34 @@
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
 
-function Header() {}
+const headerDom = document.querySelector('div.header-container')
+
+function Header() {
+    
+    const headerDiv = document.createElement('div');
+    const span1 = document.createElement('span');
+    const head1 = document.createElement('h1');
+    const span2 = document.createElement('span');
+
+
+    //append elements
+
+    headerDiv.appendChild(span1);
+    headerDiv.appendChild(head1);
+    headerDiv.appendChild(span2);
+
+    
+    //add class names
+    headerDiv.classList.add('header');
+    span1.classList.add('date');
+    span2.classList.add('temp');
+
+    
+
+    
+    return headerDiv
+
+    
+}
+
+
