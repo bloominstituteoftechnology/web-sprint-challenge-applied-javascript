@@ -24,14 +24,40 @@
 
 const { default: Axios } = require("axios")
 
-    Axios.
-        get('https://lambda-times-api.herokuapp.com/articles')
-        .then( (x) => {
-            console.log('success', x)
-        })
+Axios.
+    get('https://lambda-times-api.herokuapp.com/articles')
+    .then( (x) => {
+        const articlesDom = x.data.articles
 
-    //function cardBuilder(obj) {
+        articlesDom.forEach(x => {
+
+    })
 
 
+function cardBuilder(obj) {
+    const cardDiv = document.createElement('div')
+    const headlineDiv = document.createElement('div')
+    const authorDiv = document.createElement('div')
+    const imgDiv = document.createElement('div')
+    const image = document.createElement('img')
+    const authorSpan = document.createElement('span')
+
+    //append elements
+
+    cardDiv.appendChild(headlineDiv)
+    cardDiv.appendChild(authorDiv)
+    authorDiv.appendChild(imgDiv)
+    imgDiv.appendChild(image)
+    authorDiv.appendChild(authorSpan)
+
+    //class names
+    cardDiv.classList.add('card')
+    headlineDiv.classList.add('headline')
+    authorDiv.classList.add('author')
+    imgDiv.classList.add('img-container')
 
 
+    //text/img content
+    headlineDiv.textContent = obj.headline
+    authorSpan.textContent = obj.authorName 
+    img.src = obj.authorPhoto  
