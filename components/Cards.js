@@ -93,16 +93,19 @@ const articleCard = (headline, authorPhoto, authorName) => {
 
 const articleMaker = document.querySelector(".cards-container");
 
-axios
-  .get(`https://lambda-times-api.herokuapp.com/articles`)
-  .then((success) => {
-    let articleHead = articleCard(
-      success.data.articles.headline,
-      success.data.articles.authorPhoto,
-      success.data.articles.authorName
-    );
-    articleMaker.appendChild(articleHead);
-  })
-  .catch((err) => {
-    console.log("err", err);
-  });
+const nodeList = document.querySelectorAll(".articles");
+const articleArr = Array.from(nodeList);
+
+axios.get(`https://lambda-times-api.herokuapp.com/articles`).then((success) => {
+  success.data.articleArr.articles.forEach((article) => {
+      let articleHead = articleCard(
+        article.data.articles.headline,
+        article.data.articles.authorPhoto,
+        article.data.articles.authorName
+      );
+      articleMaker.appendChild(articleHead);
+    })
+    .catch((err) => {
+      console.log("err", err);
+    });
+});
