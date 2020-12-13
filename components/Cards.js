@@ -22,14 +22,22 @@
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
 
+
 const { default: Axios } = require("axios")
+
+const cards = document.querySelector('.cards-container')
 
 Axios.
     get('https://lambda-times-api.herokuapp.com/articles')
-    .then( (x) => {
-        const articlesDom = x.data.articles
-
-        articlesDom.forEach(x => {
+    .then((x) => {
+        console.log(x)
+        
+        Object.values(x.data.articles).forEach((foo) => {
+            foo.forEach(bar => {
+                const cardDom = cardBuilder(bar)
+                cards.appendChild(cardDom)
+            })
+        })
 
     })
 
@@ -60,4 +68,9 @@ function cardBuilder(obj) {
     //text/img content
     headlineDiv.textContent = obj.headline
     authorSpan.textContent = obj.authorName 
-    img.src = obj.authorPhoto  
+    image.src = obj.authorPhoto 
+    
+    
+    return cardDiv
+
+}
