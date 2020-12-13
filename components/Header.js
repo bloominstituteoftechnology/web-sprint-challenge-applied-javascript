@@ -26,7 +26,7 @@ function Header() {
     mainDiv.appendChild(h1)
     mainDiv.appendChild(spanT)
 
-    console.log(mainDiv)
+    // console.log(mainDiv)
 
     //Assign Classes 
     mainDiv.classList.add('header')

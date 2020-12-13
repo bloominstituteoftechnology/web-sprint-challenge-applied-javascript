@@ -18,7 +18,7 @@ const request = axios.get('https://lambda-times-api.herokuapp.com/topics')
 
             //function for creating tab div, looping, then appending to .topics
             let tab = document.createElement('div')
-            console.log(tab)
+            // console.log(tab)
             tab.classList.add('tab')
             tab.textContent = `${topics}`
 
