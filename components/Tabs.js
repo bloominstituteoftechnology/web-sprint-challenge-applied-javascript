@@ -11,6 +11,8 @@
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
 const { default: Axios } = require("axios");
 
+const domTopics = document.querySelector('div.topics')
+
 Axios
     .get('https://lambda-times-api.herokuapp.com/topics')
     .then( (x) => {
