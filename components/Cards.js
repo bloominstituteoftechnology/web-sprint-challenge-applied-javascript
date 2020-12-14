@@ -20,3 +20,91 @@
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
+
+
+const request = axios.get('https://lambda-times-api.herokuapp.com/articles')
+.then(response => {
+    console.log('success')
+    // console.log(response.data.articles)
+    let articles = Object.values(response.data.articles)
+    // console.log(articles)
+    articles.forEach((item) => {
+        let newItem = item
+        
+        console.log(newItem)
+        newItem.forEach((headline, authorName, authorPhoto) =>{
+            let card = article(headline, authorName, authorPhoto)
+            console.log(card)
+            
+        })
+    })
+    
+    
+})
+.catch(err =>{
+    console.log('reject')
+    console.log('ERROR:', err)
+})
+
+console.log('pending', request)
+
+
+
+
+
+
+
+function article ({headline, authorPhoto, authorName}){
+
+
+    // console.log(bootstrap)
+    
+
+    //Instantiate 
+    const card = document.createElement('div')
+    const hLine = document.createElement('div')
+    const author = document.createElement('div')
+    const imgCont = document.createElement('div')
+    const img = document.createElement('img')
+    const span = document.createElement('span')
+
+
+    //Structure
+    card.appendChild(hLine)
+    card.appendChild(author)
+
+    author.appendChild(imgCont)
+    author.appendChild(span)
+
+    imgCont.appendChild(img)
+    
+    console.log(card)
+    
+    
+    //Assign Classes
+    card.classList.add('card')
+    hLine.classList.add('headline')
+    author.classList.add('author')
+    imgCont.classList.add('img-container')
+
+    img.src = `${authorPhoto}`
+
+    // Text Content
+    hLine.textContent = `${headline}`
+    span.textContent = `${authorName}`
+
+    // console.log(hLine)
+    // console.log(author)
+    
+    //append to the DOM
+    const mDiv = document.querySelector('.cards-container')
+
+    mDiv.appendChild(card)
+
+    //Event listener
+    card.addEventListener('click', () =>{
+        console.log(`${headline}`)
+    })
+}
+
+// article()
