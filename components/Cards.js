@@ -21,14 +21,25 @@
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
-
+// let cardContainer = document.querySelector('.cards-container')
 const request = axios.get('https://lambda-times-api.herokuapp.com/articles')
 .then(response => {
     console.log('success')
-    console.log(response.data.articles)
-    // article(response.data.articles.bootstrap.map(obj =>{
-    //     return obj.headline && obj.authorPhoto
-    // }))
+    // console.log(response.data.articles)
+    let articles = Object.values(response.data.articles)
+    // console.log(articles)
+    articles.forEach((item) => {
+        let newItem = item
+        
+        console.log(newItem)
+        newItem.forEach((headline, authorName, authorPhoto) =>{
+            let card = article(headline, authorName, authorPhoto)
+            console.log(card)
+            
+        })
+    })
+    
+    
 })
 .catch(err =>{
     console.log('reject')
@@ -43,7 +54,7 @@ console.log('pending', request)
 
 
 
-function article (headline, authorPhoto, authorName){
+function article ({headline, authorPhoto, authorName}){
 
 
     // console.log(bootstrap)
@@ -80,7 +91,7 @@ function article (headline, authorPhoto, authorName){
 
     // Text Content
     hLine.textContent = `${headline}`
-    author.textContent = `${authorName}`
+    span.textContent = `${authorName}`
 
     console.log(hLine)
     console.log(author)
