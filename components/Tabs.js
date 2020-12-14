@@ -20,7 +20,7 @@ axios.get('https://lambda-times-api.herokuapp.com/topics')
      })
     })
     .catch(err => {
-        console.log('axios is not working')
+        console.log('axios is not working in tap')
     })
     
  function tapCreator(topicText){
