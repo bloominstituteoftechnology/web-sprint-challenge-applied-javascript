@@ -27,14 +27,19 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+Is not Java script, the DOM is the language that we use to interact with the element in the html structure or can also be used to interact in other spaces.
 
 2. What is an event?
+is and action, that can be done for an user or also per any other circuntancs
 
 3. What is an event listener?
+is a function that receives a callback and also and event that its gonna for onces the event is call.
 
 4. Why would we convert a NodeList into an Array?
+that allows us to interaite over that list.
 
 5. What is a component?
+is a piece of code that can be reusable, has many times as you want.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
