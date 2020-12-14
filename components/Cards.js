@@ -21,7 +21,7 @@
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
-// let cardContainer = document.querySelector('.cards-container')
+
 const request = axios.get('https://lambda-times-api.herokuapp.com/articles')
 .then(response => {
     console.log('success')
@@ -93,13 +93,18 @@ function article ({headline, authorPhoto, authorName}){
     hLine.textContent = `${headline}`
     span.textContent = `${authorName}`
 
-    console.log(hLine)
-    console.log(author)
+    // console.log(hLine)
+    // console.log(author)
     
     //append to the DOM
     const mDiv = document.querySelector('.cards-container')
 
     mDiv.appendChild(card)
+
+    //Event listener
+    card.addEventListener('click', () =>{
+        console.log(`${headline}`)
+    })
 }
 
 // article()
