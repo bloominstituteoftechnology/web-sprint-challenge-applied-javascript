@@ -23,9 +23,14 @@
 
 //NOT FINISHED
 
-const articles = ('GET', 'https://lambda-times-api.herokuapp.com/articles');
+axios.get('https://lambda-times-api.herokuapp.com/articles').then(response => {
+    console.log(response.data);
+    const results = CardMaker(response.data);
+}).catch((err) => {
+    console.log(err);
+});
 
-console.log(articles);
+
 
 function CardMaker(article){
     const card = document.createElement('div');
