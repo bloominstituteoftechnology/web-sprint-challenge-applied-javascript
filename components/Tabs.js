@@ -42,9 +42,9 @@ promise.then(({data: {topics: topics}}) => { // object destructuring   {objectPr
     createNewTab(e);
   });
 
-}).catch((topics) => {
-
-  console.log("Promise call unsuccessful.");
+}).catch((error) => {
+// will get an error
+  console.log(error, "Promise call unsuccessful."); // "Error: ", error  ...  Could do error.msg
 
 });  // end of the promise code
 

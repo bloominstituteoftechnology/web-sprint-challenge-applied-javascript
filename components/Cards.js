@@ -100,6 +100,8 @@ promise.then(({data: {articles: articles}}) => { // object destructuring   {obje
     let node = articles.node;
     let tecnnology = articles.technology;
 
+    // bootstrap.forEach(article => {})
+
     bootstrap.forEach(e => {
       createNewCard(e);
     });
