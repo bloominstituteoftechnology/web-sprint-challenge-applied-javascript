@@ -19,8 +19,6 @@ function Header() {
   let title = document.createElement('h1');
   let temp = document.createElement('span');
 
-
-  console.log(header)
   // assign class
   header.classList.add('header');
   date.classList.add('date');

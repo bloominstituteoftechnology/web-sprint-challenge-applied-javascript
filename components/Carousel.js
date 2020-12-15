@@ -46,14 +46,8 @@ function Carousel (urls) {
     rightButton.classList.add('right-button');
 
     // add event listener to buttons
-    leftButton.addEventListener('click', (event) => {
-      indexIncrementor(-1);
-      previousSlide();
-    });
-    rightButton.addEventListener('click', (event) => {
-      indexIncrementor(1);
-      nextSlide();
-    });
+    leftButton.addEventListener('click', previousSlide);
+    rightButton.addEventListener('click', nextSlide);
 
     // append to heirarchy
     carousel.appendChild(leftButton);
@@ -86,16 +80,20 @@ console.log("Slides: ", slides);  // returns a NodeList array of 4 images
 
 let carouselIndex = 0; // global variable, initial value of 0
 
-function indexIncrementor(changeIndex) {
+function changeCarouselIndex(changeIndex) {
   // increment the global index
-  let carouselIndex = carouselIndex + changeIndex;
+  carouselIndex = carouselIndex + changeIndex;
 
+  console.log("changeIndex", changeIndex);
+  console.log("carouselIndex", carouselIndex); 
   // check if index is valid (b/t 0 & 3), reset if not
-  if (carouselIndex > (slides.length - 1) {
+  if (carouselIndex > (slides.length - 1)) {
     carouselIndex = 0;
   } else if (carouselIndex < 0) {
     carouselIndex = (slides.length - 1);
   };
+
+  console.log("carouselIndex after check if valid", carouselIndex); 
 
 };
 
@@ -104,29 +102,31 @@ function refreshCarousel() {
   // all slides are hidden except the carouselIndex
   for (let i = 0; i < slides.length; i++) {
     if (i === carouselIndex) {
-      slide[i].style.display = "block";
+      slides[i].style.display = "block";
     } else {
-      slide[i].style.display = "none";
+      slides[i].style.display = "none";
     };
   };  // end of for loop
 };
 
 function nextSlide() {
 
+  changeCarouselIndex(1);
   refreshCarousel();
-
+  // console.log("next slide function");
 };
 
 function previousSlide() {
 
+  changeCarouselIndex(-1);
   refreshCarousel();
-
+  // console.log("previous slide function");
 };
 
 // event listener for window on load, refresh the carousel
 
 window.addEventListener('load', (event) => {
-  function refreshCarousel();
+  refreshCarousel();
 });
 
 

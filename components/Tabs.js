@@ -49,20 +49,6 @@ promise.then(({data: {topics: topics}}) => { // object destructuring   {objectPr
 });  // end of the promise code
 
 
-
-// promise.then(({data: user}) => { // object destructuring   {objectProperty: assignedToVar}
-//   console.log("User: ", user);
-  
-//   let cardContainer =  document.querySelector('.cards');
-//   cardContainer.appendChild(cardMaker(user)); // the append must go INSIDE the callback
-  
-// }).catch((user) => {
-//   console.log("Promise call unsuccessful.")
-// });
-
-
-
-
 // test code, it works
 // createNewTab("testtab");
 // let topicsContainer = document.querySelector('.topics');

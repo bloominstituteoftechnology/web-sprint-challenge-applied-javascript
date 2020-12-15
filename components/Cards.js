@@ -11,7 +11,7 @@ function getHerokuArticles() {
 // You will be creating a card for each article in the response.
 // This won't be as easy as just iterating over an array though.
 
-console.log(getHerokuArticles());  // review the data
+// console.log(getHerokuArticles());  // review the data
 
 // data:
 // articles: {javascript: Array(4), bootstrap: Array(3), technology: Array(3), jquery: Array(3), node: Array(2)}
@@ -91,7 +91,7 @@ let promise = getHerokuArticles();
 
 promise.then(({data: {articles: articles}}) => { // object destructuring   {objectProperty: assignedToVar}
 
-    console.log("Articles object with 5 properties: ", articles);
+    // console.log("Articles object with 5 properties: ", articles);
 
     // These are 5 arrays
     let bootstrap = articles.bootstrap;
