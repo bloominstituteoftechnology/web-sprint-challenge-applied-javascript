@@ -5,8 +5,8 @@
 
   If You've gotten this far, you're on your own! Although we will give you some hints:
 
-    3. Create a current index
-    4. Those buttons are gonna need some click handlers
+
+
     5. Think of how you would animate this component. Make the cards slide in and out, or fade. It's up to you!
     6. Have fun!
 */
@@ -78,14 +78,16 @@ carouselContainer.appendChild(Carousel(urls));
 let slides = document.querySelectorAll('.slide');
 console.log("Slides: ", slides);  // returns a NodeList array of 4 images
 
+//  3. Create a current index
 let carouselIndex = 0; // global variable, initial value of 0
 
 function changeCarouselIndex(changeIndex) {
   // increment the global index
   carouselIndex = carouselIndex + changeIndex;
 
-  console.log("changeIndex", changeIndex);
-  console.log("carouselIndex", carouselIndex); 
+  // console.log("changeIndex", changeIndex);
+  // console.log("carouselIndex", carouselIndex); 
+
   // check if index is valid (b/t 0 & 3), reset if not
   if (carouselIndex > (slides.length - 1)) {
     carouselIndex = 0;
@@ -93,7 +95,7 @@ function changeCarouselIndex(changeIndex) {
     carouselIndex = (slides.length - 1);
   };
 
-  console.log("carouselIndex after check if valid", carouselIndex); 
+  // console.log("carouselIndex after check if valid", carouselIndex); // it works
 
 };
 
@@ -103,12 +105,14 @@ function refreshCarousel() {
   for (let i = 0; i < slides.length; i++) {
     if (i === carouselIndex) {
       slides[i].style.display = "block";
+      gsap.to(slides[i], {duration: 3, rotationY: 180}); // simple green sock animation added here
     } else {
       slides[i].style.display = "none";
     };
   };  // end of for loop
 };
 
+// 4. Those buttons are gonna need some click handlers
 function nextSlide() {
 
   changeCarouselIndex(1);
