@@ -27,14 +27,18 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+   the DOM is contains a webpage when it is built, and has different nodes that have built in methods that manipulate the html.
 
 2. What is an event?
+   A response when a user clicks somewhere .
 
 3. What is an event listener?
+   takes to arguments, the listens for the event. The second is a callback to fire when the event is triggered.
 
 4. Why would we convert a NodeList into an Array?
-   // hello
+   to use forEach to iterate over data.
 5. What is a component?
+   A component is used to build the structure of the hmtl with css and javascript. You can use a function to create a component to make a invididual functional part of a webpage.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
