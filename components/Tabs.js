@@ -1,3 +1,15 @@
+import axios from 'axios'
+
+function getTopic(topics){
+    axios.get(`https://lambda-times-api.herokuapp.com/topics`)
+    .then( response => {
+        console.log(response)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
+
 // STEP 2: Create tabs
 // -----------------------
 // Using axios send a GET request to the address: https://lambda-times-api.herokuapp.com/topics
