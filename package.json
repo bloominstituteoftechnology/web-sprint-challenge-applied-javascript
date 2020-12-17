@@ -2,7 +2,8 @@
   "name": "web-sprint-challenge-applied-javascript",
   "version": "1.0.0",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html", 
+    "card": "node Cards.js"
   },
   "repository": {
     "type": "git",
