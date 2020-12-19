@@ -1,4 +1,5 @@
-/*
+/* COMPLETE
+
   STRETCH GOAL
   STRETCH GOAL
   STRETCH GOAL
@@ -44,6 +45,10 @@ function Carousel (urls) {
     carousel.classList.add('carousel');
     leftButton.classList.add('left-button');
     rightButton.classList.add('right-button');
+
+    // add content
+    leftButton.textContent = "<";
+    rightButton.textContent = ">";
 
     // add event listener to buttons
     leftButton.addEventListener('click', previousSlide);
@@ -134,3 +139,4 @@ window.addEventListener('load', (event) => {
 });
 
 
+// UTF8 <div>
