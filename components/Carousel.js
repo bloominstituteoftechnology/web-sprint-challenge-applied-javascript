@@ -81,7 +81,7 @@ carouselContainer.appendChild(Carousel(urls));
 
 // select all slides, set to variable slides as an array of 4 images
 let slides = document.querySelectorAll('.slide');
-console.log("Slides: ", slides);  // returns a NodeList array of 4 images
+// returns a NodeList array of 4 images
 
 //  3. Create a current index
 let carouselIndex = 0; // global variable, initial value of 0

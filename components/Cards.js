@@ -5,13 +5,13 @@
 function getHerokuArticles() {
   let herokuPromise = axios.get('https://lambda-times-api.herokuapp.com/articles');
   return herokuPromise;
-}
+} // returns the herokuPromise
 
 // Study the response data you get back, closely.
 // You will be creating a card for each article in the response.
 // This won't be as easy as just iterating over an array though.
 
-// console.log(getHerokuArticles());  // review the data
+console.log("Articles: ", getHerokuArticles());  // review the data
 
 // data:
 // articles: {javascript: Array(4), bootstrap: Array(3), technology: Array(3), jquery: Array(3), node: Array(2)}
@@ -71,55 +71,74 @@ function createNewCard (articleObject) {
 
 };
 
+function displayArticlesForTopic(topicString) {
+  // to code for the problem topic: node.js vs the article node
+  let key = topicString === "node.js" ? "node" : topicString;
+
+  let articleArray = window.articles[key];
+  // console.log(typeof articleArray); // returns "object"
+  console.log("Topic string: ", key)
+
+  let cardsContainer = document.querySelector('.cards-container');
+  cardsContainer.textContent = "";
+
+  articleArray.forEach(article => {
+    createNewCard(article);
+  })
+};
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
-/*
+/*  This is the structure of the data from the promise
 object
-
   data:
-
     articles:
-
       bootstrap:  [3 article objects]
       javascript
       technology
       jquery
       node.js
-
 */
+
 let promise = getHerokuArticles();
 
 promise.then(({data: {articles: articles}}) => { // object destructuring   {objectProperty: assignedToVar}
 
     // console.log("Articles object with 5 properties: ", articles);
+    articles.all = articles.bootstrap.concat(articles.javascript).concat(articles.jquery).concat(articles.node).concat(articles.technology);
+
+    window.articles = articles; // captures global variable for articles so I can access in tabs.js
+
+    displayArticlesForTopic("all"); 
+    window.displayArticlesForTopic = displayArticlesForTopic 
+
+    // QUESTION:  Why is the function displayArticlesForTopic() not found aka. undef in the Tabs.js file?  Hacky solution:  assign to window global variable
+    
 
     // These are 5 arrays
-    let bootstrap = articles.bootstrap;
-    let javascript = articles.javascript;
-    let jquery = articles.jquery;
-    let node = articles.node;
-    let tecnnology = articles.technology;
+    // let bootstrap = articles.bootstrap;
+    // let javascript = articles.javascript;
+    // let jquery = articles.jquery;
+    // let node = articles.node;
+    // let tecnnology = articles.technology;
 
     // bootstrap.forEach(article => {})
 
-    bootstrap.forEach(e => {
-      createNewCard(e);
-    });
-    javascript.forEach(e => {
-      createNewCard(e);
-    });
-    jquery.forEach(e => {
-      createNewCard(e);
-    });
-    node.forEach(e => {
-      createNewCard(e);
-    });
-    tecnnology.forEach(e => {
-      createNewCard(e);
-    });
+    // bootstrap.forEach(e => {
+    //   createNewCard(e);
+    // });
+    // javascript.forEach(e => {
+    //   createNewCard(e);
+    // });
+    // jquery.forEach(e => {
+    //   createNewCard(e);
+    // });
+    // node.forEach(e => {
+    //   createNewCard(e);
+    // });
+    // tecnnology.forEach(e => {
+    //   createNewCard(e);
+    // });
 
-}).catch((articles) => {
-
-  console.log("Promise call unsuccessful.");
-
+}).catch((error) => {
+  console.log("Error. Promise call unsuccessful: ", error);
 });  // end of the promise code

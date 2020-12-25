@@ -2,23 +2,29 @@
 // -----------------------
 // Using axios send a GET request to the address: https://lambda-times-api.herokuapp.com/topics
 
-function getHerokuData() {
+function getHerokuTopics() {
   let herokuPromise = axios.get('https://lambda-times-api.herokuapp.com/topics');
   return herokuPromise;
-}
+}  // returns the herokuPromise
 
 // Once the data is resolved use console logs or breakpoints to review the structure.
 
-// console.log(getHerokuData()); // review the structure.  Target is dataObject.topics
+console.log("Log:", getHerokuTopics()); // review the structure.  Target is dataObject.topics
 
 // Iterate over the topics creating a new tab for each topic, and appending it to the DOM
 
+
 function createNewTab(topicString) {
 
-  // create element
+  // create element, add class, add content, add event listener
   let tab = document.createElement('div');
   tab.classList.add('tab');
   tab.textContent = topicString;
+  tab.addEventListener('click', (event) => {
+    window.displayArticlesForTopic(topicString);
+  });
+
+  
 
 
   let topicsContainer = document.querySelector('.topics');
@@ -30,21 +36,21 @@ function createNewTab(topicString) {
 
 };  // this func creates tabs
 
-
-let promise = getHerokuData();
+let promise = getHerokuTopics();
 
 promise.then(({data: {topics: topics}}) => { // object destructuring   {objectProperty: assignedToVar}
 
   // console.log("Topics the array variable: ", topics);
+  createNewTab("all"); // create the all tab
 
-  topics.forEach(e => {
-    
-    createNewTab(e);
+
+  topics.forEach(topic => {
+    createNewTab(topic);
   });
 
 }).catch((error) => {
 // will get an error
-  console.log(error, "Promise call unsuccessful."); // "Error: ", error  ...  Could do error.msg
+  console.log(error, "Error.  Promise call unsuccessful.");
 
 });  // end of the promise code
 
