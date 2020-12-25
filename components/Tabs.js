@@ -1,11 +1,74 @@
 // STEP 2: Create tabs
 // -----------------------
 // Using axios send a GET request to the address: https://lambda-times-api.herokuapp.com/topics
+
+function getHerokuTopics() {
+  let herokuPromise = axios.get('https://lambda-times-api.herokuapp.com/topics');
+  return herokuPromise;
+}  // returns the herokuPromise
+
 // Once the data is resolved use console logs or breakpoints to review the structure.
+
+console.log("Log:", getHerokuTopics()); // review the structure.  Target is dataObject.topics
+
 // Iterate over the topics creating a new tab for each topic, and appending it to the DOM
+
+
+function createNewTab(topicString) {
+
+  // create element, add class, add content, add event listener
+  let tab = document.createElement('div');
+  tab.classList.add('tab');
+  tab.textContent = topicString;
+  tab.addEventListener('click', (event) => {
+    window.displayArticlesForTopic(topicString);
+  });
+
+  
+
+
+  let topicsContainer = document.querySelector('.topics');
+  topicsContainer.appendChild(tab);
+
+  // console.log("Appended Topics Container", topicsContainer);
+
+  return tab;
+
+};  // this func creates tabs
+
+let promise = getHerokuTopics();
+
+promise.then(({data: {topics: topics}}) => { // object destructuring   {objectProperty: assignedToVar}
+
+  // console.log("Topics the array variable: ", topics);
+  createNewTab("all"); // create the all tab
+
+
+  topics.forEach(topic => {
+    createNewTab(topic);
+  });
+
+}).catch((error) => {
+// will get an error
+  console.log(error, "Error.  Promise call unsuccessful.");
+
+});  // end of the promise code
+
+
+// test code, it works
+// createNewTab("testtab");
+// let topicsContainer = document.querySelector('.topics');
+// console.log("appended container", topicsContainer)
+
+
+
+
+
+
 // under the div.topics element.
 //
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
+
