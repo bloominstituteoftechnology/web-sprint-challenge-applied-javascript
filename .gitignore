@@ -82,7 +82,8 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+dist/*
+!dist/mockServiceWorker.js
 
 # Gatsby files
 .cache/
@@ -115,4 +116,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# Mac cruft
 .DS_Store
