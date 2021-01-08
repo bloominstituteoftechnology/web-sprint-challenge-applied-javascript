@@ -47,7 +47,7 @@ Your must complete all the following steps:
 **Notes:**
 
 - Please **do not move or rename existing files** or folders.
-- Do not alter your `package.json` file except for installing additional libraries if needed.
+- Do not alter the `package.json` file except to install additional libraries if needed.
 - In your solution, it is essential that you follow best practices and produce clean and professional results.
 - Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work.
 - It is better to submit a challenge that meets MVP than one that attempts too much and does not.
