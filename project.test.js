@@ -1,8 +1,10 @@
 import 'regenerator-runtime'
 import '@testing-library/jest-dom/extend-expect'
 import fetch from 'node-fetch'
+import axios from 'axios'
 
 globalThis.fetch = fetch
+globalThis.axios = axios
 
 import { server } from './src/mocks/server'
 import { screen, queries } from '@testing-library/dom'

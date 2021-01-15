@@ -39,18 +39,19 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 Your must complete all the following steps:
 
-- [ ] Step 0 is to link `src/index.js` to the `src/index.html` file, using a script tag.
+- [ ] Step 0 is to link `src/index.js` to the `src/index.html` file using a script tag.
 - [ ] Steps 1 and 2 are explained inside the `src/components/header.js` file.
 - [ ] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
 - [ ] Steps 5 and 6 are explained inside the `src/components/card.js` file.
 
-**Notes:**
+**Important Notes:**
 
 - Please **do not move or rename existing files** or folders.
-- Careful adding the script tag: the code inside `index.js` needs the DOM to be fully built before executing.
-- Do not alter the `package.json` file except to install additional libraries if needed.
+- Careful adding your script tag in Step 0: the code inside `index.js` needs the DOM to be fully built before executing.
+- Careful if you choose to install Axios using another script tag: The order in which script tags execute is important.
+- Do not change the `package.json` file except to install libraries with NPM (Axios is already in the `package.json`).
 - In your solution, it is essential that you follow best practices and produce clean and professional results.
-- Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work.
+- Schedule time to review, refine, and polish your work, including spell-checking and grammar-checking.
 - It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
 ### C - Stretch Goals

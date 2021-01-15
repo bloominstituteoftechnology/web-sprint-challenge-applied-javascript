@@ -14,6 +14,7 @@
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "msw": "=0.24.4",
     "regenerator-runtime": "^0.13.7"
   },
