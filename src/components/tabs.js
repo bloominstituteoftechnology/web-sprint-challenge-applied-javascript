@@ -57,7 +57,7 @@ const tabsAppender = (selector) => {
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
 
-
+  const 
 
 
 }
