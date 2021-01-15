@@ -44,7 +44,7 @@ Your must complete all the following steps:
 - [ ] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
 - [ ] Steps 5 and 6 are explained inside the `src/components/card.js` file.
 
-**Important Notes**
+**Important Notes:**
 
 - Please **do not move or rename existing files** or folders.
 - Careful adding your script tag in Step 0: the code inside `index.js` needs the DOM to be fully built before executing.
