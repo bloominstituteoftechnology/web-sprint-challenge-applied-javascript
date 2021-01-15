@@ -50,7 +50,7 @@ Your must complete all the following steps:
 - Careful adding your script tag in Step 0: the code inside `index.js` needs the DOM to be fully built before executing.
 - Careful if you choose to install Axios using another script tag: the order in which script tags execute is important.
 - If your development server stops "auto reloading", manually kill it and restart it.
-- Do not change the `package.json` file except to install libraries with NPM (Axios is already in the `package.json`).
+- Do not change the `package.json` file except to install libraries with NPM (Axios is _already_ in the `package.json`).
 - In your solution, it is essential that you follow best practices and produce clean and professional results.
 - Schedule time to review, refine, and polish your work, including spell-checking and grammar-checking.
 - It is better to submit a challenge that meets MVP than one that attempts too much and does not.
