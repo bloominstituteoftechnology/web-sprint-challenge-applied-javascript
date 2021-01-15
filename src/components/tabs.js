@@ -15,7 +15,7 @@ const Tabs = (topics) => {
   //
 }
 
-const tabsAppender = async (selector) => {
+const tabsAppender = (selector) => {
   // TASK 4
   // ---------------------
   // Implement this function which takes a css selector as its only argument.

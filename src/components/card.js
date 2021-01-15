@@ -19,7 +19,7 @@ const Card = (article) => {
   //
 }
 
-const cardAppender = async (selector) => {
+const cardAppender = (selector) => {
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
