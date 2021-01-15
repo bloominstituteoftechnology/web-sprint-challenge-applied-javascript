@@ -1,11 +1,14 @@
 import axios from "axios"
 
+const tabc = document.querySelector("tabs-container");
+
 const URL = "https://lambda-times-api.herokuapp.com/topics"
 
 
 axios .get(URL)
   .then(res => {
     console.log(res.data)
+    
     
   })
   .catch(err => {
