@@ -47,6 +47,7 @@ Your must complete all the following steps:
 **Notes:**
 
 - Please **do not move or rename existing files** or folders.
+- Careful adding the script tag: the code inside `index.js` needs the DOM to be fully built before executing.
 - Do not alter the `package.json` file except to install additional libraries if needed.
 - In your solution, it is essential that you follow best practices and produce clean and professional results.
 - Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work.
