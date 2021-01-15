@@ -44,7 +44,7 @@ const Card = (article) => {
   img.setAttribute('src', `${article.authorPhoto}`);
 
 
-  card.addEventListener('click', evvent => {
+  card.addEventListener('click', event => {
     console.log(headline);
   })
   return card;
