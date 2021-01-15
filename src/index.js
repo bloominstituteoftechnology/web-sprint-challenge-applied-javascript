@@ -10,6 +10,7 @@ import { headerAppender } from './components/header'
 
 worker.start()
 
-headerAppender('.header-container')
-tabsAppender('.tabs-container')
-cardAppender('.cards-container')
+//headerAppender('.header-container')
+//tabsAppender('.tabs-container')
+//cardAppender('.cards-container')
+
