@@ -48,7 +48,8 @@ Your must complete all the following steps:
 
 - Please **do not move or rename existing files** or folders.
 - Careful adding your script tag in Step 0: the code inside `index.js` needs the DOM to be fully built before executing.
-- Careful if you choose to install Axios using another script tag: The order in which script tags execute is important.
+- Careful if you choose to install Axios using another script tag: the order in which script tags execute is important.
+- Restart your server manually after making changes to `index.html`: the "live reload" might not pick up those changes.
 - Do not change the `package.json` file except to install libraries with NPM (Axios is already in the `package.json`).
 - In your solution, it is essential that you follow best practices and produce clean and professional results.
 - Schedule time to review, refine, and polish your work, including spell-checking and grammar-checking.
