@@ -1,4 +1,5 @@
 import axios from "axios";
+import { articles } from "../mocks/data";
 
 const Card = (article) => {
   // TASK 5
@@ -35,13 +36,17 @@ const Card = (article) => {
   card.appendChild(headline);
   card.appendChild(author);
   author.appendChild(imgContainer);
-  imgContainer.appendChild(img);
   author.appendChild(authorName);
+  imgContainer.appendChild(img);
 
   headline.textContent=article.headline;
-  authorName.textContent=article.authorName;
-  img.setAttribute('src', article.authorPhoto);
+  authorName.textContent=`By ${article.authorName}`;
+  img.setAttribute('src', `${article.authorPhoto}`);
 
+
+  card.addEventListener('click', evvent => {
+    console.log(headline);
+  })
   return card;
   
 }
@@ -64,7 +69,14 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-    axios.get(`https://lambda-times-api.herokuapp.com/articles`)
+    
+      if(selector === selector) {
+        articles.forEach
+      }
+  
+  
+  
+  axios.get(`https://lambda-times-api.herokuapp.com/articles`)
       .then(res => {
           res.data.articles.bootstrap.forEach(bootstraps => {
             Card(bootstraps);
