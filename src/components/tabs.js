@@ -1,3 +1,7 @@
+
+import axios from 'axios'
+
+
 const Tabs = (topics) => {
   // TASK 3
   // ---------------------

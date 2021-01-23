@@ -1,3 +1,7 @@
+
+import axios from 'axios'
+
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
