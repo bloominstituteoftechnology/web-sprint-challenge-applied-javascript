@@ -1,5 +1,5 @@
 # Applied JavaScript Sprint Challenge
-
+test
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
 This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored **Applied JavaScript**. During this sprint, you studied **DOM and components**. In your challenge this week, you will demonstrate your mastery of these skills by creating **an online Lambda newspaper**.
@@ -39,7 +39,7 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 Your must complete all the following steps:
 
-- [ ] Step 0 is to link `src/index.js` to the `src/index.html` file using a script tag.
+- [X] Step 0 is to link `src/index.js` to the `src/index.html` file using a script tag.
 - [ ] Steps 1 and 2 are explained inside the `src/components/header.js` file.
 - [ ] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
 - [ ] Steps 5 and 6 are explained inside the `src/components/card.js` file.
