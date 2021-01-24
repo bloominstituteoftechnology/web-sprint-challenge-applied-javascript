@@ -12,6 +12,7 @@ const Header = (title, date, temp) => {
   //  </div>
   //
   const header = document.createElement('div');
+  header.textContent = "hi";
 }
 
 const headerAppender = (selector) => {
