@@ -23,6 +23,7 @@ const Card = (article) => {
   
   let i;
   for(i = 0; i < article.length; i++){
+    
     const headline = document.createElement('div');
     headline.classList.add('headline');
     headline.textContent = article[i].headline;
@@ -44,9 +45,12 @@ const Card = (article) => {
     authorName.textContent = `By ${article[i].authorName}`;
     authorContainer.appendChild(authorName);
 
+    
   }
 
   return card;
+
+  
 }
 
 import axios from 'axios'
