@@ -13,6 +13,8 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+  const tabsTopics = document.createElement('div');
+  tabsTopics.classList.add('topics');
 }
 
 const tabsAppender = (selector) => {
