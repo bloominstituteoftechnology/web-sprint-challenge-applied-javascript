@@ -17,8 +17,39 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+
+  const card = document.createElement('div');
+  card.classList.add('card');
+  
+  let i;
+  for(i = 0; i < article.length; i++){
+    const headline = document.createElement('div');
+    headline.classList.add('headline');
+    headline.textContent = article[i].headline;
+    card.appendChild(headline);
+
+    const authorContainer = document.createElement('div');
+    authorContainer.classList.add('author');
+    card.appendChild(authorContainer);
+
+    const imgContainer = document.createElement('div');
+    imgContainer.classList.add('img-container');
+    authorContainer.appendChild(imgContainer);
+
+    const authorPhoto = document.createElement('img');
+    authorPhoto.src = article[i].authorPhoto;
+    imgContainer.appendChild(authorPhoto);
+
+    const authorName = document.createElement('span');
+    authorName.textContent = `By ${article[i].authorName}`;
+    authorContainer.appendChild(authorName);
+
+  }
+
+  return card;
 }
 
+import axios from 'axios'
 const cardAppender = (selector) => {
   // TASK 6
   // ---------------------
@@ -28,6 +59,28 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+  const articleURL = 'https://lambda-times-api.herokuapp.com/articles'
+
+  axios.get(articleURL)
+  .then(res=>{
+    console.log("success")
+    const articleArray = res.data;
+    const bootStrap = Array.from(articleArray.articles.bootstrap);
+    const javaScript = Array.from(articleArray.articles.javascript);
+    const jQuery = Array.from(articleArray.articles.jquery);
+    const node = Array.from(articleArray.articles.node);
+    const technology = Array.from(articleArray.articles.technology);
+
+    const parent =  document.querySelector(selector);
+    parent.appendChild(Card(javaScript));
+    parent.appendChild(Card(jQuery));
+    parent.appendChild(Card(node));
+    parent.appendChild(Card(technology));
+    parent.appendChild(Card(bootStrap));
+  })
+  .catch(err=>{
+    console.log(err)
+  })
 }
 
 export { Card, cardAppender }
