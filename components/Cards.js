@@ -21,26 +21,28 @@
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
-axios.get('https://lambda-times-api.herokuapp.com/articles')
-    .then(response => {
-        console.log(response)
-    });
-    .catch(reject => {
-        console.log(reject)
-    });
+let api = axios.get('https://lambda-times-api.herokuapp.com/articles')
+console.log(api)
 
-const article = ()=> {
-    const div = document.createElement('div')
-    const headline = document.createElement('div')
-    const author = document.createElement('div')
-    const imgCont = document.createElement('div')
-    const img = document.createElement('img')
-    const authName = document.createElement('span')
+    // .then(response => {
+    //     console.log(response)
+    // });
+    // .catch(reject => {
+    //     console.log(reject)
+    // });
 
-    div.classList.add('card')
-    headline.classList.add('headline')
-    author.classList.add('author')
-    imgCont.classList.add('img-container')
+// const article = ()=> {
+//     const div = document.createElement('div')
+//     const headline = document.createElement('div')
+//     const author = document.createElement('div')
+//     const imgCont = document.createElement('div')
+//     const img = document.createElement('img')
+//     const authName = document.createElement('span')
+
+//     div.classList.add('card')
+//     headline.classList.add('headline')
+//     author.classList.add('author')
+//     imgCont.classList.add('img-container')
     
     
-}
+// }
