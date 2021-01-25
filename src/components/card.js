@@ -21,7 +21,44 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+  const card = document.createElement('div');
+  
+
+  let i;
+  for(i = 0; i < article.length; i++){
+    const headline = document.createElement('div');
+    const authorContainer = document.createElement('div');
+    const imgContainer = document.createElement('div');
+    const authorPhoto = document.createElement('img');
+    const authorName = document.createElement('span');
+
+    //
+    card.classList.add('card');
+    headline.classList.add('headline');
+    authorContainer.classList.add('author');
+    imgContainer.classList.add('img-container');
+
+    //
+    card.appendChild(headline);
+    card.appendChild(authorContainer);
+    authorContainer.appendChild(imgContainer);
+    authorContainer.appendChild(authorName);
+    imgContainer.appendChild(authorPhoto);
+
+
+    //
+    authorPhoto.src = article[i].authorPhoto;
+    headline.textContent = article[i].headline;
+    authorName.textContent = `By ${article[i].authorName}`;
+
+
+    
+  
+  }
+  return card;
 }
+
+
 
 const cardAppender = (selector) => {
   // TASK 6
@@ -31,7 +68,34 @@ const cardAppender = (selector) => {
   // However, the articles do not come organized in a single, neat array. Inspect the response closely!
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
-  //
-}
+
+const articlelink = `https://lambda-times-api.herokuapp.com/articles`
+
+axios.get(articlelink)
+  .then(res => {console.log("success")
+  const articleArray = res.data;
+
+  const bootStrap = Array.from(articleArray.articles.bootstrap);
+  const javaScript = Array.from(articleArray.articles.javascript);
+
+  const jQuery = Array.from(articleArray.articles.jquery);
+
+  const node = Array.from(articleArray.articles.node);
+  const technology = Array.from(articleArray.articles.technology);
+
+  const cardholder=  document.querySelector(selector);
+
+  cardholder.appendChild(Card(javaScript));
+  cardholder.appendChild(Card(jQuery));
+
+  cardholder.appendChild(Card(node));
+
+  cardholder.appendChild(Card(technology));
+  cardholder.appendChild(Card(bootStrap));
+  })
+   .catch(error => {
+     console.log(error)
+   })
+  }
 
 export { Card, cardAppender }

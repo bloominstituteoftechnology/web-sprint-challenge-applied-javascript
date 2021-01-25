@@ -49,7 +49,7 @@ const headerAppender = (selector) => {
   // It should append the header to the element in the DOM that matches the given selector.
   //
 
-let hold = document.querySelector('.header-container')
+let hold = document.querySelector(selector)
 hold.appendChild(Header('Lambda Times','1-11-1999','72f'))
 }
 
