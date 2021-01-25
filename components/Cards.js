@@ -1,3 +1,5 @@
+import Axios from "axios";
+
 // STEP 3: Create article cards.
 // -----------------------
 // Send an HTTP GET request to the following address: https://lambda-times-api.herokuapp.com/articles
@@ -21,4 +23,43 @@
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
-const myName = "Loleatha"
+// const articleCard = document.querySelector('.cards-container')
+
+axios.get('https://lambda-times-api.herokuapp.com/articles')
+ .then((res) => {
+    console.log(res.data.articles)
+    Object.values(res.data.articles).forEach((topic) => {
+        topic.forEach(res => {
+            document.querySelector('div.cards-container').appendChild(cardMaker(res))
+        })
+    })
+})
+
+function Header() {}
+    const newCard = document.createElement('div')
+    const newHeadline = document.createElement('div')
+    const newAuthor = document.createElement('div')
+    const newImgContainer = document.querySelector('div')
+    const newImg = document.querySelector('img')
+    const span = document.querySelector('span')
+
+    newCard.classList.add('card')
+    newHeadline.classList.add('headline')
+    newAuthor.classList.add('author')
+    newImgContainer.classList.add('img-container')
+
+    newHeadline.textContent = article.headline
+    newImg.src = article.authorPhoto
+    span.textContent = article.authorName
+
+    newCard.appendChild(newHeadline)
+    newCard.appendChild(newAuthor)
+    newAuthor.appendChild(newImgContainer)
+    newImgContainer.appendChild(newImg)
+    newAuthor.appendChild(span)
+
+    return articleCard;
+};
+
+const headerContainer = document.querySelector('div.header-container')
+headerContainer.appendChild(Header())
