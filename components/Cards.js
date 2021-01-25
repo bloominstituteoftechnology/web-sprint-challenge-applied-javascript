@@ -31,18 +31,18 @@ console.log(api)
     //     console.log(reject)
     // });
 
-// const article = ()=> {
-//     const div = document.createElement('div')
-//     const headline = document.createElement('div')
-//     const author = document.createElement('div')
-//     const imgCont = document.createElement('div')
-//     const img = document.createElement('img')
-//     const authName = document.createElement('span')
+const article = ()=> {
+    const div = document.createElement('div')
+    const headline = document.createElement('div')
+    const author = document.createElement('div')
+    const imgCont = document.createElement('div')
+    const img = document.createElement('img')
+    const authName = document.createElement('span')
 
-//     div.classList.add('card')
-//     headline.classList.add('headline')
-//     author.classList.add('author')
-//     imgCont.classList.add('img-container')
+    div.classList.add('card')
+    headline.classList.add('headline')
+    author.classList.add('author')
+    imgCont.classList.add('img-container')
     
     
-// }
+}
