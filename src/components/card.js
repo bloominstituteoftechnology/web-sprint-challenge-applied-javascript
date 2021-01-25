@@ -39,17 +39,18 @@ const Card = (article) => {
     imgContainer.classList.add('img-container');
 
     //
-    card.appendChild(headline);
+    authorPhoto.src = article[i].authorPhoto;
+    headline.textContent = article[i].headline;
+    authorName.textContent = `By ${article[i].authorName}`;
+   
+
+
+    //
+     card.appendChild(headline);
     card.appendChild(authorContainer);
     authorContainer.appendChild(imgContainer);
     authorContainer.appendChild(authorName);
     imgContainer.appendChild(authorPhoto);
-
-
-    //
-    authorPhoto.src = article[i].authorPhoto;
-    headline.textContent = article[i].headline;
-    authorName.textContent = `By ${article[i].authorName}`;
 
 
     
