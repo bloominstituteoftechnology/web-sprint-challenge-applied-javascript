@@ -12,23 +12,29 @@ const Header = (title, date, temp) => {
   //  </div>
   //
 
+
+  // Create Elements
   const newHeader = document.createElement('div');
   const newDate = document.createElement('span');
   const newH1 = document.createElement('h1');
   const newTemp = document.createElement('span');
 
+  // Add Content
   newDate.textContent = date;
   newH1.textContent = title;
   newTemp.textContent = temp;
 
+  // Add Classes
   newHeader.classList.add('header');
   newDate.classList.add('date');
   newTemp.classList.add('temp');
 
+  // Structure Content
   newHeader.appendChild(newDate);
   newHeader.appendChild(newH1);
   newHeader.appendChild(newTemp);
 
+  // Return Result
   return newHeader;
 
 }

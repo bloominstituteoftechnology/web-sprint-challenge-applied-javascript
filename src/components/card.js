@@ -21,6 +21,7 @@ const Card = (article) => {
   // </div>
   //
 
+  // Create Elements
   const newCard = document.createElement('div');
   const newHeadline = document.createElement('div');
   const newAuthor = document.createElement('div');
@@ -28,21 +29,25 @@ const Card = (article) => {
   const newImg = document.createElement('img');
   const newSpan = document.createElement('span');
 
+  // Add Classes
   newCard.classList.add('card');
   newHeadline.classList.add('headline');
   newAuthor.classList.add('author');
   newImgContainer.classList.add('img-container');
 
+  // Add Content
   newHeadline.textContent = article.headline;
   newImg.src = article.authorPhoto;
   newSpan.textContent = article.authorName;
 
+  // Structure Content
   newCard.appendChild(newHeadline);
   newCard.appendChild(newAuthor);
   newAuthor.appendChild(newImgContainer);
   newImgContainer.appendChild(newImg);
   newAuthor.appendChild(newSpan);
 
+  // Return Result
   return newCard;
 
 }
