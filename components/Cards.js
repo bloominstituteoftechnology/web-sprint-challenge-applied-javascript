@@ -31,7 +31,7 @@ console.log(api)
     //     console.log(reject)
     // });
 
-const article = ()=> {
+const article = ArticleMaker => {
     const div = document.createElement('div')
     const headline = document.createElement('div')
     const author = document.createElement('div')
