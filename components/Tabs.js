@@ -9,6 +9,7 @@
 //    <div class="tab">topic here</div>
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
+<<<<<<< HEAD
 let topicName = document.querySelector('.topics')
 axios.get('https://lambda-times-api.herokuapp.com/topics')
     .then(res => {
@@ -19,3 +20,6 @@ axios.get('https://lambda-times-api.herokuapp.com/topics')
             topicName.innerHTML = topic
         })
     })
+=======
+axios.get('https://lambda-times-api.herokuapp.com/topics')
+>>>>>>> 81a60f9b306a3cc0c83dc8240d1be421b6155940
