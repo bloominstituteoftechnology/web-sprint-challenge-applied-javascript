@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -17,8 +19,46 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
-}
 
+  //iterate over array of objects and return markup
+  // const articles_obj = article.forEach((item) => {
+    //instantiating elements
+    const div_card = document.createElement('div');
+    const div_headline = document.createElement('div');
+    const div_author = document.createElement('div');
+    const div_img = document.createElement('div');
+    const img = document.createElement('img');
+    const span = document.createElement('span');
+  
+    //setting class names
+    div_card.classList.add('card');
+    div_headline.classList.add('headline');
+    div_author.classList.add('author');
+    div_img.classList.add('img-container');
+
+    //adding text and attributes to elements
+    div_headline.textContent = article.headline;
+    img.setAttribute('src', article.authorPhoto);
+    img.setAttribute('alt', 'Photo of author');
+    span.textContent = `By ${article.authorName}`;
+    
+    //setting element hierarchy
+    div_card.appendChild(div_headline);
+    div_card.appendChild(div_author);
+    div_author.appendChild(div_img);
+    div_img.appendChild(img);
+    div_author.appendChild(span);
+    
+    //creating event listener
+    div_card.addEventListener('click', (e) => {
+      console.log(article.headline);
+    });
+    //returning markup
+    return div_card;
+  }
+
+
+  //define HOF that takes in a callback
 const cardAppender = (selector) => {
   // TASK 6
   // ---------------------
@@ -28,6 +68,33 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+
+  //instantiating axios get request from url
+  const url = 'https://lambda-times-api.herokuapp.com/articles';
+  axios.get(url)
+    .then(res => {
+      const array = res.data.articles;
+      Object.values(array).forEach((value) => {
+        value.forEach(item => {
+
+          //instantiating HOF return element object
+          const articleCard = Card(item);
+          
+        //instantiating parent element and adding element object to the dom
+        document.querySelector(selector).appendChild(articleCard);
+        })
+      })
+    }) 
+    .catch(err => {
+      console.log(err)
+  })
 }
+
+
+//define selector callback argument
+const elSelector =  document.querySelector('.cards-container');
+
+//call cardAppender and pass in the callback
+cardAppender(elSelector);
 
 export { Card, cardAppender }
