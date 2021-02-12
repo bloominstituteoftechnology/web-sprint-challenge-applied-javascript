@@ -38,5 +38,11 @@
   // It should append the header to the element in the DOM that matches the given selector.
   //
 
+  function headerCreator(){
+    const button = document.createElement('header');
+
+    button.textContent = buttonText;
+
+
 
 export { Header, headerAppender }
