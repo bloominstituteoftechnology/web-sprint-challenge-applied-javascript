@@ -27,9 +27,12 @@ const Header = (title, date, temp) => {
   headerTemp.classList.add('temp')
   headerTemp.textContent = temp
   headerDiv.appendChild(headerTemp)
+
+  return headerDiv
 }
 
-//test
+//console.log(Header('1', '2', '3'))
+
 
 const headerAppender = (selector) => {
   // TASK 2
