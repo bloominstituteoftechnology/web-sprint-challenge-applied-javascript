@@ -75,7 +75,12 @@ There are two possible ways to submit this project to Canvas. Lambda Staff will 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+DOM is the Document Object Model. It takes the HTML or XTML places it into the form of an object, to then be read by Web Browser and a human.
 2. What is an event?
+An event is when either the user or the browser do something with the page.
 3. What is an event listener?
+Code that listens for a specific event, usually to associate action to the event. Ie. a user clicking an image to make it flip.
 4. Why would we convert a NodeList into an Array?
+To use array methods other than forEach()
 5. What is a component?
+A piece of code that's reusable. Ie. making a function that generates user-cards based on information fed from an API, as opposed to hardcoding a card by plugging in the information manually.
