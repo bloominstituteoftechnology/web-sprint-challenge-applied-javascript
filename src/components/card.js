@@ -63,9 +63,12 @@ const cardAppender = (selector) => {
     .get(`https://lambda-times-api.herokuapp.com/articles`)
     .then((res) => {
       const articlesBlob = res.data.articles
+      Object.values(articlesBlob).forEach((item) =>{
+        Object.values(item).forEach((e) =>{
+          entryPoint.appendChild(Card(e))
+        })
+      })
     
-     for (let issue of articlesBlob)
-     console.log(issue)
       // articlesBlob.forEach((issue) => {
       //   issue.forEach(article => {
       //     entryPoint.appendChild(Card(article))
