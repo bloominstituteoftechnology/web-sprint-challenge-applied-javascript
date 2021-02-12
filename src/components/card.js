@@ -36,7 +36,7 @@ const Card = (article) => {
     div_author.classList.add('author');
     div_img.classList.add('img-container');
 
-    //setting text and attributes to elements
+    //adding text and attributes to elements
     div_headline.textContent = article.headline;
     img.setAttribute('src', article.authorPhoto);
     img.setAttribute('alt', 'Photo of author');
@@ -53,6 +53,7 @@ const Card = (article) => {
     div_card.addEventListener('click', (e) => {
       console.log(article.headline);
     });
+    //returning markup
     return div_card;
   }
 
@@ -68,15 +69,19 @@ const cardAppender = (selector) => {
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
 
-  //instantiate axios get request from url
+  //instantiating axios get request from url
   const url = 'https://lambda-times-api.herokuapp.com/articles';
   axios.get(url)
     .then(res => {
       const array = res.data.articles;
       Object.values(array).forEach((value) => {
         value.forEach(item => {
-          const articleCard = Card(item)
-          selector.appendChild(articleCard);
+
+          //instantiating HOF return element object
+          const articleCard = Card(item);
+          
+        //instantiating parent element and adding element object to the dom
+        document.querySelector(selector).appendChild(articleCard);
         })
       })
     }) 
@@ -85,16 +90,11 @@ const cardAppender = (selector) => {
   })
 }
 
-//define a selector callback
-const elementSelector = (sel) =>{
-  const selection = sel;
-  return selection;
-}
 
 //define selector callback argument
 const elSelector =  document.querySelector('.cards-container');
 
 //call cardAppender and pass in the callback
-cardAppender(elementSelector(elSelector));
+cardAppender(elSelector);
 
 export { Card, cardAppender }
