@@ -17,6 +17,33 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+  const card = document.createElement('div')
+  const headlineTxt = document.createElement('div')
+  const author = document.createElement('div')
+  const imgContainer = document.createElement('div')
+  const image = document.createElement('img')
+  const by = document.createElement('span')
+
+  card.classList.add('card');
+  headlineTxt.classList.add('headline');
+  author.classList.add('authour');
+  imgContainer.classList.add('img-container');
+
+  headlineTxt.textContent = `${article.headline}`
+  image.src = `${author.authorPhoto}`;
+  by.textContent = `By ${article.authorName}`
+
+  card.appendChild(headlineTxt);
+  card.appendChild(author);
+  author.appendChild(imgContainer);
+  imgContainer.appendChild(image);
+  author.appendChild(by);
+
+  // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
+card.addEventListener('click', () => {console.log(headlineTxt)})
+
+ return card;
+
 }
 
 const cardAppender = (selector) => {

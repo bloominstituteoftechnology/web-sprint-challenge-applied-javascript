@@ -38,14 +38,16 @@ const headerAppender = (selector) => {
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
-  let todayDate = new Date();
-  let dd = String(today.getDate()).padStart(2, '0');
-  let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-  let yyyy = today.getFullYear();
+  const entrypoint = document.querySelector(`${selector}`)
+  let todayDate = new Date ()
+  let dd = String(todayDate.getDate()).padStart(2, '0');
+  let mm = String(todayDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+  let yyyy = todayDate.getFullYear();
   let temperature = '32';
   let heading = "It's a chilly one!"
   todayDate = `${mm}/${dd}/${yyyy}`
 
-  return selector.appendChild(Header(heading, todayDate, temperature))
+  entrypoint.appendChild(Header(heading, todayDate, temperature))
+}
 
 export { Header, headerAppender }
