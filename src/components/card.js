@@ -26,11 +26,13 @@ const author = document.createElement('div');
 const imgContainer = document.createElement('div');
 const img = document.createElement('img');
 const span = document.createElement('span');
+const id = document.createElement('id');
 //! add classes to elements
 card.classList.add('card');
 headline.classList.add('headline');
 author.classList.add('author');
 imgContainer.classList.add('img-container');
+id.classList.add(article.id)
 //! add link to image
 img.src = article.authorPhoto;
 //! add text content
@@ -42,6 +44,7 @@ card.appendChild(author);
 author.appendChild(imgContainer);
 imgContainer.appendChild(img);
 author.appendChild(span);
+card.appendChild(id);
 //! create eventListener 
 card.addEventListener('click', () => {
  console.log(headline);
@@ -74,20 +77,29 @@ const cardAppender = (selector) => {
     const technology = arrayArticles.technology;
     const jquery = arrayArticles.jquery;
     const node = arrayArticles.node;
+    
+    const take = document.querySelector('.cards-container');
+    console.log(take)
     //! add cards to the page
     javascript.forEach(item =>{
+      item.id =('javascript');
       select.appendChild(Card(item))
+
     })
     bootstrap.forEach(item =>{
+      item.id =('bootstrap');
       select.appendChild(Card(item))
     })
     technology.forEach(item =>{
+      item.id =('technology');
       select.appendChild(Card(item))
     })
     jquery.forEach(item =>{
+      item.id =('jquery');
       select.appendChild(Card(item))
     })
     node.forEach(item =>{
+      item.id =('node');
       select.appendChild(Card(item))
     })
   })

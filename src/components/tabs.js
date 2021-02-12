@@ -31,7 +31,47 @@ const Tabs = (topics) => {
    div.forEach(div => {
      topicsMain.appendChild(div);
    })
-
+   topicsMain.addEventListener('click', event => {
+    const some = document.querySelectorAll('id');
+    console.log(some)
+    if (event.target.textContent == 'javascript'){
+      some.forEach(item => {
+        if (item.className != 'javascript'){
+          item.parentElement.style.display = 'none'
+        }
+      })
+    }
+    else if (event.target.textContent == 'bootstrap'){
+      some.forEach(item => {
+        if (item.className != 'bootstrap'){
+          item.parentElement.style.display = 'none'
+        }
+      })
+    }
+    else if (event.target.textContent == 'technology'){
+      some.forEach(item => {
+        if (item.className != 'technology'){
+          item.parentElement.style.display = 'none'
+        }
+      })
+    }
+    else if (event.target.textContent == 'jquery'){
+      some.forEach(item => {
+        if (item.className != 'jquery'){
+          item.parentElement.style.display = 'none'
+        }
+        
+      })
+    }
+    else if (event.target.textContent == 'node.js'){
+      some.forEach(item => {
+        if (item.className != 'node'){
+          item.parentElement.style.display = 'none'
+        }
+        
+      })
+    }
+   })
    return topicsMain;
 }
 //!check function
