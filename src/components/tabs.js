@@ -48,26 +48,23 @@ const tabsAppender = (selector) => {
   axios.get(url)
     .then(res => {
       const array = res.data.topics;
-      console.log(array);
+      // console.log(array);
       const subjects = Tabs(array);
-      console.log(subjects);
+      // console.log(subjects);
       selector.appendChild(subjects);
   })
     .catch(err => {
       console.log(err)
   })
-    .then(() => {
-      console.log('Success ')
-})
 }
 
 const selector =  document.querySelector('.tabs-container');
+
 const returnSelector = (selector) =>{
   const selection = selector;
   return selection;
 }
 
-console.log();
 tabsAppender(returnSelector(selector));
 
 export { Tabs, tabsAppender }
