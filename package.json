@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "parcel src/index.html",
-    "test": "jest --watchAll --verbose"
+    "test:watch": "jest --watchAll --verbose"
   },
   "devDependencies": {
     "@testing-library/dom": "^7.29.1",
