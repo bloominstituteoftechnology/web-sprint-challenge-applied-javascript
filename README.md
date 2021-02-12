@@ -34,6 +34,7 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 - [ ] Run `npm install` to download the dependencies listed in the `package.json` file.
 - [ ] Run `npm start` to compile the project and serve it.
 - [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command.
+- [ ] In a separate terminal, run `npm run test:watch` to run tests.
 
 ### B - Project Requirements
 
@@ -65,10 +66,9 @@ After finishing your required elements, you can push your work further. These go
 
 ## Submission format
 
-There are two possible ways to submit this project to Canvas. Lambda Staff will let you know which one to use:
+Set up your fork on Github to [submit via Codegrade](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374), pushing commits to your `<firstName-lastName>` branch.
 
-1. Submitting a pull request to merge `<firstName-lastName>` branch into `main`.
-2. Setting up your fork on Github to submit via Codegrade, pushing commits to your `<firstName-lastName>` branch.
+Your code will be reviewed over the next few days. Read [these instructions](https://www.notion.so/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a) to learn how to view feedback in CodeGrade.
 
 ## Interview Questions
 
