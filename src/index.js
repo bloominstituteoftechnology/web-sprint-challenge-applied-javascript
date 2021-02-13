@@ -9,7 +9,7 @@ import { tabsAppender } from './components/tabs'
 import { headerAppender } from './components/header'
 
 worker.start()
-
+ 
 headerAppender('.header-container')
 tabsAppender('.tabs-container')
 cardAppender('.cards-container')
