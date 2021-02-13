@@ -1,3 +1,10 @@
+// import { response } from "msw/lib/types";
+
+import axios from 'axios';
+
+
+
+
 const Tabs = (topics) => {
   // TASK 3
   // ---------------------
@@ -6,13 +13,24 @@ const Tabs = (topics) => {
   // then the function returns the markup below.
   // The tags used, the hierarchy of elements and their attributes must match the provided markup!
   // The text inside elements will be set using their `textContent` property (NOT `innerText`).
-  //
+  
   // <div class="topics">
   //   <div class="tab">javascript</div>
   //   <div class="tab">bootstrap</div>
   //   <div class="tab">technology</div>
   // </div>
-  //
+  
+  const parentDiv = document.createElement('div');
+  
+  parentDiv.classList.add('topics')
+
+  topics.forEach(topic => {
+    const childTopic = document.createElement('div');
+    childTopic.classList.add('tab');
+    childTopic.textContent = `${topic}`
+    parentDiv.appendChild(childTopic);
+  });
+return parentDiv;
 }
 
 const tabsAppender = (selector) => {
@@ -23,6 +41,19 @@ const tabsAppender = (selector) => {
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
+  const entryPoint = document.querySelector(`${selector}`)
+
+  axios
+  .get(`https://lambda-times-api.herokuapp.com/topics`)
+  .then( response => {
+    const dataTopics = response.data.topics
+    entryPoint.appendChild(Tabs(dataTopics))
+  })
+  .catch( err => {
+    console.log(err)
+    console.log('you have an error')
+  })
+  return 
 }
 
 export { Tabs, tabsAppender }
