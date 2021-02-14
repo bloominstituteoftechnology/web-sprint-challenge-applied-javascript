@@ -34,6 +34,9 @@ const Tabs = (topics) => {
    topicsMain.addEventListener('click', event => {
     const some = document.querySelectorAll('id');
     console.log(some)
+    some.forEach(item => {
+      item.parentElement.style.display = '';
+    })
     if (event.target.textContent == 'javascript'){
       some.forEach(item => {
         if (item.className != 'javascript'){
