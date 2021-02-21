@@ -1,4 +1,4 @@
-const Tabs = (topics) => {
+ abconst Tabs = (topics) => {
   // TASK 3
   // ---------------------
   // Implement this function which takes an array of strings ("topics") as its only argument.
@@ -13,6 +13,27 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+  const topic = document.createElement('div')
+  const topicJava = document.createElement('div');
+  const topicBoot = document.createElement('div');
+  const topicTech = document.createElement('div');
+
+  topic.appendChild(topicJava)
+  topic.appendChild(topicBoot)
+  topic.appendChild(topicTech)
+
+  topic.classList.add('topics')
+  topicJava.classList.add('tab')
+  topicBoot.classList.add('tab')
+  topicTech.classList.add('tab')
+
+  topicJava.textContent = (topics.0)
+  topicBoot.textContent = (topics.1)
+  topicTech.textContent = (topics.2)
+
+  return topic
+
+
 }
 
 const tabsAppender = (selector) => {
@@ -23,6 +44,9 @@ const tabsAppender = (selector) => {
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
+
+
+
 }
 
 export { Tabs, tabsAppender }
