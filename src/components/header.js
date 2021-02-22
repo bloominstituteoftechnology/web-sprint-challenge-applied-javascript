@@ -15,16 +15,16 @@ const Header = (title, date, temp) => {
 
 	const headerDate = document.createElement("span");
 	headerDate.classList.add("date");
-	headerDate.textContent = `${date}`;
+	headerDate.textContent = date;
 	header.appendChild(headerDate);
 
 	const headerH1 = document.createElement("h1");
-	headerH1.textContent = `${title}`;
+	headerH1.textContent = title;
 	header.appendChild(headerH1);
 
 	const headerSpan = document.createElement("span");
 	headerSpan.classList.add("temp");
-	headerSpan.textContent = `${temp}`;
+	headerSpan.textContent = temp;
 	header.appendChild(headerSpan);
 
 	return header;
