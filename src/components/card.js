@@ -1,3 +1,5 @@
+import axios from "axios"
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -7,23 +9,29 @@ const Card = (article) => {
   // The text inside elements will be set using their `textContent` property (NOT `innerText`).
   // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
   //
-  // <div class="card">
-  //   <div class="headline">{ headline }</div>
-  //   <div class="author">
-  //     <div class="img-container">
-  //       <img src={ authorPhoto }>
-  //     </div>
-  //     <span>By { authorName }</span>
-  //   </div>
-  // </div>
-  //
+  <div class="card">
+    <div class="headline">{ headline }</div>
+    <div class="author">
+      <div class="img-container">
+        <img src={ authorPhoto }/>
+      </div>
+      <span>By { authorName }</span>
+    </div>
+  </div>
 }
 
 const cardAppender = (selector) => {
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
-  // It should obtain articles from this endpoint: `https://lambda-times-api.herokuapp.com/articles`
+  // It should obtain articles from this endpoint: 
+  axios.get(`https://lambda-times-api.herokuapp.com/articles`)
+  .then( response => {
+    Card(response.data)
+})
+.catch( err => {
+    console.log("Error:", err)
+})
   // However, the articles do not come organized in a single, neat array. Inspect the response closely!
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
