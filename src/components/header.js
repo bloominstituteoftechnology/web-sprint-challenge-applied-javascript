@@ -15,23 +15,24 @@ const Header = (title, date, temp) => {
   const dateSp = document.createElement('span')
   const title1 = document.createElement('h1')
   const tempSp = document.createElement('span')
-
   header.appendChild(dateSp)
   header.appendChild(title1)
   header.appendChild(tempSp)
-
-  dateSp.textContent = Header.date;
-  title1.textContent = Header.title;
-  tempSp.textContent = Header.temp;
-
+  //let's get some texts
+  dateSp.textContent =date;
+  title1.textContent = title;
+  tempSp.textContent = temp;
   header.classList.add('header')
   dateSp.classList.add('date')
   tempSp.classList.add('temp')
-
-  return header
 }
 
 const headerAppender = (selector) => {
+  const headerAppender = (selector) => {
+    console.log(selector)
+      const entryPoint = document.querySelector(selector)
+      entryPoint.appendChild(Header("Lambda Post","August 12th", "72 deg"))
+  }
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
