@@ -42,7 +42,7 @@ Your must complete all the following steps:
 - [x] Step 0 is to link `src/index.js` to the `src/index.html` file using a script tag.
 - [x] Steps 1 and 2 are explained inside the `src/components/header.js` file.
 - [x] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
-- [ ] Steps 5 and 6 are explained inside the `src/components/card.js` file.
+- [x] Steps 5 and 6 are explained inside the `src/components/card.js` file.
 
 **Important Notes:**
 
@@ -75,7 +75,16 @@ There are two possible ways to submit this project to Canvas. Lambda Staff will 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+> The DOM is known as the Document Object Model, which is a visual representation/conceptualization of the HTML tree structure on a browser giving the user the ability to traverse through HTML elements on a browser as single nodes.
+
 2. What is an event?
+> An event is any interaction a user has with the page on a browser.  In order to capture these events, you need to append event listeners that are watching for these events to occur.  Once they occur, you have the ability to target the event and to control what that event does or doesn't do.
+
 3. What is an event listener?
+> Answered it in the above response.
+
 4. Why would we convert a NodeList into an Array?
+> Because Nodelists aren't actual arrays and because that is so, methods in the array prototype will not be recognized as part of a Nodelist.  In order to manipulate the Nodelist like you would an array, you would need to convert it first.
+
 5. What is a component?
+> A component is a block of reusable code that you can use throughout your program so that you're able to minimize resources to rewrite again, as representative of elements on a page.  A component for a navigation bar, for instance.

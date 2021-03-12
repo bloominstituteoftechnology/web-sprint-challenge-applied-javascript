@@ -26,7 +26,7 @@ const Tabs = (topics) => {
     singleTopicDiv.textContent = topic;
     topicDiv.appendChild(singleTopicDiv);
   });
-  console.log(topicDiv);
+  // console.log(topicDiv);
   return topicDiv;
 }
 
@@ -48,9 +48,9 @@ const tabsAppender = (selector) => {
     .then((res) => {
       // console.log(res)
       const topicsArray = res.data.topics;
-      console.log(topicsArray);
+      // console.log(topicsArray);
       const topicDiv = Tabs(topicsArray);
-      console.log(topicDiv);
+      // console.log(topicDiv);
       tabs.appendChild(topicDiv);
     })
     .catch((err) => {
