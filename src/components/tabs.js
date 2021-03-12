@@ -30,6 +30,7 @@ const Tabs = (topics) => {
 }
 
 const tabsAppender = (selector) => {
+  // console.log(selector);
   // TASK 4
   // ---------------------
   // Implement this function which takes a css selector as its only argument.
@@ -45,9 +46,9 @@ const tabsAppender = (selector) => {
     .then((res) => {
       // console.log(res.data)
       const topicsArray = res.data.topics;
-      console.log(topicsArray);
+      // console.log(topicsArray);
       const topicDiv = Tabs(topicsArray);
-      console.log(topicDiv);
+      // console.log(topicDiv);
       tabs.appendChild(topicDiv);
     })
     .catch((err) => {
