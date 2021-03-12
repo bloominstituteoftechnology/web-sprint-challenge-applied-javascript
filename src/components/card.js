@@ -47,7 +47,7 @@ const Card = (article) => {
   return card
 }
 
-Card('1')
+// console.log(Card("1"))
 
 
 const cardAppender = (selector) => {
@@ -60,37 +60,93 @@ const cardAppender = (selector) => {
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
   const cardContainer = document.querySelector(selector)
-  axios.get(`https://lambda-times-api.herokuapp.com/articles`)
-    .then(res => {
-      res.data.articles.forEach(article => {
-        const card = Card(article)
-        cardContainer.appendChild(card)
+
+  axios
+    .get('https://lambda-times-api.herokuapp.com/articles')
+    .then((res) => {
+      const articlesJava = res.data.articles.javascript
+      const articlesJ = Array.from(articlesJava)
+      articlesJ.forEach((article) => {
+        const finalCard = Card(article) 
+        cardContainer.append(finalCard)
       })
+      console.log('the .then is working')
+      console.log(articlesJ)
 
+      const articlesBootstrap = res.data.articles.bootstrap
+      const articlesB = Array.from(articlesBootstrap)
+      articlesB.forEach((article) => {
+        const finalCard = Card(article) 
+        cardContainer.append(finalCard)
+      })
+      console.log('the .then is working')
+      console.log(articlesB)
 
+      const articlesTech = res.data.articles.technology
+      const articlesT = Array.from(articlesTech)
+      articlesT.forEach((article) => {
+        const finalCard = Card(article) 
+        cardContainer.append(finalCard)
+      })
+      console.log('the .then is working')
+      console.log(articlesT)
 
-      //attempt 2
-      // const arrayArticles = res.data.articles
-      // debugger
-      // const cardContainer = document.querySelector(selector)
-      // console.log(arrayArticles)
-      // arrayArticles.data.forEach(article => {
-      //   let authorCard = Card(article)
-      //   cardContainer.appendChild(authorCard)
-      // })
+      const articlesJque = res.data.articles.jquery
+      const articlesJq = Array.from(articlesJque)
+      articlesJq.forEach((article) => {
+        const finalCard = Card(article) 
+        cardContainer.append(finalCard)
+      })
+      console.log('the .then is working')
+      console.log(articlesJ)
 
-      //attempt 1
-      // const arrayArticles = res.data.articles
-      // arrayArticles.forEach(article => {
-      //   const cardContainer = document.querySelector(selector)
-      //   cardContainer.appendChild(Card(article))
-      // })
-
+      const articlesNode = res.data.articles.node
+      const articlesN = Array.from(articlesNode)
+      articlesN.forEach((article) => {
+        const finalCard = Card(article) 
+        cardContainer.append(finalCard)
+      })
+      console.log('the .then is working')
+      console.log(articlesN)
     })
-    .catch(err => {
-      console.log('There has been an error')
+    .catch((err) => {
+      console.log('You have this error: \n \n ', err)
     })
 
-}
+  }
 
-export { Card, cardAppender }
+  
+  export { Card, cardAppender }
+  
+  // //attempt 3
+  // const cardContainer = document.querySelector(selector)
+  // axios.get(`https://lambda-times-api.herokuapp.com/articles`)
+  //   .then(res => {
+  //     res.data.articles.forEach(article => {
+  //       const card = Card({article: article})
+  //       cardContainer.appendChild(card)
+  //     })
+
+
+
+  //     //attempt 2
+  //     // const arrayArticles = res.data.articles
+  //     // debugger
+  //     // const cardContainer = document.querySelector(selector)
+  //     // console.log(arrayArticles)
+  //     // arrayArticles.data.forEach(article => {
+  //     //   let authorCard = Card(article)
+  //     //   cardContainer.appendChild(authorCard)
+  //     // })
+
+  //     //attempt 1
+  //     // const arrayArticles = res.data.articles
+  //     // arrayArticles.forEach(article => {
+  //     //   const cardContainer = document.querySelector(selector)
+  //     //   cardContainer.appendChild(Card(article))
+  //     // })
+
+  //   })
+  //   .catch(err => {
+  //     console.log('There has been an error')
+  //   })
