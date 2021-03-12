@@ -1,7 +1,3 @@
-import axios from 'axios'
-
-const {default: axios} = require("axios");
-
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -44,7 +40,6 @@ const Card = (article) => {
   firstDiv.addEventListener("click", function(secondDiv) {
     console.log(secondDiv);
   })
-  }
   return firstDiv;
 }
 
@@ -57,20 +52,21 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+let cardElement = document.querySelector("selector");
 axios.get("https://lambda-times-api.herokuapp.com/articles");
-.then(resp => {
-  let cardElement = document.querySelector("selector");
-  let rec = response.data;
-  rec.forEach(e => {
-    cardElement.appendChild(Card(e));
+.then(response => {
+
+let received = response.data;
+received.forEach(e => {
+  cardElement.appendChild(Card(e));
+})
+
   })
-});
+
 .catch(err => {
   console.log(err);
-});
-.then(() => {
-  console.log("Success");
-});
+
+})
 }
 
 export { Card, cardAppender }
