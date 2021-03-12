@@ -52,10 +52,11 @@ const headerAppender = (selector) => {
   //
 
   // COME BACK TO THIS ONE
-  const headerDiv = Header() // we don't have the arguments to fill in for the component though?
-  selector.appendChild
-  console.log(selector)
-  
+
+  const header = document.querySelector(selector);
+
+  const headerDiv = Header('date', 'title', 'temp') // we don't have the arguments to fill in for the component though?
+  header.appendChild(headerDiv)  
 };
 
 export { Header, headerAppender }
