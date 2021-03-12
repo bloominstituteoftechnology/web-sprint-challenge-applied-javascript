@@ -55,7 +55,7 @@ const headerAppender = (selector) => {
 
   const header = document.querySelector(selector);
 
-  const headerDiv = Header('date', 'title', 'temp') // we don't have the arguments to fill in for the component though?
+  const headerDiv = Header('Lambda Times','January 6, 2021','26°') // we don't have the arguments to fill in for the component though?
   header.appendChild(headerDiv)  
 };
 

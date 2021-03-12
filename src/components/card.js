@@ -64,7 +64,7 @@ const cardAppender = (selector) => {
     .then((res) => {
       // console.log(res);
       const articles = res.data.articles;
-      console.log(articles);
+      // console.log(articles);
 
       // for(let key in articles){
       //   const card = Card(key);
