@@ -11,7 +11,37 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
-}
+
+  // return `<div class="header">
+  //   <span class="date">${ date }</span>
+  //   <h1>${ title }</h1>
+  //   <span class="temp">${ temp }</span>
+  // </div>`
+
+  let headerDiv = document.createElement('div');
+  let dateSpan = document.createElement('span');
+  let pageTitle = document.createElement('h1');
+  let tempSpan = document.createElement('span');
+
+  headerDiv.classList.add('header');
+  dateSpan.classList.add('date');
+  tempSpan.classList.add('temp');
+
+  dateSpan.textContent = date;
+  pageTitle.textContent = title;
+  tempSpan.textContent = temp;
+
+  // append header to body
+  // append elements to the header div
+  headerDiv.appendChild(dateSpan);
+  headerDiv.appendChild(pageTitle);
+  headerDiv.appendChild(tempSpan);
+  // headerDiv.append(dateSpan, pageTitle, tempSpan);
+
+  // console.log(headerDiv)
+  return headerDiv
+
+};
 
 const headerAppender = (selector) => {
   // TASK 2
@@ -20,6 +50,12 @@ const headerAppender = (selector) => {
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
-}
+
+  // COME BACK TO THIS ONE
+  const headerDiv = Header() // we don't have the arguments to fill in for the component though?
+  selector.appendChild
+  console.log(selector)
+  
+};
 
 export { Header, headerAppender }
