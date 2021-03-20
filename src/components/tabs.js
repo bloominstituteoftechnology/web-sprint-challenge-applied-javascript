@@ -26,3 +26,23 @@ const tabsAppender = (selector) => {
 }
 
 export { Tabs, tabsAppender }
+
+const axiosPromise = axios.get('https://lambda-times-api.herokuapp.com/topics')
+.then((res) => (
+  
+  res.data.topics.forEach(topic => {
+    const NewTab = creatTabs(topic)
+    document.querySelector('.topics').appendChild(newTab)
+  })
+  
+
+function createTabs(topics){
+  const tab = createElement('div');
+  tab.classList.add('tab');
+  tab.textContent = topic
+
+  const topics = document.querySelector('.topics');
+  topics.appendChild.tab;
+
+  return tab;
+}
