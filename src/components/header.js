@@ -6,9 +6,9 @@ const Header = (title, date, temp) => {
   // The text inside elements will be set using their `textContent` property (NOT `innerText`).
   //
   //  <div class="header">
-  //    <span class="date">{ date }</span>
-  //    <h1>{ title }</h1>
-  //    <span class="temp">{ temp }</span>
+  //    <span class="date">{ 03/19/2021 }</span>
+  //    <h1>{ Lambda Times}</h1>
+  //    <span class="temp">{ 35* }</span>
   //  </div>
   //
 }
@@ -23,3 +23,30 @@ const headerAppender = (selector) => {
 }
 
 export { Header, headerAppender }
+
+function Header() {
+  const header = document.createElement('div');
+  header.classList.add('header');
+
+  const date = document.createElement('div');
+  date.classList.add('date');
+  date.textContent = 'March 19, 2021';
+
+  const h1 = document.createElement('h1');
+  h1.textContent = 'Lambda Times';
+
+  const temp = document.createElement('span');
+  temp.classList.add('temp');
+  temp.textContent = '35\xB0';
+
+  header.appendChild(date);
+  header.appendChild(h1);
+  header.appendChild(temp);
+
+  const headerContainer = document.querySelector('.header.container');
+  headerContainer.appendChild(header);
+
+  return headerContainer;
+}
+
+header();

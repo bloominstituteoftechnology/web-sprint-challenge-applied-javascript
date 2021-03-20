@@ -31,3 +31,79 @@ const cardAppender = (selector) => {
 }
 
 export { Card, cardAppender }
+
+const axiosPromise = axios.get( 'https://lambda-times-api.herokuapp.com/articles')
+.then((res) => {
+
+  let javascript = res.data.articles.javascript
+  let boostrap = res.data.articles.bootstrap
+  let technology = res.data.articles.technology
+  let jquery = res.data.articles.jquery
+  let node = res.data.articles.node
+  
+  
+  javascript.forEach((articles) => {
+    const newCard = articleCard(article)
+    document.querySelector('.cards-container').appendChild(newCard)
+    console.log('this', article)
+  })
+
+  bootstrap.forEach((article) =>{
+    const newCard = aritcleCard(articles)
+    document.querySelector('.cards-container').appendChild(newCard)
+    console.log('this',article)
+  })
+
+  technology.forEach((article) => {
+    const newCard = articleCard(article)
+    document.querySelector('.cards-container').appendChild(newCard)
+    console.log('this', article)
+  })
+  jquery.forEach((article) => {
+    const newCard = articleCard(article)
+    document.querySelector('.cards-container').appendChild(newCard)
+    console.log('this', article)
+
+  })
+  node.forEach((article) => {
+    const newCard = articleCard(article)
+    document.querySelector('.cards-container').appendChild(newCard)
+    console.log('this', article)
+
+  })
+})
+
+.catch(err => console.log(err))
+
+function articleCard(article) {
+
+  const card = document.createdElement('div');
+  card.classList.add('card');
+
+  const headline = document.createElement('div');
+
+  headline.classList.add('headline');
+  headline.textContent = article.headline
+
+  const author = document.createElement('div');
+  author.classList.add('author');
+
+  const imgContainer = document.createElement('div');
+  imgContainer.classList.add('imgContainer');
+
+  const img = document.createElement('div');
+  img.src = aritcle.authorPhoto
+
+  const authorName = document.createElement('span');
+  authorName.textContent = `By ${article.authorName}`
+
+  imgContainer.appendChild(img);
+  author.appendChild(imgContainer);
+  author.appendChild(authorName);
+  card.appendChild(author);
+
+  card.addEventListener('click', () =>{
+    console.log(headline)
+  })
+  return card;
+}
