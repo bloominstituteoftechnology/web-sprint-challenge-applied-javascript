@@ -51,10 +51,6 @@ const Card = (article) => {
     authorContainer.appendChild(imgContainer);
     authorContainer.appendChild(authorName);
     imgContainer.appendChild(authorPhoto);
-
-
-    
-  
   }
   return card;
 }
