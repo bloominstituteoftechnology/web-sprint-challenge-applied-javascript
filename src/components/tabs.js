@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const Tabs = (topics) => {
     // TASK 3
     // ---------------------
@@ -35,8 +37,8 @@ const tabsAppender = (selector) => {
     axios.get("https://lambda-times-api.herokuapp.com/topics")
         .then(response => {
             let newTabs = response.data.topics;
-            let target = document.querySelector(selector);
-            target.appendChild(Tabs(newTabs))
+            let tabsContainer = document.querySelector(selector);
+            tabsContainer.appendChild(Tabs(newTabs))
         })
         .catch(err => console.log(err));
 };

@@ -37,14 +37,13 @@ const Card = (article) => {
     newAuthorImgDiv.src = article.authorPhoto;
     newAuthor.appendChild(newAuthorImgDiv);
 
-    /* let newAuthorImg = document.createElement('img');
-    newAuthorImg.src = article.authorPhoto;
-    newAuthorImgDiv.appendChild(newAuthorPhoto); */
-
     let newAuthorName = document.createElement('span');
     newAuthorName.textContent = `By ${article.authorName}`;
     newAuthor.appendChild(newAuthorName);
 
+    let authorImg = document.createElement('img');
+    authorImg.src = article.authorPhoto;
+    newAuthorImgDiv.appendChild(authorImg);
     return newCard;
 }
 
@@ -58,18 +57,38 @@ const cardAppender = (selector) => {
     // Append each card to the element in the DOM that matches the selector passed to the function.
     //
 
+
     axios.get('https://lambda-times-api.herokuapp.com/articles')
         .then(response => {
-            console.log(response);
-
-            for (let article in response.data.articles.javascript) {
-                let newArticle = response.data.articles.javascript[article];
+            for (let i in response.data.articles.bootstrap) {
+                const newArticle = Card(response.data.articles.bootstrap[i]);
+                let cardContainer = document.querySelector(selector);
+                cardContainer.appendChild(newArticle);
+            }
+            for (let j in response.data.articles.jquery) {
+                const newArticle = Card(response.data.articles.jquery[j]);
+                let cardContainer = document.querySelector(selector);
+                cardContainer.appendChild(newArticle);
+            }
+            for (let k in response.data.articles.javascript) {
+                const newArticle = Card(response.data.articles.javascript[k]);
+                let cardContainer = document.querySelector(selector);
+                cardContainer.appendChild(newArticle);
+            }
+            for (let l in response.data.articles.technology) {
+                const newArticle = Card(response.data.articles.technology[l]);
+                let cardContainer = document.querySelector(selector);
+                cardContainer.appendChild(newArticle);
+            }
+            for (let m in response.data.articles.node) {
+                const newArticle = Card(response.data.articles.node[m]);
                 let cardContainer = document.querySelector(selector);
                 cardContainer.appendChild(newArticle);
             }
         })
-        // console.log(articles);
-        .catch(error => console.log(error));
+
+
+    .catch(error => console.log(error));
 };
 
 export { Card, cardAppender }
