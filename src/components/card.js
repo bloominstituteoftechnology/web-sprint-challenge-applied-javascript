@@ -44,6 +44,10 @@ const Card = (article) => {
     let authorImg = document.createElement('img');
     authorImg.src = article.authorPhoto;
     newAuthorImgDiv.appendChild(authorImg);
+
+    newCard.addEventListener('click', (e) => {
+        console.log(newHeadline.textContent);
+    });
     return newCard;
 }
 
