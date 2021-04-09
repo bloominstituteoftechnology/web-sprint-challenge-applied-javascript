@@ -20,6 +20,7 @@ const Tabs = (topics) => {
 
   topics.forEach(element => {
     let div = document.createElement('div');
+    div.classList.add('tab');
     div.textContent = element;
     topicsDiv.appendChild(div);
     return div;
