@@ -11,30 +11,30 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
+
+  // set elements
+  const head = document.createElement('div');
+  const spanDate = document.createElement('span');
+  const h1Title = document.createElement('h1');
+  const spanTemp = document.createElement('span');
+
+  // set names
+  head.classList = 'header';
+  spanDate.classList = 'date';
+  spanTemp.classList = 'temp';
+
+  // set hierarchy
+  head.appendChild(spanDate);
+  head.appendChild(h1Title);
+  head.appendChild(spanTemp);
+
+  // set values
+  spanDate.textContent = `${date}`;
+  h1Title.textContent = `${title}`;
+  spanTemp.textContent = `${temp}`;
+
+  return head;
 }
-
-// set elements
-const head = document.createElement('div');
-const spanDate = document.createElement('span');
-const h1Title = document.createElement('h1');
-const spanTemp = document.createElement('span');
-
-// set names
-head.classList.add = 'header';
-spanDate.classList.add = 'date';
-spanTemp.classList.add = 'temp';
-
-// set hierarchy
-head.appendChild(spanDate);
-head.appendChild(h1Title);
-head.appendChild(spanTemp);
-
-// set values
-spanDate.textContent = `${date}`;
-h1Title.textContent = `${title}`;
-spanTemp.textContent = `${temp}`;
-
-return head;
 
 const headerAppender = (selector) => {
   // TASK 2

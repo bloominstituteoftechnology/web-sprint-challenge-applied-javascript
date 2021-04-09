@@ -22,7 +22,7 @@ const Tabs = (topics) => {
     const tab = document.createElement('div');
     tab.classList.add('tab');
     tab.textContent = element;
-    topicsDiv.textContent = element;
+    topicsDiv.append(tab);
   });
 
   return topicsDiv;

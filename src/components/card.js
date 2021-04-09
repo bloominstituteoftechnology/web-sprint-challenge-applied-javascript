@@ -69,7 +69,7 @@ const cardAppender = (selector) => {
   .get(`https://lambda-times-api.herokuapp.com/articles`)
   .then((res) => {
     array.forEach(topic => {
-      res.data.article[topic].forEach(el => {
+      res.data.articles[topic].forEach(el => {
         const newDiv = Card(el);
         document.querySelector(selector).appendChild(newDiv);
       });
