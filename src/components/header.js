@@ -6,6 +6,13 @@ const Header = (title, date, temp) => {
   // The text inside elements will be set using their `textContent` property (NOT `innerText`).
   //
   //  <div class="header">
+  //    <span class="date">{ date }</span>
+  //    <h1>{ title }</h1>
+  //    <span class="temp">{ temp }</span>
+  //  </div>
+  
+
+  //  <div class="header">
   let headerDiv = document.createElement('div');
   headerDiv.classList.add('header');
   //    <span class="date">{ date }</span>
@@ -19,9 +26,11 @@ const Header = (title, date, temp) => {
   let tempSpan = document.createElement('span');
   tempSpan.classList('temp');
   tempSpan.textContent = temp;
-  
-  //  </div>
-  //
+
+  headerDiv.appendChild(dateSpan);
+  headerDiv.appendChild(h1);
+  headerDiv.appendChild(tempSpan);
+ 
 }
 
 const headerAppender = (selector) => {
