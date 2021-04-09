@@ -34,12 +34,11 @@ const Header = (title, date, temp) => {
   return headerDiv;
  
 }
-// console.log('1: ', Header('Hello', "Today",'20'));
+
 
 // Lambda Times
 // Friday, April 9, 2021
 // 77°F
-// Header("Lambda Times", "Friday, April 9, 2021","77°F" );
 
 const headerAppender = (selector) => {
   // TASK 2
@@ -52,5 +51,5 @@ let parent = document.querySelector(selector);
 let child = Header("Lambda Times", "Friday, April 9, 2021","77°F" );
 return parent.appendChild(child);
 }
-// console.log(headerAppender('.header-container'));
+
 export { Header, headerAppender }

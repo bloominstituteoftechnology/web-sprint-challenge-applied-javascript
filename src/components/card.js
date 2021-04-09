@@ -41,7 +41,6 @@ const Card = (article) => {
   authorDiv.appendChild(imgContainer);
   // <img src={ authorPhoto }>
   let img = document.createElement('img');
-  // debugger
   img.src = article.authorPhoto;
   imgContainer.appendChild(img);
 
