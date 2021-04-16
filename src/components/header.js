@@ -5,6 +5,15 @@ const Header = (title, date, temp) => {
   // The tags used, the hierarchy of elements and their attributes must match the provided markup exactly!
   // The text inside elements will be set using their `textContent` property (NOT `innerText`).
   //
+const headTitle = document.createElement('h1');
+const headDate = document.createElement('span');
+const headTemp = document.createElement('span');
+
+headTitle.textContent = title
+headDate.textContent = date
+headTemp.textContent = temp
+
+
   //  <div class="header">
   //    <span class="date">{ date }</span>
   //    <h1>{ title }</h1>
