@@ -53,7 +53,7 @@ const cardAppender = (selector) => {
     const technology = articles.technology;
 
 		// --- This is one option to do it and then forEach over this to add to the DOM. Array of just javascript articles
-
+const cardContainer = document.querySelector('.cards-container')
 		const allArticles = bootstrap.concat(javascript,technology);
 		// console.log(allArticles, 'Array of articles');
 		allArticles.forEach((item) => {
