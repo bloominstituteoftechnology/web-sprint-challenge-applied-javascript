@@ -44,4 +44,4 @@ const headerAppender = (selector) => {
   mainHeader.appendChild(headerAppender())
 }
 
-export { Header, headerAppender }
+export { Header, headerAppender}

@@ -7,6 +7,21 @@ const Card = (article) => {
   // The text inside elements will be set using their `textContent` property (NOT `innerText`).
   // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
   //
+
+  const mainCard = document.createElement('div');
+  const headline = document.createElement('div')
+  const author = document.createElement('div')
+  const imageContainer = document.createElement('div')
+  const image = document.createElement('img')
+  const authorName = document.createElement('span')
+
+  mainCard.appendChild(headline)
+  mainCard.appendChild(author)
+  author.appendChild(imageContainer)
+  imageContainer.appendChild(image)
+  author.appendChild(authorName)
+
+
   // <div class="card">
   //   <div class="headline">{ headline }</div>
   //   <div class="author">
@@ -28,6 +43,29 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+  axios
+	.get('https://lambda-times-backend.herokuapp.com/articles')
+	.then((res) => {
+		const articles = res.data.articles;
+		// console.log(articles, 'show articles');
+		const bootstrap = articles.bootstrap;
+		const javascript = articles.javascript;
+    const technology = articles.technology;
+
+		// --- This is one option to do it and then forEach over this to add to the DOM. Array of just javascript articles
+
+		const allArticles = bootstrap.concat(javascript,technology);
+		// console.log(allArticles, 'Array of articles');
+		allArticles.forEach((item) => {
+			const createdArticle = Card(item);
+			// console.log(createdArticle, 'Creating in articles');
+			cardContainer.appendChild(createdArticle);
+		});
+	})
+	.catch((err) => {
+		console.log('Error!', err);
+	});
+
 }
 
 export { Card, cardAppender }
