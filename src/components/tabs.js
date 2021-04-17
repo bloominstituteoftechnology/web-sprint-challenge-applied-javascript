@@ -49,7 +49,7 @@ const tabsAppender = (selector) => {
       console.log(res, 'topics');
       const topicsList = res.data.topics;
       topicsList.forEach((item) => {
-        const newTab = addTopic(item);
+        const newTab = mainTab(item);
         mainTab.appendChild(newTab);
       });
     })
