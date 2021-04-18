@@ -13,6 +13,3 @@ worker.start()
 headerAppender('.header-container')
 tabsAppender('.tabs-container')
 cardAppender('.cards-container')
-
-
-const name = 'steve'
