@@ -13,6 +13,7 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+  
 }
 
 const tabsAppender = (selector) => {
