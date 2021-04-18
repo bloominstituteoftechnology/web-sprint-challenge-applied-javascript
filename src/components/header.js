@@ -40,7 +40,7 @@ const headerAppender = (selector) => {
   //
  const headerContainer = document.querySelector(selector)
  if(headerContainer){
-  header = Header('Steve, a coding wonder','April 18th', '65 degrees fahrenheit')
+  header = Header('Computer scientish weekly','April 18th', '65 degrees fahrenheit')
   headerContainer.appendChild(Header)}
 }
 
