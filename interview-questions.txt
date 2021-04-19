@@ -4,9 +4,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 
 1. Briefly compare and contrast `.forEach` & `.map` (2-3 sentences max)
-.forEach is an array method.  This does not return a new array.
-
-.map returns a new array.
+.forEach is an array method.  This does not return a new array.  .map returns a new array.
 
 
 2. Explain the difference between a callback and a higher order function.
