@@ -13,25 +13,13 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
-  const topicsDiv = document.createElement('div')
-  const topic1 = document.createElement('div')
-  const topic2 = document.createElement('div')
-  const topic3 = document.createElement('div')
-
-  topic1.textContent(topics)
-  topic2.textContent(topics)
-  topic3.textContent(topics)
-
-  topicsDiv.classList.add('topics')
-  topic1.classList.add('tab')
-  topic2.classList.add('tab')
-  topic3.classList.add('tab')
-
-  topicsDiv.appendChild('topic1')
-  topicsDiv.appendChild('topic2')
-  topicsDiv.appendChild('topic3')
-
-  return topicsDiv
+  
+ topics.forEach((topic)=>{
+   let topic = document.createElement('div')
+   topic.textContent(topic)
+   topics.appendChild('topic')
+ })
+  
 
   
 }
