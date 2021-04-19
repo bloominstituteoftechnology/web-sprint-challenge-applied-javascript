@@ -13,11 +13,12 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
-  
+  const topicContainer = document.createElement('div')
+
  topics.forEach((topic)=>{
    let topic = document.createElement('div')
    topic.textContent(topic)
-   topics.appendChild('topic')
+   topicContainer.appendChild(topic)
  })
   
 
