@@ -19,9 +19,33 @@ const Card = (article) => {
   // </div>
   //
 
+  const card = document.createElement('div')
+  const headLine = document.createElement('div')
+  const author = document.createElement('div')
+  const imgContainer = document.createElement('div')
+  const authorPhoto = document.createElement('img')
+  const authorName = document.createElement('span')
+
   
+  headLine.textContent(article.headLine)
+  authorPhoto.textContent(article.authorPhoto)
+  authorName.textContent(article.authorName)
+  
+  card.classList.add('card')
+  headLine.classList.add('headline')
+  author.classList.add('author')
+  imgContainer.classList.add('img-container')
 
+  card.appendChild(headLine)
+  card.appendChild(author)
+  author.appendChild(imgContainer)
+  author.appendChild(authorName)
+  imgContainer.appendChild(authorPhoto)
 
+  card.addEventListener('click',()=>{
+    console.log(article.headLine)
+  })
+  return card
 }
 
 const cardAppender = (selector) => {
@@ -33,6 +57,24 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+  const cardContainer = document.querySelector(selector)
+  axios
+  .get(`https://lambda-times-api.herokuapp.com/articles`)
+    .then(res =>{
+      const js = Card(res.data.javascript)
+      cardContainer.appendChild(js)
+      const boots = Card(res.data.bootstrap)
+      cardContainer.appendChild(boots)
+      const tech = Card(res.data.technology)
+      cardContainer.appendChild(tech)
+      const jq = Card(res.data.jquery)
+      cardContainer.appendChild(jq)
+      const nodeJs = Card(res.data.node)
+      cardContainer.appendChild(nodeJs)
+    })
+    .catch(err =>{
+      console.log(err)
+    })
 }
 
 export { Card, cardAppender }
