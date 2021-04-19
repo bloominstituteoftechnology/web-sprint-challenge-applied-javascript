@@ -1,4 +1,7 @@
-Interview Questions
+## Interview Questions
+
+Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
+
 
 1. Briefly compare and contrast `.forEach` & `.map` (2-3 sentences max)
 .forEach is an array method.  This does not return a new array.
@@ -22,4 +25,3 @@ The this reference is connected to the global object in a function is referenced
 
 5. Why do we need super() in an extended class?
 Super() references the parent element in a class.
-
