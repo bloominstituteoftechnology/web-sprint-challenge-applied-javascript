@@ -17,10 +17,10 @@ const Tabs = (topics) => {
   //
   const topicContainer = document.createElement('div')
 
- topics.forEach((topic)=>{
+ topics.forEach((item)=>{
    let topic = document.createElement('div')
-   topic.textContent(topic)
-   topicContainer.appendChild(topic)
+   topic.textContent(item)
+   topicContainer.appendChild(item)
  })
   
 return topicContainer
