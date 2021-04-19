@@ -42,7 +42,7 @@ Your must complete all the following steps:
 - [x] Step 0 is to link `src/index.js` to the `src/index.html` file using a script tag.
 - [x] Steps 1 and 2 are explained inside the `src/components/header.js` file.
 - [x] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
-- [ ] Steps 5 and 6 are explained inside the `src/components/card.js` file.
+- [x] Steps 5 and 6 are explained inside the `src/components/card.js` file.
 
 **Important Notes:**
 
