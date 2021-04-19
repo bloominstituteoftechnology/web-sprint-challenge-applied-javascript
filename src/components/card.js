@@ -61,20 +61,31 @@ const cardAppender = (selector) => {
   axios
   .get(`https://lambda-times-api.herokuapp.com/articles`)
     .then(res =>{
-      const js = Card(res.data.javascript)
-      cardContainer.appendChild(js)
-      const boots = Card(res.data.bootstrap)
-      cardContainer.appendChild(boots)
-      const tech = Card(res.data.technology)
-      cardContainer.appendChild(tech)
-      const jq = Card(res.data.jquery)
-      cardContainer.appendChild(jq)
-      const nodeJs = Card(res.data.node)
-      cardContainer.appendChild(nodeJs)
+      res.data.article.javascript.forEach((article) =>{
+        const js = Card(article)
+        cardContainer.appendChild(js)
+      })
+      res.data.article.bootstrap.forEach((article)=>{
+        const boots = Card(article)
+        cardContainer.appendChild(boots)
+      })
+      res.data.article.technology.forEach((article)=>{
+        const tech = Card(article)
+        cardContainer.appendChild(tech)
+      })
+      res.data.article.jquery.forEach((article)=>{
+        const jq = Card(article)
+        cardContainer.appendChild(jq)
+      })
+      res.data.article.node.forEach((article)=>{
+        const nodes = Card(article)
+        cardContainer.appendChild(nodes)
+      })
     })
     .catch(err =>{
       console.log(err)
     })
-}
+    return cardContainer
+  }
 
 export { Card, cardAppender }
