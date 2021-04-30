@@ -17,10 +17,9 @@ const Header = (title, date, temp) => {
   const sibTwo = document.createElement("h1");
   const sibThree = document.createElement("span");
 
-  parent.textContent = header;
   sibOne.textContent = date;
   sibTwo.textContent = title;
-  sibThree.textContent = time;
+  sibThree.textContent = temp;
 
   parent.classList.add("header");
   sibOne.classList.add("date");
@@ -40,8 +39,10 @@ const headerAppender = (selector) => {
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
-};
 
-headerAppender.appendChild(selector);
+  const heading = Header("hello world", "05 - 11 - 2005", "76");
+
+  document.querySelector(selector).append(heading);
+};
 
 export { Header, headerAppender };
