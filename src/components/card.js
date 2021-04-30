@@ -1,3 +1,6 @@
+import axios from "axios";
+import { articles } from "../mocks/data";
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -17,7 +20,39 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
-}
+
+  const nodeList = [];
+
+  for (let topics in article) {
+    let el = article[topics];
+    el.forEach((element) => {
+      const classCard = document.createElement("div");
+      const classHeadline = document.createElement("div");
+      const classAuthor = document.createElement("div");
+      const classImageContainer = document.createElement("div");
+      const span = document.createElement("span");
+      const image = document.createElement("img");
+
+      classCard.textContent = element.headline;
+      span.textContent = element.authorName;
+      image.src = element.authorPhoto;
+
+      classCard.classList.add("card");
+      classHeadline.classList.add("headline");
+      classAuthor.classList.add("author");
+      classImageContainer.classList.add("img-container");
+
+      classImageContainer.appendChild(image);
+      classAuthor.appendChild(classImageContainer);
+      classAuthor.appendChild(span);
+      classHeadline.appendChild(classAuthor);
+      classCard.appendChild(classHeadline);
+
+      nodeList.push(classCard);
+    });
+  }
+  return nodeList;
+};
 
 const cardAppender = (selector) => {
   // TASK 6
@@ -28,6 +63,16 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-}
+  console.log(selector);
+  axios
+    .get("https://lambda-times-api.herokuapp.com/articles")
+    .then((res) => {
+      console.log(res.data.articles);
+      Card(res.data.articles).forEach((card) => {
+        document.querySelector(selector).append(card);
+      });
+    })
+    .catch((err) => console.log(err));
+};
 
-export { Card, cardAppender }
+export { Card, cardAppender };
