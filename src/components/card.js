@@ -1,3 +1,5 @@
+import axios from "axios"
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -56,6 +58,23 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+  const selected = document.querySelector(selector)
+  axios
+  // .get('https://lambda-times-api.herokuapp.com/articles')
+  // .then((res) => {
+  //   res.forEach(element => {
+  //     let data = res.data.articles
+  //     let card = Card(data)
+  //     selected.appendChild(card)
+  //   });
+  // })
+  .get('https://lambda-times-api.herokuapp.com/articles')
+  .then((res) => {
+    let data = res.data.articles.bootstrap[0, 1, 2]
+    let card = Card(data)
+    selected.appendChild(card)
+    console.log(res.data.articles)
+  })
 }
 
 export { Card, cardAppender }
