@@ -1,3 +1,6 @@
+import axios from "axios"
+import { articles } from "../mocks/data"
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -17,6 +20,34 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+  // Instantiating elements
+  const card = document.createElement('div')
+  const headline = document.createElement('div')
+  const author = document.createElement('div')
+  const imageContainer = document.createElement('div')
+  const image = document.createElement('img')
+  const name = document.createElement('span')
+  // Adding classes to elements
+  card.classList.add('card')
+  headline.classList.add('headline')
+  author.classList.add('author')
+  imageContainer.classList.add('img-container')
+  // Setting up structure of elements
+  card.appendChild(headline)
+  card.appendChild(author)
+  author.appendChild(imageContainer)
+  imageContainer.appendChild(image)
+  imageContainer.appendChild(name)
+  // Adding content
+  headline.textContent = article.headline
+  image.src = article.authorPhoto
+  name.textContent = article.authorName
+  // Adding event listener
+  card.addEventListener('click', () => {
+    console.log(article.headline)
+  })
+  // Return
+  return card
 }
 
 const cardAppender = (selector) => {
@@ -28,6 +59,25 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+  const selected = document.querySelector(selector)
+  axios
+  // .get('https://lambda-times-api.herokuapp.com/articles')
+  // .then((res) => {
+  //   res.forEach(element => {
+  //     let data = res.data.articles
+  //     let card = Card(data)
+  //     selected.appendChild(card)
+  //   });
+  // })
+  .get('https://lambda-times-api.herokuapp.com/articles')
+  .then((res) => {
+    let data = res.data.articles
+    for(const [category,articles]of Object.entries(data)){
+      articles.forEach(element => {
+        selected.appendChild(Card(element))
+      })
+    }
+  })
 }
 
 export { Card, cardAppender }
