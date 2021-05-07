@@ -17,6 +17,34 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+  // Instantiating elements
+  const card = document.createElement('div')
+  const headline = document.createElement('div')
+  const author = document.createElement('div')
+  const imageContainer = document.createElement('div')
+  const image = document.createElement('img')
+  const name = document.createElement('span')
+  // Adding classes to elements
+  card.classList.add('card')
+  headline.classList.add('headline')
+  author.classList.add('author')
+  imageContainer.classList.add('img-container')
+  // Setting up structure of elements
+  card.appendChild(headline)
+  card.appendChild(author)
+  author.appendChild(imageContainer)
+  imageContainer.appendChild(image)
+  imageContainer.appendChild(name)
+  // Adding content
+  headline.textContent = article.headline
+  image.src = article.authorPhoto
+  name.textContent = article.authorName
+  // Adding event listener
+  card.addEventListener('click', () => {
+    console.log(article.headline)
+  })
+  // Return
+  return card
 }
 
 const cardAppender = (selector) => {
