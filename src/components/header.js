@@ -52,7 +52,7 @@ const mountPoint = document.querySelector('.header-container')
 
 
 const headerAppender = (selector) => {
-  return selector.appendChild(Header('IM TITLE!', 'IM DATE', 'IM TEMP')); 
+  return selector.appendChild(Header('Lambda Times', 'May 15, 2021', '88 degrees')); 
 }
 
 headerAppender(mountPoint) // This invokes the selector function.

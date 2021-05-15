@@ -1,4 +1,4 @@
-## Project Set Up
+## Project Set Up seems wrong
 
 - [ ] Fork and clone the repo. Delete your old fork from Github first if you are repeating this Unit.
 - [ ] Open the assignment in Canvas and click on the "Set up git" option.
