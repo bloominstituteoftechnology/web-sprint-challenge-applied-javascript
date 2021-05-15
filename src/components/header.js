@@ -20,6 +20,10 @@ const Header = (title, date, temp) => {
   header.classList.add("header");
   date.classList.add("date");
   temp.classList.add("temp");
+  // add textContent
+  date.textContent = date;
+  title.textContent = title;
+  temp.textContent = temp;
   //create structure
   header.appendChild(date);
   header.appendChild(title);
