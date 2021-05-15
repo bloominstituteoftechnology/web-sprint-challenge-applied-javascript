@@ -1,13 +1,3 @@
-# Applied JavaScript Sprint Challenge
-
-**Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
-
-This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored **Applied JavaScript**. During this sprint, you studied **DOM and components**. In your challenge this week, you will demonstrate your mastery of these skills by creating **an online Lambda newspaper**.
-
-This is an individual assessment. All work must be your own. Your challenge score is a measure of your ability to work independently using the material covered through this sprint. You need to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
-
-You are not allowed to collaborate during the sprint challenge.
-
 ## Project Set Up
 
 - [ ] Fork and clone the repo. Delete your old fork from Github first if you are repeating this Unit.
@@ -17,9 +7,6 @@ You are not allowed to collaborate during the sprint challenge.
 - [ ] Check to see that Codegrade has accepted your git submission.
 
 For a step-by-step on setting up Codegrade see [this guide.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
-
-## Project Instructions
-
 ### Introduction
 
 You are going to create a Lambda Newspaper. Your job is going to be to create the components that make up the newspaper's home page.
@@ -36,12 +23,19 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 - [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command.
 - [ ] In a separate terminal, run `npm test` to run tests.
 
-**Steps Required for MVP:**
+**Steps Required for MVP:** // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+**Steps Required for MVP:** // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+**Steps Required for MVP:** // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+**Steps Required for MVP:** // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+**Steps Required for MVP:** // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+**Steps Required for MVP:** // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 
 - [ ] Step 0 is to link `src/index.js` to the `src/index.html` file using a script tag.
 - [ ] Steps 1 and 2 are explained inside the `src/components/header.js` file.
 - [ ] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
 - [ ] Steps 5 and 6 are explained inside the `src/components/card.js` file.
+
 
 **Important Notes:**
 
@@ -53,6 +47,10 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 - In your solution, it is essential that you follow best practices and produce clean and professional results.
 - Schedule time to review, refine, and polish your work, including spell-checking and grammar-checking.
 - It is better to submit a challenge that meets MVP than one that attempts too much and does not.
+
+
+
+
 
 **Stretch Goals:**
 
