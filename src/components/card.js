@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const Card = ({headline, authorPhoto, authorName}) => {
   // TASK 5
   // ---------------------
@@ -62,8 +64,9 @@ const cardAppender = (selector) => {
     .get("https://lambda-times-api.herokuapp.com/articles")
     .then(item => {
       const articles = item.data.articles;
-      for(article in articles){
-        articles[article].forEach(y => main.appendChild(Card(y)))
+      for(const art in articles){
+        console.log(articles[art]);
+        articles[art].forEach(y => main.appendChild(Card(y)))
       }
         })
     .catch(err => console.log(err))

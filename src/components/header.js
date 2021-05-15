@@ -13,21 +13,21 @@ const Header = (title, date, temp) => {
   //
   // create elements
   const header = document.createElement("div");
-  const date = document.createElement("span");
-  const title = document.createElement("h1");
-  const temp = document.createElement("temp");
+  const date1 = document.createElement("span");
+  const title1 = document.createElement("h1");
+  const temp1 = document.createElement("span");
   //add style and classes
   header.classList.add("header");
-  date.classList.add("date");
-  temp.classList.add("temp");
+  date1.classList.add("date");
+  temp1.classList.add("temp");
   // add textContent
-  date.textContent = date;
-  title.textContent = title;
-  temp.textContent = temp;
+  date1.textContent = date;
+  title1.textContent = title;
+  temp1.textContent = temp;
   //create structure
-  header.appendChild(date);
-  header.appendChild(title);
-  header.appendChild(temp);
+  header.appendChild(date1);
+  header.appendChild(title1);
+  header.appendChild(temp1);
   // return the block
   return header
 }
