@@ -2,6 +2,7 @@
 // DO NOT MAKE CHANGES TO THIS FILE
 // DO NOT MAKE CHANGES TO THIS FILE
 import 'regenerator-runtime'
+
 import { worker } from './mocks/browser'
 
 import { cardAppender } from './components/card'
