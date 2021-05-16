@@ -18,8 +18,22 @@ const Card = (article) => {
   // </div>
   //
 }
+const cards = document.querySelector(".cards-container")
 
-const cardAppender = (selector) => {
+
+
+axios
+  .get("https://lambda-times-api.herokuapp.com/articles")
+  .then(res => {
+    console.log(res.data)
+    Object.values(res.data.articles).forEach((topic) => {
+      topic.forEach(e => {
+        cardMaker(e)
+      })
+    })
+  })
+  .catch(err => err)
+
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
@@ -27,7 +41,38 @@ const cardAppender = (selector) => {
   // However, the articles do not come organized in a single, neat array. Inspect the response closely!
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
-  //
-}
+  
+const cardMaker = (e) => {
+  // Create Elements
+  const cardDiv = document.createElement('div')
+  const headline = document.createElement('div')
+  const author = document.createElement('div')
+  const imgCont = document.createElement('div')
+  const img = document.createElement('img')
+  const name = document.createElement('span')
 
-export { Card, cardAppender }
+
+  // Add Classes
+  cardDiv.classList.add("card")
+  headline.classList.add("headline")
+  author.classList.add("author")
+  imgCont.classList.add("img-container")
+
+  // Add Content
+  headline.textContent = e.headline
+  img.src = e.authorPhoto
+  name.textContent = `By ${e.authorName}`
+
+  // Append
+  cards.appendChild(cardDiv)
+  cardDiv.appendChild(headline)
+  cardDiv.appendChild(author)
+  author.appendChild(imgCont)
+  imgCont.appendChild(img)
+  author.appendChild(name)
+
+  cardDiv.addEventListener('click', () => {
+    console.log(e.headline)
+  })
+
+  return cards}

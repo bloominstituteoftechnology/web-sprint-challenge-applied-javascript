@@ -10,11 +10,11 @@ You are not allowed to collaborate during the sprint challenge.
 
 ## Project Set Up
 
-- [ ] Fork and clone the repo. Delete your old fork from Github first if you are repeating this Unit.
-- [ ] Open the assignment in Canvas and click on the "Set up git" option.
-- [ ] Follow instructions to set up Codegrade's Webhook and Deploy Key.
-- [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
-- [ ] Check to see that Codegrade has accepted your git submission.
+- [x] Fork and clone the repo. Delete your old fork from Github first if you are repeating this Unit.
+- [x] Open the assignment in Canvas and click on the "Set up git" option.
+- [x] Follow instructions to set up Codegrade's Webhook and Deploy Key.
+- [x] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
+- [x] Check to see that Codegrade has accepted your git submission.
 
 For a step-by-step on setting up Codegrade see [this guide.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
 
@@ -30,18 +30,18 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 ### Instructions
 
-- [ ] Navigate to the root of the project with your command line.
-- [ ] Run `npm install` to download the dependencies listed in the `package.json` file.
-- [ ] Run `npm start` to compile the project and serve it.
-- [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command.
-- [ ] In a separate terminal, run `npm test` to run tests.
+- [x] Navigate to the root of the project with your command line.
+- [x] Run `npm install` to download the dependencies listed in the `package.json` file.
+- [x] Run `npm start` to compile the project and serve it.
+- [x] Navigate Chrome to the URL indicated in the output of the `npm start` command.
+- [x] In a separate terminal, run `npm test` to run tests.
 
 **Steps Required for MVP:**
 
-- [ ] Step 0 is to link `src/index.js` to the `src/index.html` file using a script tag.
-- [ ] Steps 1 and 2 are explained inside the `src/components/header.js` file.
-- [ ] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
-- [ ] Steps 5 and 6 are explained inside the `src/components/card.js` file.
+- [x] Step 0 is to link `src/index.js` to the `src/index.html` file using a script tag.
+- [x] Steps 1 and 2 are explained inside the `src/components/header.js` file.
+- [x] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
+- [x] Steps 5 and 6 are explained inside the `src/components/card.js` file.
 
 **Important Notes:**
 
@@ -60,23 +60,28 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
 
-- [ ] Use the tabs at the top of the page to filter articles by topic.
+- [x] Use the tabs at the top of the page to filter articles by topic.
 
 ## Submission format
 
-- [ ] Submit via Codegrade by committing and pushing any new changes.
-- [ ] Create a pull request to merge `<firstName-lastName>` branch into `main`.
-- [ ] Please don't merge your own pull request and make sure **you are on your own repo**.
-- [ ] Check Codegrade for automated feedback.
-- [ ] Check Codegrade in the days following the Sprint Challenge for reviewer feedback.
-- [ ] Any changes pushed after the deadline will not receive any feedback.
+- [x] Submit via Codegrade by committing and pushing any new changes.
+- [x] Create a pull request to merge `<firstName-lastName>` branch into `main`.
+- [x] Please don't merge your own pull request and make sure **you are on your own repo**.
+- [x] Check Codegrade for automated feedback.
+- [x] Check Codegrade in the days following the Sprint Challenge for reviewer feedback.
+- [x] Any changes pushed after the deadline will not receive any feedback.
 
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+A: The DOM is the Document Object Model => The representation/access to all elements on a website.
 2. What is an event?
+A: Anything from loading of a page to the user clicking on an element.
 3. What is an event listener?
+A: is a javascript that listens for an event to fire and then preforms an action.
 4. Why would we convert a NodeList into an Array?
+A: To use those elements at a later time, or to use more advanced array methods.
 5. What is a component?
+A: a component is a self contained piece of code that fits into a larger codebase. It is removed to keep the code more dry, and keep it more readable, and reuseable.

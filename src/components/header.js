@@ -11,15 +11,39 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
+  const headerSelector = document.querySelector(".header-container")
+
+function Header() {
+  let arr = []
+
+  const headDiv = document.createElement("div")
+  headDiv.classList.add("header")
+
+
+
+  const date = document.createElement("span")
+  date.classList.add("date")
+  date.textContent = "MARCH 28, 2020"
+  arr.push(date)
+
+  const h1 = document.createElement("h1")
+  h1.textContent = "Lambda Times"
+  arr.push(h1)
+
+  const temp = document.createElement("span")
+  temp.classList.add("temp")
+  temp.textContent = "98°"
+  arr.push(temp)
+
+  arr.forEach(e => {
+    headDiv.appendChild(e)
+  })
+
+  headerSelector.appendChild(headDiv)
+
 }
 
-const headerAppender = (selector) => {
-  // TASK 2
-  // ---------------------
-  // Implement this function taking a css selector as its only argument.
-  // It should create a header using the Header component above, passing arguments of your choosing.
-  // It should append the header to the element in the DOM that matches the given selector.
-  //
+Header()
 }
 
-export { Header, headerAppender }
+const headerAppender = (selector) 
