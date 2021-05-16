@@ -23,7 +23,7 @@ axios
     entry.appendChild(tabCreator(e))
   });
 
-})
+)
 .catch(err => err)
 
 
