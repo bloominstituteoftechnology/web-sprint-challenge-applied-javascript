@@ -1,5 +1,4 @@
-const Card = (article) => {
-  // TASK 5
+// TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
   // It takes as its only argument an "article" object with `headline`, `authorPhoto` and `authorName` properties.
@@ -16,11 +15,37 @@ const Card = (article) => {
   //     <span>By { authorName }</span>
   //   </div>
   // </div>
-  //
-}
 
-const cardAppender = (selector) => {
-  // TASK 6
+import axios from "axios";
+
+  //
+const Card = (article) => {
+  let card = document.createElement("div");
+      card.classList.add("card");
+  let headline = document.createElement("div")
+      headline.classList.add("headline")
+      headline.textContent= `${article.headline}`
+      card.appendChild(headline);
+  let divAuthor = document.createElement("div")
+      divAuthor.classList.add("author");
+      card.appendChild(divAuthor)
+  let imgContainer = document.createElement("div");
+      imgContainer.classList.add("img-container")
+      divAuthor.appendChild(imgContainer)
+  let img = document.createElement("img");
+      img.setAttribute("src", `${article.authorPhoto}`);
+      imgContainer.appendChild(img)
+  let span = document.createElement("span");
+       span.textContent = `${article.authorName}`
+       divAuthor.appendChild(span);
+      card.addEventListener("click", (e)=>{
+        e.preventDefault();
+        console.log(e.target) 
+      })
+     
+  return card;
+}
+// TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
   // It should obtain articles from this endpoint: `https://lambda-times-api.herokuapp.com/articles`
@@ -28,6 +53,18 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+const cardAppender = (selector) => {
+  
+ let select = document.querySelector(selector);
+ axios.get(`https://lambda-times-api.herokuapp.com/articles`)
+ .then(res=>{
+   console.log(res.data.articles)
+   for(let x in res.data.articles){
+     console.log(x)
+   }
+ })
+ .catch(err=>{
+   console.log("worong ", err)
+ })
 }
-
 export { Card, cardAppender }

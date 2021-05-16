@@ -38,18 +38,11 @@ const tabsAppender = (selector) => {
   //
   axios.get(`https://lambda-times-api.herokuapp.com/topics`)
   .then(res=>{
-    return res.data.topics  
-    
+    document.querySelector(selector).appendChild(Tabs(res.data.topics))
   })
-  .then(res=>{
-    let x = Tabs(res);
-    document.querySelector(selector).appendChild(x)
-  })
- 
   .catch(err=>{
     console.log("something goes wrong ", err)
-  })
-  
+  }) 
 }
 
 export { Tabs, tabsAppender }
