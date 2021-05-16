@@ -16,7 +16,7 @@ const Tabs = (topics) => {
   //
   let container = document.createElement("div");
       container.classList.add("topics")
-    topics.forEach(item => {
+    topics.forEach( item=> {
       let tabDiv = document.createElement("div")
       tabDiv.classList.add("tab")
       tabDiv.textContent = item;

@@ -18,13 +18,20 @@
 
 import axios from "axios";
 
-  //
+  
 const Card = (article) => {
+  let url = axios.get(`https://lambda-times-api.herokuapp.com/articles`)
+   url.then(res=>{
+     console.log("===============", res.data.articles)
+   })
+   .catch(err=>{
+     console.log("errowerer==========", err)
+   })
   let card = document.createElement("div");
       card.classList.add("card");
   let headline = document.createElement("div")
       headline.classList.add("headline")
-      headline.textContent= `${article.headline}`
+      headline.textContent= `${article.authorPhoto}`;
       card.appendChild(headline);
   let divAuthor = document.createElement("div")
       divAuthor.classList.add("author");
@@ -33,14 +40,14 @@ const Card = (article) => {
       imgContainer.classList.add("img-container")
       divAuthor.appendChild(imgContainer)
   let img = document.createElement("img");
-      img.setAttribute("src", `${article.authorPhoto}`);
+      img.setAttribute("src", "https://tk-assets.lambdaschool.com/1891c758-b3f4-4ec7-9d88-590bf7c7ceb2_fido.jpg");
       imgContainer.appendChild(img)
   let span = document.createElement("span");
-       span.textContent = `${article.authorName}`
+       span.textContent = article.authorName
        divAuthor.appendChild(span);
       card.addEventListener("click", (e)=>{
-        e.preventDefault();
-        console.log(e.target) 
+        // e.preventDefault();
+        e.target;
       })
      
   return card;
@@ -58,13 +65,13 @@ const cardAppender = (selector) => {
  let select = document.querySelector(selector);
  axios.get(`https://lambda-times-api.herokuapp.com/articles`)
  .then(res=>{
-   console.log(res.data.articles)
-   for(let x in res.data.articles){
-     console.log(x)
+   for(let item in res.data.articles){
+   select.appendChild(Card(item))
    }
- })
+ }) 
  .catch(err=>{
-   console.log("worong ", err)
+   console.log("wrong let try this one  ", err)
  })
+ 
 }
 export { Card, cardAppender }
