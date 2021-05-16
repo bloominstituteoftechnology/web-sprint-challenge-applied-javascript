@@ -13,6 +13,11 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+  let container = document.createElement("div");
+  topics.map(item=>{
+    container.appendChild(document.createElement("div").appendChild(item))
+
+  })
 }
 
 const tabsAppender = (selector) => {
