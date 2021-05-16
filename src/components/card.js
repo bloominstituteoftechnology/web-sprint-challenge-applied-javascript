@@ -41,8 +41,7 @@ axios
   // However, the articles do not come organized in a single, neat array. Inspect the response closely!
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
-  //
-}
+  
 const cardMaker = (e) => {
   // Create Elements
   const cardDiv = document.createElement('div')
@@ -76,4 +75,4 @@ const cardMaker = (e) => {
     console.log(e.headline)
   })
 
-  return cards
+  return cards}
