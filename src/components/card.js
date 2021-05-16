@@ -109,19 +109,19 @@ const Card = (article) => {
 
 
   const cardAppender = (selector) => {
-    const main = document.querySelector(selector);
+    const cont = document.querySelector(selector);
     axios
       .get("https://lambda-times-api.herokuapp.com/articles")
       .then(item => {
         const articles = item.data.articles;
         for(const article in articles){            // for in loop
           console.log('look', articles[article]);
-          articles[article].forEach(i => main.appendChild(Card(i)))
+          articles[article].forEach(i => cont.appendChild(Card(i)))
         }
           })
       .catch(err => console.log(err))
   }
-
+ //  sdfd
 
 
 
