@@ -40,8 +40,8 @@ const Card = (article) => {
   authorName.appendChild(authorName)
 
   img.setAttribute('src', article.authorPhoto)
-headline.textContent = {headline}
-authorName.textContent = 'By' + authorName
+headline.textContent = article.headline
+authorName.textContent = 'By' + article.authorName
 
 return article
 }

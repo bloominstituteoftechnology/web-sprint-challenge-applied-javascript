@@ -16,16 +16,16 @@ const Tabs = (topics) => {
   // </div>
   //
   const entry = document.querySelector(`.topics`)
-  const topics = document.createElement('div') 
-   topics.classList.add(`topics`)
+  const topic = document.createElement('div') 
+   topic.classList.add(`topics`)
    const tab = document.createElement('div') 
    tab.classList.add(`tab`)
 
-   topics.appendChild(topics)
+   topic.appendChild(topics)
    tab.appendChild(tab)
 
 
-return topics
+return topic
 }
 
 const tabsAppender = (selector) => {
