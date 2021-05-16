@@ -1,0 +1,25 @@
+## Interview Questions
+
+Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
+
+
+1. Briefly compare and contrast `.forEach` & `.map` (2-3 sentences max)
+.forEach is an array method.  This does not return a new array.  .map returns a new array.
+
+
+2. Explain the difference between a callback and a higher order function.
+A callback function is a function given to another function acting and further action will be taken on the callback function in the future.
+
+A higher order function is a function which takes other functions in as arguments and has the parameters for when callback functions run.,
+
+
+3. What is closure?
+A function and scope together comprise a closure.  They have a memory feature for inputted data.
+
+
+4. Describe the four rules of the 'this' keyword.
+The this reference is connected to the global object in a function is referenced in a global scope.  A function referenced to with an object that is context will have a this connected to the context object.  If using a new keyword, a this reference is connected to a certain object.  And, the this value is determined at runtime so you cannot predict what it will be based on your code input.  (courtesy of online reference)
+
+
+5. Why do we need super() in an extended class?
+Super() references the parent element in a class.
