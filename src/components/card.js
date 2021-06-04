@@ -53,6 +53,8 @@ const Card = (article) => {
   return cardDiv
 }
 
+
+
 const cardAppender = (selector) => {
   // TASK 6
   // ---------------------
