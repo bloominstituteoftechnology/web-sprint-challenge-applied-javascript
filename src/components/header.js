@@ -28,15 +28,22 @@ const Header = (title, date, temp) => {
   mainDiv.appendChild(dateSpan)
   mainDiv.appendChild(divH1)
   mainDiv.appendChild(tempSpan)
+
+  return mainDiv
 }
 
+
+// TASK 2
+// ---------------------
+// Implement this function taking a css selector as its only argument.
+// It should create a header using the Header component above, passing arguments of your choosing.
+// It should append the header to the element in the DOM that matches the given selector.
+//
 const headerAppender = (selector) => {
-  // TASK 2
-  // ---------------------
-  // Implement this function taking a css selector as its only argument.
-  // It should create a header using the Header component above, passing arguments of your choosing.
-  // It should append the header to the element in the DOM that matches the given selector.
-  //
+  
+  selector = document.querySelector(".header-container")
+  selector.appendChild(Header("Purefallen weekly news","June 2021","102 degrees"))
+  
 }
 
 export { Header, headerAppender }
