@@ -16,15 +16,15 @@ import axios from 'axios'
 const Tabs = (topics) => {
   const topic = document.createElement("div")
   topic.classList.add("topics")
-
   topics.forEach(data => {
-    const item = document.createElement("div");
-    item.classList.add("tab");
-    item.textContent = data;
+    const item = document.createElement("div")
+    item.classList.add("tab")
+    item.textContent = data
     topic.appendChild(item)
   })
 
   return topic
+
 }
 
 // TASK 4
@@ -36,16 +36,19 @@ const Tabs = (topics) => {
 //
 const tabsAppender = (selector) => {
 
+  const tabMaker = document.querySelector(selector)
+  
   axios.get("https://lambda-times-api.herokuapp.com/topics")
     .then(res => {
-
-      const tabInfo = res.data.topics
-      
-      const tabAppend = document.querySelector(selector)
-      tabAppend.appendChild(Tabs(tabInfo))
-
-      return tabAppend
-  })
+    tabMaker.appendChild(Tabs(res.data.topics))
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  
+  return tabMaker
+  
+  
 }
 
 export { Tabs, tabsAppender }
