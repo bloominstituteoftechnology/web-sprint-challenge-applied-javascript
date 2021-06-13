@@ -42,6 +42,8 @@ const Header = (title, date, temp) => {
 const headerAppender = (selector) => {
   
   const headerAppend = document.querySelector(selector)
-  headerAppend.appendChild(Header("Steve's Weekly News","June 2021","92°F"))
+  headerAppend.appendChild(Header("Steve's Weekly News", "June 2021", "92°F"))
+  
+  return headerAppend
 }
 export { Header, headerAppender }
