@@ -2,14 +2,14 @@ const Tabs = (topics) => {
   const topicBody = document.createElement('div')
   topicBody.classList.add('topics')
   
-  topics.forEach((topics) => {
+  topics.forEach(topics => {
     const thing = document.createElement('div')
     thing.classList.add('tab')
     thing.textContent = topics
     
     topicBody.appendChild(thing)
     
-  })
+  });
   console.log(topicBody)
   return topicBody
 }

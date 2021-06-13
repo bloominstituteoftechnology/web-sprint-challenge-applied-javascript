@@ -23,8 +23,9 @@ const Header = (title, date, temp)  =>  {
 }
 
 const headerAppender = (selector) => {
+  const mountingpoint = document.querySelector(selector)
   const newHeader = Header("stuff", "stuff2", "stuff3")
-  selector.appendChild(newHeader)
+  mountingpoint.appendChild(newHeader)
   console.log(selector)
  }
 

@@ -1,5 +1,5 @@
 const Card = (article) => {
-  article.forEach((data) =>{
+  article.forEach(data =>{
     const card = document.createElement('div')
     card.classList.add('card')
     
@@ -26,11 +26,11 @@ const Card = (article) => {
     
     card.addEventListener('click', (event) => {
       console.log(`${data.headline}`)
-    }
+    })
     
-    
-  })
-  
+    });
+ 
+  return card 
 }
 
 const cardAppender = (selector) => {
@@ -40,7 +40,7 @@ const cardAppender = (selector) => {
     response.data.articles.forEach(things =>{
       const madeCard = Card(things)
       mountingpoint.appendChild(madeCard)
-    })
+    });
   })
 }
 
