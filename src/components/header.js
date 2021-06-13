@@ -21,9 +21,9 @@ const Header = (title, date, temp) => {
   dateSpan.classList.add("date");
   tempSpan.classList.add("temp");
 
-  dateSpan.innerText = date;
-  divH1.innerText = title;
-  tempSpan.innerText = temp
+  dateSpan.textContent= date;
+  divH1.textContent= title;
+  tempSpan.textContent = temp;
 
   mainDiv.appendChild(dateSpan)
   mainDiv.appendChild(divH1)
@@ -42,7 +42,7 @@ const Header = (title, date, temp) => {
 const headerAppender = (selector) => {
   
   selector = document.querySelector(".header-container")
-  selector.appendChild(Header("Purefallen weekly news","June 2021","102 degrees"))
+  selector.appendChild(Header("Purefallen Weekly News","June 2021","102 degrees"))
   
 }
 
