@@ -1,3 +1,5 @@
+Initial Commit web-sprint-challenge-applied-javascript June 14, 2021
+
 # Applied JavaScript Sprint Challenge
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
