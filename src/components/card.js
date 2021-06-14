@@ -1,16 +1,16 @@
 const Card = (article) => {
-  article.forEach(data =>{
-    const card = document.createElement('div')
-    card.classList.add('card')
+  article.forEach(data => {
+    const Ncard = document.createElement('div')
+    Ncard.classList.add('card')
     
     const hLine = document.createElement('div')
     hLine.classList.add('headline')
     hLine.textContent = `${data.headline}`
-    card.appendChild(hLine)
+    Ncard.appendChild(hLine)
     
     const auth = document.createElement('div')
     auth.classList.add('author')
-    card.appendChild(auth)
+    Ncard.appendChild(auth)
     
     const imgBox = document.createElement('div')
     imgBox.classList.add('img-container')
@@ -24,13 +24,13 @@ const Card = (article) => {
     authSpan.textContent = `${data.authorName}`
     auth.appendChild(authSpan)
     
-    card.addEventListener('click', (event) => {
+    Ncard.addEventListener('click', (event) => {
       console.log(`${data.headline}`)
     })
     
     });
  
-  return card 
+  return Ncard 
 }
 
 const cardAppender = (selector) => {
