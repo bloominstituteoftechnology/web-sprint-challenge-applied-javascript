@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 // TASK 5
 // ---------------------
 // Implement this function, which should return the markup you see below.
@@ -36,7 +38,7 @@ const Card = (article) => {
   card.appendChild(headline)
   card.appendChild(author)
   author.appendChild(imgContainer)
-  author.appendChild(authorPhoto)
+  imgContainer.appendChild(authorPhoto)
   author.appendChild(authorName)
 
   card.addEventListener("click", () => console.log(headline))
@@ -53,6 +55,18 @@ const Card = (article) => {
 // Append each card to the element in the DOM that matches the selector passed to the function.
 //
 const cardAppender = (selector) => {
+  const cardMaker = document.querySelector(selector)
+
+  axios.get("https://lambda-times-api.herokuapp.com/articles")
+    .then(res => {
+      const data = res.data.articles;
+      for (let articles in data) {
+        data[articles].forEach(i => {
+          cardMaker.appendChild(Card(i))
+        })
+      }
+    })
+      
   
 }
 
