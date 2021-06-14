@@ -3,19 +3,14 @@
 
 <head>
   <title>Lambda Times</title>
-  <link rel="icon" href="./favicon.ico">
-  <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
+  <link rel="icon" href="favicon.ico">
+  <link href="index.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  <script src="index.js" defer> </script>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="./components/Tabs/index.js" async></script>
-  <script src="./components/Header/index.js" async></script>
-  <script src="./components/Cards/index.js" async></script>
-  <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
 </head>
 
 <body>
-
-  <!-- TOP BAR COMPONENT -->
   <div class="top-bar">
     <div class="container">
       <div class="container-left">
@@ -30,64 +25,17 @@
     </div>
   </div>
 
-  HEADER COMPONENT, PLACE HEADER HERE
   <div class="header-container">
+    <!-- index.js injects the header here -->
   </div>
 
-  <!-- TABS COMPONENT, PLACE TABS HERE-->
-  <div class="tabs">
-    <div class="topics">
-      <span class="title">TRENDING TOPICS:</span>
-    </div>
+  <div class="tabs-container">
+    <!-- index.js injects the tabs here -->
   </div>
 
-  <!-- STRETCH GOAL: ONLY ATTEMPT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
-  <!-- CAROUSEL COMPONENT -->
-  <div class="carousel-container">
-    <button class="carousel__button carousel__button--left">
-      <img src="assets/carousel/left-arrow.png" alt="arrow button pointing left">
-    </button>
-  
-  <div class="carousel__track-container">
-    <ul class="carousel__track">
-      <li class="carousel__slide">
-          <img src="assets/carousel/computer.jpeg"  alt="image of a computer">
-      </li>
-
-      <li class="carousel__slide">
-          <img src="assets/carousel/mountains.jpeg"  alt="image of the mountains">
-      </li>
-
-      <li class="carousel__slide">
-          <img src="assets/carousel/trees.jpg"  alt="image of trees">
-      </li>
-
-      <li class="carousel__slide">
-          <img src="assets/carousel/turntable.jpg"  alt="image of a turntable">
-      </li>
-    </ul>
-  </div>
-  
-  <button class="carousel__button carousel__button--right">
-      <img src="assets/carousel/right-arrow.png" alt="arrow button pointing right">
-  </button>
-
-<div class="carousel__nav">
-    <button>
-        <img src="assets/carousel__indicator"></button>
-        <img src="assets/carousel__indicator"></button>
-        <img src="assets/carousel__indicator"></button>
-        <img src="assets/carousel__indicator"></button>
-</div>
-
-
-
-</div>
-
-  <!-- CARDS CONTAINER, PLACE ARTICLE CARDS HERE -->
   <div class="cards-container">
+    <!-- index.js injects the cards here -->
   </div>
-
 </body>
 
 </html>

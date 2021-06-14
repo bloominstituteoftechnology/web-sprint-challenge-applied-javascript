@@ -45,7 +45,7 @@ const headerAppender = (selector) => {
   //
 
   const headContainer = document.querySelector(selector);
-  headContainer.append(Header('Lambda Times', 'February 28 2021', '65 degrees'));
+  headContainer.append(Header('Lambda Times', 'June 14, 2021', '86° Sunny with Clouds'));
 }
 
 export { Header, headerAppender }
