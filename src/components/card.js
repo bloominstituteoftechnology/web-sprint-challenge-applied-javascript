@@ -66,6 +66,9 @@ const cardAppender = (selector) => {
         })
       }
     })
+    .catch(err => {
+      console.log("something went wrong with the api", err)
+    })
       
   
 }
