@@ -33,12 +33,11 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 - [ ] Navigate to the root of the project with your command line.
 - [ ] Run `npm install` to download the dependencies listed in the `package.json` file.
 - [ ] Run `npm start` to compile the project and serve it.
-- [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command.
+- [ ] Navigate Chrome to `http://localhost:3000`
 - [ ] In a separate terminal, run `npm test` to run tests.
 
 **Steps Required for MVP:**
 
-- [ ] Step 0 is to link `src/index.js` to the `src/index.html` file using a script tag.
 - [ ] Steps 1 and 2 are explained inside the `src/components/header.js` file.
 - [ ] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
 - [ ] Steps 5 and 6 are explained inside the `src/components/card.js` file.
@@ -46,21 +45,11 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 **Important Notes:**
 
 - Please **do not move or rename existing files** or folders.
-- Careful adding your script tag in Step 0: the code inside `index.js` needs the DOM to be fully built before executing.
-- Careful if you choose to install Axios using another script tag: the order in which script tags execute is important.
 - If your development server stops "auto reloading", manually kill it with `CTRL+C` and restart it.
 - Do not change the `package.json` file except to install libraries with NPM (Axios is _already_ in the `package.json`).
 - In your solution, it is essential that you follow best practices and produce clean and professional results.
 - Schedule time to review, refine, and polish your work, including spell-checking and grammar-checking.
 - It is better to submit a challenge that meets MVP than one that attempts too much and does not.
-
-**Stretch Goals:**
-
-**IMPORTANT:** Work on stretch goals in a **new branch**. You can branch off of `<firstName-lastName>` by executing `git checkout -b stretch`.
-
-After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
-
-- [ ] Use the tabs at the top of the page to filter articles by topic.
 
 ## Submission format
 

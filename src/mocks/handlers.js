@@ -1,6 +1,3 @@
-// DO NOT MAKE CHANGES TO THIS FILE
-// DO NOT MAKE CHANGES TO THIS FILE
-// DO NOT MAKE CHANGES TO THIS FILE
 import { rest } from 'msw'
 import { topics, articles } from './data'
 
@@ -19,6 +16,6 @@ function getArticles(req, res, ctx) {
 }
 
 export const handlers = [
-  rest.get('https://lambda-times-api.herokuapp.com/articles', getArticles),
-  rest.get('https://lambda-times-api.herokuapp.com/topics', getTopics),
+  rest.get('http://localhost:5000/api/articles', getArticles),
+  rest.get('http://localhost:5000/api/topics', getTopics),
 ]
