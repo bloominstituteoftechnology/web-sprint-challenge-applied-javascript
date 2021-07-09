@@ -1,14 +1,6 @@
-const Tabs = (topics) => {
-  const topicsDiv = document.createElement('div')
-  topicsDiv.classList.add('topics')
-  topics.forEach(item =>{
-    const tabDiv = document.createElement('div')
-    tabDiv.textContent = item
-    tabDiv.classList.add('tab')
-    topicsDiv.appendChild(tabDiv)
-  })
-  return topicsDiv
-}
+import axios from "axios"
+
+
   // TASK 3
   // ---------------------
   // Implement this function which takes an array of strings ("topics") as its only argument.
@@ -24,9 +16,21 @@ const Tabs = (topics) => {
   // </div>
   //
 
-const tabsAppender = (selector) => {
 
+const Tabs = (topics) => {
+  const topicsDiv = document.createElement('div')
+  topicsDiv.classList.add('topics')
+  topics.forEach(item =>{
+    const tabDiv = document.createElement('div')
+    tabDiv.textContent = item
+    tabDiv.classList.add('tab')
+    topicsDiv.appendChild(tabDiv)
+  })
+  return topicsDiv
 }
+
+
+
 
   // TASK 4
   // ---------------------
@@ -34,5 +38,41 @@ const tabsAppender = (selector) => {
   // It should obtain topics from this endpoint: `http://localhost:5000/api/topics` (test it in Postman/HTTPie!).
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
-  //
+  
+let topicsArray = [];
+
+axios.get(`http://localhost:5000/api/topics`)
+  .then(res=>{
+    const tab = Tabs(e)
+    topicsArray.push('tab')
+  })
+  .catch(err=>{
+    console.log('error')
+  })
+  .finally(() => console.log('done'))
+
+
+
+const tabsAppender = (selector) => {
+  topicsArray.forEach(e=>{
+    selector.appendChild(e)
+  })
+  }
+  
+
+  // selector.forEach(item=>{
+  //   axios.get(`http://localhost:5000/api/topics`)
+  //   entryPoint = document.querySelector(`.${item}`)
+  //   .then(res=>{
+  //     const tab = Tabs(res.data)
+  //     entryPoint.appendChild(tab)
+  //   })
+  //   .catch(err=>{
+  //     console.log('error')
+  //   })
+  //   .finally(() => console.log('done'))
+  // })
+
+
+
 export { Tabs, tabsAppender }
