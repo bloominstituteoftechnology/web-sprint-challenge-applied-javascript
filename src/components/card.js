@@ -1,4 +1,4 @@
-const Card = (article) => {
+const Card = article => {
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
@@ -17,9 +17,23 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
-}
+  const cardYo = document.createElement("div");
+  cardYo.classList.add("card");
 
-const cardAppender = (selector) => {
+  const headline1 = document.createElement("div");
+  headline1.classList.add("headline");
+
+  const authorStuffs = document.createElement("div");
+  authorStuffs.classList.add("author");
+
+  const imageCon = document.createElement("div");
+  imageCon.classList.add("img-container");
+
+  const spanStuff = document.createElement("span");
+  spanStuff.textContent = `By ${authorName}`;
+};
+
+const cardAppender = selector => {
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
@@ -28,6 +42,6 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-}
+};
 
-export { Card, cardAppender }
+export { Card, cardAppender };
