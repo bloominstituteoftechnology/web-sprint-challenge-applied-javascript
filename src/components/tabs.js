@@ -7,11 +7,11 @@ const Tabs = (topics) => {
   // The tags used, the hierarchy of elements and their attributes must match the provided markup!
   // The text inside elements will be set using their `textContent` property (NOT `innerText`).
   //
-   <div class="topics">
-     <div class="tab">javascript</div>
-     <div class="tab">bootstrap</div>
-     <div class="tab">technology</div>
-   </div>
+  //  <div class="topics">
+  //    <div class="tab">javascript</div>
+  //    <div class="tab">bootstrap</div>
+  //    <div class="tab">technology</div>
+  //  </div>
   //
   
   const topicsContainer = document.createElement('div');
