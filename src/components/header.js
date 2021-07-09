@@ -25,9 +25,9 @@ const Header = (title, date, temp) => {
   headerDate.classList.add('date')
   headerTemp.classList.add('temp')
 
-  headerDate.textContent = `${date}`
-  headerTitle.textContent = `${title}`
-  headerTemp.textContent = `${temp}`
+  headerDate.textContent = date
+  headerTitle.textContent = title
+  headerTemp.textContent = temp
 
   return header
 
@@ -42,7 +42,7 @@ const headerAppender = (selector) => {
   // It should append the header to the element in the DOM that matches the given selector.
   //
 
-  document.querySelector(`${selector}`).appendChild(Header('Lambda Times', 'July 9, 2021', '73°'))
+  document.querySelector(selector).appendChild(Header('Lambda Times', 'July 9, 2021', '82°'))
 
 }
 
