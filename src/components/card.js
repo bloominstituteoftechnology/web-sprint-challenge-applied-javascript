@@ -60,15 +60,17 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-
-  const entryPoint = document.querySelector(selector)
+  // const entryPoint = document.querySelector(selector)
+  // entryPoint.appendChild(Card(article))
+  // 
+  // Same as tabs. Kept going back and forth. Is there value in creating variables instead of line 73?
   
   axios.get('http://localhost:5000/api/articles')
     .then(res => {
       const articles = res.data.articles
       for (const item in articles) {
         articles[item].forEach(article => {
-          entryPoint.appendChild(Card(article))
+          document.querySelector(selector).appendChild(Card(article))
         })
       }
     })
