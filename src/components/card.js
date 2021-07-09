@@ -17,7 +17,35 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
-}
+
+  const cardNode = document.createElement('div');
+  const headline = document.createElement('div');
+  const author = document.createElement('div');
+  const imgContainer = document.createElement('div');
+  const img = document.createElement('img');
+  const span = document.createElement('span');
+
+  cardNode.appendChild(headline);
+  cardNode.appendChild(author);
+  author.appendChild(imgContainer);
+  imgContainer.appendChild(img);
+  cardNode.appendChild(span);
+
+  cardNode.classList.add('card');
+  headline.classList.add('headline');
+  author.classList.add('author');
+  imgContainer.classList.add('img-container');
+  
+  img.src = article.authorPhoto;
+  headline.textContent = article.headline;
+  span.textContent = article.authorName;
+
+cardNode.addEventListener('click', () =>{
+  console.log(headline);
+});
+
+  return cardNode;
+};
 
 const cardAppender = (selector) => {
   // TASK 6
