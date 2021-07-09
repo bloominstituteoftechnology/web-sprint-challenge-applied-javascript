@@ -64,22 +64,22 @@ const cardAppender = (selector) => {
     const newCard = document.querySelector(selector);
     response.data.articles.javascript.forEach(e => {
       newCard.appendChild(Card(e));
-    })
+    });
     response.data.articles.bootstrap.forEach(e => {
       newCard.appendChild(Card(e));
-    })
+    });
     response.data.articles.technology.forEach(e => {
       newCard.appendChild(Card(e));
-    })
+    });
     response.data.articles.jquery.forEach(e => {
       newCard.appendChild(Card(e));
-    })
+    });
     response.data.articles.node.forEach(e => {
       newCard.appendChild(Card(e));
-    })
+    });
 
   })
-
+//Unsuccessful refactoring attempt. bummed about it. 
   // axios.get('http://localhost:5000/api/articles')
   // .then(function (response) {
   //   const newCard = document.querySelector(selector);
