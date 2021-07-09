@@ -22,9 +22,12 @@ const Header = (title, date, temp) => {
 
   const dspan = document.createElement("span");
   dspan.classList.add(temp);
-  dspan.textContent = date;
+  dspan.textContent = temp;
 };
 
+head1.appendChild(datespan);
+head1.appendChild(heading1);
+head1.appendChild(dspan);
 const headerAppender = header => {
   headerAppender.classList.add("header-container");
   headerAppender.appendChild(header.h1);

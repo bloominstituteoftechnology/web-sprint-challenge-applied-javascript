@@ -28,12 +28,16 @@ const Card = article => {
 
   const imageCon = document.createElement("div");
   imageCon.classList.add("img-container");
+  imageCon.src = article.authorPhoto;
 
   const spanStuff = document.createElement("span");
   spanStuff.textContent = `By ${authorName}`;
 };
+cardYo.appendChild(headline1);
+cardYo.appendChild(author);
+cardYo.appendChild(img - container);
 
-const cardAppender = selector => {
+const cardAppender = h2 => {
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
@@ -42,6 +46,7 @@ const cardAppender = selector => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+  fetch("http://localhost:5000/api/articles");
 };
 
 export { Card, cardAppender };
