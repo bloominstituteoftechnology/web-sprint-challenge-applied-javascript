@@ -21,7 +21,7 @@ const Tabs = (topics) => {
 
   allTopics.classList.add('topics')
  
-  topics.forEach(function(topic){
+  topics.forEach(topic => {
     const tab = document.createElement('div')
     tab.classList.add('tab')
     tab.textContent = topic
@@ -41,20 +41,15 @@ const tabsAppender = (selector) => {
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
   //
-
-  // axios.get(`http://localhost:5000/api/topics`)
-  //   .then(res => {
-  //     document.querySelector(`${selector}`).appendChild(Tabs(res.data))
-  //   })
-  //   .catch(err => console.log(err.message))
-  //   .finally(() => console.log('Done'))
+  const entryPoint = document.querySelector(selector)
 
   axios.get('http://localhost:5000/api/topics')
-  .then(res => {
-    document.querySelector(selector).appendChild(Tabs(res.data.topics))
-  })
-   .catch(err => console.log(err.message))
-   .finally(() => console.log('Done'))
+    .then(res => {
+      const tab = Tabs(res.data.topics)
+      entryPoint.appendChild(tab)
+    })
+    .catch(err => console.log(err.message))
+    .finally(() => console.log('Done'))
 
 }
 
