@@ -1,4 +1,5 @@
 import axios from "axios";
+import { response } from "msw";
 
 const Card = (article) => {
   // TASK 5
@@ -49,7 +50,6 @@ cardNode.addEventListener('click', () =>{
   return cardNode;
 };
 
-const cardAppender = (selector) => {
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
@@ -58,21 +58,39 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-  const newCard = document.querySelector(selector);
-  axios.get('http://localhost:5000/api/articles', {
+const cardAppender = (selector) => {
+  axios.get('http://localhost:5000/api/articles')
+  .then(response => {
+    const newCard = document.querySelector(selector);
+    response.data.articles.javascript.forEach(e => {
+      newCard.appendChild(Card(e));
+    })
+    response.data.articles.bootstrap.forEach(e => {
+      newCard.appendChild(Card(e));
+    })
+    response.data.articles.technology.forEach(e => {
+      newCard.appendChild(Card(e));
+    })
+    response.data.articles.jquery.forEach(e => {
+      newCard.appendChild(Card(e));
+    })
+    response.data.articles.node.forEach(e => {
+      newCard.appendChild(Card(e));
+    })
+
   })
-  .then(function (response) {
-    console.log(response);
-    response.data.articles.forEach(obj => {
-        Object.keys(obj).forEach(key => {
-          let result = response.data.articles`.${key}`;
-          result.forEach(endpoint => {
-            newCard.appendChild(Card(endpoint));
-          });
-        });
-      });
-    }    
-  )
+
+  // axios.get('http://localhost:5000/api/articles')
+  // .then(function (response) {
+  //   const newCard = document.querySelector(selector);
+  //   Object.keys(response.data.articles).forEach( key => {
+  //         let result = response.data.articles`.${ key }`;
+  //         result.forEach(i => {
+  //           newCard.appendChild(Card(i));
+  //       });
+  //     });
+  //   }    
+  // )
   .catch(function (error) {
     console.log(error);
   })
