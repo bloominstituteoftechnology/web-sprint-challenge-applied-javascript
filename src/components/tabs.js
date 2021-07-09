@@ -41,12 +41,15 @@ const tabsAppender = (selector) => {
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
   //
-  const entryPoint = document.querySelector(selector)
+  // const entryPoint = document.querySelector(selector)
+  // const tab = Tabs(res.data.topics)
+  // entryPoint.appendChild(tab)
+  // 
+  // Kept going back and forth. Is there value in creating variables instead of line 52?
 
   axios.get('http://localhost:5000/api/topics')
     .then(res => {
-      const tab = Tabs(res.data.topics)
-      entryPoint.appendChild(tab)
+      document.querySelector(selector).appendChild(Tabs(res.data.topics))
     })
     .catch(err => console.log(err.message))
     .finally(() => console.log('Done'))
