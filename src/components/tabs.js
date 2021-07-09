@@ -26,6 +26,12 @@ const Tabs = (topics) => {
     tab.classList.add('tab')
     tab.textContent = topic
     allTopics.appendChild(tab) 
+
+    // tab.addEventListener('click', () => {
+    //   console.log(tab.textContent)
+    // })
+    // 
+    // Started playing around with filtering buttons and didn't get very far.
   })
 
   return allTopics
