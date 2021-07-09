@@ -36,12 +36,13 @@ const Card = (article) => {
 
   cardNode.classList.add('card');
   headline.classList.add('headline');
-  author.classList.add('author');
+  author.classList.add(`author`);
   imgContainer.classList.add('img-container');
   
   img.src = article.authorPhoto;
   headline.textContent = article.headline;
-  span.textContent = article.authorName;
+  span.textContent = `by ${article.authorName}`;
+
 
 cardNode.addEventListener('click', () =>{
   console.log(headline);
@@ -59,22 +60,22 @@ cardNode.addEventListener('click', () =>{
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
 const cardAppender = (selector) => {
-  axios.get('http://localhost:5000/api/articles')
-  .then(response => {
+  axios.get('http://localhost:5000/api/articles', {})
+  .then(res => {
     const newCard = document.querySelector(selector);
-    response.data.articles.javascript.forEach(e => {
+    res.data.articles.javascript.forEach(e => {
       newCard.appendChild(Card(e));
     });
-    response.data.articles.bootstrap.forEach(e => {
+    res.data.articles.bootstrap.forEach(e => {
       newCard.appendChild(Card(e));
     });
-    response.data.articles.technology.forEach(e => {
+    res.data.articles.technology.forEach(e => {
       newCard.appendChild(Card(e));
     });
-    response.data.articles.jquery.forEach(e => {
+    res.data.articles.jquery.forEach(e => {
       newCard.appendChild(Card(e));
     });
-    response.data.articles.node.forEach(e => {
+    res.data.articles.node.forEach(e => {
       newCard.appendChild(Card(e));
     });
 
