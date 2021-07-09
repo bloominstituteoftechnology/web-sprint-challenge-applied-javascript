@@ -1,3 +1,6 @@
+// Added imports to the top of the file
+import axios from 'axios'
+
 const Tabs = (topics) => {
   // TASK 3
   // ---------------------
@@ -13,6 +16,19 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+
+  const allTopics = document.createElement('div')
+  const tab = document.createElement('div')
+
+  allTopics.appendChild(tab)
+
+  allTopics.classList.add('topics')
+  tab.classList.add('tab')
+
+  tab.textContent = `${topics}`
+
+  return allTopics
+
 }
 
 const tabsAppender = (selector) => {
@@ -23,6 +39,15 @@ const tabsAppender = (selector) => {
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
+  //
+
+  axios.get(`http://localhost:5000/api/topics`)
+    .then(res => {
+      document.querySelector(`${selector}`).appendChild(Tabs(res.data))
+    })
+    .catch(err => console.log(err.message))
+    .finally(() => console.log('Done'))
+
 }
 
 export { Tabs, tabsAppender }
