@@ -18,14 +18,15 @@ const Tabs = (topics) => {
   //
 
   const allTopics = document.createElement('div')
-  const tab = document.createElement('div')
-
-  allTopics.appendChild(tab)
 
   allTopics.classList.add('topics')
-  tab.classList.add('tab')
-
-  tab.textContent = `${topics}`
+ 
+  topics.forEach(function(topic){
+    const tab = document.createElement('div')
+    tab.classList.add('tab')
+    tab.textContent = topic
+    allTopics.appendChild(tab) 
+  })
 
   return allTopics
 
@@ -41,12 +42,19 @@ const tabsAppender = (selector) => {
   //
   //
 
-  axios.get(`http://localhost:5000/api/topics`)
-    .then(res => {
-      document.querySelector(`${selector}`).appendChild(Tabs(res.data))
-    })
-    .catch(err => console.log(err.message))
-    .finally(() => console.log('Done'))
+  // axios.get(`http://localhost:5000/api/topics`)
+  //   .then(res => {
+  //     document.querySelector(`${selector}`).appendChild(Tabs(res.data))
+  //   })
+  //   .catch(err => console.log(err.message))
+  //   .finally(() => console.log('Done'))
+
+  axios.get('http://localhost:5000/api/topics')
+  .then(res => {
+    document.querySelector(selector).appendChild(Tabs(res.data.topics))
+  })
+   .catch(err => console.log(err.message))
+   .finally(() => console.log('Done'))
 
 }
 
