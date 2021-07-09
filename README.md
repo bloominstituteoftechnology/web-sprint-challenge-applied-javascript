@@ -65,7 +65,17 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+
+- **Answer**
+  - The DOM or Document Object model  is a language independent and cross-platform interface that HTML and XML documents in a tree-like structure where each part can be handled in "nodes." it let's us access and manipulate the structure for the browser to render.
+
 2. What is an event?
 3. What is an event listener?
 4. Why would we convert a NodeList into an Array?
 5. What is a component?
+
+## Rick Mansfield's Pull Request
+
+- [Pull Request](https://github.com/LambdaSchool/web-sprint-challenge-applied-javascript/pull/212
+  ) 
+  This is here just for safe keeping. 
