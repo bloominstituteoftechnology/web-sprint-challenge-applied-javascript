@@ -1,4 +1,6 @@
 import axios from "axios"
+import { addDevServerEntrypoints } from "webpack-dev-server"
+import { Card } from "./card"
 
 
   // TASK 3
@@ -19,7 +21,14 @@ import axios from "axios"
 
 const Tabs = (topics) => {
   const topicsDiv = document.createElement('div')
+  const tabsDiv = document.createElement('div')
+
   topicsDiv.classList.add('topics')
+  tabsDiv.classList.add('tab')
+
+  topicsDiv.appendChild(tabsDiv)
+
+
   topics.forEach(item =>{
     const tabDiv = document.createElement('div')
     tabDiv.textContent = item
@@ -30,35 +39,36 @@ const Tabs = (topics) => {
 }
 
 
-
-
   // TASK 4
   // ---------------------
   // Implement this function which takes a css selector as its only argument.
-  // It should obtain topics from this endpoint: `http://localhost:5000/api/topics` (test it in Postman/HTTPie!).
+  // It should obtain topics from this endpoint:   // TASK 6
+  // ---------------------
+  // Implement this function that takes a css selector as its only argument.
+  // It should obtain articles from this endpoint: `http://localhost:5000/api/articles` (test it in Postman/HTTPie!).
+  // However, the articles do not come organized in a single, neat array. Inspect the response closely!
+  // Create a card from each and every article object in the response, using the Card component.
+  // Append each card to the element in the DOM that matches the selector passed to the function.
+  // (test it in Postman/HTTPie!).
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   
-let topicsArray = [];
-
+const tabsAppender = (selector) => {
+function tabDivMaker(i){
+  const tab = document.createElement('div')
+  tab.textContent = i
+  selector.appendChild(tab)
+}
 axios.get(`http://localhost:5000/api/topics`)
   .then(res=>{
-    const tab = Tabs(e)
-    topicsArray.push('tab')
+  tabDivMaker(res)
   })
   .catch(err=>{
     console.log('error')
   })
   .finally(() => console.log('done'))
+}
 
-
-
-const tabsAppender = (selector) => {
-  topicsArray.forEach(e=>{
-    selector.appendChild(e)
-  })
-  }
-  
 
   // selector.forEach(item=>{
   //   axios.get(`http://localhost:5000/api/topics`)
