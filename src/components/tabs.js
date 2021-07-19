@@ -15,7 +15,7 @@
   import axios from 'axios'
 
   
-  const Tabs = (topics) => {
+   const Tabs = (topics) => {
     
     const tabsContainer = document.createElement('div')
     tabsContainer.classList.add('topics')

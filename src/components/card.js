@@ -37,8 +37,8 @@
      //authorName.classList.add('span') // perhaps unnecessary
   
    
-     headline.textContent = `{data.articles.headline}`;
-     img.src = `{article.imgSrc}`;
+     headline.textContent = `{article.headline}`
+     img.src = article.img
      authorName.textContent = `By: ${article.authorName}`
   
   
@@ -52,7 +52,7 @@
      author.appendChild(authorName);
      imgContainer.appendChild(img);
   
-     
+     console.log(card)
      return card;
   }   
   
