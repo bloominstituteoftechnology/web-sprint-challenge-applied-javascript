@@ -39,7 +39,7 @@
    
      headline.textContent = article.headline;
      img.src = article.imgSrc;
-     //img.setAttribute('src', `${article.spanAuthorName}`); no
+     
      authorName.textContent = ` By ${article.authorName}`
   
   
@@ -52,9 +52,6 @@
      author.appendChild(imgContainer);
      author.appendChild(authorName);
      imgContainer.appendChild(img);
-  
-    //  imgContainer.appendChild(imgSrc)
-    //  author.appendChild(spanAuthorName)
   
      console.log(Card)
      return card;
@@ -71,13 +68,10 @@
   //
 
   const cardAppender = (selector) => {
-  
-
-
-
 
     axios.get(`https://lambda-times-api.herokuapp.com/articles`)
     .then((response) => {
+      console.log(response)
       response.data.articles.javascript.forEach(element => {
         let component = Card(element)
         document.querySelector(selector).appendChild(Card(component))

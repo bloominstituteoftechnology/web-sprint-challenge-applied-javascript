@@ -1,5 +1,4 @@
-
-  // TASK 3
+// TASK 3
   // ---------------------
   // Implement this function which takes an array of strings ("topics") as its only argument.
   // As an example, if the topics passed are ['javascript', 'bootstrap', 'technology']
@@ -13,8 +12,8 @@
   //   <div class="tab">technology</div>
   // </div>
   //
-    
   import axios from 'axios'
+
   
   const Tabs = (topics) => {
     
@@ -43,7 +42,7 @@
   
     axios.get(`https://lambda-times-api.herokuapp.com/topics`)
       .then(response => {
-        console.log(response)
+        //console.log(response)
         const tabs = Tabs(response.data.topics)
         d.appendChild(tabs)
       })
