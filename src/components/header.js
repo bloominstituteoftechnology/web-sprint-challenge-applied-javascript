@@ -15,7 +15,7 @@
 
 
     // create the element
-   const header = document.createElement('div');
+   const header = document.createElement('div');  
    const hDate = document.createElement('span');
    const hTitle = document.createElement('h1');
    const hTemp = document.createElement('span');
@@ -23,7 +23,7 @@
    // add the styles
    header.classList.add('header');
    hDate.classList.add('date');
-   hTitle.classList.add('h1')
+   hTitle.classList.add('title')
    hTemp.classList.add('temp');
    
   // add the text
