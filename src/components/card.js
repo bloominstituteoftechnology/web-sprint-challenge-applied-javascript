@@ -34,13 +34,12 @@
      headline.classList.add('headline');
      author.classList.add('author');
      imgContainer.classList.add('img-container');
-     authorName.classList.add('span') // perhaps unnecessary
+     //authorName.classList.add('span') // perhaps unnecessary
   
    
-     headline.textContent = article.headline;
-     img.src = article.imgSrc;
-     
-     authorName.textContent = ` By ${article.authorName}`
+     headline.textContent = `{data.articles.headline}`;
+     img.src = `{article.imgSrc}`;
+     authorName.textContent = `By: ${article.authorName}`
   
   
     // card.addEventListener('click', (e) => {
@@ -53,7 +52,7 @@
      author.appendChild(authorName);
      imgContainer.appendChild(img);
   
-     console.log(Card)
+     
      return card;
   }   
   
@@ -71,7 +70,7 @@
 
     axios.get(`https://lambda-times-api.herokuapp.com/articles`)
     .then((response) => {
-      console.log(response)
+    console.log(response)
       response.data.articles.javascript.forEach(element => {
         let component = Card(element)
         document.querySelector(selector).appendChild(Card(component))
