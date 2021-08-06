@@ -54,35 +54,16 @@ const Tabs = (topics) => {
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   
 const tabsAppender = (selector) => {
-function tabDivMaker(i){
-  const tab = document.createElement('div')
-  tab.textContent = i
-  selector.appendChild(tab)
-}
 axios.get(`http://localhost:5000/api/topics`)
   .then(res=>{
-  tabDivMaker(res)
+  const tabContainer = document.querySelector(selector);
+  const topics = res.data['topics'];
+  const newTab = Tabs(topics);
+  tabContainer.appendChild(newTab);
   })
   .catch(err=>{
     console.log('error')
   })
   .finally(() => console.log('done'))
 }
-
-
-  // selector.forEach(item=>{
-  //   axios.get(`http://localhost:5000/api/topics`)
-  //   entryPoint = document.querySelector(`.${item}`)
-  //   .then(res=>{
-  //     const tab = Tabs(res.data)
-  //     entryPoint.appendChild(tab)
-  //   })
-  //   .catch(err=>{
-  //     console.log('error')
-  //   })
-  //   .finally(() => console.log('done'))
-  // })
-
-
-
 export { Tabs, tabsAppender }
