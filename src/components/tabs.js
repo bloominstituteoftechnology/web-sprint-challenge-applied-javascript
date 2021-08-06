@@ -24,6 +24,9 @@ const Tabs = (topics) =>
         const tab = document.createElement("div");
         tab.classList.add("tab");
         tab.textContent = content;
+        tab.style.backgroundColor = "green";
+        tab.style.height = "3em";
+        tab.style.fontFamily = "Arial";
         topic.appendChild(tab);
     });
 
