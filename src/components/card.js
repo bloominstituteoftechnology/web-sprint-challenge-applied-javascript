@@ -64,28 +64,10 @@ axios.get('http://localhost:5000/api/articles')
     const jquery = res.data.articles.jquery
     const node = res.data.articles.node
     const technology = res.data.articles.technology
-    // const allArticles = [
-    //   bootstrap,
-    //   javascript,
-    //   jquery,
-    //   node,
-    //   technology
-    // ]
+    const allArticles = [...bootstrap,...javascript,...jquery,...node,...technology]
     const selected = document.querySelector(selector)
 
-    bootstrap.forEach(item => {
-      selected.appendChild(Card(item))
-    })
-    javascript.forEach(item => {
-      selected.appendChild(Card(item))
-    })
-    jquery.forEach(item => {
-      selected.appendChild(Card(item))
-    })
-    node.forEach(item => {
-      selected.appendChild(Card(item))
-    })
-    technology.forEach(item => {
+    allArticles.forEach(item => {
       selected.appendChild(Card(item))
     })
   })
