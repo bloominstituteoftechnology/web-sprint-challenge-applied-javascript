@@ -40,7 +40,7 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 - [X] Steps 1 and 2 are explained inside the `src/components/header.js` file.
 - [X] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
-- [ ] Steps 5 and 6 are explained inside the `src/components/card.js` file.
+- [X] Steps 5 and 6 are explained inside the `src/components/card.js` file.
 
 **Important Notes:**
 
@@ -65,7 +65,23 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+
+DOM is an acronym for 'Document Object Model'. The DOM is the data representation of the objects that make up the structure and content of a document on the web. The DOM is NOT a programming language. The DOM is a programming interface for HTML (HyperText Markup Language, the standard markup language for documents designed to be displayed in a web browser) and XML ( documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes an objects so that programming languages can connect to the page.
+
 2. What is an event?
+
+Events are actions or occurrences that happen in the system you are programming, which the system tells you about so you can respond to them in some way if you want to. For example, if a user clicks on a button, you might want to redirect their browser to the corresponding web page.
+
 3. What is an event listener?
+
+Each available event has an event listener and an event handler. An event listener listens out for the event happening. An event handler is a block of code (usually a JavaScript function that the programmer creates) that runs when the event fires. The event handler is the code that is runs in response to it happening.
+
 4. Why would we convert a NodeList into an Array?
+
+NodeList objects are collections of nodes, usually returned by properties such as Node.childNodes and methods such as document.querySelectorAll(), which is what we have been using! 
+There are 2 varieties of NodeList: live and static. When the NodeList is live, changes in the DOM automatically update the collection. When the NodeList is static, any changes in the DOM do not affect the content of the collection. document.querySelectorAll() method returns a static NodeList.
+The latest JavaScript ES6 release brought helpful methods for working with arrays: Array.forEach(), Array.every(), Array.some(), Array.filter(), etc. Unfortunately, when you use querySelectorAll() method it returns a NodeList instead of an array. You cannot use any of the helpful array methods on the NodeList. You would want to convert a NodeList into an array so that you could utilize the helpful array methods.
+
 5. What is a component?
+
+A component brings together markup, logic, and style in an encapsulated and reusable form. The idea behind components is to build functions that take data as arguments are return HTML elements. Generally speaking in the programming field of study, a component is an identifiable part of a larger program or construction.
