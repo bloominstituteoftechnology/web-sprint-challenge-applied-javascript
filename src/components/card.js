@@ -26,6 +26,7 @@ const Card = (article) => {
     
     Ncard.addEventListener('click', (event) => {
       console.log(`${data.headline}`)
+
     })
     
     });
@@ -37,14 +38,21 @@ const cardAppender = (selector) => {
   const mountingpoint = document.querySelector(selector)
   axios.get('https://lambda-times-api.herokuapp.com/articles')
   .then(response => {
-    console.log('RESPONSE', response)
-    response.data.articles.forEach(things =>{
+    console.log("RESPONSE", response)
+    
+    const thingy = response.data.articles
+
+    thingy.forEach(things =>{
       const madeCard = Card(things)
       mountingpoint.appendChild(madeCard)
     })
     
   })
 }
+
+// I HAVE TRIED EVERYTHING I CAN THINK OF TO FIX THE CARDS NOT SHOWING. PLEASE LET ME KNOW WHAT I AM DOING WRONG SO I CAN FIX it. THANK YOU.
+
+
 
 
 // const Card = (article) => {

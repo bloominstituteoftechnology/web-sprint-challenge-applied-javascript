@@ -10,7 +10,7 @@ const Tabs = (topics) => {
     topicBody.appendChild(thing)
     
   });
-  console.log(topicBody)
+  // console.log(topicBody)
   return topicBody
 }
 
