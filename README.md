@@ -20,7 +20,7 @@ For a step-by-step on setting up Codegrade see [this guide.](https://www.notion.
 
 ## Project Instructions  
 
-### Introduction
+### Introduction  
 
 You are going to create a Lambda Newspaper. Your job is going to be to create the components that make up the newspaper's home page.
 
