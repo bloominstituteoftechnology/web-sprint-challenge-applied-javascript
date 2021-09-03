@@ -14,10 +14,10 @@ const Tabs = (topics) => {
   // </div>
   //
   const topicsDiv = document.createElement('div');
-  topics.forEach(i => {
+  topics.forEach((el, i) => {
     let newTab = document.createElement('div');
     newTab.classList.add('tab');
-    newTab.textContent = i;
+    newTab.textContent = el;
     topicsDiv.appendChild(newTab);
   });
   topicsDiv.classList.add('topics');
@@ -35,14 +35,19 @@ const tabsAppender = (selector) => {
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
   axios.get(`http://localhost:5000/api/topics`).then(data => {
-    let newArr = data.topics;
-    
-  }).then(newArr => {
+    // console.log(data);
+    let newArr = [];
+    newArr = data.data.topics;
+    // console.log(newArr);
     let newT = Tabs(newArr);
-  }).then(newT => {
+    console.log(newT);
     let chosenSelector = document.querySelector(selector);
     chosenSelector.appendChild(newT);
   })
+  // }).then(newArr => {
+    
+  // }).then(newT => {
+    
   
     
 }

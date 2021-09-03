@@ -6,8 +6,7 @@ const Card = (article) => {
   // The tags used, the hierarchy of elements and their attributes must match the provided markup exactly!
   // The text inside elements will be set using their `textContent` property (NOT `innerText`).
   // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
-  //
-  // <div class="card">
+    // <div class="card">
   //   <div class="headline">{ headline }</div>
   //   <div class="author">
   //     <div class="img-container">
@@ -17,6 +16,31 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+
+  //Creting Elements
+  const cardDiv = document.createElement('div');
+  const headlineDiv = document.createElement('div');
+  const authorDiv = document.createElement('div');
+  const imgDiv = document.createElement('div');
+  const picture = document.createElement('img');
+  const authorSpan = document.createElement('span');
+// Adding Classes
+  cardDiv.classList.add('card');
+  headlineDiv.classList.add('headline');
+  authorDiv.classList.add('author');
+  imgDiv.classList.add('img-container');
+// Adding text and links
+  headlineDiv.textContent = article.headline;
+  picture.src = article.authorPhoto;
+  authorSpan.textContent = 'By' + ' ' + article.authorName;
+  // Appending
+  cardDiv.appendChild(headlineDiv);
+  cardDiv.appendChild(authorDiv);
+  authorDiv.appendChild(imgDiv);
+  imgDiv.appendChild(picture);
+  authorDiv.appendChild(authorSpan);
+
+  return cardDiv;
 }
 
 const cardAppender = (selector) => {
