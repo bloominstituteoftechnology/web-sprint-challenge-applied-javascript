@@ -58,19 +58,15 @@ const cardAppender = (selector) => {
   const parent = document.querySelector(selector);
   axios.get(`http://localhost:5000/api/articles`)
   .then((resp)=>{
-    const carol = [resp.data.articles.javascript,resp.data.articles.bootstrap,
+    const topics = [resp.data.articles.javascript,resp.data.articles.bootstrap,
       resp.data.articles.technology,resp.data.articles.jquery,resp.data.articles.node]
-    carol.forEach(topic => {
+    topics.forEach(topic => {
       topic.forEach(element => {
         parent.appendChild(Card(element));
       });
-      
     });
-    
   })
   .catch(er=> console.log(er));
-
-  
 }
 
 export { Card, cardAppender }
