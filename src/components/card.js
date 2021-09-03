@@ -57,13 +57,12 @@ const cardAppender = (selector) => {
   //
   const parent = document.querySelector(selector);
   axios.get(`http://localhost:5000/api/articles`)
-  .then((resp)=> {
-    resp.data.articles.forEach(collection => {
-    collection.forEach(article =>{
-      parent.appendChild(Card(article));
-    }) 
-    
-  })})
+  .then((resp)=>{
+    Object.keys(resp.data.articles).forEach(object =>{
+      Object.keys(object).forEach(article=>
+        parent.appendChild(Card(article)));
+    })
+  })
   .catch(console.log(err));
 }
 
