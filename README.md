@@ -18,7 +18,7 @@ You are not allowed to collaborate during the sprint challenge.
 
 For a step-by-step on setting up Codegrade see [this guide.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
 
-## Project Instructions
+## Project Instructions  
 
 ### Introduction
 
