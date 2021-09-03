@@ -1,3 +1,5 @@
+const entryPoint = document.querySelector('.cards-container');
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -17,9 +19,43 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+const cardDiv = document.createElement('div');
+const headlineDiv = document.createElement('div');
+const authorDiv = document.createElement('div');
+const imgDiv = document.createElement('div');
+const authorImage = document.characterSet('img');
+const authorSpan = document.characterSet('span');
+
+cardDiv.appendChild(headlineDiv);
+headlineDiv.appendChild(authorDiv);
+authorDiv.appendChild(imgDiv);
+imgDiv.appendChild(authorImage)
+authorDiv.appendChild(authorSpan);
+
+cardDiv.classList.add('card');
+headlineDiv.classList.add('headline');
+authorDiv.classList.add('author');
+imgDiv.classList.add('img-container');
+
+headlineDiv.textContent = article;
+authorImage.imagecontent = article;
+authorSpan.textContent = article;
+
+cardDiv.addEventListener('click', console.log(headline))
+
+return cardDiv
 }
 
-const cardAppender = (selector) => {
+const cardAppender =  async (selector) => {
+    const resp = await axios.get('http://localhost:5000/api/articles');
+    then(articles => {
+      const parent = document.querySelector(selector);
+      for (let i = 0; i < resp.data.message.length; i++) {
+        const card = Card(articles);
+        card.appendChild(Card(article))
+      }
+    })
+  
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
