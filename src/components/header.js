@@ -42,7 +42,7 @@ const headerAppender = async (selector) => {
     const resp = await axios.get(Header(date, time, temp));
     for (let i = 0; i < resp.data.message.length; i++){
       const autorimg = {imageURL: resp.data.message[i], selector: selector}
-      const header = Header(autorimg);
+      const header = Header(resp);
       header.appendChild(Header)
     }
     } catch(err) {

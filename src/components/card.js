@@ -52,7 +52,7 @@ const cardAppender =  async (selector) => {
       const parent = document.querySelector(selector);
       for (let i = 0; i < resp.data.message.length; i++) {
         const card = Card(articles);
-        card.appendChild(Card)
+        card.appendChild(Card(article))
       }
     })
   
