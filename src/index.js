@@ -10,8 +10,3 @@ tabsAppender('.tabs-container')
 cardAppender('.cards-container')
 
 console.log('Lambda Times loaded!')
-axios.get('http://localhost:5000/api/topics')
-  .then((resp)=>{
-    console.log(resp['topics']);
-  })
-  .catch(err =>{console.log(err)});
