@@ -1,11 +1,11 @@
 const Tabs = (topics) => {
   // TASK 3
   // ---------------------
-  // Implement this function which takes an array of strings ("topics") as its only argument.
-  // As an example, if the topics passed are ['javascript', 'bootstrap', 'technology']
-  // then the function returns the markup below.
-  // The tags used, the hierarchy of elements and their attributes must match the provided markup!
-  // The text inside elements will be set using their `textContent` property (NOT `innerText`).
+    // Implement this function which takes an array of strings ("topics") as its only argument.
+    // As an example, if the topics passed are ['javascript', 'bootstrap', 'technology']
+    // then the function returns the markup below.
+    // The tags used, the hierarchy of elements and their attributes must match the provided markup!
+    // The text inside elements will be set using their `textContent` property (NOT `innerText`).
   //
   // <div class="topics">
   //   <div class="tab">javascript</div>
@@ -13,6 +13,16 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+const div = document.createElement('div');
+const newArray = topics;
+ newArray.forEach(item => {
+   let newElement  = document.createElement('div');
+   newElement.classList.add('tab');
+   newElement.textContent = item;
+   div.appendChild(newElement);
+
+ });
+ return div;  
 }
 
 const tabsAppender = (selector) => {

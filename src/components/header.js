@@ -48,7 +48,12 @@ const headerAppender = (selector) => {
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
+
+
+  //Taking the selector in query selector
   const selector1 = document.querySelector(selector);
+
+  //appending selected item
   selector1.appendChild(Header('derp','derp','derp'));
 
 
