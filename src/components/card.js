@@ -70,7 +70,11 @@ const cardAppender = (selector) => {
     
     for (const key in res.data.articles) {
       const newValues = res.data.articles[key];
-      entryPoint.appendChild(Card(newValues));
+      for(const key in newValues){
+        let runObj = newValues[key];
+        entryPoint.appendChild(Card(runObj));
+      }
+   
    
   }
   
