@@ -18,9 +18,9 @@ You are not allowed to collaborate during the sprint challenge.
 
 For a step-by-step on setting up Codegrade see [this guide.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
 
-## Project Instructions
+## Project Instructions  
 
-### Introduction
+### Introduction  
 
 You are going to create a Lambda Newspaper. Your job is going to be to create the components that make up the newspaper's home page.
 
@@ -64,7 +64,7 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
-1. What is the DOM?
+1. What is the DOM? Document object model, 
 2. What is an event?
 3. What is an event listener?
 4. Why would we convert a NodeList into an Array?
