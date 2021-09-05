@@ -1,4 +1,5 @@
 import axios from "axios";
+import { response } from "msw";
 
 const Card = (article) => {
   // TASK 5
@@ -62,18 +63,26 @@ const cardAppender = (selector) => {
   //
   const entryPoint = document.querySelector(selector);
 
-  const getArticles = () => {
+
   axios.get('http://localhost:5000/api/articles')
   .then((res) => {
+
+    
+    for (const key in res.data.articles) {
+      const newValues = res.data.articles[key];
+      entryPoint.appendChild(Card(newValues));
    
-      entryPoint.appendChild(Card(res.data.articles));
+  }
+  
+   
+      
      
   })
   .catch((err) => {
       console.log("Error");
   });
 
-  }
 }
+
 
 export { Card, cardAppender }
