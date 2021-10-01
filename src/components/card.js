@@ -1,4 +1,61 @@
 const Card = (article) => {
+  article.forEach(data => {
+    const Ncard = document.createElement('div')
+    Ncard.classList.add('card')
+    
+    const hLine = document.createElement('div')
+    hLine.classList.add('headline')
+    hLine.textContent = `${data.headline}`
+    Ncard.appendChild(hLine)
+    
+    const auth = document.createElement('div')
+    auth.classList.add('author')
+    Ncard.appendChild(auth)
+    
+    const imgBox = document.createElement('div')
+    imgBox.classList.add('img-container')
+    auth.appendChild(imgBox)
+    
+    const authImg = document.createElement('img')
+    authImg.src = `${data.authorPhoto}`
+    imgBox.appendChild(authImg)
+    
+    const authSpan = document.createElement('span')
+    authSpan.textContent = `${data.authorName}`
+    auth.appendChild(authSpan)
+    
+    Ncard.addEventListener('click', (event) => {
+      console.log(`${data.headline}`)
+
+    })
+    
+    });
+ 
+  return Ncard 
+}
+
+const cardAppender = (selector) => {
+  const mountingpoint = document.querySelector(selector)
+  axios.get('https://lambda-times-api.herokuapp.com/articles')
+  .then(response => {
+    console.log("RESPONSE", response)
+    
+    const thingy = response.data.articles
+
+    thingy.forEach(things =>{
+      const madeCard = Card(things)
+      mountingpoint.appendChild(madeCard)
+    })
+    
+  })
+}
+
+// I HAVE TRIED EVERYTHING I CAN THINK OF TO FIX THE CARDS NOT SHOWING. PLEASE LET ME KNOW WHAT I AM DOING WRONG SO I CAN FIX it. THANK YOU.
+
+
+
+
+// const Card = (article) => {
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
@@ -17,10 +74,10 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
-}
+// }
 
-const cardAppender = (selector) => {
-  // TASK 6
+// const cardAppender = (selector) => {
+  // TASK 6  Setting up codegrade
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
   // It should obtain articles from this endpoint: `http://localhost:5000/api/articles` (test it in Postman/HTTPie!).
@@ -28,6 +85,6 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-}
+// }
 
 export { Card, cardAppender }
