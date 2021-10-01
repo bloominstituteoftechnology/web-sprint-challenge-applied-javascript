@@ -62,7 +62,7 @@ describe('TASK 4 - tabsAppender', () => {
   })
   test('[6] fetches topics and appends the correct tabs to the DOM', async () => {
     for (let i = 0; i < topics.topics.length; i++) {
-      expect(await screen.findByText(topics.topics[i])).toBeInTheDocument()
+            expect(await screen.findByText(topics.topics[i])).toBeInTheDocument()
     }
   })
 })
