@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { response } from 'msw';
 
 const Tabs = (topics) => {
   // TASK 3
