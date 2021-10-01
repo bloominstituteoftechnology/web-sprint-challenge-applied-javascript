@@ -41,7 +41,7 @@ const tabsAppender = (selector) => {
 
   let response = axios.get(`http://localhost:5000/api/topics`)
 
-  response.then((value) => {
+  response.then(value => {
 
     let tabs = document.querySelector(selector);
     let topicsTwo = value.data.topics;
