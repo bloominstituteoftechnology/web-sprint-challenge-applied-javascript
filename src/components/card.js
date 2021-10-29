@@ -1,11 +1,10 @@
 import axios from "axios";
+
+
 const Card = (article) => {
 
 
-  
-
   let coolCard = document.createElement('div');
-      // coolCard.textContent = article["headline"]
     coolCard.setAttribute('class', 'card');
 
   let headDiv = document.createElement('div');
@@ -69,28 +68,26 @@ const Card = (article) => {
   //
 
 const cardAppender = (selector) => {
+
   let cardSelector = document.querySelector(selector);
   axios.get('http://localhost:5000/api/articles')
   .then(res => {
     console.log(res.data);
+     // refactor something 
+         
 
-  })
+      })
+    
+
+   
+    
+
+ 
   .catch(err => {
-
+    console.error(err)
   })
 
-  // let tabSelector = document.querySelector(selector);
-  // axios.get('http://localhost:5000/api/topics')
-  // .then(resp => {
-  //   console.log(resp.data);
-  //   let topics = resp.data.topics;
-  //   console.log(topics); 
-  //   tabSelector.appendChild(Tabs(topics));
-  // })
-  // .catch(err => {
-  //   console.error(err);
-  // })
-
+  cardSelector.appendChild(Card);
 
 
 }
