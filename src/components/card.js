@@ -72,23 +72,23 @@ const cardAppender = (selector) => {
   let cardSelector = document.querySelector(selector);
   axios.get('http://localhost:5000/api/articles')
   .then(res => {
-    console.log(res.data);
+    let articles = res.data.articles; 
+    console.log(articles);
+    for (const property in articles) {
+      console.log(articles[property])
+      articles[property].forEach(element => {
+        cardSelector.appendChild(Card(element));
+      });
+      
+    }
+    
      // refactor something 
          
 
-      })
-    
-
-   
-    
-
- 
+  })
   .catch(err => {
     console.error(err)
   })
-
-  cardSelector.appendChild(Card);
-
 
 }
 
