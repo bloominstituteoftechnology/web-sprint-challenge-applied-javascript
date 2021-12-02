@@ -57,7 +57,7 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 ## Interview Questions
 
-Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
+Demonstrate your understanding of this week's concepts by answering the following questions:
 
 1. What is the DOM?
 2. What is an event?
