@@ -1,4 +1,41 @@
+import axios from "axios";
+
+
 const Card = (article) => {
+
+
+  let coolCard = document.createElement('div');
+    coolCard.setAttribute('class', 'card');
+
+  let headDiv = document.createElement('div');
+      headDiv.textContent = article["headline"];
+      headDiv.setAttribute('class', 'headline');
+      coolCard.appendChild(headDiv);
+
+   let authorDiv = document.createElement('div');
+      authorDiv.setAttribute('class', 'author');
+      coolCard.appendChild(authorDiv);
+      
+    let imgDiv = document.createElement('div');
+      imgDiv.setAttribute('class', 'img-container');
+      authorDiv.appendChild(imgDiv);
+
+  let imgCard = document.createElement('img');
+    imgCard.src = article['authorPhoto'];
+    imgDiv.appendChild(imgCard);
+   
+
+  let span = document.createElement('span');
+      span.textContent = article['authorName'];
+      authorDiv.appendChild(span);
+
+   coolCard.addEventListener('click', function(){
+     console.log(headDiv.textContent);
+   })   
+   return coolCard;
+
+  
+  
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
@@ -9,7 +46,9 @@ const Card = (article) => {
   //
   // <div class="card">
   //   <div class="headline">{ headline }</div>
+
   //   <div class="author">
+
   //     <div class="img-container">
   //       <img src={ authorPhoto }>
   //     </div>
@@ -19,8 +58,7 @@ const Card = (article) => {
   //
 }
 
-const cardAppender = (selector) => {
-  // TASK 6
+// TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
   // It should obtain articles from this endpoint: `http://localhost:5000/api/articles` (test it in Postman/HTTPie!).
@@ -28,6 +66,30 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+
+const cardAppender = (selector) => {
+
+  let cardSelector = document.querySelector(selector);
+  axios.get('http://localhost:5000/api/articles')
+  .then(res => {
+    let articles = res.data.articles; 
+    console.log(articles);
+    for (const property in articles) {
+      console.log(articles[property])
+      articles[property].forEach(element => {
+        cardSelector.appendChild(Card(element));
+      });
+      
+    }
+    
+     // refactor something 
+         
+
+  })
+  .catch(err => {
+    console.error(err)
+  })
+
 }
 
 export { Card, cardAppender }
