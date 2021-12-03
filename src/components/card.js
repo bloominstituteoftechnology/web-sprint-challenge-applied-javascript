@@ -1,3 +1,13 @@
+import axios from "axios";
+
+axios.get(`http://localhost:5000/api/articles`)
+.then(resp => {
+  console.log(resp.data.articles);
+})
+.catch(err =>{
+  console.log(err);
+})
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -17,6 +27,29 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+  const newCard = document.createElement('div');
+  const divHeadline = document.createElement('div');
+  const divAuthor = document.createElement('div');
+  const divImgContainer = document.createElement('div');
+  const image = document.createElement('img');
+  const name = document.createElement('span');
+
+  newCard.classList.add('card');
+  divHeadline.classList.add('headline');
+  divAuthor.classList.add('author');
+  divImgContainer.classList.add('img-container');
+  
+  newCard.appendChild(divHeadline);
+  newCard.appendChild(divAuthor);
+  divAuthor.appendChild(divImgContainer);
+  divImgContainer.appendChild(image);
+  divAuthor.appendChild(name);
+
+  divHeadline.textContent = `${article.headline}`
+  image.src = `${article.authorPhoto}`
+  name.textContent = `By ${article.authorName}`
+
+  return newCard
 }
 
 const cardAppender = (selector) => {
@@ -28,6 +61,19 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+
+const inject = document.querySelector('.cards-container');
+axios.get(`http://localhost:5000/api/articles`)
+ .then(res => {
+const objects = res.data.articles.javascript
+objects.forEach(object => {
+const newsCard = Card(object)
+inject.append(newsCard)
+})
+})
+.catch(err => {
+console.log(err)
+})
 }
 
 export { Card, cardAppender }
