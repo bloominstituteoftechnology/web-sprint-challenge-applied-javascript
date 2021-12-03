@@ -60,7 +60,10 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 Demonstrate your understanding of this week's concepts by answering the following questions:
 
 1. What is the DOM?
+- The DOM is a document object model where it a document on a browser. It is a language neutral
 2. What is an event?
+- It is basically something that makes an action happen.
 3. What is an event listener?
-4. Why would we convert a NodeList into an Array?
-5. What is a component?
+- It is a procedure that waits for an event to happen.
+4. Why would we convert a NodeList into an Array? to make it easier to decipher for the future developers
+5. What is a component? Dry resuable chunks of code that can be independent
