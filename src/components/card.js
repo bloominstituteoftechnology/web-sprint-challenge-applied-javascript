@@ -1,4 +1,21 @@
 const Card = (article) => {
+  const cardDiv = document.createElement('div')
+  const cardHeadline = document.createElement('div')
+  const authorInfo = document.createElement('div')
+  const photoCont = document.createElement('div')
+  const authorPhoto = document.createElement('img')
+  const name = document.createElement('span')
+
+  cardDiv.classList.add('card')
+  cardHeadline.classList.add('headline')
+  authorInfo.classList('author')
+  photoCont.classList('img-container')
+
+  cardHeadline.textContent = article.headline
+  name.textContent = `By ${article.authorName}`
+
+  authorPhoto.src = article.authorPhoto
+
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
