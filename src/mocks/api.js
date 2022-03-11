@@ -16,6 +16,6 @@ api.get('/api/topics', (req, res) => {
   res.json(topics)
 })
 
-api.listen(5000, () => {
-  console.log('listening on 5000')
+api.listen(5001, () => {
+  console.log('listening on 5001')
 })
