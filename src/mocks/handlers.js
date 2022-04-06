@@ -16,6 +16,6 @@ function getArticles(req, res, ctx) {
 }
 
 export const handlers = [
-  rest.get('http://localhost:5000/api/articles', getArticles),
-  rest.get('http://localhost:5000/api/topics', getTopics),
+  rest.get('http://localhost:5001/api/articles', getArticles),
+  rest.get('http://localhost:5001/api/topics', getTopics),
 ]
