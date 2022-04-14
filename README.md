@@ -19,11 +19,11 @@ You are not allowed to collaborate during the sprint challenge.
 
 ### Introduction
 
-You are going to create a Lambda Newspaper. Your job is going to be to create the components that make up the newspaper's home page.
+You are going to create a Bloomtech Newspaper. Your job is going to be to create the components that make up the newspaper's home page.
 
 In meeting the minimum viable product (MVP) specifications listed below, your project should look similar to the image linked below:
 
-[Lambda Times](https://tk-assets.lambdaschool.com/cac4803c-6e8f-4846-be0e-b20d82a34a73_lambda-times.png)
+[Bloomtech Times](https://tk-assets.lambdaschool.com/cac4803c-6e8f-4846-be0e-b20d82a34a73_lambda-times.png)
 
 ### Instructions
 
