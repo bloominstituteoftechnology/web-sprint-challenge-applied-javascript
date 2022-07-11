@@ -17,12 +17,12 @@ test('[0] sanity', () => {
   expect(true).not.toBe(false)
 })
 
-describe('TASK 1 - Header', () => {
+describe('TASK 1 - Header, Review how to create a new element, manipulate it (such as adding a class and text to it), and add it to the DOM. ', () => {
   let header
   beforeEach(() => {
     header = Header('foo', 'bar', 'baz')
   })
-  test('[1] returns a header with the correct heading (element, attrs and text)', () => {
+  test('[1] returns a header with the correct heading (element, attrs and text)!', () => {
     expect(header.querySelector('div.header>h1').textContent).toMatch(/foo/i)
   })
   test('[2] returns a header with the correct date (element, attrs and text)', () => {
@@ -33,7 +33,7 @@ describe('TASK 1 - Header', () => {
   })
 })
 
-describe('TASK 2 - headerAppender', () => {
+describe('TASK 2 - headerAppender, Review DOM selectors and appending to it.', () => {
   beforeEach(() => {
     headerAppender('body')
   })
@@ -44,7 +44,7 @@ describe('TASK 2 - headerAppender', () => {
   })
 })
 
-describe('TASK 3 - Tabs', () => {
+describe('TASK 3 - Tabs, Review how to iterate (loop) over a list of data creating a new component for each item, manipulate it (such as adding a class and text to it), and attaching that component to the DOM.', () => {
   let tabs
   beforeEach(() => {
     tabs = Tabs(['foo', 'bar', 'baz'])
@@ -56,7 +56,7 @@ describe('TASK 3 - Tabs', () => {
   })
 })
 
-describe('TASK 4 - tabsAppender', () => {
+describe('TASK 4 - tabsAppender,  Review making HTTP requests and getting data from a server using axios as well as how to use promises and iterate over a list of data received from a server, creating a set of components and adding them to the DOM.', () => {
   beforeEach(() => {
     tabsAppender('body')
   })
@@ -67,7 +67,7 @@ describe('TASK 4 - tabsAppender', () => {
   })
 })
 
-describe('TASK 5 - Card', () => {
+describe('TASK 5 - Card, Review how to iterate (loop) over a list of data creating a new component for each item, manipulate it (such as adding a class and text to it), and attaching that component to the DOM.', () => {
   let card
   beforeEach(() => {
     card = Card({ headline: 'foo', authorName: 'bar', authorPhoto: 'baz' })
@@ -83,7 +83,7 @@ describe('TASK 5 - Card', () => {
   })
 })
 
-describe('TASK 6 - cardAppender', () => {
+describe('TASK 6 - cardAppender,  Review making HTTP requests and getting data from a server using axios as well as how to use promises and iterate over a list of data received from a server, creating a set of components and adding them to the DOM.', () => {
   beforeEach(() => {
     cardAppender('body')
   })
