@@ -23,7 +23,7 @@ You are going to create a Bloomtech Newspaper. Your job is going to be to create
 
 In meeting the minimum viable product (MVP) specifications listed below, your project should look similar to the image linked below:
 
-[Bloomtech Times](https://tk-assets.lambdaschool.com/cac4803c-6e8f-4846-be0e-b20d82a34a73_lambda-times.png)
+[Bloomtech Times](https://github.com/bloominstituteoftechnology/web-sprint-challenge-applied-javascript/blob/main/Assets/bloomtech-times.png)
 
 ### Instructions
 
