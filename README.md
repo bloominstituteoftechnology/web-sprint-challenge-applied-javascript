@@ -8,12 +8,12 @@ This is an individual assessment. All work must be your own. Your challenge scor
 
 You are not allowed to collaborate during the sprint challenge.
 
-## Project Set Up
+### Project Set Up
 
-- [ ] Fork and clone the repo.
-- [ ] Open the assignment in Canvas and click on the "Set up git" option.
-- [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
-- [ ] Check to see that Codegrade has accepted your git submission.
+- [ ] Create a forked copy of this project
+- [ ] Clone your OWN version of the repository (Not BloomTech's by mistake!)
+- [ ] Implement the project on the main branch, committing changes regularly
+- [ ] Push commits: `git push origin main`
 
 ## Project Instructions
 
@@ -53,9 +53,9 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 - [ ] Submit via Codegrade by committing and pushing any new changes to the *main* branch.
 - [ ] Check Codegrade for automated feedback.
 
-## Interview Questions
+## Stretch Interview Questions
 
-Demonstrate your understanding of this week's concepts by answering the following questions:
+Demonstrate your understanding of this sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
 1. What is the DOM?
 2. What is an event?
