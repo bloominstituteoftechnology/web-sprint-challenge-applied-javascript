@@ -60,7 +60,7 @@ const Card = (article) => {
   
 const cardAppender = (selector) => {
   const array = ['javascript', 'bootstrap', 'technology', 'jquery', 'node']
-  axios.get(`https://lambda-times-api.herokuapp.com/articles`)
+  axios.get(`http://localhost:5000/api/articles`)
   .then((res) => {
     array.forEach(topic => {
       res.data.articles[topic].forEach(el => {
