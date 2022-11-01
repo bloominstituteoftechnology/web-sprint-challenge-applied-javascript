@@ -1,4 +1,37 @@
+// const div1 = document.createElement('div')
+// const span1 = document.createElement('span')
+// const h1t = document.createElement('h1')
+// const span2 = document.createElement('span')
+// div1.classList.add('header')
+// span1.classList.add('date')
+// h1t.classList.add('title')
+// span2.classList.add('temp')
+// console.log(div1);
+// div1.append(span1,h1t,span2)
+// const ns1 = document.querySelector('date')
+// const ns2 = document.querySelector('temp')
+// const ht = docuemnt.querySelector('date')
+// span1.textContent = date
+
 const Header = (title, date, temp) => {
+  const div1 = document.createElement('div')
+  const span1 = document.createElement('span')
+  const h1t = document.createElement('h1')
+  const span2 = document.createElement('span')
+  div1.classList.add('header')
+  span1.classList.add('date')
+  span1.textContent = `${date}`;
+  h1t.classList.add('title')
+  h1t.textContent = `${title}`;
+  span2.classList.add('temp')
+  span2.textContent = `${temp}`;
+  div1.append(span1,h1t,span2)
+  
+  return div1;
+
+
+  
+
   // TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
@@ -12,8 +45,15 @@ const Header = (title, date, temp) => {
   //  </div>
   //
 }
+// Header('day of the dead', '10/12/22', 102);
+
 
 const headerAppender = (selector) => {
+const toadd = document.querySelector(selector);
+toadd.appendChild(Header('wise man fears','11/1/22','500 degrees'))
+return toadd;
+
+
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
@@ -27,5 +67,6 @@ const headerAppender = (selector) => {
   // so all that you need to do is pass it into the querySelector method
   // for the tests to work!
 }
+
 
 export { Header, headerAppender }
