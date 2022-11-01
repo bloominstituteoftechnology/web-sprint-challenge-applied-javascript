@@ -8,7 +8,8 @@ const Card = (article) => {
   // The tags used, the hierarchy of elements and their attributes must match the provided markup exactly!
   // The text inside elements will be set using their `textContent` property (NOT `innerText`).
   // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
-    // <div class="card">
+  //
+  // <div class="card">
   //   <div class="headline">{ headline }</div>
   //   <div class="author">
   //     <div class="img-container">
@@ -18,38 +19,35 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+  const newCard = document.createElement('div');
+  const divHeadline = document.createElement('div');
+  const divAuthor = document.createElement('div');
+  const divImgContainer = document.createElement('div');
+  const image = document.createElement('img');
+  const name = document.createElement('span');
 
-  //Creting Elements
-  const cardDiv = document.createElement('div');
-  const headlineDiv = document.createElement('div');
-  const authorDiv = document.createElement('div');
-  const imgDiv = document.createElement('div');
-  const picture = document.createElement('img');
-  const authorSpan = document.createElement('span');
-// Adding Classes
-  cardDiv.classList.add('card');
-  headlineDiv.classList.add('headline');
-  authorDiv.classList.add('author');
-  imgDiv.classList.add('img-container');
-// Adding text and links
-  headlineDiv.textContent = article.headline;
-  picture.src = article.authorPhoto;
-  authorSpan.textContent = 'By' + ' ' + article.authorName;
-  // Appending
-  cardDiv.appendChild(headlineDiv);
-  cardDiv.appendChild(authorDiv);
-  authorDiv.appendChild(imgDiv);
-  imgDiv.appendChild(picture);
-  authorDiv.appendChild(authorSpan);
-// event listener
-  cardDiv.addEventListener('click', () => {
-    console.log(article.headline);
-  });
+  newCard.classList.add('card');
+  divHeadline.classList.add('headline');
+  divAuthor.classList.add('author');
+  divImgContainer.classList.add('img-container');
+  
+  newCard.appendChild(divHeadline);
+  newCard.appendChild(divAuthor);
+  divAuthor.appendChild(divImgContainer);
+  divImgContainer.appendChild(image);
+  divAuthor.appendChild(name);
 
-  return cardDiv;
+  divHeadline.textContent = `${article.headline}`
+  image.src = `${article.authorPhoto}`
+  name.textContent = `By ${article.authorName}`
+
+  newCard.addEventListener('click', ()=>{
+    console.log(divHeadline)
+  })
+
+  return newCard
 }
 
-const cardAppender = (selector) => {
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
@@ -58,18 +56,23 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-  axios.get(`http://localhost:5000/api/articles`).then(data => {
-    let dataArticles = data.data.articles;
-    console.log(data);
-    for (let topic in dataArticles) {
-      console.log(topic);
-      data.data.articles[topic].forEach(item => {
-        let newCard = Card(item);
-        const classSelector = document.querySelector(selector);
-        classSelector.appendChild(newCard);
+  
+  
+const cardAppender = (selector) => {
+  const array = ['javascript', 'bootstrap', 'technology', 'jquery', 'node']
+  axios.get(`https://lambda-times-api.herokuapp.com/articles`)
+  .then((res) => {
+    array.forEach(topic => {
+      res.data.articles[topic].forEach(el => {
+        const newDiv = Card(el)
+        document.querySelector(selector).appendChild(newDiv)
       })
-    }
-    
+    })
   })
+  .catch((err) => {
+    console.log(err)
+  })
+
 }
+
 export { Card, cardAppender }

@@ -15,7 +15,7 @@ const Tabs = (topics) => {
 }
 
 const tabsAppender = (selector) => {
-  axios.get('https://lambda-times-api.herokuapp.com/topics')
+  axios.get(`http://localhost:5001/api/topics`)
    .then(response => {
   const mountingpoint = document.querySelector(selector)
   const data = Tabs(response.data.topics)
