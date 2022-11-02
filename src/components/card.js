@@ -19,60 +19,75 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
-  const newCard = document.createElement('div');
+  const divCard = document.createElement('div');
   const divHeadline = document.createElement('div');
   const divAuthor = document.createElement('div');
-  const divImgContainer = document.createElement('div');
-  const image = document.createElement('img');
-  const name = document.createElement('span');
+  const divImg = document.createElement('div');
+  const img = document.createElement('img');
+  const spanAuthor = document.createElement('span');
 
-  newCard.classList.add('card');
+  divCard.classList.add('card');
   divHeadline.classList.add('headline');
   divAuthor.classList.add('author');
-  divImgContainer.classList.add('img-container');
+  divImg.classList.add('img-container');
+
+  divHeadline.textContent = article.headline;
+  img.src = article.authorPhoto;
+  spanAuthor.textContent = `By ${article.authorName}`;
+
+  divCard.appendChild(divHeadline);
+  divCard.appendChild(divAuthor);
+  divAuthor.appendChild(divImg);
+  divImg.appendChild(img);
+  divAuthor.appendChild(spanAuthor);
   
-  newCard.appendChild(divHeadline);
-  newCard.appendChild(divAuthor);
-  divAuthor.appendChild(divImgContainer);
-  divImgContainer.appendChild(image);
-  divAuthor.appendChild(name);
-
-  divHeadline.textContent = `${article.headline}`
-  image.src = `${article.authorPhoto}`
-  name.textContent = `By ${article.authorName}`
-
-  newCard.addEventListener('click', ()=>{
-    console.log(divHeadline)
+  divCard.addEventListener('click', () => {
+    console.log(article.headline);
   })
-
-  return newCard
+  return divCard;
 }
 
-  // TASK 6
-  // ---------------------
-  // Implement this function that takes a css selector as its only argument.
-  // It should obtain articles from this endpoint: `http://localhost:5000/api/articles` (test it in Postman/HTTPie!).
-  // However, the articles do not come organized in a single, neat array. Inspect the response closely!
-  // Create a card from each and every article object in the response, using the Card component.
-  // Append each card to the element in the DOM that matches the selector passed to the function.
-  //
-  
-  
-const cardAppender = (selector) => {
-  const array = ['javascript', 'bootstrap', 'technology', 'jquery', 'node']
-  axios.get(`https://lambda-times-api.herokuapp.com/articles`)
-  .then((res) => {
-    array.forEach(topic => {
-      res.data.articles[topic].forEach(el => {
-        const newDiv = Card(el)
-        document.querySelector(selector).appendChild(newDiv)
-      })
-    })
-  })
-  .catch((err) => {
-    console.log(err)
-  })
+// const cardAppender = (selector) => {
+//   // TASK 6
+//   // ---------------------
+//   // Implement this function that takes a css selector as its only argument.
+//   // It should obtain articles from this endpoint: `http://localhost:5000/api/articles` (test it in Postman/HTTPie!).
+//   // However, the articles do not come organized in a single, neat array. Inspect the response closely!
+//   // Create a card from each and every article object in the response, using the Card component.
+//   // Append each card to the element in the DOM that matches the selector passed to the function.
+//   //
+// axios.get('http://localhost:5000/api/articles')
+//   .then(res => {
+//     console.log(res)
+//     const bootstrap = res.data.articles.bootstrap
+//     const javascript = res.data.articles.javascript
+//     const jquery = res.data.articles.jquery
+//     const node = res.data.articles.node
+//     const technology = res.data.articles.technology
+//     const allArticles = [...bootstrap,...javascript,...jquery,...node,...technology]
+//     const selected = document.querySelector(selector)
 
+//     allArticles.forEach(item => {
+//       selected.appendChild(Card(item))
+//     })
+//   })
+//   .catch(err => {
+//     console.error(err)
+//   })
+// }
+
+const cardAppender = (selector) => {
+  const cont = document.querySelector(selector);
+  axios
+    .get("https://lambda-times-api.herokuapp.com/articles")
+    .then(item => {
+      const articles = item.data.articles;
+      for(const article in articles){            // for in loop
+        console.log('look', articles[article]);
+        articles[article].forEach(i => cont.appendChild(Card(i)))
+      }
+        })
+    .catch(err => console.log(err))
 }
 
 export { Card, cardAppender }
