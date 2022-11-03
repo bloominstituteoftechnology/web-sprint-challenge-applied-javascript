@@ -1,3 +1,6 @@
+import axios from "axios";
+
+
 const Tabs = (topics) => {
   const topicBody = document.createElement('div')
   topicBody.classList.add('topics')
