@@ -61,7 +61,7 @@ const Card = (article) => {
 
 
   const cardAppender = (selector) => {
-axios.get('http://lambda-times-api.herokuapp.com/articles')
+axios.get('http://localhost:5001/api/articles')
   .then(res => {
     console.log(res)
     const bootstrap = res.data.articles.bootstrap
