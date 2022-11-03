@@ -1,4 +1,35 @@
+import axios from "axios";
+
 const Card = (article) => {
+
+  const cardElem = document.createElement("div");
+  const headlineElem = document.createElement('div');
+  const authorElem = document.createElement('div');
+  const imageContainer = document.createElement('div');
+  const authorPhoto = document.createElement('img');
+  const authorName = document.createElement('span');
+
+  cardElem.classList.add('card');
+  headlineElem.classList.add('headline');
+  authorElem.classList.add('author');
+  imageContainer.classList.add('img-container');
+  
+  cardElem.appendChild(headlineElem);
+  cardElem.addEventListener('click', () => {
+    console.log(headlineElem.textContent)
+  })
+  cardElem.appendChild(authorElem);
+  authorElem.appendChild(imageContainer);
+  imageContainer.appendChild(authorPhoto);
+  authorElem.appendChild(authorName);
+
+  headlineElem.textContent = article.headline;
+  authorPhoto.src = article.authorPhoto;
+  authorName.textContent = article.authorName;
+
+
+  return cardElem;
+
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
@@ -19,7 +50,25 @@ const Card = (article) => {
   //
 }
 
+
 const cardAppender = (selector) => {
+  const target = document.querySelector(selector);
+  axios.get('http://localhost:5001/api/articles')
+  .then(info => {
+      const current = []
+      current.push(info.data.articles.javascript,info.data.articles.bootstrap,info.data.articles.technology,info.data.articles.jquery,info.data.articles.node)
+
+      function sender (arr){
+        for(let i = 0;i<arr.length;i++){
+          target.appendChild(Card(arr[i]))
+        }
+      }
+      current.forEach(x =>
+        sender(x))
+  })
+    
+  
+
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
