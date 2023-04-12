@@ -1,4 +1,4 @@
-import axios from 'axios';
+
 
 const Card = (article) => {
   // TASK 5
@@ -25,6 +25,9 @@ const Card = (article) => {
 
   let cardMain = document.createElement("div");
   cardMain.classList.add("card");
+  cardMain.addEventListener("click", () => {
+    console.log(headline);
+  });
 
   let cardHeadline = document.createElement("div");
   cardHeadline.classList.add("headline");
@@ -50,7 +53,7 @@ const Card = (article) => {
 return cardMain;
 
 }
-
+import axios from 'axios';
 const cardAppender = (selector) => {
   // TASK 6
   // ---------------------
@@ -61,20 +64,18 @@ const cardAppender = (selector) => {
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
 
-// axios.get("http://localhost:5001/api/articles")
-// .then(resp => {
-//   console.log(resp)
-//   document.querySelector(selector).appendChild(Card(resp.datas));
-// })
-// .catch(err => console.log(err))
-// }
-
-
 axios.get("http://localhost:5001/api/articles")
 .then(resp => {
-  document.querySelector(selector).appendChild(Card(resp.data));
+  let newArray = [resp.data.articles];
+  newArray.forEach(FirstElement => {
+    FirstElement.forEach(SecondElement => {
+      document.querySelector(selector).appendChild(Card(SecondElement));
+    })
+  })
+  })
+.catch(err => {
+  console.log(err);
 })
-.catch(err => console.error(err))
 }
 
 
