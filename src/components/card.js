@@ -1,3 +1,5 @@
+
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -17,8 +19,41 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
-}
+  let headline = article.headline;
+  let authorPhoto = article.authorPhoto;
+  let authorName = article.authorName;
 
+  let cardMain = document.createElement("div");
+  cardMain.classList.add("card");
+  cardMain.addEventListener("click", () => {
+    console.log(headline);
+  });
+
+  let cardHeadline = document.createElement("div");
+  cardHeadline.classList.add("headline");
+  cardHeadline.textContent = headline;
+  cardMain.appendChild(cardHeadline);
+
+  let cardAuthor = document.createElement("div");
+  cardAuthor.classList.add("author");
+  cardMain.appendChild(cardAuthor);
+
+  let cardImgContainer = document.createElement("div");
+  cardImgContainer.classList.add("img-container");
+  cardAuthor.appendChild(cardImgContainer);
+
+  let cardImg = document.createElement("img");
+  cardImg.src = authorPhoto;
+  cardImgContainer.appendChild(cardImg);
+
+  const cardSpan = document.createElement("span");
+  cardSpan.textContent = `By ${authorName}`;
+  cardAuthor.appendChild(cardSpan);
+
+return cardMain;
+
+}
+import axios from 'axios';
 const cardAppender = (selector) => {
   // TASK 6
   // ---------------------
@@ -28,6 +63,24 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+
+axios.get("http://localhost:5001/api/articles")
+.then(res => {
+  // const articleMethods = ["javascript", "bootstrap", "technology", "jquery", "node"];
+  let newArray = [res.data.articles];
+  const objKeys = Object.keys(newArray[0]);
+  objKeys.forEach(element => {
+    newArray[0][element].forEach(element => {
+      document.querySelector(selector).appendChild(Card(element))
+    })
+  })
+  })
+.catch(err => {
+  console.log(err);
+})
 }
 
+
 export { Card, cardAppender }
+
+
