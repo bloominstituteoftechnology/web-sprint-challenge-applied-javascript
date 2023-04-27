@@ -24,6 +24,10 @@ const Header = (title, date, temp) => {
   dateSpan.textContent = date;
   titleH1.textContent = title;
   tempSpan.textContent = temp;
+
+  header.append(dateSpan, titleH1, tempSpan);
+
+  return header;
 };
 
 const headerAppender = (selector) => {
@@ -38,6 +42,9 @@ const headerAppender = (selector) => {
   // We are taking care of passing in the correct selector on line 16,
   // so all that you need to do is pass it into the querySelector method
   // for the tests to work!
+
+  const wrapper = document.querySelector(selector);
+  wrapper.appendChild(Header('Weather', '12/12/12', '32'));
 };
 
 export { Header, headerAppender };
