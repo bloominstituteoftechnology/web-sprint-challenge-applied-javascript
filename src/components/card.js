@@ -37,6 +37,7 @@ const Card = (article) => {
 
   headline.textContent = article.headline;
   img.src = article.authorPhoto;
+  imgContainer.appendChild(img);
   authorName.textContent = `By ${article.authorName}`;
 
   card.addEventListener('click', () => {
