@@ -44,7 +44,7 @@ const headerAppender = (selector) => {
   // for the tests to work!
 
   const wrapper = document.querySelector(selector);
-  wrapper.appendChild(Header('Weather', '12/12/12', '32'));
+  wrapper.appendChild(Header('Weather', '04/27/23', '32'));
 };
 
 export { Header, headerAppender };
