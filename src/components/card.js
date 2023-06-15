@@ -17,6 +17,32 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+  const cardWrap = document.createElement("div");
+  const headline = document.createElement("div");
+  const author = document.createElement("div");
+  const imgContainer = document.createElement("div");
+  const img = document.createElement("img");
+  const authorName = document.createElement("span");
+
+  cardWrap.classList.add("card");
+  headline.classList.add("headline");
+  author.classList.add("author");
+  imgContainer.classList.add("img-container");
+  
+  imgContainer.appendChild(img);
+  author.appendChild(imgContainer);
+  author.appendChild(authorName);
+  cardWrap.appendChild(headline)
+  cardWrap.appendChild(author);
+
+  headline.textContent = article.headline;
+  img.src = article.authorPhoto;
+  authorName.textContent = `BY ${article.authorName}`;
+  cardWrap.addEventListener("click", () => {
+    console.log(article.headline)
+  })
+  //what
+return cardWrap;
 }
 
 const cardAppender = (selector) => {
@@ -28,6 +54,24 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+  const cardContainer = document.querySelector(selector);
+
+  fetch('http://localhost:5001/api/articles')
+    .then(response => response.json())
+    .then(data => {
+      for (const category in data) {
+       if(Array.isArray(data[category])) {
+        data[category].forEach(article => {
+          const card = Card(article);
+          cardContainer.appendChild(card);
+        });
+      }
+    }
+    })
+    .catch(error => {
+      console.log('Error', error);
+    });
 }
+
 
 export { Card, cardAppender }
