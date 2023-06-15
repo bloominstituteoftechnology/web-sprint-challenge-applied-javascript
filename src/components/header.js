@@ -52,7 +52,7 @@ const headerAppender = (selector) => {
   if(existingHeader){
     headerContainer.removeChild(existingHeader);
   }
-  const header = Header("BloomTech Times" , "January 6, 2021", "26°");
+  const header = Header();
   headerContainer.appendChild(header);
 };
 window.addEventListener("DOMContentLoaded", () => {

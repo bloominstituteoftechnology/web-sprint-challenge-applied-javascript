@@ -13,6 +13,18 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+  const topicWrap = document.createElement("div");
+
+  topicWrap.classList.add("topics");
+  
+  topics.forEach(tab => {
+    const tabs = document.createElement("div");
+    tabs.classList.add("tab");
+    tabs.textContent = tab;
+    topicWrap.appendChild(tabs);
+    
+  });
+   return topicWrap
 }
 
 const tabsAppender = (selector) => {
@@ -23,6 +35,17 @@ const tabsAppender = (selector) => {
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
+  fetch(`http://localhost:5001/api/topics`)
+  .then(response => response.json())
+  .then(data => {
+    const topics = data.topics;
+    const tabs = Tabs(topics)
+    const container = document.querySelector(selector);
+    container.appendChild(tabs)
+  })
+  .catch(error => {
+    console.error("Error grabbing the gudstuff", error)
+  })
 }
 
 export { Tabs, tabsAppender }
