@@ -41,7 +41,7 @@ const Card = (article) => {
   cardWrap.addEventListener("click", () => {
     console.log(article.headline)
   })
-  
+  //what
 return cardWrap;
 }
 
